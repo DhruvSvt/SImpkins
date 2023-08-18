@@ -709,6 +709,7 @@ parentSearch($(".father-search"), baseUrl + "/parent/search", {'type': 'father'}
         $('#father_last_name').val(repo.last_name).attr('readonly', true);
         $('#father_mobile').val(repo.mobile).attr('readonly', true);
         $('#father_occupation').val(repo.occupation).attr('readonly', true);
+        $('#father_annual_income').val(repo.annual_income).attr('readonly', true);
         $('#father_dob').val(repo.dob).attr('readonly', true);
         $('#father-image-tag').attr('src', repo.image);
     } else {
@@ -724,6 +725,7 @@ parentSearch($(".father-search"), baseUrl + "/parent/search", {'type': 'father'}
         $('#father_last_name').val('').attr('readonly', false);
         $('#father_mobile').val('').attr('readonly', false);
         $('#father_occupation').val('').attr('readonly', false);
+        $('#father_annual_income').val('').attr('readonly', false);
         $('#father_dob').val('').attr('readonly', false);
         $('#father-image-tag').attr('src', '');
     }
