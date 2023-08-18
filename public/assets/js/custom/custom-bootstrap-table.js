@@ -310,7 +310,7 @@ window.parentEvents = {
         $('#email').val(row.email);
         $('#mobile').val(row.mobile);
         $('#occupation').val(row.occupation);
-        $('#father_annual_income').val(row.annual_income);
+        $('#annual_income').val(row.annual_income);
         $('#dob').val(row.dob);
         if (row.current_address) {
             $('#current_address_div').show();

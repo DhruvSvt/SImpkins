@@ -141,6 +141,7 @@ class ParentsController extends Controller
                 ->orwhere('email', 'LIKE', "%$search%")
                 ->orwhere('mobile', 'LIKE', "%$search%")
                 ->orwhere('occupation', 'LIKE', "%$search%")
+                ->orwhere('annual_income', 'LIKE', "%$search%")
                 ->orwhere('dob', 'LIKE', "%" . $search . "%")
                 ->orWhereHas('user', function ($q) use ($search) {
                     $q->where('id', 'LIKE', "%$search%")
@@ -173,6 +174,7 @@ class ParentsController extends Controller
             $tempRow['dob'] = date($data['date_formate'], strtotime($row->dob));
             $tempRow['mobile'] = $row->mobile;
             $tempRow['occupation'] = $row->occupation;
+            $tempRow['annual_income'] = $row->annual_income;
             if ($row->user) {
                 $tempRow['current_address'] = $row->user->current_address;
                 $tempRow['permanent_address'] = $row->user->permanent_address;
@@ -214,6 +216,7 @@ class ParentsController extends Controller
             $parents->mobile = $request->mobile;
             $parents->dob = date('Y-m-d', strtotime($request->dob));
             $parents->occupation = $request->occupation;
+            $parents->annual_income = $request->annual_income;
             if ($request->hasFile('image')) {
                 if ($parents->image != "" && Storage::disk('public')->exists($parents->image)) {
                     Storage::disk('public')->delete($parents->image);
