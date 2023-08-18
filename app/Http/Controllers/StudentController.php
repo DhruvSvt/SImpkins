@@ -126,6 +126,7 @@ class StudentController extends Controller
             'mobile' => 'nullable|regex:/^([0-9\s\-\+\(\)]*)$/',
             'image' => 'mimes:jpeg,png,jpg|image|max:2048',
             'dob' => 'required',
+            'admitted_class' => 'required',
             'class_section_id' => 'required',
             'category_id' => 'required',
             'admission_no' => 'required|unique:users,email,' . $request->edit_id,
@@ -304,7 +305,6 @@ class StudentController extends Controller
 
     public function store(Request $request)
     {
-        // dd($request->father_annual_income);
         if (!Auth::user()->can('student-create') || !Auth::user()->can('student-edit')) {
             $response = array(
                 'message' => trans('no_permission_message')
@@ -318,6 +318,7 @@ class StudentController extends Controller
             'mobile' => 'nullable|regex:/^([0-9\s\-\+\(\)]*)$/',
             'image' => 'mimes:jpeg,png,jpg|image|max:2048',
             'dob' => 'required',
+            'admitted_class' => 'required',
             'class_section_id' => 'required',
             'category_id' => 'required',
             'admission_no' => 'required|unique:users,email',
@@ -493,6 +494,12 @@ class StudentController extends Controller
             $student->father_id = $father_parent_id;
             $student->mother_id = $mother_parent_id;
             $student->guardian_id = $guardian_parent_id;
+
+            $student->admitted_class = $request->admitted_class;
+            $student->aadhar_card = $request->aadhar_card;
+            $student->is_handicap = $request->is_handicap ?? 0;
+            $student->is_only_child = $request->is_only_child ?? 0;
+            $student->is_minority = $request->is_minority ?? 0;
             $student->save();
 
             //Send User Credentials via Email
@@ -662,6 +669,12 @@ class StudentController extends Controller
             $tempRow['current_address'] = $row->user->current_address;
             $tempRow['permanent_address'] = $row->user->permanent_address;
             $tempRow['is_new_admission'] = $row->is_new_admission;
+            $tempRow['gender'] = $row->user->gender;
+            $tempRow['admitted_class'] = $row->admitted_class;
+            $tempRow['aadhar_card'] = $row->aadhar_card;
+            $tempRow['is_handicap'] = $row->is_handicap ? 'Yes' : 'No';
+            $tempRow['is_only_child'] = $row->is_only_child ? 'Yes' : 'No';
+            $tempRow['is_minority'] = $row->is_minority ? 'Yes' : 'No';
 
             if (!empty($row->father)) {
                 //Father Data

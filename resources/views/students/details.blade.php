@@ -56,60 +56,47 @@
                                             <th scope="col" data-field="no" data-sortable="true">{{ __('no') }}</th>
                                             <th scope="col" data-field="user_id" data-sortable="false"
                                                 data-visible="false">{{ __('user_id') }}</th>
+                                            <th scope="col" data-field="admission_no" data-sortable="false">
+                                                {{ __('admission_no') }}</th>
                                             <th scope="col" data-field="first_name" data-sortable="false">
                                                 {{ __('first_name') }}</th>
                                             <th scope="col" data-field="last_name" data-sortable="false">
                                                 {{ __('last_name') }}</th>
-                                            <th scope="col" data-field="dob" data-sortable="false">{{ __('dob') }}
-                                            </th>
-                                            <th scope="col" data-field="image" data-sortable="false"
-                                                data-formatter="imageFormatter">{{ __('image') }}
-                                            </th>
-                                            <th scope="col" data-field="class_section_id" data-sortable="false"
-                                                data-visible="false">
-                                                {{ __('class') . ' ' . __('section') . ' ' . __('id') }}</th>
-                                            <th scope="col" data-field="class_section_name" data-sortable="false">
-                                                {{ __('class') . ' ' . __('section') }}</th>
-                                            <th scope="col" data-field="category_id" data-sortable="false"
-                                                data-visible="false">{{ __('category') . ' ' . __('id') }}</th>
-                                            <th scope="col" data-field="category_name" data-sortable="false">
-                                                {{ __('category') }}</th>
-                                            <th scope="col" data-field="admission_no" data-sortable="false">
-                                                {{ __('admission_no') }}</th>
-                                            <th scope="col" data-field="roll_number" data-sortable="false">
-                                                {{ __('roll_no') }}</th>
-                                            <th scope="col" data-field="caste" data-sortable="false">{{ __('caste') }}
-                                            </th>
-                                            <th scope="col" data-field="religion" data-sortable="false">
-                                                {{ __('religion') }}</th>
-                                            <th scope="col" data-field="admission_date" data-sortable="false">
-                                                {{ __('admission_date') }}</th>
-                                            <th scope="col" data-field="blood_group" data-sortable="false">
-                                                {{ __('blood_group') }}</th>
-                                            <th scope="col" data-field="height" data-sortable="false">
-                                                {{ __('height') }}</th>
-                                            <th scope="col" data-field="weight" data-sortable="false">
-                                                {{ __('weight') }}</th>
                                             <th scope="col" data-field="father_first_name" data-sortable="false">
                                                 {{ __('father') . ' ' . __('name') }}</th>
-                                            <th scope="col" data-field="father_mobile" data-sortable="false">
-                                                {{ __('father') . ' ' . __('mobile') }}</th>
-                                            <th scope="col" data-field="father_occupation" data-sortable="false">
-                                                {{ __('father') . ' ' . __('occupation') }}</th>
-                                            <th scope="col" data-field="father_annual_income" data-sortable="false">
-                                                {{ __('father') . ' ' . __('annual_income') }}</th>
-                                            <th scope="col" data-field="father_image" data-sortable="false"
-                                                data-formatter="fatherImageFormatter">
-                                                {{ __('father') . ' ' . __('image') }}</th>
                                             <th scope="col" data-field="mother_first_name" data-sortable="false">
                                                 {{ __('mother') . ' ' . __('name') }}</th>
-                                            <th scope="col" data-field="mother_occupation" data-sortable="false">
-                                                {{ __('parents') . ' ' . __('occupation') }}</th>
-                                            <th scope="col" data-field="mother_image" data-sortable="false"
-                                                data-formatter="motherImageFormatter">
-                                                {{ __('mother') . ' ' . __('image') }}</th>
-                                            <th scope="col" data-field="is_new_admission" data-sortable="false"
-                                                data-visible="false">{{ __('is_new_admission') }}</th>
+                                            <th scope="col" data-field="religion" data-sortable="false">
+                                                {{ __('religion') }}</th>
+                                            <th scope="col" data-field="gender" data-sortable="false">
+                                                {{ __('gender') }}</th>
+                                            <th scope="col" data-field="category_name" data-sortable="false">
+                                                {{ __('category') }}</th>
+                                            <th scope="col" data-field="dob" data-sortable="false">{{ __('dob') }}
+                                            </th>
+                                            <th scope="col" data-field="admitted_class" data-sortable="false">
+                                                {{ __('admitted_class') }}
+                                            </th>
+                                            <th scope="col" data-field="class_section_name" data-sortable="false">
+                                                {{ __('class') . ' ' . __('section') }}</th>
+                                            <th scope="col" data-field="admission_date" data-sortable="false">
+                                                {{ __('admission_date') }}</th>
+                                            <th scope="col" data-field="father_mobile" data-sortable="false">
+                                                {{ __('father') . ' ' . __('mobile') }}</th>
+                                            <th scope="col" data-field="mother_mobile" data-sortable="false">
+                                                {{ __('mother') . ' ' . __('mobile') }}</th>
+                                            <th scope="col" data-field="current_address" data-sortable="false">
+                                                {{ __('current_address') }}</th>
+                                            <th scope="col" data-field="father_annual_income" data-sortable="false">
+                                                {{ __('father') . ' ' . __('annual_income') }}</th>
+                                            <th scope="col" data-field="aadhar_card" data-sortable="false">
+                                                {{ __('aadhar_card') }}</th>
+                                            <th scope="col" data-field="is_handicap" data-sortable="false">
+                                                {{ __('is_handicap') }}</th>
+                                            <th scope="col" data-field="is_only_child" data-sortable="false">
+                                                {{ __('is_only_child') }}</th>
+                                            <th scope="col" data-field="is_minority" data-sortable="false">
+                                                {{ __('is_minority') }}</th>
                                             @canany(['student-edit', 'student-delete'])
                                                 <th data-events="studentEvents" scope="col" data-field="operate"
                                                     data-sortable="false">{{ __('action') }}</th>
@@ -145,12 +132,20 @@
                             <div class="row">
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('first_name') }} <span class="text-danger">*</span></label>
-                                    {!! Form::text('first_name', null, ['placeholder' => __('first_name'), 'class' => 'form-control', 'id' => 'edit_first_name']) !!}
+                                    {!! Form::text('first_name', null, [
+                                        'placeholder' => __('first_name'),
+                                        'class' => 'form-control',
+                                        'id' => 'edit_first_name',
+                                    ]) !!}
 
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('last_name') }} <span class="text-danger">*</span></label>
-                                    {!! Form::text('last_name', null, ['placeholder' => __('last_name'), 'class' => 'form-control', 'id' => 'edit_last_name']) !!}
+                                    {!! Form::text('last_name', null, [
+                                        'placeholder' => __('last_name'),
+                                        'class' => 'form-control',
+                                        'id' => 'edit_last_name',
+                                    ]) !!}
 
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
@@ -191,13 +186,17 @@
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('dob') }} <span class="text-danger">*</span></label>
-                                    {!! Form::text('dob', null, ['readonly', 'placeholder' => __('dob'), 'class' => 'datepicker-popup form-control', 'id' => 'edit_dob']) !!}
+                                    {!! Form::text('dob', null, [
+                                        'readonly',
+                                        'placeholder' => __('dob'),
+                                        'class' => 'datepicker-popup form-control',
+                                        'id' => 'edit_dob',
+                                    ]) !!}
                                     <span class="input-group-addon input-group-append">
                                     </span>
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('class') . ' ' . __('section') }} <span
-                                            class="text-danger">*</span></label>
+                                    <label>{{ __('class') . ' ' . __('section') }} <span class="text-danger">*</span></label>
                                     <select required name="class_section_id" class="form-control" id="edit_class_section_id">
                                         <option value="">{{ __('select') . ' ' . __('class') . ' ' . __('section') }}
                                         </option>
@@ -220,12 +219,20 @@
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('admission_no') }} <span class="text-danger">*</span></label>
-                                    {!! Form::text('admission_no', null, ['placeholder' => __('admission_no'), 'class' => 'form-control', 'id' => 'edit_admission_no']) !!}
+                                    {!! Form::text('admission_no', null, [
+                                        'placeholder' => __('admission_no'),
+                                        'class' => 'form-control',
+                                        'id' => 'edit_admission_no',
+                                    ]) !!}
 
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('roll_no') }} <span class="text-danger">*</span></label>
-                                    {!! Form::text('roll_number', null, ['placeholder' => __('roll_no'), 'class' => 'form-control', 'id' => 'edit_roll_number']) !!}
+                                    {!! Form::text('roll_number', null, [
+                                        'placeholder' => __('roll_no'),
+                                        'class' => 'form-control',
+                                        'id' => 'edit_roll_number',
+                                    ]) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('caste') }}</label>
@@ -234,11 +241,20 @@
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('religion') }}</label>
-                                    {!! Form::text('religion', null, ['placeholder' => __('religion'), 'class' => 'form-control', 'id' => 'edit_religion']) !!}
+                                    {!! Form::text('religion', null, [
+                                        'placeholder' => __('religion'),
+                                        'class' => 'form-control',
+                                        'id' => 'edit_religion',
+                                    ]) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('admission_date') }} <span class="text-danger">*</span></label>
-                                    {!! Form::text('admission_date', null, ['readonly', 'placeholder' => __('admission_date'), 'class' => 'datepicker-popup form-control', 'id' => 'edit_admission_date']) !!}
+                                    {!! Form::text('admission_date', null, [
+                                        'readonly',
+                                        'placeholder' => __('admission_date'),
+                                        'class' => 'datepicker-popup form-control',
+                                        'id' => 'edit_admission_date',
+                                    ]) !!}
                                     <span class="input-group-addon input-group-append">
                                     </span>
                                 </div>
@@ -258,19 +274,39 @@
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('height') }} <span class="text-danger">*</span></label>
-                                    {!! Form::text('height', null, ['placeholder' => __('height'), 'class' => 'form-control', 'id' => 'edit_height']) !!}
+                                    {!! Form::text('height', null, [
+                                        'placeholder' => __('height'),
+                                        'class' => 'form-control',
+                                        'id' => 'edit_height',
+                                    ]) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('weight') }} <span class="text-danger">*</span></label>
-                                    {!! Form::text('weight', null, ['placeholder' => __('weight'), 'class' => 'form-control', 'id' => 'edit_weight']) !!}
+                                    {!! Form::text('weight', null, [
+                                        'placeholder' => __('weight'),
+                                        'class' => 'form-control',
+                                        'id' => 'edit_weight',
+                                    ]) !!}
                                 </div>
                                 <div class="form-group col-12">
                                     <label>{{ __('address') }} <span class="text-danger">*</span></label>
-                                    {!! Form::textarea('current_address', null, ['placeholder' => __('current_address'), 'class' => 'form-control', 'id' => 'current_address', 'id' => 'edit_current_address', 'rows' => 2]) !!}
+                                    {!! Form::textarea('current_address', null, [
+                                        'placeholder' => __('current_address'),
+                                        'class' => 'form-control',
+                                        'id' => 'current_address',
+                                        'id' => 'edit_current_address',
+                                        'rows' => 2,
+                                    ]) !!}
                                 </div>
                                 <div class="form-group col-12">
                                     <label>{{ __('permanent_address') }} <span class="text-danger">*</span></label>
-                                    {!! Form::textarea('permanent_address', null, ['placeholder' => __('permanent_address'), 'class' => 'form-control', 'id' => 'permanent_address', 'id' => 'edit_permanent_address', 'rows' => 2]) !!}
+                                    {!! Form::textarea('permanent_address', null, [
+                                        'placeholder' => __('permanent_address'),
+                                        'class' => 'form-control',
+                                        'id' => 'permanent_address',
+                                        'id' => 'edit_permanent_address',
+                                        'rows' => 2,
+                                    ]) !!}
                                 </div>
                             </div>
                             <hr>
@@ -285,31 +321,60 @@
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('father') . ' ' . __('first_name') }} <span
                                             class="text-danger">*</span></label>
-                                    {!! Form::text('father_first_name', null, ['placeholder' => __('father') . ' ' . __('first_name'), 'class' => 'form-control', 'id' => 'edit_father_first_name', 'readonly' => true]) !!}
+                                    {!! Form::text('father_first_name', null, [
+                                        'placeholder' => __('father') . ' ' . __('first_name'),
+                                        'class' => 'form-control',
+                                        'id' => 'edit_father_first_name',
+                                        'readonly' => true,
+                                    ]) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('father') . ' ' . __('last_name') }} <span
                                             class="text-danger">*</span></label>
-                                    {!! Form::text('father_last_name', null, ['placeholder' => __('father') . ' ' . __('last_name'), 'class' => 'form-control', 'id' => 'edit_father_last_name', 'readonly' => true]) !!}
+                                    {!! Form::text('father_last_name', null, [
+                                        'placeholder' => __('father') . ' ' . __('last_name'),
+                                        'class' => 'form-control',
+                                        'id' => 'edit_father_last_name',
+                                        'readonly' => true,
+                                    ]) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('father') . ' ' . __('mobile') }} <span
-                                            class="text-danger">*</span></label>
-                                    {!! Form::text('father_mobile', null, ['placeholder' => __('father') . ' ' . __('mobile'), 'class' => 'form-control', 'id' => 'edit_father_mobile', 'readonly' => true]) !!}
+                                    <label>{{ __('father') . ' ' . __('mobile') }} <span class="text-danger">*</span></label>
+                                    {!! Form::text('father_mobile', null, [
+                                        'placeholder' => __('father') . ' ' . __('mobile'),
+                                        'class' => 'form-control',
+                                        'id' => 'edit_father_mobile',
+                                        'readonly' => true,
+                                    ]) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('father') . ' ' . __('dob') }} <span class="text-danger">*</span></label>
-                                    {!! Form::text('father_dob', null, ['placeholder' => __('father') . ' ' . __('dob'), 'class' => 'form-control datepicker-popup form-control', 'id' => 'edit_father_dob', 'readonly' => true]) !!}
+                                    {!! Form::text('father_dob', null, [
+                                        'placeholder' => __('father') . ' ' . __('dob'),
+                                        'class' => 'form-control datepicker-popup form-control',
+                                        'id' => 'edit_father_dob',
+                                        'readonly' => true,
+                                    ]) !!}
                                 </div>
 
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('father') . ' ' . __('occupation') }} <span
                                             class="text-danger">*</span></label>
-                                    {!! Form::text('father_occupation', null, ['placeholder' => __('father') . ' ' . __('occupation'), 'class' => 'form-control', 'id' => 'edit_father_occupation', 'readonly' => true]) !!}
+                                    {!! Form::text('father_occupation', null, [
+                                        'placeholder' => __('father') . ' ' . __('occupation'),
+                                        'class' => 'form-control',
+                                        'id' => 'edit_father_occupation',
+                                        'readonly' => true,
+                                    ]) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('father') . ' ' . __('annual_income') }}</label>
-                                    {!! Form::text('father_annual_income', null, ['placeholder' => __('father') . ' ' . __('annual_income'), 'class' => 'form-control', 'id' => 'edit_father_annual_income', 'readonly' => true]) !!}
+                                    {!! Form::text('father_annual_income', null, [
+                                        'placeholder' => __('father') . ' ' . __('annual_income'),
+                                        'class' => 'form-control',
+                                        'id' => 'edit_father_annual_income',
+                                        'readonly' => true,
+                                    ]) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('father') . ' ' . __('image') }} <span class="text-danger">*</span></label>
@@ -339,27 +404,51 @@
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('mother') . ' ' . __('first_name') }} <span
                                             class="text-danger">*</span></label>
-                                    {!! Form::text('mother_first_name', null, ['placeholder' => __('mother') . ' ' . __('first_name'), 'class' => 'form-control', 'id' => 'edit_mother_first_name', 'readonly' => true]) !!}
+                                    {!! Form::text('mother_first_name', null, [
+                                        'placeholder' => __('mother') . ' ' . __('first_name'),
+                                        'class' => 'form-control',
+                                        'id' => 'edit_mother_first_name',
+                                        'readonly' => true,
+                                    ]) !!}
                                 </div>
 
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('mother') . ' ' . __('last_name') }} <span
                                             class="text-danger">*</span></label>
-                                    {!! Form::text('mother_last_name', null, ['placeholder' => __('mother') . ' ' . __('last_name'), 'class' => 'form-control', 'id' => 'edit_mother_last_name', 'readonly' => true]) !!}
+                                    {!! Form::text('mother_last_name', null, [
+                                        'placeholder' => __('mother') . ' ' . __('last_name'),
+                                        'class' => 'form-control',
+                                        'id' => 'edit_mother_last_name',
+                                        'readonly' => true,
+                                    ]) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('mother') . ' ' . __('mobile') }} <span
-                                            class="text-danger">*</span></label>
-                                    {!! Form::text('mother_mobile', null, ['placeholder' => __('mother') . ' ' . __('mobile'), 'class' => 'form-control', 'id' => 'edit_mother_mobile', 'readonly' => true]) !!}
+                                    <label>{{ __('mother') . ' ' . __('mobile') }} <span class="text-danger">*</span></label>
+                                    {!! Form::text('mother_mobile', null, [
+                                        'placeholder' => __('mother') . ' ' . __('mobile'),
+                                        'class' => 'form-control',
+                                        'id' => 'edit_mother_mobile',
+                                        'readonly' => true,
+                                    ]) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('mother') . ' ' . __('dob') }} <span class="text-danger">*</span></label>
-                                    {!! Form::text('mother_dob', null, ['placeholder' => __('mother') . ' ' . __('dob'), 'class' => 'form-control datepicker-popup form-control', 'id' => 'edit_mother_dob', 'readonly' => true]) !!}
+                                    {!! Form::text('mother_dob', null, [
+                                        'placeholder' => __('mother') . ' ' . __('dob'),
+                                        'class' => 'form-control datepicker-popup form-control',
+                                        'id' => 'edit_mother_dob',
+                                        'readonly' => true,
+                                    ]) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('mother') . ' ' . __('occupation') }} <span
                                             class="text-danger">*</span></label>
-                                    {!! Form::text('mother_occupation', null, ['placeholder' => __('mother') . ' ' . __('occupation'), 'class' => 'form-control', 'id' => 'edit_mother_occupation', 'readonly' => true]) !!}
+                                    {!! Form::text('mother_occupation', null, [
+                                        'placeholder' => __('mother') . ' ' . __('occupation'),
+                                        'class' => 'form-control',
+                                        'id' => 'edit_mother_occupation',
+                                        'readonly' => true,
+                                    ]) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('mother') . ' ' . __('image') }} <span class="text-danger">*</span></label>
@@ -388,8 +477,7 @@
                             </div>
                             <div class="row" id="edit_guardian_div" style="display:none;">
                                 <div class="form-group col-sm-12 col-md-12">
-                                    <label>{{ __('guardian') . ' ' . __('email') }} <span
-                                            class="text-danger">*</span></label>
+                                    <label>{{ __('guardian') . ' ' . __('email') }} <span class="text-danger">*</span></label>
                                     <select class="edit-guardian-search form-control" id="edit_guardian_email"
                                         name="guardian_email"></select>
                                 </div>
@@ -397,31 +485,55 @@
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('guardian') . ' ' . __('first_name') }} <span
                                             class="text-danger">*</span></label>
-                                    {!! Form::text('guardian_first_name', null, ['placeholder' => __('guardian') . ' ' . __('first_name'), 'class' => 'form-control', 'id' => 'edit_guardian_first_name', 'readonly' => true]) !!}
+                                    {!! Form::text('guardian_first_name', null, [
+                                        'placeholder' => __('guardian') . ' ' . __('first_name'),
+                                        'class' => 'form-control',
+                                        'id' => 'edit_guardian_first_name',
+                                        'readonly' => true,
+                                    ]) !!}
                                 </div>
 
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('guardian') . ' ' . __('last_name') }} <span
                                             class="text-danger">*</span></label>
-                                    {!! Form::text('guardian_last_name', null, ['placeholder' => __('guardian') . ' ' . __('last_name'), 'class' => 'form-control', 'id' => 'edit_guardian_last_name', 'readonly' => true]) !!}
+                                    {!! Form::text('guardian_last_name', null, [
+                                        'placeholder' => __('guardian') . ' ' . __('last_name'),
+                                        'class' => 'form-control',
+                                        'id' => 'edit_guardian_last_name',
+                                        'readonly' => true,
+                                    ]) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('guardian') . ' ' . __('mobile') }} <span
                                             class="text-danger">*</span></label>
-                                    {!! Form::text('guardian_mobile', null, ['placeholder' => __('guardian') . ' ' . __('mobile'), 'class' => 'form-control', 'id' => 'edit_guardian_mobile', 'readonly' => true]) !!}
+                                    {!! Form::text('guardian_mobile', null, [
+                                        'placeholder' => __('guardian') . ' ' . __('mobile'),
+                                        'class' => 'form-control',
+                                        'id' => 'edit_guardian_mobile',
+                                        'readonly' => true,
+                                    ]) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('guardian') . ' ' . __('dob') }} <span class="text-danger">*</span></label>
-                                    {!! Form::text('guardian_dob', null, ['placeholder' => __('guardian') . ' ' . __('dob'), 'class' => 'form-control datepicker-popup form-control', 'id' => 'edit_guardian_dob', 'readonly' => true]) !!}
+                                    {!! Form::text('guardian_dob', null, [
+                                        'placeholder' => __('guardian') . ' ' . __('dob'),
+                                        'class' => 'form-control datepicker-popup form-control',
+                                        'id' => 'edit_guardian_dob',
+                                        'readonly' => true,
+                                    ]) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('guardian') . ' ' . __('occupation') }} <span
                                             class="text-danger">*</span></label>
-                                    {!! Form::text('guardian_occupation', null, ['placeholder' => __('guardian') . ' ' . __('occupation'), 'class' => 'form-control', 'id' => 'edit_guardian_occupation', 'readonly' => true]) !!}
+                                    {!! Form::text('guardian_occupation', null, [
+                                        'placeholder' => __('guardian') . ' ' . __('occupation'),
+                                        'class' => 'form-control',
+                                        'id' => 'edit_guardian_occupation',
+                                        'readonly' => true,
+                                    ]) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('guardian') . ' ' . __('image') }} <span
-                                            class="text-danger">*</span></label>
+                                    <label>{{ __('guardian') . ' ' . __('image') }} <span class="text-danger">*</span></label>
                                     <input type="file" name="guardian_image" class="file-upload-default" />
                                     <div class="input-group col-xs-12">
                                         <input type="text" class="form-control file-upload-info" disabled=""
