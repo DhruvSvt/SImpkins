@@ -1,0 +1,43 @@
+<?php
+    $lang = Session::get('language');
+?>
+<link rel="stylesheet" href="<?php echo e(asset('/assets/css/vendor.bundle.base.css')); ?>">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="<?php echo e(asset('/assets/fonts/font-awesome.min.css')); ?>"/>
+<link rel="stylesheet" href="<?php echo e(asset('/assets/select2/select2.min.css')); ?>">
+<link rel="stylesheet" href="<?php echo e(asset('/assets/jquery-toast-plugin/jquery.toast.min.css')); ?>">
+<link rel="stylesheet" href="<?php echo e(asset('/assets/color-picker/color.min.css')); ?>">
+<?php if($lang): ?>
+    <?php if($lang->is_rtl): ?>
+        <link rel="stylesheet" href="<?php echo e(asset('/assets/css/rtl.css')); ?>">
+    <?php else: ?>
+        <link rel="stylesheet" href="<?php echo e(asset('/assets/css/style.css')); ?>">
+    <?php endif; ?>
+<?php else: ?>
+    <link rel="stylesheet" href="<?php echo e(asset('/assets/css/style.css?v=')); ?><?=time()?>">
+<?php endif; ?>
+<link rel="stylesheet" href="<?php echo e(asset('/assets/css/datepicker.min.css')); ?>">
+<link rel="stylesheet" href="<?php echo e(asset('/assets/css/ekko-lightbox.css')); ?>">
+
+<link rel="stylesheet" href="<?php echo e(asset('/assets/bootstrap-table/bootstrap-table.min.css')); ?>">
+<link rel="stylesheet" href="<?php echo e(asset('/assets/bootstrap-table/fixed-columns.min.css')); ?>">
+
+
+<link rel="shortcut icon" href="<?php echo e(url(Storage::url(env('FAVICON')))); ?>"/>
+
+<?php
+    $theme_color = getSettings('theme_color');
+    // echo json_encode($theme_color);
+    $theme_color = $theme_color['theme_color'];
+?>
+<style>
+    :root {
+        /*--theme-color: <?=$theme_color ?>;*/
+        --theme-color:#DC700E;
+        #DC700E
+    }
+</style>
+<script>
+    var baseUrl = "<?php echo e(URL::to('/')); ?>";
+</script>
+<?php /**PATH /home1/mdcollegeagra/simpkins.mdayurvediccollege.in/resources/views/layouts/include.blade.php ENDPATH**/ ?>
