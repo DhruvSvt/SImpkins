@@ -310,6 +310,7 @@ window.parentEvents = {
         $('#email').val(row.email);
         $('#mobile').val(row.mobile);
         $('#occupation').val(row.occupation);
+        $('#father_annual_income').val(row.annual_income);
         $('#dob').val(row.dob);
         if (row.current_address) {
             $('#current_address_div').show();
@@ -360,6 +361,7 @@ window.studentEvents = {
             $('#edit_father_mobile').val(row.father_mobile).attr('readonly', true);
             $('#edit_father_dob').val(row.father_dob).attr('readonly', true);
             $('#edit_father_occupation').val(row.father_occupation).attr('readonly', true);
+            $('#edit_father_annual_income').val(row.father_annual_income).attr('readonly', true);
             $('#edit-father-image-tag').attr('src', row.father_image_link);
             $(".edit-father-search").rules("remove", "email");
             $(".father_image").rules("remove", "required");

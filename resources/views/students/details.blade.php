@@ -96,6 +96,8 @@
                                                 {{ __('father') . ' ' . __('mobile') }}</th>
                                             <th scope="col" data-field="father_occupation" data-sortable="false">
                                                 {{ __('father') . ' ' . __('occupation') }}</th>
+                                            <th scope="col" data-field="father_annual_income" data-sortable="false">
+                                                {{ __('father') . ' ' . __('annual_income') }}</th>
                                             <th scope="col" data-field="father_image" data-sortable="false"
                                                 data-formatter="fatherImageFormatter">
                                                 {{ __('father') . ' ' . __('image') }}</th>
@@ -304,6 +306,10 @@
                                     <label>{{ __('father') . ' ' . __('occupation') }} <span
                                             class="text-danger">*</span></label>
                                     {!! Form::text('father_occupation', null, ['placeholder' => __('father') . ' ' . __('occupation'), 'class' => 'form-control', 'id' => 'edit_father_occupation', 'readonly' => true]) !!}
+                                </div>
+                                <div class="form-group col-sm-12 col-md-4">
+                                    <label>{{ __('father') . ' ' . __('annual_income') }}</label>
+                                    {!! Form::text('father_annual_income', null, ['placeholder' => __('father') . ' ' . __('annual_income'), 'class' => 'form-control', 'id' => 'edit_father_annual_income', 'readonly' => true]) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('father') . ' ' . __('image') }} <span class="text-danger">*</span></label>

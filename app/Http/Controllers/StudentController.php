@@ -26,7 +26,8 @@ use Illuminate\Support\Facades\Validator;
 
 class StudentController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         if (!Auth::user()->can('student-list')) {
             $response = array(
                 'message' => trans('no_permission_message')
@@ -38,7 +39,8 @@ class StudentController extends Controller
         return view('students.details', compact('class_section', 'category'));
     }
 
-    public function create() {
+    public function create()
+    {
         if (!Auth::user()->can('student-create')) {
             $response = array(
                 'message' => trans('no_permission_message')
@@ -55,7 +57,8 @@ class StudentController extends Controller
         return view('students.index', compact('class_section', 'category', 'admission_no'));
     }
 
-    public function createBulkData() {
+    public function createBulkData()
+    {
         if (!Auth::user()->can('student-create')) {
             $response = array(
                 'message' => trans('no_permission_message')
@@ -72,7 +75,8 @@ class StudentController extends Controller
         return view('students.add_bulk_data', compact('class_section'));
     }
 
-    public function storeBulkData(Request $request) {
+    public function storeBulkData(Request $request)
+    {
         if (!Auth::user()->can('student-create') || !Auth::user()->can('student-edit')) {
             $response = array(
                 'message' => trans('no_permission_message')
@@ -107,7 +111,8 @@ class StudentController extends Controller
         return response()->json($response);
     }
 
-    public function update(Request $request) {
+    public function update(Request $request)
+    {
         if (!Auth::user()->can('student-create') || !Auth::user()->can('student-edit')) {
             $response = array(
                 'message' => trans('no_permission_message')
@@ -184,6 +189,7 @@ class StudentController extends Controller
                 $father_parent->last_name = $request->father_last_name;
                 $father_parent->image = $father_user->getRawOriginal('image');
                 $father_parent->occupation = $request->father_occupation;
+                $father_parent->annual_income = $request->father_annual_income;
                 $father_parent->mobile = $request->father_mobile;
                 $father_parent->email = $request->father_email;
                 $father_parent->dob = date('Y-m-d', strtotime($request->father_dob));
@@ -246,11 +252,11 @@ class StudentController extends Controller
 
             //Create Student User First
             $user = User::find($request->edit_id);
-//            $user->password = Hash::make(str_replace('/', '', $request->dob));
+            //            $user->password = Hash::make(str_replace('/', '', $request->dob));
             $user->first_name = $request->first_name;
             $user->last_name = $request->last_name;
             //            $user->email = (isset($request->email)) ? $request->email : "";
-//            $user->email = $request->admission_no;
+            //            $user->email = $request->admission_no;
             $user->mobile = (isset($request->mobile)) ? $request->mobile : "";
             $user->dob = date('Y-m-d', strtotime($request->dob));
             $user->current_address = $request->current_address;
@@ -269,7 +275,7 @@ class StudentController extends Controller
             $student = Students::where('user_id', $user->id)->firstOrFail();
             $student->class_section_id = $request->class_section_id;
             $student->category_id = $request->category_id;
-//            $student->admission_no = $request->admission_no;
+            //            $student->admission_no = $request->admission_no;
             $student->roll_number = $request->roll_number;
             $student->caste = $request->caste;
             $student->religion = $request->religion;
@@ -296,7 +302,9 @@ class StudentController extends Controller
         return response()->json($response);
     }
 
-    public function store(Request $request) {
+    public function store(Request $request)
+    {
+        // dd($request->father_annual_income);
         if (!Auth::user()->can('student-create') || !Auth::user()->can('student-edit')) {
             $response = array(
                 'message' => trans('no_permission_message')
@@ -378,6 +386,7 @@ class StudentController extends Controller
                 $father_parent->last_name = $request->father_last_name;
                 $father_parent->image = $father_user->getRawOriginal('image');
                 $father_parent->occupation = $request->father_occupation;
+                $father_parent->annual_income = $request->father_annual_income;
                 $father_parent->mobile = $request->father_mobile;
                 $father_parent->email = $request->father_email;
                 $father_parent->dob = date('Y-m-d', strtotime($request->father_dob));
@@ -538,7 +547,8 @@ class StudentController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function show() {
+    public function show()
+    {
         if (!Auth::user()->can('student-list')) {
             $response = array(
                 'message' => trans('no_permission_message')
@@ -588,6 +598,7 @@ class StudentController extends Controller
                         ->orwhere('email', 'LIKE', "%$search%")
                         ->orwhere('mobile', 'LIKE', "%$search%")
                         ->orwhere('occupation', 'LIKE', "%$search%")
+                        ->orwhere('annual_income', 'LIKE', "%$search%")
                         ->orwhere('dob', 'LIKE', "%$search%");
                 })
                 ->orWhereHas('mother', function ($q) use ($search) {
@@ -661,6 +672,7 @@ class StudentController extends Controller
                 $tempRow['father_mobile'] = $row->father->mobile;
                 $tempRow['father_dob'] = $row->father->dob;
                 $tempRow['father_occupation'] = $row->father->occupation;
+                $tempRow['father_annual_income'] = $row->father->annual_income;
                 $tempRow['father_image'] = $row->father->image;
                 $tempRow['father_image_link'] = $row->father->image;
             }
@@ -705,7 +717,8 @@ class StudentController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id) {
+    public function destroy($id)
+    {
         if (!Auth::user()->can('student-delete')) {
             $response = array(
                 'message' => trans('no_permission_message')
@@ -743,7 +756,8 @@ class StudentController extends Controller
     }
 
 
-    public function reset_password() {
+    public function reset_password()
+    {
         if (!Auth::user()->can('reset-password-list')) {
             $response = array(
                 'message' => trans('no_permission_message')
@@ -800,7 +814,8 @@ class StudentController extends Controller
         return response()->json($bulkData);
     }
 
-    public function change_password(Request $request) {
+    public function change_password(Request $request)
+    {
         if (!Auth::user()->can('student-change-password')) {
             $response = array(
                 'message' => trans('no_permission_message')
@@ -827,7 +842,8 @@ class StudentController extends Controller
         return response()->json($response);
     }
 
-    public function assignClass() {
+    public function assignClass()
+    {
         //        if (!Auth::user()->can('student-list')) {
         //            $response = array(
         //                'message' => trans('no_permission_message')
@@ -840,7 +856,8 @@ class StudentController extends Controller
         return view('students.assign-class', compact('class_section', 'class', 'category'));
     }
 
-    public function newStudentList(Request $request) {
+    public function newStudentList(Request $request)
+    {
         //        if (!Auth::user()->can('student-list')) {
         //            $response = array(
         //                'message' => trans('no_permission_message')
@@ -895,7 +912,8 @@ class StudentController extends Controller
     }
 
 
-    public function assignClass_store(Request $request) {
+    public function assignClass_store(Request $request)
+    {
         //        if (!Auth::user()->can('student-list')) {
         //            $response = array(
         //                'message' => trans('no_permission_message')

@@ -149,7 +149,6 @@
                             <div class="row">
                                 <div class="form-group col-sm-12 col-md-12">
                                     <label>{{ __('father_email') }} <span class="text-danger">*</span></label>
-
                                     <select class="father-search w-100" id="father_email" name="father_email"></select>
                                 </div>
 
@@ -186,6 +185,11 @@
                                     <div style="width: 100px;">
                                         <img src="" id="father-image-tag" class="img-fluid w-100"/>
                                     </div>
+                                </div>
+
+                                <div class="form-group col-sm-12 col-md-4">
+                                    <label>{{ __('father') . ' ' . __('annual_income') }}</label>
+                                    {!! Form::text('father_annual_income', null, ['placeholder' => __('father') . ' ' . __('annual_income'), 'class' => 'form-control', 'id' => 'father_annual_income']) !!}
                                 </div>
                             </div>
 

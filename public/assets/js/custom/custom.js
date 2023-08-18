@@ -797,6 +797,7 @@ parentSearch($(".edit-father-search"), baseUrl + "/parent/search", {'type': 'fat
         $('#edit_father_last_name').val(repo.last_name).attr('readonly', true);
         $('#edit_father_mobile').val(repo.mobile).attr('readonly', true);
         $('#edit_father_occupation').val(repo.occupation).attr('readonly', true);
+        $('#edit_father_annual_income').val(repo.annual_income).attr('readonly', true);
         $('#edit_father_dob').val(repo.dob).attr('readonly', true);
         $('#edit-father-image-tag').attr('src', repo.image);
         // } else if (repo.text !== "Search for Father Email") {
@@ -814,6 +815,7 @@ parentSearch($(".edit-father-search"), baseUrl + "/parent/search", {'type': 'fat
         $('#edit_father_last_name').val('').attr('readonly', false);
         $('#edit_father_mobile').val('').attr('readonly', false);
         $('#edit_father_occupation').val('').attr('readonly', false);
+        $('#edit_father_annual_income').val('').attr('readonly', false);
         $('#edit_father_dob').val('').attr('readonly', false);
         $('#edit-father-image-tag').attr('src', '');
     }
