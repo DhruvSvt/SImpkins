@@ -346,7 +346,18 @@ window.studentEvents = {
         $('#edit_weight').val(row.weight);
         $('#edit_current_address').val(row.current_address);
         $('#edit_permanent_address').val(row.permanent_address);
+        $('#edit_admitted_class').val(row.admitted_class);
+        $('#edit_aadhar_card').val(row.aadhar_card);
         $('#edit-student-image-tag').attr('src', row.image_link);
+
+        //checkboxes value and checked attributes
+        $('#edit_is_handicap').val('1');
+        $('#edit_is_only_child').val('1');
+        $('#edit_is_minority').val('1');
+        $('#edit_is_handicap').prop('checked', parseInt(row.is_handicap));
+        $('#edit_is_only_child').prop('checked', parseInt(row.is_only_child));
+        $('#edit_is_minority').prop('checked', parseInt(row.is_minority));
+
         //Father Data
         $("#edit_father_email").select2("trigger", "select", {
             data: {

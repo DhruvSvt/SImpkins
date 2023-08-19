@@ -91,11 +91,11 @@
                                                 {{ __('father') . ' ' . __('annual_income') }}</th>
                                             <th scope="col" data-field="aadhar_card" data-sortable="false">
                                                 {{ __('aadhar_card') }}</th>
-                                            <th scope="col" data-field="is_handicap" data-sortable="false">
+                                            <th scope="col" data-field="is_handicap_text" data-sortable="false">
                                                 {{ __('is_handicap') }}</th>
-                                            <th scope="col" data-field="is_only_child" data-sortable="false">
+                                            <th scope="col" data-field="is_only_child_text" data-sortable="false">
                                                 {{ __('is_only_child') }}</th>
-                                            <th scope="col" data-field="is_minority" data-sortable="false">
+                                            <th scope="col" data-field="is_minority_text" data-sortable="false">
                                                 {{ __('is_minority') }}</th>
                                             @canany(['student-edit', 'student-delete'])
                                                 <th data-events="studentEvents" scope="col" data-field="operate"
@@ -307,6 +307,34 @@
                                         'id' => 'edit_permanent_address',
                                         'rows' => 2,
                                     ]) !!}
+                                </div>
+                                <div class="form-group col-12">
+                                    <label>{{ __('admitted_class') }} <span class="text-danger">*</span></label>
+                                    {!! Form::text('admitted_class', null, [
+                                        'placeholder' => __('admitted_class'),
+                                        'class' => 'form-control',
+                                        'id' => 'edit_admitted_class',
+                                    ]) !!}
+                                </div>
+                                <div class="form-group col-12">
+                                    <label>{{ __('aadhar_card') }}</label>
+                                    {!! Form::text('aadhar_card', null, [
+                                        'placeholder' => __('aadhar_card'),
+                                        'class' => 'form-control',
+                                        'id' => 'edit_aadhar_card',
+                                    ]) !!}
+                                </div>
+                                <div class="form-group col-12">
+                                    <label>{{ __('is_handicap') }}</label>
+                                    {{ Form::checkbox('is_handicap', '1', false, ['id' => 'edit_is_handicap', 'placeholder' => __('is_handicap')]) }}
+                                </div>
+                                <div class="form-group col-12">
+                                    <label>{{ __('is_only_child') }}</label>
+                                    {{ Form::checkbox('is_only_child', '1', false, ['id' => 'edit_is_only_child', 'placeholder' => __('is_only_child')]) }}
+                                </div>
+                                <div class="form-group col-12">
+                                    <label>{{ __('is_minority') }}</label>
+                                    {{ Form::checkbox('is_minority', '1', false, ['id' => 'edit_is_minority', 'placeholder' => __('is_minority')]) }}
                                 </div>
                             </div>
                             <hr>

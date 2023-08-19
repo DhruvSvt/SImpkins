@@ -287,6 +287,12 @@ class StudentController extends Controller
             $student->father_id = $father_parent_id;
             $student->mother_id = $mother_parent_id;
             $student->guardian_id = $guardian_parent_id;
+
+            $student->admitted_class = $request->admitted_class;
+            $student->aadhar_card = $request->aadhar_card;
+            $student->is_handicap = $request->is_handicap ?? 0;
+            $student->is_only_child = $request->is_only_child ?? 0;
+            $student->is_minority = $request->is_minority ?? 0;
             $student->save();
 
             $response = [
@@ -672,9 +678,13 @@ class StudentController extends Controller
             $tempRow['gender'] = $row->user->gender;
             $tempRow['admitted_class'] = $row->admitted_class;
             $tempRow['aadhar_card'] = $row->aadhar_card;
-            $tempRow['is_handicap'] = $row->is_handicap ? 'Yes' : 'No';
-            $tempRow['is_only_child'] = $row->is_only_child ? 'Yes' : 'No';
-            $tempRow['is_minority'] = $row->is_minority ? 'Yes' : 'No';
+            $tempRow['is_handicap'] = $row->is_handicap;
+            $tempRow['is_only_child'] = $row->is_only_child;
+            $tempRow['is_minority'] = $row->is_minority;
+
+            $tempRow['is_handicap_text'] = $row->is_handicap ? 'Yes' : 'No';
+            $tempRow['is_only_child_text'] = $row->is_only_child ? 'Yes' : 'No';
+            $tempRow['is_minority_text'] = $row->is_minority ? 'Yes' : 'No';
 
             if (!empty($row->father)) {
                 //Father Data
