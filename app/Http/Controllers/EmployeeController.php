@@ -18,8 +18,8 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        $category = Employee::where('status', 1)->get();
-        return view('students.details', compact('class_section', 'category'));
+        $category = Employee::with('user')->get();
+        return view('employees.details', compact('category'));
     }
 
     /**
@@ -126,9 +126,105 @@ class EmployeeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $offset = 0;
+        $limit = 10;
+        $sort = 'id';
+        $order = 'DESC';
+
+        if (isset($_GET['offset']))
+            $offset = $_GET['offset'];
+        if (isset($_GET['limit']))
+            $limit = $_GET['limit'];
+
+        if (isset($_GET['sort']))
+            $sort = $_GET['sort'];
+        if (isset($_GET['order']))
+            $order = $_GET['order'];
+
+        $sql = Employee::with('user');
+        if (isset($_GET['search']) && !empty($_GET['search'])) {
+            $search = $_GET['search'];
+            $sql->where('id', 'LIKE', "%$search%")
+                ->orWhere('user_id','LIKE',"%$search%")
+                ->orWhere('code','LIKE',"%$search%")
+                ->orWhere('father_name','LIKE',"%$search%")
+                ->orWhere('mother_name','LIKE',"%$search%")
+                ->orWhere('religion','LIKE',"%$search%")
+                ->orWhere('category','LIKE',"%$search%")
+                ->orWhere('designation','LIKE',"%$search%")
+                ->orWhere('date_of_joining','LIKE',"%$search%")
+                ->orWhere('address','LIKE',"%$search%")
+                ->orWhere('aadhar_card','LIKE',"%$search%")
+                ->orWhere('pancard','LIKE',"%$search%")
+                ->orWhere('bank_name','LIKE',"%$search%")
+                ->orWhere('bank_acc_no','LIKE',"%$search%")
+                ->orWhere('ifsc_code','LIKE',"%$search%")
+                ->orWhereHas('user', function ($q) use ($search) {
+                    $q->where('first_name', 'LIKE', "%$search%")
+                        ->orwhere('last_name', 'LIKE', "%$search%")
+                        ->orwhere('email', 'LIKE', "%$search%")
+                        ->orwhere('dob', 'LIKE', "%$search%");
+                });
+        }
+
+        $total = $sql->count();
+
+        $sql->orderBy($sort, $order)->skip($offset)->take($limit);
+        $res = $sql->get();
+
+        $bulkData = array();
+        $bulkData['total'] = $total;
+        $rows = array();
+        $tempRow = array();
+        $no = 1;
+        $data = getSettings('date_formate');
+        foreach ($res as $row) {
+            $operate = '';
+            // if (Auth::user()->can('employee-edit')) {
+                $operate .= '<a class="btn btn-xs btn-gradient-primary btn-rounded btn-icon editdata" data-id=' . $row->id . ' data-url=' . url('employees') . ' title="Edit" data-toggle="modal" data-target="#editModal"><i class="fa fa-edit"></i></a>&nbsp;&nbsp;';
+            // }
+
+            // if (Auth::user()->can('employee-delete')) {
+                $operate .= '<a class="btn btn-xs btn-gradient-danger btn-rounded btn-icon deletedata" data-id=' . $row->id . ' data-user_id=' . $row->user_id . ' data-url=' . url('employees', $row->user_id) . ' title="Delete"><i class="fa fa-trash"></i></a>';
+            // }
+
+            $tempRow['id'] = $row->id;
+            $tempRow['no'] = $no++;
+            $tempRow['user_id'] = $row->user_id;
+            $tempRow['first_name'] = $row->user->first_name;
+            $tempRow['last_name'] = $row->user->last_name;
+            $tempRow['email'] = $row->user->email;
+            $tempRow['dob'] = date($data['date_formate'], strtotime($row->user->dob));
+            $tempRow['mobile'] = $row->user->mobile;
+            $tempRow['image'] = $row->user->image;
+            $tempRow['image_link'] = $row->user->image;
+            $tempRow['address'] = $row->user->current_address;
+            $tempRow['gender'] = $row->user->gender;
+
+            $tempRow['employee_code'] = $row->code;
+            $tempRow['father_name'] = $row->father_name;
+            $tempRow['mother_name'] = $row->mother_name;
+            $tempRow['religion'] = $row->religion;
+            $tempRow['category'] = $row->category;
+            $tempRow['designation'] = $row->designation;
+            $tempRow['date_of_joining'] = date($data['date_formate'], strtotime($row->date_of_joining));
+            $tempRow['aadhar_card'] = $row->aadhar_card;
+            $tempRow['pancard'] = $row->pancard;
+            $tempRow['bank_name'] = $row->bank_name;
+            $tempRow['bank_acc_no'] = $row->bank_acc_no;
+            $tempRow['ifsc_code'] = $row->ifsc_code;
+            $tempRow['is_front_office'] = $row->is_front_office;
+            $tempRow['is_front_office_text'] = $row->is_front_office ? 'Yes' : 'No';
+
+
+            $tempRow['operate'] = $operate;
+            $rows[] = $tempRow;
+        }
+
+        $bulkData['rows'] = $rows;
+        return response()->json($bulkData);
     }
 
     /**

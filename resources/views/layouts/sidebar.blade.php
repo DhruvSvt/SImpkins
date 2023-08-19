@@ -142,6 +142,11 @@
                                     {{ __('employee_add') }}
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('employees.index') }}">
+                                    {{ __('employee_details') }}
+                                </a>
+                            </li>
                         {{-- @endcan --}}
                     </ul>
                 </div>

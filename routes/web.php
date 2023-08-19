@@ -109,7 +109,9 @@ Route::group(['middleware' => ['Role', 'auth']], function () {
         Route::get('students/create_bulk', [StudentController::class, 'createBulkData'])->name('students.create-bulk-data');
         Route::post('students/store_bulk', [StudentController::class, 'storeBulkData'])->name('students.store-bulk-data');
         Route::resource('students', StudentController::class);
+
         Route::resource('employees', EmployeeController::class);
+        Route::get('employees-list', [EmployeeController::class, 'show'])->name('employees.list');
 
         Route::resource('category', CategoryController::class);
         Route::get('category_list', [CategoryController::class, 'show']);
