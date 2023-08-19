@@ -31,6 +31,7 @@ use App\Http\Controllers\LessonTopicController;
 use App\Http\Controllers\SessionYearController;
 use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\ClassTeacherController;
+use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\SystemUpdateController;
 use App\Http\Controllers\ExamTimetableController;
 use App\Http\Controllers\StudentSessionController;
@@ -108,6 +109,7 @@ Route::group(['middleware' => ['Role', 'auth']], function () {
         Route::get('students/create_bulk', [StudentController::class, 'createBulkData'])->name('students.create-bulk-data');
         Route::post('students/store_bulk', [StudentController::class, 'storeBulkData'])->name('students.store-bulk-data');
         Route::resource('students', StudentController::class);
+        Route::resource('employees', EmployeeController::class);
 
         Route::resource('category', CategoryController::class);
         Route::get('category_list', [CategoryController::class, 'show']);
@@ -247,7 +249,6 @@ Route::get('storage-link', function () {
     try {
         Artisan::call('queue:restart');
         //Artisan::call('storage:link');
-        
         echo "storage link created";
     } catch (Exception $e) {
         echo "Storage Link already exists";

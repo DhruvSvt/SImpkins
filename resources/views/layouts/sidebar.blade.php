@@ -127,6 +127,27 @@
             </li>
         @endcanany
 
+        {{-- employee --}}
+        {{-- @canany(['employee-add']) --}}
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#employee-menu" aria-expanded="false" aria-controls="academics-menu">
+                    <i class="fa fa-graduation-cap menu-icon"></i>
+                    <span class="menu-title">{{ __('employee') }}</span>
+                </a>
+                <div class="collapse" id="employee-menu">
+                    <ul class="nav flex-column sub-menu">
+                        {{-- @can('employee-create') --}}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('employees.create') }}">
+                                    {{ __('employee_add') }}
+                                </a>
+                            </li>
+                        {{-- @endcan --}}
+                    </ul>
+                </div>
+            </li>
+        {{-- @endcanany --}}
+
         {{-- teacher --}}
         @can('teacher-create')
             <li class="nav-item">
@@ -272,7 +293,7 @@
             <li class="nav-item">
                 <a class="nav-link" data-toggle="collapse" href="#exam-menu" aria-expanded="false" aria-controls="exam-menu">
                   <i class="fa fa-book menu-icon"></i>  <span class="menu-title">{{ __('exam') }}</span>
-                    
+
                 </a>
                 <div class="collapse" id="exam-menu">
                     <ul class="nav flex-column sub-menu">
