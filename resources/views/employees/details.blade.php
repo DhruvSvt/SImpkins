@@ -29,7 +29,8 @@
                                     data-fixed-columns="true" data-fixed-number="2" data-fixed-right-number="1"
                                     data-trim-on-search="false" data-mobile-responsive="true" data-sort-name="id"
                                     data-sort-order="desc" data-maintain-selected="true" data-export-types='["txt","excel"]'
-                                    data-export-options='{ "fileName": "employees-list-<?= date('d-m-y') ?>" ,"ignoreColumn":
+                                    data-export-options='{ "fileName": "employees-list-<?= date('d-m-y') ?>"
+                                    ,"ignoreColumn":
                                     ["operate"]}' data-query-params="StudentDetailQueryParams"
                                     data-check-on-init="true">
 
@@ -77,12 +78,10 @@
                                                 {{ __('bank_acc_no') }}</th>
                                             <th scope="col" data-field="ifsc_code" data-sortable="false">
                                                 {{ __('ifsc_code') }}</th>
-                                            @canany(['employee-edit', 'employee-delete'])
-                                                <th scope="col" data-field="operate"
-                                                    data-sortable="false">{{ __('action') }}</th>
-                                                {{-- <th data-events="employeeEvents" scope="col" data-field="operate"
-                                                data-sortable="false">{{ __('action') }}</th> --}}
-                                            @endcanany
+                                            {{-- @canany(['employee-edit', 'employee-delete']) --}}
+                                            <th data-events="employeeEvents" scope="col" data-field="operate"
+                                                data-sortable="false">{{ __('action') }}</th>
+                                            {{-- @endcanany --}}
                                         </tr>
                                     </thead>
                                 </table>
@@ -94,480 +93,233 @@
         </div>
     </div>
 
-    {{-- @can('student-edit')
-        <div class="modal fade" id="editModal" data-backdrop="static" tabindex="-1" role="dialog"
-            aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title" id="exampleModalLabel">{{ __('edit') . ' ' . __('employees') }}</h4><br>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true"><i class="fa fa-close"></i></span>
-                        </button>
-                    </div>
-                    <form id="edit-form" class="edit-student-registration-form" novalidate="novalidate"
-                        action="{{ url('employees') }}" enctype="multipart/form-data">
-                        @csrf
-                        <div class="modal-body">
-                            <input type="hidden" name="edit_id" id="edit_id">
-
-                            <div class="row">
-                                <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('first_name') }} <span class="text-danger">*</span></label>
-                                    {!! Form::text('first_name', null, [
-                                        'placeholder' => __('first_name'),
-                                        'class' => 'form-control',
-                                        'id' => 'edit_first_name',
-                                    ]) !!}
-
-                                </div>
-                                <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('last_name') }} <span class="text-danger">*</span></label>
-                                    {!! Form::text('last_name', null, [
-                                        'placeholder' => __('last_name'),
-                                        'class' => 'form-control',
-                                        'id' => 'edit_last_name',
-                                    ]) !!}
-
-                                </div>
-                                <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('mobile') }}</label>
-                                    {!! Form::tel('mobile', null, ['placeholder' => __('mobile'), 'class' => 'form-control', 'id' => 'edit_mobile']) !!}
-                                </div>
-                                <div class="form-group col-sm-12 col-md-12">
-                                    <label>{{ __('gender') }} <span class="text-danger">*</span></label><br>
-                                    <div class="d-flex">
-                                        <div class="form-check form-check-inline">
-                                            <label class="form-check-label">
-                                                {!! Form::radio('gender', 'male', ['id' => 'male']) !!}
-                                                {{ __('male') }}
-                                            </label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <label class="form-check-label">
-                                                {!! Form::radio('gender', 'female', ['id' => 'female']) !!}
-                                                {{ __('female') }}
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('image') }} <span class="text-danger">*</span></label>
-                                    <input type="file" name="image" class="file-upload-default" />
-                                    <div class="input-group col-xs-12">
-                                        <input type="text" class="form-control file-upload-info" disabled=""
-                                            placeholder="{{ __('image') }}" required="required" id="edit_image" />
-                                        <span class="input-group-append">
-                                            <button class="file-upload-browse btn btn-theme"
-                                                type="button">{{ __('upload') }}</button>
-                                        </span>
-                                    </div>
-                                    <div style="width: 100px;">
-                                        <img src="" id="edit-student-image-tag" class="img-fluid w-100" />
-                                    </div>
-                                </div>
-                                <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('dob') }} <span class="text-danger">*</span></label>
-                                    {!! Form::text('dob', null, [
-                                        'readonly',
-                                        'placeholder' => __('dob'),
-                                        'class' => 'datepicker-popup form-control',
-                                        'id' => 'edit_dob',
-                                    ]) !!}
-                                    <span class="input-group-addon input-group-append">
-                                    </span>
-                                </div>
-                                <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('class') . ' ' . __('section') }} <span class="text-danger">*</span></label>
-                                    <select required name="class_section_id" class="form-control" id="edit_class_section_id">
-                                        <option value="">{{ __('select') . ' ' . __('class') . ' ' . __('section') }}
-                                        </option>
-                                        @foreach ($class_section as $section)
-                                            <option value="{{ $section->id }}">{{ $section->class->name }} -
-                                                {{ $section->section->name }} {{ $section->class->medium->name }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="form-group col-sm-12 col-md-4">
-                                    <label> {{ __('category') }} <span class="text-danger">*</span></label>
-                                    <select name="category_id" class="form-control" id="edit_category_id">
-                                        <option value="">{{ __('select') . ' ' . __('category') }}</option>
-                                        @foreach ($category as $cat)
-                                            <option value="{{ $cat->id }}">{{ $cat->name }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('admission_no') }} <span class="text-danger">*</span></label>
-                                    {!! Form::text('admission_no', null, [
-                                        'placeholder' => __('admission_no'),
-                                        'class' => 'form-control',
-                                        'id' => 'edit_admission_no',
-                                    ]) !!}
-
-                                </div>
-                                <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('roll_no') }} <span class="text-danger">*</span></label>
-                                    {!! Form::text('roll_number', null, [
-                                        'placeholder' => __('roll_no'),
-                                        'class' => 'form-control',
-                                        'id' => 'edit_roll_number',
-                                    ]) !!}
-                                </div>
-                                <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('caste') }}</label>
-                                    {!! Form::text('caste', null, ['placeholder' => __('caste'), 'class' => 'form-control', 'id' => 'edit_caste']) !!}
-
-                                </div>
-                                <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('religion') }}</label>
-                                    {!! Form::text('religion', null, [
-                                        'placeholder' => __('religion'),
-                                        'class' => 'form-control',
-                                        'id' => 'edit_religion',
-                                    ]) !!}
-                                </div>
-                                <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('admission_date') }} <span class="text-danger">*</span></label>
-                                    {!! Form::text('admission_date', null, [
-                                        'readonly',
-                                        'placeholder' => __('admission_date'),
-                                        'class' => 'datepicker-popup form-control',
-                                        'id' => 'edit_admission_date',
-                                    ]) !!}
-                                    <span class="input-group-addon input-group-append">
-                                    </span>
-                                </div>
-                                <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('blood_group') }} <span class="text-danger">*</span></label>
-                                    <select name="blood_group" class="form-control" id="edit_blood_group">
-                                        <option value="">{{ __('select') . ' ' . __('blood_group') }}</option>
-                                        <option value="A+">A+</option>
-                                        <option value="A-">A-</option>
-                                        <option value="B+">B+</option>
-                                        <option value="B-">B-</option>
-                                        <option value="O+">O+</option>
-                                        <option value="O-">O-</option>
-                                        <option value="AB+">AB+</option>
-                                        <option value="AB-">AB-</option>
-                                    </select>
-                                </div>
-                                <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('height') }} <span class="text-danger">*</span></label>
-                                    {!! Form::text('height', null, [
-                                        'placeholder' => __('height'),
-                                        'class' => 'form-control',
-                                        'id' => 'edit_height',
-                                    ]) !!}
-                                </div>
-                                <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('weight') }} <span class="text-danger">*</span></label>
-                                    {!! Form::text('weight', null, [
-                                        'placeholder' => __('weight'),
-                                        'class' => 'form-control',
-                                        'id' => 'edit_weight',
-                                    ]) !!}
-                                </div>
-                                <div class="form-group col-12">
-                                    <label>{{ __('address') }} <span class="text-danger">*</span></label>
-                                    {!! Form::textarea('current_address', null, [
-                                        'placeholder' => __('current_address'),
-                                        'class' => 'form-control',
-                                        'id' => 'current_address',
-                                        'id' => 'edit_current_address',
-                                        'rows' => 2,
-                                    ]) !!}
-                                </div>
-                                <div class="form-group col-12">
-                                    <label>{{ __('permanent_address') }} <span class="text-danger">*</span></label>
-                                    {!! Form::textarea('permanent_address', null, [
-                                        'placeholder' => __('permanent_address'),
-                                        'class' => 'form-control',
-                                        'id' => 'permanent_address',
-                                        'id' => 'edit_permanent_address',
-                                        'rows' => 2,
-                                    ]) !!}
-                                </div>
-                                <div class="form-group col-12">
-                                    <label>{{ __('admitted_class') }} <span class="text-danger">*</span></label>
-                                    {!! Form::text('admitted_class', null, [
-                                        'placeholder' => __('admitted_class'),
-                                        'class' => 'form-control',
-                                        'id' => 'edit_admitted_class',
-                                    ]) !!}
-                                </div>
-                                <div class="form-group col-12">
-                                    <label>{{ __('aadhar_card') }}</label>
-                                    {!! Form::text('aadhar_card', null, [
-                                        'placeholder' => __('aadhar_card'),
-                                        'class' => 'form-control',
-                                        'id' => 'edit_aadhar_card',
-                                    ]) !!}
-                                </div>
-                                <div class="form-group col-12">
-                                    <label>{{ __('is_handicap') }}</label>
-                                    {{ Form::checkbox('is_handicap', '1', false, ['id' => 'edit_is_handicap', 'placeholder' => __('is_handicap')]) }}
-                                </div>
-                                <div class="form-group col-12">
-                                    <label>{{ __('is_only_child') }}</label>
-                                    {{ Form::checkbox('is_only_child', '1', false, ['id' => 'edit_is_only_child', 'placeholder' => __('is_only_child')]) }}
-                                </div>
-                                <div class="form-group col-12">
-                                    <label>{{ __('is_minority') }}</label>
-                                    {{ Form::checkbox('is_minority', '1', false, ['id' => 'edit_is_minority', 'placeholder' => __('is_minority')]) }}
-                                </div>
-                            </div>
-                            <hr>
-                            <h4>Parent Guardian Details</h4><br>
-                            <div class="row">
-                                <div class="form-group col-sm-12 col-md-12">
-                                    <label>{{ __('father_email') }} <span class="text-danger">*</span></label>
-                                    <select class="edit-father-search w-100" id="edit_father_email"
-                                        name="father_email"></select>
-                                </div>
-
-                                <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('father') . ' ' . __('first_name') }} <span
-                                            class="text-danger">*</span></label>
-                                    {!! Form::text('father_first_name', null, [
-                                        'placeholder' => __('father') . ' ' . __('first_name'),
-                                        'class' => 'form-control',
-                                        'id' => 'edit_father_first_name',
-                                        'readonly' => true,
-                                    ]) !!}
-                                </div>
-                                <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('father') . ' ' . __('last_name') }} <span
-                                            class="text-danger">*</span></label>
-                                    {!! Form::text('father_last_name', null, [
-                                        'placeholder' => __('father') . ' ' . __('last_name'),
-                                        'class' => 'form-control',
-                                        'id' => 'edit_father_last_name',
-                                        'readonly' => true,
-                                    ]) !!}
-                                </div>
-                                <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('father') . ' ' . __('mobile') }} <span class="text-danger">*</span></label>
-                                    {!! Form::text('father_mobile', null, [
-                                        'placeholder' => __('father') . ' ' . __('mobile'),
-                                        'class' => 'form-control',
-                                        'id' => 'edit_father_mobile',
-                                        'readonly' => true,
-                                    ]) !!}
-                                </div>
-                                <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('father') . ' ' . __('dob') }} <span class="text-danger">*</span></label>
-                                    {!! Form::text('father_dob', null, [
-                                        'placeholder' => __('father') . ' ' . __('dob'),
-                                        'class' => 'form-control datepicker-popup form-control',
-                                        'id' => 'edit_father_dob',
-                                        'readonly' => true,
-                                    ]) !!}
-                                </div>
-
-                                <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('father') . ' ' . __('occupation') }} <span
-                                            class="text-danger">*</span></label>
-                                    {!! Form::text('father_occupation', null, [
-                                        'placeholder' => __('father') . ' ' . __('occupation'),
-                                        'class' => 'form-control',
-                                        'id' => 'edit_father_occupation',
-                                        'readonly' => true,
-                                    ]) !!}
-                                </div>
-                                <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('father') . ' ' . __('annual_income') }}</label>
-                                    {!! Form::text('father_annual_income', null, [
-                                        'placeholder' => __('father') . ' ' . __('annual_income'),
-                                        'class' => 'form-control',
-                                        'id' => 'edit_father_annual_income',
-                                        'readonly' => true,
-                                    ]) !!}
-                                </div>
-                                <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('father') . ' ' . __('image') }} <span class="text-danger">*</span></label>
-                                    <input type="file" name="father_image" class="father_image file-upload-default" />
-                                    <div class="input-group col-xs-12">
-                                        <input type="text" class="form-control file-upload-info" disabled=""
-                                            placeholder="{{ __('father') . ' ' . __('image') }}" />
-                                        <span class="input-group-append">
-                                            <button class="file-upload-browse btn btn-theme"
-                                                type="button">{{ __('upload') }}</button>
-                                        </span>
-                                    </div>
-                                    <div style="width: 100px;">
-                                        <img src="" id="edit-father-image-tag" class="img-fluid w-100" />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <hr>
-                            <div class="row">
-                                <div class="form-group col-sm-12 col-md-12">
-                                    <label>{{ __('mother_email') }} <span class="text-danger">*</span></label>
-                                    <select class="edit-mother-search w-100" id="edit_mother_email"
-                                        name="mother_email"></select>
-                                </div>
-
-                                <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('mother') . ' ' . __('first_name') }} <span
-                                            class="text-danger">*</span></label>
-                                    {!! Form::text('mother_first_name', null, [
-                                        'placeholder' => __('mother') . ' ' . __('first_name'),
-                                        'class' => 'form-control',
-                                        'id' => 'edit_mother_first_name',
-                                        'readonly' => true,
-                                    ]) !!}
-                                </div>
-
-                                <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('mother') . ' ' . __('last_name') }} <span
-                                            class="text-danger">*</span></label>
-                                    {!! Form::text('mother_last_name', null, [
-                                        'placeholder' => __('mother') . ' ' . __('last_name'),
-                                        'class' => 'form-control',
-                                        'id' => 'edit_mother_last_name',
-                                        'readonly' => true,
-                                    ]) !!}
-                                </div>
-                                <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('mother') . ' ' . __('mobile') }} <span class="text-danger">*</span></label>
-                                    {!! Form::text('mother_mobile', null, [
-                                        'placeholder' => __('mother') . ' ' . __('mobile'),
-                                        'class' => 'form-control',
-                                        'id' => 'edit_mother_mobile',
-                                        'readonly' => true,
-                                    ]) !!}
-                                </div>
-                                <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('mother') . ' ' . __('dob') }} <span class="text-danger">*</span></label>
-                                    {!! Form::text('mother_dob', null, [
-                                        'placeholder' => __('mother') . ' ' . __('dob'),
-                                        'class' => 'form-control datepicker-popup form-control',
-                                        'id' => 'edit_mother_dob',
-                                        'readonly' => true,
-                                    ]) !!}
-                                </div>
-                                <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('mother') . ' ' . __('occupation') }} <span
-                                            class="text-danger">*</span></label>
-                                    {!! Form::text('mother_occupation', null, [
-                                        'placeholder' => __('mother') . ' ' . __('occupation'),
-                                        'class' => 'form-control',
-                                        'id' => 'edit_mother_occupation',
-                                        'readonly' => true,
-                                    ]) !!}
-                                </div>
-                                <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('mother') . ' ' . __('image') }} <span class="text-danger">*</span></label>
-                                    <input type="file" name="mother_image" class="file-upload-default" />
-                                    <div class="input-group col-xs-12">
-                                        <input type="text" class="form-control file-upload-info" disabled=""
-                                            placeholder="{{ __('mother') . ' ' . __('image') }}" />
-                                        <span class="input-group-append">
-                                            <button class="file-upload-browse btn btn-theme"
-                                                type="button">{{ __('upload') }}</button>
-                                        </span>
-                                    </div>
-                                    <div style="width: 100px;">
-                                        <img src="" id="edit-mother-image-tag" class="img-fluid w-100" />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <div class="form-check">
-                                    <label class="form-check-label">
-                                        <input type="checkbox" class="form-check-input"
-                                            id="show-edit-guardian-details">{{ __('guardian_details') }}
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="row" id="edit_guardian_div" style="display:none;">
-                                <div class="form-group col-sm-12 col-md-12">
-                                    <label>{{ __('guardian') . ' ' . __('email') }} <span class="text-danger">*</span></label>
-                                    <select class="edit-guardian-search form-control" id="edit_guardian_email"
-                                        name="guardian_email"></select>
-                                </div>
-
-                                <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('guardian') . ' ' . __('first_name') }} <span
-                                            class="text-danger">*</span></label>
-                                    {!! Form::text('guardian_first_name', null, [
-                                        'placeholder' => __('guardian') . ' ' . __('first_name'),
-                                        'class' => 'form-control',
-                                        'id' => 'edit_guardian_first_name',
-                                        'readonly' => true,
-                                    ]) !!}
-                                </div>
-
-                                <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('guardian') . ' ' . __('last_name') }} <span
-                                            class="text-danger">*</span></label>
-                                    {!! Form::text('guardian_last_name', null, [
-                                        'placeholder' => __('guardian') . ' ' . __('last_name'),
-                                        'class' => 'form-control',
-                                        'id' => 'edit_guardian_last_name',
-                                        'readonly' => true,
-                                    ]) !!}
-                                </div>
-                                <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('guardian') . ' ' . __('mobile') }} <span
-                                            class="text-danger">*</span></label>
-                                    {!! Form::text('guardian_mobile', null, [
-                                        'placeholder' => __('guardian') . ' ' . __('mobile'),
-                                        'class' => 'form-control',
-                                        'id' => 'edit_guardian_mobile',
-                                        'readonly' => true,
-                                    ]) !!}
-                                </div>
-                                <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('guardian') . ' ' . __('dob') }} <span class="text-danger">*</span></label>
-                                    {!! Form::text('guardian_dob', null, [
-                                        'placeholder' => __('guardian') . ' ' . __('dob'),
-                                        'class' => 'form-control datepicker-popup form-control',
-                                        'id' => 'edit_guardian_dob',
-                                        'readonly' => true,
-                                    ]) !!}
-                                </div>
-                                <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('guardian') . ' ' . __('occupation') }} <span
-                                            class="text-danger">*</span></label>
-                                    {!! Form::text('guardian_occupation', null, [
-                                        'placeholder' => __('guardian') . ' ' . __('occupation'),
-                                        'class' => 'form-control',
-                                        'id' => 'edit_guardian_occupation',
-                                        'readonly' => true,
-                                    ]) !!}
-                                </div>
-                                <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('guardian') . ' ' . __('image') }} <span class="text-danger">*</span></label>
-                                    <input type="file" name="guardian_image" class="file-upload-default" />
-                                    <div class="input-group col-xs-12">
-                                        <input type="text" class="form-control file-upload-info" disabled=""
-                                            placeholder="{{ __('guardian') . ' ' . __('image') }}" />
-                                        <span class="input-group-append">
-                                            <button class="file-upload-browse btn btn-theme"
-                                                type="button">{{ __('upload') }}</button>
-                                        </span>
-                                    </div>
-                                    <div style="width: 100px;">
-                                        <img src="" id="edit-guardian-image-tag" class="img-fluid w-100" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <input class="btn btn-theme" type="submit" value={{ __('submit') }}>
-                            <button type="button" class="btn btn-light" data-dismiss="modal">{{ __('cancel') }}</button>
-                        </div>
-                    </form>
+    {{-- @can('student-edit') --}}
+    <div class="modal fade" id="editModal" data-backdrop="static" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel">{{ __('edit') . ' ' . __('employees') }}</h4><br>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fa fa-close"></i></span>
+                    </button>
                 </div>
+                <form id="edit-form" class="edit-student-registration-form" novalidate="novalidate"
+                    action="{{ url('employees') }}" enctype="multipart/form-data">
+                    @csrf
+                    <div class="modal-body">
+                        <input type="hidden" name="edit_id" id="edit_id">
+
+                        <div class="row">
+                            <div class="form-group col-sm-12 col-md-4">
+                                <label>{{ __('employee_code') }} <span class="text-danger">*</span></label>
+                                {!! Form::text('employee_code', null, [
+                                    'placeholder' => __('employee_code'),
+                                    'class' => 'form-control',
+                                    'id' => 'edit_employee_code',
+                                ]) !!}
+
+                            </div>
+                            <div class="form-group col-sm-12 col-md-4">
+                                <label>{{ __('name') }} <span class="text-danger">*</span></label>
+                                {!! Form::text('name', null, [
+                                    'placeholder' => __('name'),
+                                    'class' => 'form-control',
+                                    'id' => 'edit_name',
+                                ]) !!}
+
+                            </div>
+                            <div class="form-group col-sm-12 col-md-4">
+                                <label>{{ __('father_name') }} <span class="text-danger">*</span></label>
+                                {!! Form::text('father_name', null, [
+                                    'placeholder' => __('father_name'),
+                                    'class' => 'form-control',
+                                    'id' => 'edit_father_name',
+                                ]) !!}
+
+                            </div>
+                            <div class="form-group col-sm-12 col-md-4">
+                                <label>{{ __('mother_name') }} <span class="text-danger">*</span></label>
+                                {!! Form::text('mother_name', null, [
+                                    'placeholder' => __('mother_name'),
+                                    'class' => 'form-control',
+                                    'id' => 'edit_mother_name',
+                                ]) !!}
+
+                            </div>
+                            <div class="form-group col-sm-12 col-md-4">
+                                <label>{{ __('religion') }} <span class="text-danger">*</span></label>
+                                {!! Form::text('religion', null, [
+                                    'placeholder' => __('religion'),
+                                    'class' => 'form-control',
+                                    'id' => 'edit_religion',
+                                ]) !!}
+
+                            </div>
+                            <div class="form-group col-sm-12 col-md-12">
+                                <label>{{ __('gender') }} <span class="text-danger">*</span></label><br>
+                                <div class="d-flex">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">
+                                            {!! Form::radio('gender', 'male', ['id' => 'gender']) !!}
+                                            {{ __('male') }}
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">
+                                            {!! Form::radio('gender', 'female', ['id' => 'gender']) !!}
+                                            {{ __('female') }}
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-sm-12 col-md-4">
+                                <label>{{ __('category') }} <span class="text-danger">*</span></label>
+                                {!! Form::text('category', null, [
+                                    'placeholder' => __('category'),
+                                    'class' => 'form-control',
+                                    'id' => 'edit_category',
+                                ]) !!}
+
+                            </div>
+                            <div class="form-group col-sm-12 col-md-4">
+                                <label>{{ __('image') }} <span class="text-danger">*</span></label>
+                                <input type="file" name="image" class="file-upload-default" />
+                                <div class="input-group col-xs-12">
+                                    <input type="text" class="form-control file-upload-info" disabled=""
+                                        placeholder="{{ __('image') }}" required="required" id="edit_image" />
+                                    <span class="input-group-append">
+                                        <button class="file-upload-browse btn btn-theme"
+                                            type="button">{{ __('upload') }}</button>
+                                    </span>
+                                </div>
+                                <div style="width: 100px;">
+                                    <img src="" id="edit-employee-image-tag" class="img-fluid w-100" />
+                                </div>
+                            </div>
+                            <div class="form-group col-sm-12 col-md-4">
+                                <label>{{ __('dob') }} <span class="text-danger">*</span></label>
+                                {!! Form::text('dob', null, [
+                                    'readonly',
+                                    'placeholder' => __('dob'),
+                                    'class' => 'datepicker-popup form-control',
+                                    'id' => 'edit_dob',
+                                ]) !!}
+                                <span class="input-group-addon input-group-append">
+                                </span>
+                            </div>
+                            <div class="form-group col-sm-12 col-md-4">
+                                <label>{{ __('designation') }} <span class="text-danger">*</span></label>
+                                {!! Form::text('designation', null, [
+                                    'placeholder' => __('designation'),
+                                    'class' => 'form-control',
+                                    'id' => 'edit_designation',
+                                ]) !!}
+
+                            </div>
+                            <div class="form-group col-sm-12 col-md-4">
+                                <label>{{ __('date_of_joining') }} <span class="text-danger">*</span></label>
+                                {!! Form::text('date_of_joining', null, [
+                                    'readonly',
+                                    'placeholder' => __('date_of_joining'),
+                                    'class' => 'datepicker-popup form-control',
+                                    'id' => 'edit_date_of_joining',
+                                ]) !!}
+                                <span class="input-group-addon input-group-append">
+                                </span>
+                            </div>
+                            <div class="form-group col-sm-12 col-md-4">
+                                <label>{{ __('address') }} <span class="text-danger">*</span></label>
+                                {!! Form::text('address', null, [
+                                    'placeholder' => __('address'),
+                                    'class' => 'form-control',
+                                    'id' => 'edit_address',
+                                ]) !!}
+
+                            </div>
+                            <div class="form-group col-sm-12 col-md-4">
+                                <label>{{ __('aadhar_card') }}</label>
+                                {!! Form::text('aadhar_card', null, [
+                                    'placeholder' => __('aadhar_card'),
+                                    'class' => 'form-control',
+                                    'id' => 'edit_aadhar_card',
+                                ]) !!}
+
+                            </div>
+                            <div class="form-group col-sm-12 col-md-4">
+                                <label>{{ __('pancard') }}</label>
+                                {!! Form::text('pancard', null, [
+                                    'placeholder' => __('pancard'),
+                                    'class' => 'form-control',
+                                    'id' => 'edit_pancard',
+                                ]) !!}
+
+                            </div>
+                            <div class="form-group col-sm-12 col-md-4">
+                                <label>{{ __('bank_name') }}</label>
+                                {!! Form::text('bank_name', null, [
+                                    'placeholder' => __('bank_name'),
+                                    'class' => 'form-control',
+                                    'id' => 'edit_bank_name',
+                                ]) !!}
+
+                            </div>
+                            <div class="form-group col-sm-12 col-md-4">
+                                <label>{{ __('bank_acc_no') }}</label>
+                                {!! Form::text('bank_acc_no', null, [
+                                    'placeholder' => __('bank_acc_no'),
+                                    'class' => 'form-control',
+                                    'id' => 'edit_bank_acc_no',
+                                ]) !!}
+
+                            </div>
+                            <div class="form-group col-sm-12 col-md-4">
+                                <label>{{ __('ifsc_code') }}</label>
+                                {!! Form::text('ifsc_code', null, [
+                                    'placeholder' => __('ifsc_code'),
+                                    'class' => 'form-control',
+                                    'id' => 'edit_ifsc_code',
+                                ]) !!}
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-12 col-md-3">
+                                <label>{{ __('front_office') }}</label>
+                                {{ Form::checkbox('is_front_office', '1', false, ['id' => 'edit_is_front_office', 'placeholder' => __('is_front_office')]) }}
+                            </div>
+                            <div class="row" id="front_office_container" style="display: none">
+                                <div class="form-group col-sm-12 col-md-4">
+                                    <label>{{ __('email') }} <span class="text-danger">*</span></label>
+                                    {!! Form::email('email', null, [
+                                        'id' => 'edit_email',
+                                        'placeholder' => __('email'),
+                                        'class' => 'form-control',
+                                        'required' => true,
+                                    ]) !!}
+                                </div>
+                                <div class="form-group col-sm-12 col-md-4">
+                                    <label>{{ __('password') }} <span class="text-danger">*</span></label>
+                                    {!! Form::password('password', null, [
+                                        'id' => 'edit_password',
+                                        'placeholder' => __('password'),
+                                        'class' => 'form-control',
+                                        'autocomplete' => 'off',
+                                        'required' => true,
+                                    ]) !!}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input class="btn btn-theme" type="submit" value={{ __('submit') }}>
+                        <button type="button" class="btn btn-light" data-dismiss="modal">{{ __('cancel') }}</button>
+                    </div>
+                </form>
             </div>
         </div>
-    @endcan --}}
+    </div>
+    {{-- @endcan --}}
 @endsection
 
 
@@ -582,5 +334,14 @@
                 search: p.search
             };
         }
+    </script>
+    <script>
+        $('#edit_is_front_office').change(function() {
+            if ($(this).is(':checked')) {
+                $('#front_office_container').show();
+            } else {
+                $('#front_office_container').hide();
+            }
+        });
     </script>
 @endsection

@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\Storage;
 use Throwable;
 
 class EmployeeController extends Controller
@@ -245,9 +246,115 @@ class EmployeeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        // if (!Auth::user()->can('employee-create') || !Auth::user()->can('employee-edit')) {
+        //     $response = array(
+        //         'message' => trans('no_permission_message')
+        //     );
+        //     return response()->json($response);
+        // }
+        $request->validate([
+            'employee_code' => 'required',
+            'image' => 'mimes:jpeg,png,jpg|image|max:2048',
+            'name' => 'required',
+            'father_name' => 'required',
+            'mother_name' => 'required',
+            'religion' => 'required',
+            'gender' => 'required',
+            'category' => 'required',
+            'dob' => 'required',
+            'designation' => 'required',
+            'date_of_joining' => 'required',
+            'address' => 'required',
+        ]);
+
+        try {
+            $full_name = explode(" ", $request->name);
+            if(count($full_name) > 1) {
+                $lastname = array_pop($full_name);
+                $firstname = implode(" ", $full_name);
+            }
+            else
+            {
+                $firstname = $request->name;
+                $lastname = " ";
+            }
+
+            //Create Employee User First
+            $user = User::find($request->edit_id);
+            $user->first_name = $firstname;
+            $user->last_name = $lastname;
+            $user->email = $request->email ?? $request->email;
+            $user->mobile = $request->mobile ?? $request->mobile;
+
+            $user->dob = date('Y-m-d', strtotime($request->dob));
+            $user->current_address = $request->address;
+            $user->gender = $request->gender;
+
+            //If Image exists then upload new image and delete the old image
+            if ($request->hasFile('image')) {
+                if (Storage::disk('public')->exists($user->image)) {
+                    Storage::disk('public')->delete($user->image);
+                }
+                $user->image = $request->file('image')->store('employees', 'public');
+            }
+            $user->save();
+
+            $employee = Employee::where('user_id', $user->id)->firstOrFail();
+            $employee->user_id = $user->id;
+            $employee->code = $request->employee_code;
+            $employee->father_name = $request->father_name;
+            $employee->mother_name = $request->mother_name;
+            $employee->religion = $request->religion;
+            $employee->category = $request->category;
+            $employee->designation = $request->designation;
+            $employee->date_of_joining =  date('Y-m-d', strtotime($request->date_of_joining));
+            $employee->address = $request->address;
+            $employee->aadhar_card = $request->aadhar_card;
+            $employee->pancard = $request->pancard;
+            $employee->bank_name = $request->bank_name;
+            $employee->bank_acc_no = $request->bank_acc_no;
+            $employee->ifsc_code = $request->ifsc_code;
+            $employee->save();
+
+            $frontOfficeRole = Role::where('name', 'Front Office')->first();
+
+            //detaching role
+            if($user->hasRole('Front Office')){
+                $user->removeRole('Front Office');
+                $employee->is_front_office = false;
+            }
+
+            //for front office
+            if($request->is_front_office == 1 || $request->is_front_office == '1'){
+                //update email
+                if(isset($request->email))
+                    $user->email = $request->email;
+                //update password
+                if(isset($request->password)){
+                    $employee_plaintext_password = $request->password ?? rand(10000,99999);
+                    $user->password = Hash::make($employee_plaintext_password);
+                }
+                //assigning role
+                $employee->is_front_office = true;
+                $user->assignRole($frontOfficeRole);
+            }
+
+            $employee->save();
+
+            $response = [
+                'error' => false,
+                'message' => trans('data_store_successfully')
+            ];
+        } catch (Exception $e) {
+            $response = array(
+                'error' => true,
+                'message' => trans('error_occurred'),
+                'data' => $e
+            );
+        }
+        return response()->json($response);
     }
 
     /**
