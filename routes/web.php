@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FrontOfficeController;
 use App\Models\ExamTimetable;
 use App\Models\Grade;
 use Illuminate\Support\Facades\Auth;
@@ -112,6 +113,8 @@ Route::group(['middleware' => ['Role', 'auth']], function () {
 
         Route::resource('employees', EmployeeController::class);
         Route::get('employees-list', [EmployeeController::class, 'show'])->name('employees.list');
+
+        Route::resource('front-offices', FrontOfficeController::class);
 
         Route::resource('category', CategoryController::class);
         Route::get('category_list', [CategoryController::class, 'show']);

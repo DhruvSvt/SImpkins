@@ -3,86 +3,94 @@
     <ul class="nav">
         {{-- dashboard --}}
         <li class="nav-item">
-            <a href="{{ url('/') }}" class="nav-link"><i class="fa fa-home menu-icon"></i> <span class="menu-title">{{ __('dashboard') }}</span></a>
+            <a href="{{ url('/') }}" class="nav-link"><i class="fa fa-home menu-icon"></i> <span
+                    class="menu-title">{{ __('dashboard') }}</span></a>
         </li>
 
         @hasrole('Super Admin')
-        {{-- academics --}}
-        @canany(['medium-create','section-create','subject-create','class-create','subject-create','class-teacher-create','subject-teacher-list','subject-teachers-create','assign-class-to-new-student','promote-student-create'])
-            <li class="nav-item">
-                <a class="nav-link" data-toggle="collapse" href="#academics-menu" aria-expanded="false" aria-controls="academics-menu"><i class="fa fa-university menu-icon"></i> <span class="menu-title">{{ __('academics') }}</span>  </a>
-                <div class="collapse" id="academics-menu">
-                    <ul class="nav flex-column sub-menu">
-                        @can('medium-create')
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('medium.index') }}"> {{ __('medium') }} </a>
-                            </li>
-                        @endcan
+            {{-- academics --}}
+            @canany(['medium-create', 'section-create', 'subject-create', 'class-create', 'subject-create',
+                'class-teacher-create', 'subject-teacher-list', 'subject-teachers-create', 'assign-class-to-new-student',
+                'promote-student-create'])
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="collapse" href="#academics-menu" aria-expanded="false"
+                        aria-controls="academics-menu"><i class="fa fa-university menu-icon"></i> <span
+                            class="menu-title">{{ __('academics') }}</span> </a>
+                    <div class="collapse" id="academics-menu">
+                        <ul class="nav flex-column sub-menu">
+                            @can('medium-create')
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('medium.index') }}"> {{ __('medium') }} </a>
+                                </li>
+                            @endcan
 
-                        @can('section-create')
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('section.index') }}"> {{ __('section') }} </a>
-                            </li>
-                        @endcan
+                            @can('section-create')
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('section.index') }}"> {{ __('section') }} </a>
+                                </li>
+                            @endcan
 
-                        @can('subject-create')
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('subject.index') }}"> {{ __('subject') }} </a>
-                            </li>
-                        @endcan
+                            @can('subject-create')
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('subject.index') }}"> {{ __('subject') }} </a>
+                                </li>
+                            @endcan
 
-                        @can('class-create')
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('class.index') }}"> {{ __('class') }} </a>
-                            </li>
-                        @endcan
+                            @can('class-create')
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('class.index') }}"> {{ __('class') }} </a>
+                                </li>
+                            @endcan
 
-                        @can('subject-create')
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('class.subject') }}">{{ __('assign_class_subject') }} </a>
-                            </li>
-                        @endcan
-                        @can('class-teacher-create')
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('class.teacher') }}">
-                                    {{ __('assign_class_teacher') }}
-                                </a>
-                            </li>
-                        @endcan
+                            @can('subject-create')
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('class.subject') }}">{{ __('assign_class_subject') }} </a>
+                                </li>
+                            @endcan
+                            @can('class-teacher-create')
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('class.teacher') }}">
+                                        {{ __('assign_class_teacher') }}
+                                    </a>
+                                </li>
+                            @endcan
 
-                        @canany(['subject-teacher-list','subject-teacher-create','subject-teacher-edit','subject-teacher-delete'])
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('subject-teachers.index') }}">
-                                    {{ __('assign') . ' ' . __('subject') . ' ' . __('teacher') }}
-                                </a>
-                            </li>
-                        @endcan
-                        @can('assign-class-to-new-student')
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('students.assign-class') }}">
-                                    {{ __('assign_new_student_class') }}
-                                </a>
-                            </li>
-                        @endcan
-                        @can('promote-student-create')
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('promote-student.index') }}">
-                                    {{ __('promote_student') }}
-                                </a>
-                            </li>
-                        @endcan
-                    </ul>
-                </div>
-            </li>
-        @endcanany
+                            @canany(['subject-teacher-list', 'subject-teacher-create', 'subject-teacher-edit',
+                                'subject-teacher-delete'])
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('subject-teachers.index') }}">
+                                        {{ __('assign') . ' ' . __('subject') . ' ' . __('teacher') }}
+                                    </a>
+                                </li>
+                            @endcan
+                            @can('assign-class-to-new-student')
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('students.assign-class') }}">
+                                        {{ __('assign_new_student_class') }}
+                                    </a>
+                                </li>
+                            @endcan
+                            @can('promote-student-create')
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('promote-student.index') }}">
+                                        {{ __('promote_student') }}
+                                    </a>
+                                </li>
+                            @endcan
+                        </ul>
+                    </div>
+                </li>
+            @endcanany
         @endrole
 
         {{-- student --}}
-        @canany(['student-create','student-list','category-create','student-reset-password','class-teacher'])
+        @canany(['student-create', 'student-list', 'category-create', 'student-reset-password', 'class-teacher'])
             <li class="nav-item">
-                <a class="nav-link" data-toggle="collapse" href="#student-menu" aria-expanded="false" aria-controls="academics-menu"><i class="fa fa-graduation-cap menu-icon"></i> <span class="menu-title">{{ __('students') }}</span>
+                <a class="nav-link" data-toggle="collapse" href="#student-menu" aria-expanded="false"
+                    aria-controls="academics-menu"><i class="fa fa-graduation-cap menu-icon"></i> <span
+                        class="menu-title">{{ __('students') }}</span>
 
-                     </a>
+                </a>
                 <div class="collapse" id="student-menu">
                     <ul class="nav flex-column sub-menu">
                         @can('student-create')
@@ -93,7 +101,7 @@
                             </li>
                         @endcan
 
-                        @canany(['student-list','class-teacher'])
+                        @canany(['student-list', 'class-teacher'])
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('students.index') }}">
                                     {{ __('student_details') }}
@@ -115,7 +123,7 @@
                                 </a>
                             </li>
                         @endcan
-                        @if(Auth::user()->hasRole('Super Admin'))
+                        @if (Auth::user()->hasRole('Super Admin'))
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('students.create-bulk-data') }}">
                                     {{ __('add_bulk_data') }}
@@ -129,50 +137,82 @@
 
         {{-- employee --}}
         {{-- @canany(['employee-add']) --}}
-            <li class="nav-item">
-                <a class="nav-link" data-toggle="collapse" href="#employee-menu" aria-expanded="false" aria-controls="academics-menu">
-                    <i class="fa fa-graduation-cap menu-icon"></i>
-                    <span class="menu-title">{{ __('employee') }}</span>
-                </a>
-                <div class="collapse" id="employee-menu">
-                    <ul class="nav flex-column sub-menu">
-                        {{-- @can('employee-create') --}}
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('employees.create') }}">
-                                    {{ __('employee_add') }}
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('employees.index') }}">
-                                    {{ __('employee_details') }}
-                                </a>
-                            </li>
-                        {{-- @endcan --}}
-                    </ul>
-                </div>
-            </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#employee-menu" aria-expanded="false"
+                aria-controls="academics-menu">
+                <i class="fa fa-users menu-icon"></i>
+                <span class="menu-title">{{ __('employee') }}</span>
+            </a>
+            <div class="collapse" id="employee-menu">
+                <ul class="nav flex-column sub-menu">
+                    {{-- @can('employee-create') --}}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('employees.create') }}">
+                            {{ __('employee_add') }}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('employees.index') }}">
+                            {{ __('employee_details') }}
+                        </a>
+                    </li>
+                    {{-- @endcan --}}
+                </ul>
+            </div>
+        </li>
+        {{-- @endcanany --}}
+
+        {{-- Front Office --}}
+        {{-- @canany(['front_office-add']) --}}
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#front_office-menu" aria-expanded="false"
+                aria-controls="academics-menu">
+                <i class="fa fa-building-o menu-icon"></i>
+                <span class="menu-title">{{ __('front-office') }}</span>
+            </a>
+            <div class="collapse" id="front_office-menu">
+                <ul class="nav flex-column sub-menu">
+                    {{-- @can('front_office-create') --}}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('front-offices.create') }}">
+                            {{ __('front_office_add') }}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('front-offices.index') }}">
+                            {{ __('front_office_details') }}
+                        </a>
+                    </li>
+                    {{-- @endcan --}}
+                </ul>
+            </div>
+        </li>
         {{-- @endcanany --}}
 
         {{-- teacher --}}
         @can('teacher-create')
             <li class="nav-item">
-                <a href="{{ route('teachers.index') }}" class="nav-link"><i class="fa fa-user menu-icon"></i> <span class="menu-title">{{ __('teacher') }}</span>  </a>
+                <a href="{{ route('teachers.index') }}" class="nav-link"><i class="fa fa-user menu-icon"></i> <span
+                        class="menu-title">{{ __('teacher') }}</span> </a>
             </li>
         @endcan
 
         {{-- parents --}}
         @can('parents-create')
             <li class="nav-item">
-                <a href="{{ route('parents.index') }}" class="nav-link"><i class="fa fa-users menu-icon"></i> <span class="menu-title">{{ __('parents') }}</span>  </a>
+                <a href="{{ route('parents.index') }}" class="nav-link"><i class="fa fa-users menu-icon"></i> <span
+                        class="menu-title">{{ __('parents') }}</span> </a>
             </li>
         @endcan
 
         {{-- timetable --}}
-        @canany(['timetable-create','class-timetable','teacher-timetable'])
+        @canany(['timetable-create', 'class-timetable', 'teacher-timetable'])
             <li class="nav-item">
-                <a class="nav-link" data-toggle="collapse" href="#timetable-menu" aria-expanded="false" aria-controls="timetable-menu"> <i class="fa fa-calendar menu-icon"></i> <span class="menu-title">{{ __('timetable') }}</span>
+                <a class="nav-link" data-toggle="collapse" href="#timetable-menu" aria-expanded="false"
+                    aria-controls="timetable-menu"> <i class="fa fa-calendar menu-icon"></i> <span
+                        class="menu-title">{{ __('timetable') }}</span>
 
-                     </a>
+                </a>
                 <div class="collapse" id="timetable-menu">
                     <ul class="nav flex-column sub-menu">
                         @can('timetable-create')
@@ -180,7 +220,7 @@
                                 <a class="nav-link" href="{{ route('timetable.index') }}">{{ __('create_timetable') }} </a>
                             </li>
                         @endcan
-                        @canany(['class-timetable','class-teacher'])
+                        @canany(['class-timetable', 'class-teacher'])
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('class-timetable') }}">
                                     {{ __('class_timetable') }}
@@ -200,27 +240,32 @@
         @endcanany
 
         {{-- Holiday --}}
-        @canany(['holiday-create','holiday-list'])
+        @canany(['holiday-create', 'holiday-list'])
             <li class="nav-item">
                 @can('holiday-list')
-                    <a href="{{ route('holiday.index') }}" class="nav-link"> <i class="fa fa-calendar-check-o menu-icon"></i> <span class="menu-title">{{ __('holiday_list') }}</span>  </a>
+                    <a href="{{ route('holiday.index') }}" class="nav-link"> <i
+                            class="fa fa-calendar-check-o menu-icon"></i> <span
+                            class="menu-title">{{ __('holiday_list') }}</span> </a>
                 @endcan
             </li>
         @endcanany
 
         {{-- subject lesson --}}
-        @canany(['lesson-list','lesson-create','lesson-edit','lesson-delete','topic-list','topic-create','topic-edit','topic-delete'])
+        @canany(['lesson-list', 'lesson-create', 'lesson-edit', 'lesson-delete', 'topic-list', 'topic-create',
+            'topic-edit', 'topic-delete'])
             <li class="nav-item">
-                <a class="nav-link" data-toggle="collapse" href="#subject-lesson-menu" aria-expanded="false" aria-controls="subject-lesson-menu"><i class="fa fa-book menu-icon"></i> <span class="menu-title">{{ __('subject_lesson') }}</span>  </a>
+                <a class="nav-link" data-toggle="collapse" href="#subject-lesson-menu" aria-expanded="false"
+                    aria-controls="subject-lesson-menu"><i class="fa fa-book menu-icon"></i> <span
+                        class="menu-title">{{ __('subject_lesson') }}</span> </a>
                 <div class="collapse" id="subject-lesson-menu">
                     <ul class="nav flex-column sub-menu">
-                        @canany(['lesson-list','lesson-create','lesson-edit','lesson-delete'])
+                        @canany(['lesson-list', 'lesson-create', 'lesson-edit', 'lesson-delete'])
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('lesson') }}"> {{ __('create_lesson') }}</a>
                             </li>
                         @endcanany
 
-                        @canany(['topic-list','topic-create','topic-edit','topic-delete'])
+                        @canany(['topic-list', 'topic-create', 'topic-edit', 'topic-delete'])
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('lesson-topic') }}"> {{ __('create_topic') }}</a>
                             </li>
@@ -231,9 +276,11 @@
         @endcanany
 
         {{-- student assignment --}}
-        @canany(['assignment-create','assignment-submission'])
+        @canany(['assignment-create', 'assignment-submission'])
             <li class="nav-item">
-                <a class="nav-link" data-toggle="collapse" href="#student-assignment-menu" aria-expanded="false" aria-controls="student-assignment-menu"><i class="fa fa-tasks menu-icon"></i> <span class="menu-title">{{ __('student_assignment') }}</span>  </a>
+                <a class="nav-link" data-toggle="collapse" href="#student-assignment-menu" aria-expanded="false"
+                    aria-controls="student-assignment-menu"><i class="fa fa-tasks menu-icon"></i> <span
+                        class="menu-title">{{ __('student_assignment') }}</span> </a>
                 <div class="collapse" id="student-assignment-menu">
                     <ul class="nav flex-column sub-menu">
                         @can('assignment-create')
@@ -256,14 +303,17 @@
         @endcanany
         @can('slider-create')
             <li class="nav-item">
-                <a href="{{ route('sliders.index') }}" class="nav-link"><i class="fa fa-list menu-icon"></i> <span class="menu-title">{{ __('sliders') }}</span>  </a>
+                <a href="{{ route('sliders.index') }}" class="nav-link"><i class="fa fa-list menu-icon"></i> <span
+                        class="menu-title">{{ __('sliders') }}</span> </a>
             </li>
         @endcan
 
         {{-- attendance --}}
         @canany(['class-teacher'])
             <li class="nav-item">
-                <a class="nav-link" data-toggle="collapse" href="#attendance-menu" aria-expanded="false" aria-controls="attendance-menu"><i class="fa fa-check menu-icon"></i> <span class="menu-title">{{ __('attendance') }}</span>  </a>
+                <a class="nav-link" data-toggle="collapse" href="#attendance-menu" aria-expanded="false"
+                    aria-controls="attendance-menu"><i class="fa fa-check menu-icon"></i> <span
+                        class="menu-title">{{ __('attendance') }}</span> </a>
                 <div class="collapse" id="attendance-menu">
                     <ul class="nav flex-column sub-menu">
                         @can('attendance-create')
@@ -289,15 +339,17 @@
         {{-- announceent --}}
         @can('announcement-create')
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('announcement.index') }}"><i class="fa fa-check menu-icon"></i>  <span class="menu-title">{{ __('announcement') }}</span>
-                     </a>
+                <a class="nav-link" href="{{ route('announcement.index') }}"><i class="fa fa-check menu-icon"></i> <span
+                        class="menu-title">{{ __('announcement') }}</span>
+                </a>
             </li>
         @endcan
         {{-- exam --}}
-        @canany(['exam-create','exam-timetable-create','exam-upload-marks','grade-create'])
+        @canany(['exam-create', 'exam-timetable-create', 'exam-upload-marks', 'grade-create'])
             <li class="nav-item">
-                <a class="nav-link" data-toggle="collapse" href="#exam-menu" aria-expanded="false" aria-controls="exam-menu">
-                  <i class="fa fa-book menu-icon"></i>  <span class="menu-title">{{ __('exam') }}</span>
+                <a class="nav-link" data-toggle="collapse" href="#exam-menu" aria-expanded="false"
+                    aria-controls="exam-menu">
+                    <i class="fa fa-book menu-icon"></i> <span class="menu-title">{{ __('exam') }}</span>
 
                 </a>
                 <div class="collapse" id="exam-menu">
@@ -310,48 +362,54 @@
                         @endcan
                         @can('exam-timetable-create')
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('exam-timetable.index') }}"> {{ __('create_exam_timetable') }}
+                                <a class="nav-link" href="{{ route('exam-timetable.index') }}">
+                                    {{ __('create_exam_timetable') }}
                                 </a>
                             </li>
                         @endcan
                         @can('class-teacher')
                             @can('exam-upload-marks')
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('exams.upload-marks') }}">
-                                {{ __('upload')}} {{__('exam_marks') }}
-                            </a>
-                        </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('exams.upload-marks') }}">
+                                        {{ __('upload') }} {{ __('exam_marks') }}
+                                    </a>
+                                </li>
+                            @endcan
+                            @can('exam-result')
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('exams.get-result') }}">
+                                        {{ __('students') }} {{ __('exam_result') }}
+                                    </a>
+                                </li>
+                            @endcan
                         @endcan
-                        @can('exam-result')
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('exams.get-result') }}">
-                                {{ __('students')}} {{__('exam_result') }}
-                            </a>
-                        </li>
+                        @can('grade-create')
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('grades') }}">
+                                    {{ __('exam') }} {{ __('grade') }}
+                                </a>
+                            </li>
                         @endcan
-                    @endcan
-                    @can('grade-create')
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('grades') }}">
-                            {{ __('exam') }} {{__('grade')}}
-                        </a>
-                    </li>
-                    @endcan
-                </ul>
-            </div>
-        </li>
+                    </ul>
+                </div>
+            </li>
         @endcan
         {{-- session-year --}}
         @can('session-year-create')
             <li class="nav-item">
-                <a href="{{ route('session-years.index') }}" class="nav-link"> <i class="fa fa-calendar-o menu-icon"></i> <span class="menu-title">{{ __('session_years') }}</span>  </a>
+                <a href="{{ route('session-years.index') }}" class="nav-link"> <i
+                        class="fa fa-calendar-o menu-icon"></i> <span class="menu-title">{{ __('session_years') }}</span>
+                </a>
             </li>
         @endcan
         {{-- settings --}}
-        @canany(['setting-create','fcm-setting-create','email-setting-create','privacy-policy','contact-us','about-us','role-create'])
+        @canany(['setting-create', 'fcm-setting-create', 'email-setting-create', 'privacy-policy', 'contact-us',
+            'about-us', 'role-create'])
             <li class="nav-item">
-                <a class="nav-link" data-toggle="collapse" href="#settings-menu" aria-expanded="false" aria-controls="settings-menu"><i class="fa fa-cog menu-icon"></i> <span class="menu-title">{{ __('system_settings') }}</span>  </a>
+                <a class="nav-link" data-toggle="collapse" href="#settings-menu" aria-expanded="false"
+                    aria-controls="settings-menu"><i class="fa fa-cog menu-icon"></i> <span
+                        class="menu-title">{{ __('system_settings') }}</span> </a>
                 <div class="collapse" id="settings-menu">
                     <ul class="nav flex-column sub-menu">
                         @can('setting-create')
@@ -420,15 +478,15 @@
                     </ul>
                 </div>
             </li>
-        @endif
+            @endif
 
-        @if(Auth::user()->hasRole('Super Admin'))
-            <!--<li class="nav-item">-->
-            <!--    <a class="nav-link" href="{{ route('system-update.index') }}">-->
-            <!--        <span class="menu-title">{{ __('system_update') }}</span>-->
-            <!--        <i class="fa fa-cloud-download menu-icon"></i> </a>-->
-            <!--</li>-->
-        @endif
+            @if (Auth::user()->hasRole('Super Admin'))
+                <!--<li class="nav-item">-->
+                <!--    <a class="nav-link" href="{{ route('system-update.index') }}">-->
+                <!--        <span class="menu-title">{{ __('system_update') }}</span>-->
+                <!--        <i class="fa fa-cloud-download menu-icon"></i> </a>-->
+                <!--</li>-->
+            @endif
 
-    </ul>
-</nav>
+        </ul>
+    </nav>

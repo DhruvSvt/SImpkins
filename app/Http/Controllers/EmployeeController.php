@@ -324,6 +324,7 @@ class EmployeeController extends Controller
             if($user->hasRole('Front Office')){
                 $user->removeRole('Front Office');
                 $employee->is_front_office = false;
+                $user->email = $request->employee_code.rand(10000,99999).'@gmail.com';
             }
 
             //for front office
@@ -342,6 +343,7 @@ class EmployeeController extends Controller
             }
 
             $employee->save();
+            $user->save();
 
             $response = [
                 'error' => false,
@@ -365,6 +367,33 @@ class EmployeeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // if (!Auth::user()->can('student-delete')) {
+        //     $response = array(
+        //         'message' => trans('no_permission_message')
+        //     );
+        //     return response()->json($response);
+        // }
+        try {
+            $user = User::find($id);
+            if ($user->image != "" && Storage::disk('public')->exists($user->image)) {
+                Storage::disk('public')->delete($user->image);
+            }
+            $user->delete();
+
+            $employee_id = Employee::select('id')->where('user_id', $id)->pluck('id')->first();
+            $employee = Employee::find($employee_id);
+            $employee->delete();
+
+            $response = [
+                'error' => false,
+                'message' => trans('data_delete_successfully')
+            ];
+        } catch (Throwable $e) {
+            $response = array(
+                'error' => true,
+                'message' => trans('error_occurred')
+            );
+        }
+        return response()->json($response);
     }
 }
