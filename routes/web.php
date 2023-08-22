@@ -260,15 +260,15 @@ Route::get('clear', function () {
     Artisan::call('cache:clear');
 });
 
-Route::get('storage-link', function () {
-    try {
-        Artisan::call('queue:restart');
-        Artisan::call('storage:link');
-        echo "storage link created";
-    } catch (Exception $e) {
-        echo "Storage Link already exists";
-    }
-});
+// Route::get('storage-link', function () {
+//     try {
+//         Artisan::call('queue:restart');
+//         Artisan::call('storage:link');
+//         echo "storage link created";
+//     } catch (Exception $e) {
+//         echo "Storage Link already exists";
+//     }
+// });
 
 
 // Route::get('migrate', function () {
