@@ -185,15 +185,15 @@
                     </li>
                     {{-- @endcan --}}
 
-                    {{-- @can('visitor-room-create') --}}
+                    {{-- @can('visitor-book-create') --}}
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('visitor-room.create') }}">
-                            {{ __('visitor-room') .' '. _('add') }}
+                        <a class="nav-link" href="{{ route('visitor-book.create') }}">
+                            {{ __('visitor-book') .' '. _('add') }}
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('visitor-room.index') }}">
-                            {{ __('visitor-room') .' '. _('details') }}
+                        <a class="nav-link" href="{{ route('visitor-book.index') }}">
+                            {{ __('visitor-book') .' '. _('details') }}
                         </a>
                     </li>
                     {{-- @endcan --}}

@@ -306,5 +306,10 @@
     "candidate": "Candidate",
     "apply_for": "Apply For",
     "highest_qualification": "Highest Qualification",
-    "current_organization": "Current Organization"
+    "current_organization": "Current Organization",
+    "visitor_name": "Visitor Name",
+    "in_time": "In Time",
+    "out_time": "Out Time",
+    "purpose": "Purpose",
+    "remarks": "Remarks"
 }

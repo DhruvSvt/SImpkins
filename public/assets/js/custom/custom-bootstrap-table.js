@@ -492,6 +492,17 @@ window.resumeSubmitEvents = {
         $('#edit_address').val(row.address);
     }
 };
+window.visitorRoomEvents = {
+    'click .editdata': function (e, value, row, index) {
+        $('#edit_id').val(row.id);
+        $('#edit_visitor_name').val(row.visitor_name);
+        $('#edit_date').val(row.date);
+        $('#edit_in_time').val(row.in_time);
+        $('#edit_out_time').val(row.out_time);
+        $('#edit_purpose').val(row.purpose);
+        $('#edit_remarks').val(row.remarks);
+    }
+};
 
 window.assignmentSubmissionEvents = {
     'click .edit-data': function (e, value, row, index) {

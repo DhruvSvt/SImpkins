@@ -38,7 +38,7 @@ use App\Http\Controllers\ExamTimetableController;
 use App\Http\Controllers\FrontOffice\ResumeSubmitController;
 use App\Http\Controllers\StudentSessionController;
 use App\Http\Controllers\SubjectTeacherController;
-use App\Http\Controllers\FrontOffice\VisitorRoomController;
+use App\Http\Controllers\FrontOffice\VisitorBookController;
 
 /*
 |--------------------------------------------------------------------------
@@ -119,11 +119,11 @@ Route::group(['middleware' => ['Role', 'auth']], function () {
 
         //Front Office
         Route::resource('admission-enquiry', AdmissionEnquiryController::class);
-        Route::resource('visitor-room', VisitorRoomController::class);
+        Route::resource('visitor-book', VisitorBookController::class);
         Route::resource('resume-submit', ResumeSubmitController::class);
 
         Route::get('admission-enquiry-list', [AdmissionEnquiryController::class, 'show'])->name('admission-enquiry.list');
-        Route::get('visitor-room-list', [VisitorRoomController::class, 'show'])->name('visitor-room-list');
+        Route::get('visitor-book-list', [VisitorBookController::class, 'show'])->name('visitor-book-list');
         Route::get('resume-submit-list', [ResumeSubmitController::class, 'show'])->name('resume-submit-list');
 
         Route::resource('category', CategoryController::class);
