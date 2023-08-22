@@ -136,90 +136,95 @@
         @endcanany
 
         {{-- employee --}}
-        {{-- @canany(['employee-add']) --}}
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#employee-menu" aria-expanded="false"
-                aria-controls="academics-menu">
-                <i class="fa fa-users menu-icon"></i>
-                <span class="menu-title">{{ __('employee') }}</span>
-            </a>
-            <div class="collapse" id="employee-menu">
-                <ul class="nav flex-column sub-menu">
-                    {{-- @can('employee-create') --}}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('employees.create') }}">
-                            {{ __('employee_add') }}
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('employees.index') }}">
-                            {{ __('employee_details') }}
-                        </a>
-                    </li>
-                    {{-- @endcan --}}
-                </ul>
-            </div>
-        </li>
-        {{-- @endcanany --}}
+        @canany(['employee-list', 'employee-create', 'employee-edit', 'employee-delete'])
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#employee-menu" aria-expanded="false"
+                    aria-controls="academics-menu">
+                    <i class="fa fa-users menu-icon"></i>
+                    <span class="menu-title">{{ __('employee') }}</span>
+                </a>
+                <div class="collapse" id="employee-menu">
+                    <ul class="nav flex-column sub-menu">
+                        @can('employee-create')
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('employees.create') }}">
+                                    {{ __('employee_add') }}
+                                </a>
+                            </li>
+                        @endcan
+                        @can('employee-list')
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('employees.index') }}">
+                                    {{ __('employee_details') }}
+                                </a>
+                            </li>
+                        @endcan
+                    </ul>
+                </div>
+            </li>
+        @endcanany
 
         {{-- Front Office --}}
-        {{-- @canany(['front_office-add']) --}}
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#front_office-menu" aria-expanded="false"
-                aria-controls="academics-menu">
-                <i class="fa fa-building-o menu-icon"></i>
-                <span class="menu-title">{{ __('front-office') }}</span>
-            </a>
-            <div class="collapse" id="front_office-menu">
-                <ul class="nav flex-column sub-menu">
-                    {{-- @can('front_office-create') --}}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('admission-enquiry.create') }}">
-                            {{ __('admission-enquiry') .' '. _('add') }}
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('admission-enquiry.index') }}">
-                            {{ __('admission-enquiry') .' '. _('details') }}
-                        </a>
-                    </li>
-                    {{-- @endcan --}}
+        @canany(['admission-enquiry-list', 'admission-enquiry-create', 'admission-enquiry-edit',
+            'admission-enquiry-delete', 'visitor-book-list', 'visitor-book-create', 'visitor-book-edit',
+            'visitor-book-delete', 'resume-submit-list', 'resume-submit-create', 'resume-submit-edit',
+            'resume-submit-delete'])
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#front_office-menu" aria-expanded="false"
+                    aria-controls="academics-menu">
+                    <i class="fa fa-building-o menu-icon"></i>
+                    <span class="menu-title">{{ __('front-office') }}</span>
+                </a>
+                <div class="collapse" id="front_office-menu">
+                    <ul class="nav flex-column sub-menu">
+                        @can('admission-enquiry-create')
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('admission-enquiry.create') }}">
+                                    {{ __('admission-enquiry') . ' ' . _('add') }}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('admission-enquiry.index') }}">
+                                    {{ __('admission-enquiry') . ' ' . _('details') }}
+                                </a>
+                            </li>
+                        @endcan
 
-                    {{-- @can('visitor-book-create') --}}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('visitor-book.create') }}">
-                            {{ __('visitor-book') .' '. _('add') }}
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('visitor-book.index') }}">
-                            {{ __('visitor-book') .' '. _('details') }}
-                        </a>
-                    </li>
-                    {{-- @endcan --}}
+                        @can('visitor-book-create')
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('visitor-book.create') }}">
+                                    {{ __('visitor-book') . ' ' . _('add') }}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('visitor-book.index') }}">
+                                    {{ __('visitor-book') . ' ' . _('details') }}
+                                </a>
+                            </li>
+                        @endcan
 
-                    {{-- @can('resume-submit-create') --}}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('resume-submit.create') }}">
-                            {{ __('resume-submit') .' '. _('add') }}
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('resume-submit.index') }}">
-                            {{ __('resume-submit') .' '. _('details') }}
-                        </a>
-                    </li>
-                    {{-- @endcan --}}
-                </ul>
-            </div>
-        </li>
-        {{-- @endcanany --}}
+                        @can('resume-submit-create')
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('resume-submit.create') }}">
+                                    {{ __('resume-submit') . ' ' . _('add') }}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('resume-submit.index') }}">
+                                    {{ __('resume-submit') . ' ' . _('details') }}
+                                </a>
+                            </li>
+                        @endcan
+                    </ul>
+                </div>
+            </li>
+        @endcanany
 
         {{-- teacher --}}
         @can('teacher-create')
             <li class="nav-item">
-                <a href="{{ route('teachers.index') }}" class="nav-link"><i class="fa fa-user menu-icon"></i> <span
-                        class="menu-title">{{ __('teacher') }}</span> </a>
+                <a href="{{ route('teachers.index') }}" class="nav-link"><i class="fa fa-user menu-icon"></i>
+                    <span class="menu-title">{{ __('teacher') }}</span> </a>
             </li>
         @endcan
 
