@@ -59,10 +59,10 @@
                                                 {{ __('address') }}</th>
                                             <th scope="col" data-field="date" data-sortable="false">
                                                 {{ __('date') }}</th>
-                                            {{-- @canany(['employee-edit', 'employee-delete']) --}}
+                                            @canany(['admission-enquiry-edit', 'admission-enquiry-delete'])
                                             <th data-events="admissionEnquiryEvents" scope="col" data-field="operate"
                                                 data-sortable="false">{{ __('action') }}</th>
-                                            {{-- @endcanany --}}
+                                            @endcanany
                                         </tr>
                                     </thead>
                                 </table>
@@ -74,7 +74,7 @@
         </div>
     </div>
 
-    {{-- @can('student-edit') --}}
+    @can('admission-enquiry-edit')
     <div class="modal fade" id="editModal" data-backdrop="static" tabindex="-1" role="dialog"
         aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
@@ -186,7 +186,7 @@
             </div>
         </div>
     </div>
-    {{-- @endcan --}}
+    @endcan
 @endsection
 
 

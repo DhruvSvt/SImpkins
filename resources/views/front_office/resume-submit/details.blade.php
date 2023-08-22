@@ -55,10 +55,10 @@
                                                 {{ __('current_organization') }}</th>
                                             <th scope="col" data-field="address" data-sortable="false">
                                                 {{ __('address') }}</th>
-                                            {{-- @canany(['employee-edit', 'employee-delete']) --}}
+                                            @canany(['resume-submit-edit', 'resume-submit-delete'])
                                             <th data-events="resumeSubmitEvents" scope="col" data-field="operate"
                                                 data-sortable="false">{{ __('action') }}</th>
-                                            {{-- @endcanany --}}
+                                            @endcanany
                                         </tr>
                                     </thead>
                                 </table>
@@ -70,7 +70,7 @@
         </div>
     </div>
 
-    {{-- @can('student-edit') --}}
+    @can('resume-submit-edit')
     <div class="modal fade" id="editModal" data-backdrop="static" tabindex="-1" role="dialog"
         aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
@@ -161,7 +161,7 @@
             </div>
         </div>
     </div>
-    {{-- @endcan --}}
+    @endcan
 @endsection
 
 

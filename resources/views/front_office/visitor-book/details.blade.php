@@ -54,10 +54,10 @@
                                             <th scope="col" data-field="remarks" data-sortable="false">
                                                 {{ __('remarks') }}</th>
 
-                                            {{-- @canany(['visitor-book-edit', 'visitor-book-delete']) --}}
+                                            @canany(['resume-submit-edit', 'resume-submit-delete'])
                                             <th data-events="visitorRoomEvents" scope="col" data-field="operate"
                                                 data-sortable="false">{{ __('action') }}</th>
-                                            {{-- @endcanany --}}
+                                            @endcanany
                                         </tr>
                                     </thead>
                                 </table>
@@ -69,7 +69,7 @@
         </div>
     </div>
 
-    {{-- @can('visitor-book-edit') --}}
+    @can('resume-submit-edit')
     <div class="modal fade" id="editModal" data-backdrop="static" tabindex="-1" role="dialog"
         aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
@@ -147,7 +147,7 @@
             </div>
         </div>
     </div>
-    {{-- @endcan --}}
+    @endcan
 @endsection
 
 

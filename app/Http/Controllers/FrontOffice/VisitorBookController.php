@@ -7,6 +7,7 @@ use App\Models\VisitorBook;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Throwable;
 
 class VisitorBookController extends Controller
@@ -18,6 +19,12 @@ class VisitorBookController extends Controller
      */
     public function index()
     {
+        if (!Auth::user()->can('visitor-book-list')) {
+            $response = array(
+                'message' => trans('no_permission_message')
+            );
+            return redirect(route('home'))->withErrors($response);
+        }
         $visitors = VisitorBook::get();
         return view('front_office.visitor-book.details', compact('visitors'));
     }
@@ -29,6 +36,12 @@ class VisitorBookController extends Controller
     */
     public function create()
     {
+        if (!Auth::user()->can('visitor-book-create')) {
+            $response = array(
+                'message' => trans('no_permission_message')
+            );
+            return redirect(route('home'))->withErrors($response);
+        }
         return view('front_office.visitor-book.index');
     }
 
@@ -40,6 +53,12 @@ class VisitorBookController extends Controller
      */
     public function store(Request $request)
     {
+        if (!Auth::user()->can('visitor-book-create') || !Auth::user()->can('visitor-book-edit')) {
+            $response = array(
+                'message' => trans('no_permission_message')
+            );
+            return response()->json($response);
+        }
         $request->validate([
             'visitor_name' => 'required',
             'date' => 'required',
@@ -80,6 +99,12 @@ class VisitorBookController extends Controller
      */
     public function show()
     {
+        if (!Auth::user()->can('visitor-book-list')) {
+            $response = array(
+                'message' => trans('no_permission_message')
+            );
+            return response()->json($response);
+        }
         $offset = 0;
         $limit = 10;
         $sort = 'id';
@@ -120,11 +145,11 @@ class VisitorBookController extends Controller
         $data = getSettings('date_formate');
         foreach ($res as $row) {
             $operate = '';
-            // if (Auth::user()->can('employee-edit')) {
+            // if (Auth::user()->can('visitor-book-edit')) {
             $operate .= '<a class="btn btn-xs btn-gradient-primary btn-rounded btn-icon editdata" data-id=' . $row->id . ' data-url=' . url('visitor-book') . ' title="Edit" data-toggle="modal" data-target="#editModal"><i class="fa fa-edit"></i></a>&nbsp;&nbsp;';
             // }
 
-            // if (Auth::user()->can('employee-delete')) {
+            // if (Auth::user()->can('visitor-book-delete')) {
             $operate .= '<a class="btn btn-xs btn-gradient-danger btn-rounded btn-icon deletedata" data-id=' . $row->id . ' data-user_id=' . $row->id . ' data-url=' . url('visitor-book', $row->id) . ' title="Delete"><i class="fa fa-trash"></i></a>';
             // }
 
@@ -165,6 +190,12 @@ class VisitorBookController extends Controller
      */
     public function update(Request $request, $id)
     {
+        if (!Auth::user()->can('visitor-book-create') || !Auth::user()->can('visitor-book-edit')) {
+            $response = array(
+                'message' => trans('no_permission_message')
+            );
+            return response()->json($response);
+        }
         try{
             $resume = VisitorBook::find($request->edit_id);
             $resume->visitor_name = $request->visitor_name;
@@ -197,6 +228,12 @@ class VisitorBookController extends Controller
      */
     public function destroy($id)
     {
+        if (!Auth::user()->can('visitor-book-delete')) {
+            $response = array(
+                'message' => trans('no_permission_message')
+            );
+            return response()->json($response);
+        }
         try {
             $resume = VisitorBook::find($id);
             $resume->delete();

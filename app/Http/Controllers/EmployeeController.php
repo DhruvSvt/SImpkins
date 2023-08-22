@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Employee;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Storage;
@@ -19,6 +20,12 @@ class EmployeeController extends Controller
      */
     public function index()
     {
+        if (!Auth::user()->can('employee-list')) {
+            $response = array(
+                'message' => trans('no_permission_message')
+            );
+            return redirect(route('home'))->withErrors($response);
+        }
         $category = Employee::with('user')->get();
         return view('employees.details', compact('category'));
     }
@@ -30,6 +37,12 @@ class EmployeeController extends Controller
      */
     public function create()
     {
+        if (!Auth::user()->can('employee-create')) {
+            $response = array(
+                'message' => trans('no_permission_message')
+            );
+            return redirect(route('home'))->withErrors($response);
+        }
         return view('employees.index');
     }
 
@@ -41,6 +54,12 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
+        if (!Auth::user()->can('employee-create') || !Auth::user()->can('employee-edit')) {
+            $response = array(
+                'message' => trans('no_permission_message')
+            );
+            return response()->json($response);
+        }
         $request->validate([
             'employee_code' => 'required',
             'image' => 'required|mimes:jpeg,png,jpg|image|max:2048',
@@ -129,6 +148,12 @@ class EmployeeController extends Controller
      */
     public function show()
     {
+        if (!Auth::user()->can('employee-list')) {
+            $response = array(
+                'message' => trans('no_permission_message')
+            );
+            return response()->json($response);
+        }
         $offset = 0;
         $limit = 10;
         $sort = 'id';
@@ -248,12 +273,12 @@ class EmployeeController extends Controller
      */
     public function update(Request $request)
     {
-        // if (!Auth::user()->can('employee-create') || !Auth::user()->can('employee-edit')) {
-        //     $response = array(
-        //         'message' => trans('no_permission_message')
-        //     );
-        //     return response()->json($response);
-        // }
+        if (!Auth::user()->can('employee-create') || !Auth::user()->can('employee-edit')) {
+            $response = array(
+                'message' => trans('no_permission_message')
+            );
+            return response()->json($response);
+        }
         $request->validate([
             'employee_code' => 'required',
             'image' => 'mimes:jpeg,png,jpg|image|max:2048',
@@ -367,12 +392,12 @@ class EmployeeController extends Controller
      */
     public function destroy($id)
     {
-        // if (!Auth::user()->can('student-delete')) {
-        //     $response = array(
-        //         'message' => trans('no_permission_message')
-        //     );
-        //     return response()->json($response);
-        // }
+        if (!Auth::user()->can('employee-delete')) {
+            $response = array(
+                'message' => trans('no_permission_message')
+            );
+            return response()->json($response);
+        }
         try {
             $user = User::find($id);
             if ($user->image != "" && Storage::disk('public')->exists($user->image)) {

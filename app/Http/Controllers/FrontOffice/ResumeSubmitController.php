@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\ResumeSubmit;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Throwable;
 
 class ResumeSubmitController extends Controller
@@ -17,6 +18,12 @@ class ResumeSubmitController extends Controller
     */
     public function index()
     {
+        if (!Auth::user()->can('resume-submit-list')) {
+            $response = array(
+                'message' => trans('no_permission_message')
+            );
+            return response()->json($response);
+        }
         $resumes = ResumeSubmit::get();
         return view('front_office.resume-submit.details', compact('resumes'));
     }
@@ -28,6 +35,12 @@ class ResumeSubmitController extends Controller
     */
     public function create()
     {
+        if (!Auth::user()->can('resume-submit-create')) {
+            $response = array(
+                'message' => trans('no_permission_message')
+            );
+            return response()->json($response);
+        }
         return view('front_office.resume-submit.index');
     }
 
@@ -39,6 +52,12 @@ class ResumeSubmitController extends Controller
     */
     public function store(Request $request)
     {
+        if (!Auth::user()->can('resume-submit-create') || !Auth::user()->can('resume-submit-edit')) {
+            $response = array(
+                'message' => trans('no_permission_message')
+            );
+            return response()->json($response);
+        }
         $request->validate([
             'candidate_name' => 'required',
             'father_name' => 'required',
@@ -82,6 +101,13 @@ class ResumeSubmitController extends Controller
      */
     public function show()
     {
+        if (!Auth::user()->can('resume-submit-list')) {
+            $response = array(
+                'message' => trans('no_permission_message')
+            );
+            return response()->json($response);
+        }
+
         $offset = 0;
         $limit = 10;
         $sort = 'id';
@@ -169,6 +195,13 @@ class ResumeSubmitController extends Controller
      */
     public function update(Request $request, $id)
     {
+        if (!Auth::user()->can('resume-submit-create') || !Auth::user()->can('resume-submit-edit')) {
+            $response = array(
+                'message' => trans('no_permission_message')
+            );
+            return response()->json($response);
+        }
+
         try{
             $resume = ResumeSubmit::find($request->edit_id);
             $resume->candidate_name = $request->candidate_name;
@@ -203,6 +236,13 @@ class ResumeSubmitController extends Controller
      */
     public function destroy($id)
     {
+        if (!Auth::user()->can('resume-submit-delete')) {
+            $response = array(
+                'message' => trans('no_permission_message')
+            );
+            return response()->json($response);
+        }
+
         try {
             $resume = ResumeSubmit::find($id);
             $resume->delete();

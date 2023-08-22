@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\AdmissionEnquiry;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Throwable;
 
 class AdmissionEnquiryController extends Controller
@@ -17,6 +18,12 @@ class AdmissionEnquiryController extends Controller
      */
     public function index()
     {
+        if (!Auth::user()->can('admission-enquiry-list')) {
+            $response = array(
+                'message' => trans('no_permission_message')
+            );
+            return redirect(route('home'))->withErrors($response);
+        }
         $admissions = AdmissionEnquiry::get();
         return view('front_office.admission-enquiry.details', compact('admissions'));
     }
@@ -28,6 +35,12 @@ class AdmissionEnquiryController extends Controller
      */
     public function create()
     {
+        if (!Auth::user()->can('admission-enquiry-create')) {
+            $response = array(
+                'message' => trans('no_permission_message')
+            );
+            return redirect(route('home'))->withErrors($response);
+        }
         return view('front_office.admission-enquiry.index');
     }
 
@@ -39,6 +52,12 @@ class AdmissionEnquiryController extends Controller
      */
     public function store(Request $request)
     {
+        if (!Auth::user()->can('admission-enquiry-create') || !Auth::user()->can('admission-enquiry-edit')) {
+            $response = array(
+                'message' => trans('no_permission_message')
+            );
+            return response()->json($response);
+        }
         $request->validate([
             'student_name' => 'required',
             'admitted_class' => 'required',
@@ -86,6 +105,13 @@ class AdmissionEnquiryController extends Controller
      */
     public function show()
     {
+        if (!Auth::user()->can('admission-enquiry-list')) {
+            $response = array(
+                'message' => trans('no_permission_message')
+            );
+            return response()->json($response);
+        }
+
         $offset = 0;
         $limit = 10;
         $sort = 'id';
@@ -177,6 +203,12 @@ class AdmissionEnquiryController extends Controller
      */
     public function update(Request $request)
     {
+        if (!Auth::user()->can('admission-enquiry-create') || !Auth::user()->can('admission-enquiry-edit')) {
+            $response = array(
+                'message' => trans('no_permission_message')
+            );
+            return response()->json($response);
+        }
         try{
             $admission = AdmissionEnquiry::find($request->edit_id);
             $admission->student_name = $request->student_name;
@@ -213,12 +245,12 @@ class AdmissionEnquiryController extends Controller
      */
     public function destroy($id)
     {
-        // if (!Auth::user()->can('fornt-office-delete')) {
-        //     $response = array(
-        //         'message' => trans('no_permission_message')
-        //     );
-        //     return response()->json($response);
-        // }
+        if (!Auth::user()->can('admission-enquiry-delete')) {
+            $response = array(
+                'message' => trans('no_permission_message')
+            );
+            return response()->json($response);
+        }
         try {
             $admission = AdmissionEnquiry::find($id);
             $admission->delete();
