@@ -314,14 +314,15 @@ Route::get('clear', function () {
 //     echo "symbolic link created successfully";
 // });
 
+
 Route::get('storage-link', function () {
-    try {
-      Artisan::call('storage:link');
-        echo "storage link created";
-    } catch (Exception $e) {
-        echo $e->getMessage();
-        echo "Storage Link already exists";
-    }
+    Artisan::call('storage:link');
+//     try {
+//         echo "storage link created";
+//     } catch (Exception $e) {
+//         echo $e->getMessage();
+//         echo "Storage Link already exists";
+//     }
 });
 
 // Route::get('/command', function()
