@@ -187,7 +187,7 @@ class AdmissionEnquiryController extends Controller
             $admission->last_class = $request->last_class;
             $admission->father_mobile = $request->father_mobile;
             $admission->address = $request->address;
-            $admission->date = $request->date;
+            $admission->date = date('Y-m-d', strtotime($request->date));
             $admission->save();
 
 

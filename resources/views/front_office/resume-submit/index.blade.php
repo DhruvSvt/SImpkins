@@ -23,34 +23,41 @@
                             @csrf
                             <div class="row">
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('visitor_name') }} <span class="text-danger">*</span></label>
-                                    {!! Form::text('visitor_name', null, ['placeholder' => __('visitor_name'), 'class' => 'form-control']) !!}
+                                    <label>{{ __('candidate_name') }} <span class="text-danger">*</span></label>
+                                    {!! Form::text('candidate_name', null, ['placeholder' => __('candidate_name'), 'class' => 'form-control']) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('date') }} <span class="text-danger">*</span></label>
-                                    {!! Form::text('date', null, ['placeholder' => __('date'), 'class' => 'form-control']) !!}
+                                    <label>{{ __('father_name') }} <span class="text-danger">*</span></label>
+                                    {!! Form::text('father_name', null, ['placeholder' => __('father_name'), 'class' => 'form-control']) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('in_time') }} <span class="text-danger">*</span></label>
-                                    {!! Form::time('in_time', null, ['placeholder' => __('in_time'), 'class' => 'form-control']) !!}
+                                    <label>{{ __('mobile') }} <span class="text-danger">*</span></label>
+                                    {!! Form::text('mobile', null, ['placeholder' => __('mobile'), 'class' => 'form-control']) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('out_time') }} <span class="text-danger">*</span></label>
-                                    {!! Form::time('out_time', null, ['placeholder' => __('out_time'), 'class' => 'form-control']) !!}
+                                    <label>{{ __('apply_for') }} <span class="text-danger">*</span></label>
+                                    {!! Form::text('apply_for', null, ['placeholder' => __('apply_for'), 'class' => 'form-control']) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('purpose') }} <span class="text-danger">*</span></label>
-                                    {!! Form::text('purpose', null, [
-                                        'placeholder' => __('purpose'),
+                                    <label>{{ __('highest_qualification') }} <span class="text-danger">*</span></label>
+                                    {!! Form::text('highest_qualification', null, [
+                                        'placeholder' => __('highest_qualification'),
+                                        'class' => 'form-control form-control',
+                                    ]) !!}
+                                </div>
+                                <div class="form-group col-sm-12 col-md-4">
+                                    <label>{{ __('current_organization') }} <span class="text-danger">*</span></label>
+                                    {!! Form::text('current_organization', null, [
+                                        'placeholder' => __('current_organization'),
                                         'class' => 'form-control form-control',
                                     ]) !!}
                                 </div>
                                 <div class="form-group col-12">
-                                    <label>{{ __('remarks') }} <span class="text-danger">*</span></label>
-                                    {!! Form::textarea('remarks', null, [
-                                        'placeholder' => __('remarks'),
+                                    <label>{{ __('address') }} <span class="text-danger">*</span></label>
+                                    {!! Form::textarea('address', null, [
+                                        'placeholder' => __('address'),
                                         'class' => 'form-control',
-                                        'id' => 'remarks',
+                                        'id' => 'address',
                                         'rows' => 2,
                                     ]) !!}
                                 </div>
