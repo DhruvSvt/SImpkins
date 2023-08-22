@@ -480,6 +480,19 @@ window.admissionEnquiryEvents = {
     }
 };
 
+window.resumeSubmitEvents = {
+    'click .editdata': function (e, value, row, index) {
+        $('#edit_id').val(row.id);
+        $('#edit_candidate_name').val(row.candidate_name);
+        $('#edit_father_name').val(row.father_name);
+        $('#edit_mobile').val(row.mobile);
+        $('#edit_apply_for').val(row.apply_for);
+        $('#edit_highest_qualification').val(row.highest_qualification);
+        $('#edit_current_organization').val(row.current_organization);
+        $('#edit_address').val(row.address);
+    }
+};
+
 window.assignmentSubmissionEvents = {
     'click .edit-data': function (e, value, row, index) {
         let file_html = "";

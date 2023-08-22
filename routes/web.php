@@ -123,8 +123,8 @@ Route::group(['middleware' => ['Role', 'auth']], function () {
         Route::resource('resume-submit', ResumeSubmitController::class);
 
         Route::get('admission-enquiry-list', [AdmissionEnquiryController::class, 'show'])->name('admission-enquiry.list');
-        Route::get('visitor-room-list', [VisitorRoomController::class, 'show'])->name('visitor-room.list');
-        Route::get('resume-submit-list', [ResumeSubmitController::class, 'show'])->name('resume-submit.list');
+        Route::get('visitor-room-list', [VisitorRoomController::class, 'show'])->name('visitor-room-list');
+        Route::get('resume-submit-list', [ResumeSubmitController::class, 'show'])->name('resume-submit-list');
 
         Route::resource('category', CategoryController::class);
         Route::get('category_list', [CategoryController::class, 'show']);

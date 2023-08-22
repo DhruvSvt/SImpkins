@@ -302,5 +302,9 @@
     "grades_data_does_not_exists": "Grades data does not exists",
     "student": "Student",
     "previous_school_name": "Previous School Name",
-    "admission-enquiry": "Admission Enquiry"
+    "admission-enquiry": "Admission Enquiry",
+    "candidate": "Candidate",
+    "apply_for": "Apply For",
+    "highest_qualification": "Highest Qualification",
+    "current_organization": "Current Organization"
 }
