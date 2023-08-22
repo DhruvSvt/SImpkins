@@ -301,5 +301,6 @@
     "first_download_dummy_file_and_convert_to_csv_file_then_upload_it": "First download dummy file and convert to .csv file then upload it.",
     "grades_data_does_not_exists": "Grades data does not exists",
     "student": "Student",
-    "previous_school_name": "Previous School Name"
+    "previous_school_name": "Previous School Name",
+    "admission-enquiry": "Admission Enquiry"
 }

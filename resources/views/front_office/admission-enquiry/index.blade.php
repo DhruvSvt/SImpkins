@@ -1,14 +1,14 @@
 @extends('layouts.master')
 
 @section('title')
-    {{ __('front_office') }}
+    {{ __('admission-enquiry') }}
 @endsection
 
 @section('content')
     <div class="content-wrapper">
         <div class="page-header">
             <h3 class="page-title">
-                {{ __('manage') . ' ' . __('front_office') }}
+                {{ __('manage') . ' ' . __('admission-enquiry') }}
             </h3>
         </div>
         <div class="row">
@@ -16,15 +16,15 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">
-                            {{ __('create') . ' ' . __('front_office') }}
+                            {{ __('create') . ' ' . __('admission-enquiry') }}
                         </h4>
                         <form class="pt-3 student-registration-form" enctype="multipart/form-data"
-                            action="{{ route('front-offices.store') }}" method="POST" novalidate="novalidate">
+                            action="{{ route('admission-enquiry.store') }}" method="POST" novalidate="novalidate">
                             @csrf
                             <div class="row">
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('student') . ' ' . __('name') }} <span class="text-danger">*</span></label>
-                                    {!! Form::text('name', null, ['placeholder' => __('student') . ' ' . __('name'), 'class' => 'form-control']) !!}
+                                    {!! Form::text('student_name', null, ['placeholder' => __('student') . ' ' . __('name'), 'class' => 'form-control']) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('admitted_class') }} <span class="text-danger">*</span></label>
@@ -63,9 +63,9 @@
                                     ]) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('dob') }} <span class="text-danger">*</span></label>
-                                    {!! Form::text('dob', null, [
-                                        'placeholder' => __('dob'),
+                                    <label>{{ __('date') }} <span class="text-danger">*</span></label>
+                                    {!! Form::text('date', null, [
+                                        'placeholder' => __('date'),
                                         'class' => 'form-control datepicker-popup form-control',
                                     ]) !!}
                                 </div>

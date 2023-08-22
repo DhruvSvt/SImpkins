@@ -174,13 +174,39 @@
                 <ul class="nav flex-column sub-menu">
                     {{-- @can('front_office-create') --}}
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('front-offices.create') }}">
-                            {{ __('front_office_add') }}
+                        <a class="nav-link" href="{{ route('admission-enquiry.create') }}">
+                            {{ __('admission-enquiry') .' '. _('add') }}
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('front-offices.index') }}">
-                            {{ __('front_office_details') }}
+                        <a class="nav-link" href="{{ route('admission-enquiry.index') }}">
+                            {{ __('admission-enquiry') .' '. _('details') }}
+                        </a>
+                    </li>
+                    {{-- @endcan --}}
+
+                    {{-- @can('visitor-room-create') --}}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('visitor-room.create') }}">
+                            {{ __('visitor-room') .' '. _('add') }}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('visitor-room.index') }}">
+                            {{ __('visitor-room') .' '. _('details') }}
+                        </a>
+                    </li>
+                    {{-- @endcan --}}
+
+                    {{-- @can('resume-submit-create') --}}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('resume-submit.create') }}">
+                            {{ __('resume-submit') .' '. _('add') }}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('resume-submit.index') }}">
+                            {{ __('resume-submit') .' '. _('details') }}
                         </a>
                     </li>
                     {{-- @endcan --}}

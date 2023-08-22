@@ -1,11 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\FrontOffice;
 
+use App\Http\Controllers\Controller;
 use App\Models\AdmissionEnquiry;
+use Exception;
 use Illuminate\Http\Request;
+use Throwable;
 
-class FrontOfficeController extends Controller
+class AdmissionEnquiryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +17,8 @@ class FrontOfficeController extends Controller
      */
     public function index()
     {
-        $admissions = AdmissionEnquiry::with('user')->get();
-        return view('employees.details', compact('admissions'));
+        $admissions = AdmissionEnquiry::get();
+        return view('front_office.admission-enquiry.details', compact('admissions'));
     }
 
     /**
@@ -25,7 +28,7 @@ class FrontOfficeController extends Controller
      */
     public function create()
     {
-        return view('front_office.index');
+        return view('front_office.admission-enquiry.index');
     }
 
     /**
@@ -37,15 +40,15 @@ class FrontOfficeController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'student_name': 'required'
-            'admitted_class': 'required'
-            'previous_school_name': 'required'
-            'father_name': 'required'
-            'mother_name': 'required'
-            'last_class': 'required'
-            'father_mobile': 'required'
-            'address': 'required'
-            'date': 'required'
+            'student_name' => 'required',
+            'admitted_class' => 'required',
+            'previous_school_name' => 'required',
+            'father_name' => 'required',
+            'mother_name' => 'required',
+            'last_class' => 'required',
+            'father_mobile' => 'required',
+            'address' => 'required',
+            'date' => 'required',
         ]);
 
         try {
@@ -59,8 +62,8 @@ class FrontOfficeController extends Controller
             $admission->last_class = $request->last_class;
             $admission->father_mobile = $request->father_mobile;
             $admission->address = $request->address;
-            $admission->date = $request->date;
-            $employee->save();
+            $admission->date = date('Y-m-d', strtotime($request->date));
+            $admission->save();
 
             $response = [
                 'error' => false,
@@ -79,10 +82,9 @@ class FrontOfficeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
         $offset = 0;
         $limit = 10;
@@ -99,7 +101,7 @@ class FrontOfficeController extends Controller
         if (isset($_GET['order']))
             $order = $_GET['order'];
 
-        $sql = AdmissionEnquiry::with('user');
+        $sql = AdmissionEnquiry::where('deleted_at', null);
         if (isset($_GET['search']) && !empty($_GET['search'])) {
             $search = $_GET['search'];
             $sql->where('id', 'LIKE', "%$search%")
@@ -128,11 +130,11 @@ class FrontOfficeController extends Controller
         foreach ($res as $row) {
             $operate = '';
             // if (Auth::user()->can('employee-edit')) {
-                $operate .= '<a class="btn btn-xs btn-gradient-primary btn-rounded btn-icon editdata" data-id=' . $row->id . ' data-url=' . url('employees') . ' title="Edit" data-toggle="modal" data-target="#editModal"><i class="fa fa-edit"></i></a>&nbsp;&nbsp;';
+                $operate .= '<a class="btn btn-xs btn-gradient-primary btn-rounded btn-icon editdata" data-id=' . $row->id . ' data-url=' . url('admission-enquiry') . ' title="Edit" data-toggle="modal" data-target="#editModal"><i class="fa fa-edit"></i></a>&nbsp;&nbsp;';
             // }
 
             // if (Auth::user()->can('employee-delete')) {
-                $operate .= '<a class="btn btn-xs btn-gradient-danger btn-rounded btn-icon deletedata" data-id=' . $row->id . ' data-user_id=' . $row->user_id . ' data-url=' . url('employees', $row->user_id) . ' title="Delete"><i class="fa fa-trash"></i></a>';
+                $operate .= '<a class="btn btn-xs btn-gradient-danger btn-rounded btn-icon deletedata" data-id=' . $row->id . ' data-user_id=' . $row->id . ' data-url=' . url('admission-enquiry', $row->id) . ' title="Delete"><i class="fa fa-trash"></i></a>';
             // }
 
             $tempRow['id'] = $row->id;
@@ -145,6 +147,7 @@ class FrontOfficeController extends Controller
             $tempRow['last_class'] = $row->last_class;
             $tempRow['father_mobile'] = $row->father_mobile;
             $tempRow['address'] = $row->address;
+            $tempRow['date'] = date($data['date_formate'], strtotime($row->date));
 
             $tempRow['operate'] = $operate;
             $rows[] = $tempRow;
@@ -185,7 +188,7 @@ class FrontOfficeController extends Controller
             $admission->father_mobile = $request->father_mobile;
             $admission->address = $request->address;
             $admission->date = $request->date;
-            $employee->save();
+            $admission->save();
 
 
             $response = [

@@ -465,6 +465,21 @@ window.employeeEvents = {
     }
 };
 
+window.admissionEnquiryEvents = {
+    'click .editdata': function (e, value, row, index) {
+        $('#edit_id').val(row.id);
+        $('#edit_student_name').val(row.student_name);
+        $('#edit_admitted_class').val(row.admitted_class);
+        $('#edit_previous_school_name').val(row.previous_school_name);
+        $('#edit_father_name').val(row.father_name);
+        $('#edit_mother_name').val(row.mother_name);
+        $('#edit_last_class').val(row.last_class);
+        $('#edit_father_mobile').val(row.father_mobile);
+        $('#edit_address').val(row.address);
+        $('#edit_date').val(row.date);
+    }
+};
+
 window.assignmentSubmissionEvents = {
     'click .edit-data': function (e, value, row, index) {
         let file_html = "";
