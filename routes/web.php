@@ -263,7 +263,7 @@ Route::get('clear', function () {
 Route::get('storage-link', function () {
     try {
         Artisan::call('queue:restart');
-        //Artisan::call('storage:link');
+        Artisan::call('storage:link');
         echo "storage link created";
     } catch (Exception $e) {
         echo "Storage Link already exists";
