@@ -314,6 +314,15 @@ Route::get('storage-link', function () {
 //     echo "symbolic link created successfully";
 // });
 
+Route::get('storage-link', function () {
+    try {
+      Artisan::call('storage:link');
+        echo "storage link created";
+    } catch (Exception $e) {
+        echo "Storage Link already exists";
+    }
+});
+
 // Route::get('/command', function()
 // {
 //     $exitCode = Artisan::call('db:seed', ['--class' => 'DummyDataSeeder']);
