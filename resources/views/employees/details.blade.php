@@ -49,6 +49,12 @@
                                                 {{ __('first_name') }}</th>
                                             <th scope="col" data-field="last_name" data-sortable="false">
                                                 {{ __('last_name') }}</th>
+                                            <th scope="col" data-field="email" data-sortable="false">
+                                                {{ __('email') }}</th>
+                                            <th scope="col" data-field="mobile" data-sortable="false">
+                                                {{ __('mobile') }}</th>
+                                            <th scope="col" data-field="additional_mobile" data-sortable="false">
+                                                {{ __('additional_mobile') }}</th>
                                             <th scope="col" data-field="father_name" data-sortable="false">
                                                 {{ __('father') . ' ' . __('name') }}</th>
                                             <th scope="col" data-field="mother_name" data-sortable="false">
@@ -76,6 +82,8 @@
                                                 {{ __('bank_name') }}</th>
                                             <th scope="col" data-field="bank_acc_no" data-sortable="false">
                                                 {{ __('bank_acc_no') }}</th>
+                                            <th scope="col" data-field="qualification" data-sortable="false">
+                                                {{ __('qualification') }}</th>
                                             <th scope="col" data-field="ifsc_code" data-sortable="false">
                                                 {{ __('ifsc_code') }}</th>
                                             @canany(['employee-edit', 'employee-delete'])
@@ -117,8 +125,8 @@
                                         'placeholder' => __('employee_code'),
                                         'class' => 'form-control',
                                         'id' => 'edit_employee_code',
+                                        'required' => true,
                                     ]) !!}
-
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('name') }} <span class="text-danger">*</span></label>
@@ -126,8 +134,34 @@
                                         'placeholder' => __('name'),
                                         'class' => 'form-control',
                                         'id' => 'edit_name',
+                                        'required' => true,
                                     ]) !!}
-
+                                </div>
+                                <div class="form-group col-sm-12 col-md-4">
+                                    <label>{{ __('email') }} <span class="text-danger">*</span></label>
+                                    {!! Form::email('email', null, [
+                                        'id' => 'edit_email',
+                                        'placeholder' => __('email'),
+                                        'class' => 'form-control',
+                                        'required' => true,
+                                    ]) !!}
+                                </div>
+                                <div class="form-group col-sm-12 col-md-4">
+                                    <label>{{ __('mobile') }} <span class="text-danger">*</span></label>
+                                    {!! Form::text('mobile', null, [
+                                        'placeholder' => __('mobile'),
+                                        'class' => 'form-control',
+                                        'id' => 'edit_mobile',
+                                        'required' => true,
+                                    ]) !!}
+                                </div>
+                                <div class="form-group col-sm-12 col-md-4">
+                                    <label>{{ __('additional_mobile') }}</label>
+                                    {!! Form::text('additional_mobile', null, [
+                                        'placeholder' => __('additional_mobile'),
+                                        'class' => 'form-control',
+                                        'id' => 'edit_additional_mobile',
+                                    ]) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('father_name') }} <span class="text-danger">*</span></label>
@@ -135,8 +169,8 @@
                                         'placeholder' => __('father_name'),
                                         'class' => 'form-control',
                                         'id' => 'edit_father_name',
+                                        'required' => true,
                                     ]) !!}
-
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('mother_name') }} <span class="text-danger">*</span></label>
@@ -144,8 +178,8 @@
                                         'placeholder' => __('mother_name'),
                                         'class' => 'form-control',
                                         'id' => 'edit_mother_name',
+                                        'required' => true,
                                     ]) !!}
-
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('religion') }} <span class="text-danger">*</span></label>
@@ -153,8 +187,8 @@
                                         'placeholder' => __('religion'),
                                         'class' => 'form-control',
                                         'id' => 'edit_religion',
+                                        'required' => true,
                                     ]) !!}
-
                                 </div>
                                 <div class="form-group col-sm-12 col-md-12">
                                     <label>{{ __('gender') }} <span class="text-danger">*</span></label><br>
@@ -179,6 +213,7 @@
                                         'placeholder' => __('category'),
                                         'class' => 'form-control',
                                         'id' => 'edit_category',
+                                        'required' => true,
                                     ]) !!}
 
                                 </div>
@@ -204,6 +239,7 @@
                                         'placeholder' => __('dob'),
                                         'class' => 'datepicker-popup form-control',
                                         'id' => 'edit_dob',
+                                        'required' => true,
                                     ]) !!}
                                     <span class="input-group-addon input-group-append">
                                     </span>
@@ -214,6 +250,7 @@
                                         'placeholder' => __('designation'),
                                         'class' => 'form-control',
                                         'id' => 'edit_designation',
+                                        'required' => true,
                                     ]) !!}
 
                                 </div>
@@ -224,6 +261,7 @@
                                         'placeholder' => __('date_of_joining'),
                                         'class' => 'datepicker-popup form-control',
                                         'id' => 'edit_date_of_joining',
+                                        'required' => true,
                                     ]) !!}
                                     <span class="input-group-addon input-group-append">
                                     </span>
@@ -234,6 +272,7 @@
                                         'placeholder' => __('address'),
                                         'class' => 'form-control',
                                         'id' => 'edit_address',
+                                        'required' => true,
                                     ]) !!}
 
                                 </div>
@@ -265,6 +304,16 @@
 
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
+                                    <label>{{ __('qualification') }}</label>
+                                    {!! Form::text('qualification', null, [
+                                        'placeholder' => __('qualification'),
+                                        'class' => 'form-control',
+                                        'id' => 'edit_qualification',
+                                        'required' => true,
+                                    ]) !!}
+
+                                </div>
+                                <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('bank_acc_no') }}</label>
                                     {!! Form::text('bank_acc_no', null, [
                                         'placeholder' => __('bank_acc_no'),
@@ -289,15 +338,6 @@
                                     {{ Form::checkbox('is_front_office', '1', false, ['id' => 'edit_is_front_office', 'placeholder' => __('is_front_office')]) }}
                                 </div>
                                 <div class="row" id="front_office_container" style="display: none">
-                                    <div class="form-group col-sm-12 col-md-4">
-                                        <label>{{ __('email') }} <span class="text-danger">*</span></label>
-                                        {!! Form::email('email', null, [
-                                            'id' => 'edit_email',
-                                            'placeholder' => __('email'),
-                                            'class' => 'form-control',
-                                            'required' => true,
-                                        ]) !!}
-                                    </div>
                                     <div class="form-group col-sm-12 col-md-4">
                                         <label>{{ __('password') }} <span class="text-danger">*</span></label>
                                         {!! Form::password('password', null, [

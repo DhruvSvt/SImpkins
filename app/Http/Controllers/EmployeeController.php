@@ -64,6 +64,8 @@ class EmployeeController extends Controller
             'employee_code' => 'required',
             'image' => 'required|mimes:jpeg,png,jpg|image|max:2048',
             'name' => 'required',
+            'email' => 'required',
+            'mobile' => 'required',
             'father_name' => 'required',
             'mother_name' => 'required',
             'religion' => 'required',
@@ -73,29 +75,31 @@ class EmployeeController extends Controller
             'designation' => 'required',
             'date_of_joining' => 'required',
             'address' => 'required',
+            'qualification' => 'required',
+
         ]);
 
-        try{
+        try {
             $full_name = explode(" ", $request->name);
-            if(count($full_name) > 1) {
+            if (count($full_name) > 1) {
                 $lastname = array_pop($full_name);
                 $firstname = implode(" ", $full_name);
-            }
-            else
-            {
+            } else {
                 $firstname = $request->name;
                 $lastname = " ";
             }
+            $employee_plaintext_password = $request->password ?? rand(10000, 99999);
 
             $user = new User();
-            $employee_plaintext_password = $request->password ?? rand(10000,99999);
             $user->image = $request->file('image')->store('employees', 'public');
             $user->password = Hash::make($employee_plaintext_password);
             $user->first_name = $firstname;
             $user->last_name = $lastname;
-            $user->email = $request->email ?? $request->employee_code.rand(10000,99999);
+            $user->email = $request->email ?? $request->employee_code . rand(10000, 99999);
             $user->dob = date('Y-m-d', strtotime($request->dob));
             $user->gender = $request->gender;
+            $user->email = $request->email;
+            $user->mobile = $request->mobile;
             $user->current_address = $request->address;
             $user->save();
 
@@ -105,18 +109,20 @@ class EmployeeController extends Controller
             $employee->father_name = $request->father_name;
             $employee->mother_name = $request->mother_name;
             $employee->religion = $request->religion;
+            $employee->additional_mobile = $request->additional_mobile;
             $employee->category = $request->category;
             $employee->designation = $request->designation;
-            $employee->date_of_joining =  date('Y-m-d', strtotime($request->date_of_joining));
+            $employee->date_of_joining = date('Y-m-d', strtotime($request->date_of_joining));
             $employee->address = $request->address;
             $employee->aadhar_card = $request->aadhar_card;
             $employee->pancard = $request->pancard;
             $employee->bank_name = $request->bank_name;
             $employee->bank_acc_no = $request->bank_acc_no;
+            $employee->qualification = $request->qualification;
             $employee->ifsc_code = $request->ifsc_code;
             $employee->save();
 
-            if($request->front_office == 1 || $request->front_office == '1'){
+            if ($request->front_office == 1 || $request->front_office == '1') {
                 $employee->is_front_office = true;
                 $employee->save();
 
@@ -129,8 +135,7 @@ class EmployeeController extends Controller
                 'error' => false,
                 'message' => trans('data_store_successfully')
             ];
-        }
-        catch (Throwable $e) {
+        } catch (Throwable $e) {
             $response = array(
                 'error' => true,
                 'message' => trans('error_occurred'),
@@ -173,24 +178,27 @@ class EmployeeController extends Controller
         if (isset($_GET['search']) && !empty($_GET['search'])) {
             $search = $_GET['search'];
             $sql->where('id', 'LIKE', "%$search%")
-                ->orWhere('user_id','LIKE',"%$search%")
-                ->orWhere('code','LIKE',"%$search%")
-                ->orWhere('father_name','LIKE',"%$search%")
-                ->orWhere('mother_name','LIKE',"%$search%")
-                ->orWhere('religion','LIKE',"%$search%")
-                ->orWhere('category','LIKE',"%$search%")
-                ->orWhere('designation','LIKE',"%$search%")
-                ->orWhere('date_of_joining','LIKE',"%$search%")
-                ->orWhere('address','LIKE',"%$search%")
-                ->orWhere('aadhar_card','LIKE',"%$search%")
-                ->orWhere('pancard','LIKE',"%$search%")
-                ->orWhere('bank_name','LIKE',"%$search%")
-                ->orWhere('bank_acc_no','LIKE',"%$search%")
-                ->orWhere('ifsc_code','LIKE',"%$search%")
+                ->orWhere('user_id', 'LIKE', "%$search%")
+                ->orWhere('code', 'LIKE', "%$search%")
+                ->orWhere('father_name', 'LIKE', "%$search%")
+                ->orWhere('mother_name', 'LIKE', "%$search%")
+                ->orWhere('religion', 'LIKE', "%$search%")
+                ->orWhere('additional_mobile', 'LIKE', "%$search%")
+                ->orWhere('category', 'LIKE', "%$search%")
+                ->orWhere('designation', 'LIKE', "%$search%")
+                ->orWhere('date_of_joining', 'LIKE', "%$search%")
+                ->orWhere('address', 'LIKE', "%$search%")
+                ->orWhere('aadhar_card', 'LIKE', "%$search%")
+                ->orWhere('pancard', 'LIKE', "%$search%")
+                ->orWhere('bank_name', 'LIKE', "%$search%")
+                ->orWhere('bank_acc_no', 'LIKE', "%$search%")
+                ->orWhere('qualification', 'LIKE', "%$search%")
+                ->orWhere('ifsc_code', 'LIKE', "%$search%")
                 ->orWhereHas('user', function ($q) use ($search) {
                     $q->where('first_name', 'LIKE', "%$search%")
                         ->orwhere('last_name', 'LIKE', "%$search%")
                         ->orwhere('email', 'LIKE', "%$search%")
+                        ->orwhere('mobile', 'LIKE', "%$search%")
                         ->orwhere('dob', 'LIKE', "%$search%");
                 });
         }
@@ -209,11 +217,11 @@ class EmployeeController extends Controller
         foreach ($res as $row) {
             $operate = '';
             // if (Auth::user()->can('employee-edit')) {
-                $operate .= '<a class="btn btn-xs btn-gradient-primary btn-rounded btn-icon editdata" data-id=' . $row->id . ' data-url=' . url('employees') . ' title="Edit" data-toggle="modal" data-target="#editModal"><i class="fa fa-edit"></i></a>&nbsp;&nbsp;';
+            $operate .= '<a class="btn btn-xs btn-gradient-primary btn-rounded btn-icon editdata" data-id=' . $row->id . ' data-url=' . url('employees') . ' title="Edit" data-toggle="modal" data-target="#editModal"><i class="fa fa-edit"></i></a>&nbsp;&nbsp;';
             // }
 
             // if (Auth::user()->can('employee-delete')) {
-                $operate .= '<a class="btn btn-xs btn-gradient-danger btn-rounded btn-icon deletedata" data-id=' . $row->id . ' data-user_id=' . $row->user_id . ' data-url=' . url('employees', $row->user_id) . ' title="Delete"><i class="fa fa-trash"></i></a>';
+            $operate .= '<a class="btn btn-xs btn-gradient-danger btn-rounded btn-icon deletedata" data-id=' . $row->id . ' data-user_id=' . $row->user_id . ' data-url=' . url('employees', $row->user_id) . ' title="Delete"><i class="fa fa-trash"></i></a>';
             // }
 
             $tempRow['id'] = $row->id;
@@ -233,6 +241,7 @@ class EmployeeController extends Controller
             $tempRow['father_name'] = $row->father_name;
             $tempRow['mother_name'] = $row->mother_name;
             $tempRow['religion'] = $row->religion;
+            $tempRow['additional_mobile'] = $row->additional_mobile;
             $tempRow['category'] = $row->category;
             $tempRow['designation'] = $row->designation;
             $tempRow['date_of_joining'] = date($data['date_formate'], strtotime($row->date_of_joining));
@@ -240,6 +249,7 @@ class EmployeeController extends Controller
             $tempRow['pancard'] = $row->pancard;
             $tempRow['bank_name'] = $row->bank_name;
             $tempRow['bank_acc_no'] = $row->bank_acc_no;
+            $tempRow['qualification'] = $row->qualification;
             $tempRow['ifsc_code'] = $row->ifsc_code;
             $tempRow['is_front_office'] = $row->is_front_office;
             $tempRow['is_front_office_text'] = $row->is_front_office ? 'Yes' : 'No';
@@ -283,6 +293,8 @@ class EmployeeController extends Controller
             'employee_code' => 'required',
             'image' => 'mimes:jpeg,png,jpg|image|max:2048',
             'name' => 'required',
+            'email' => 'required',
+            'mobile' => 'required',
             'father_name' => 'required',
             'mother_name' => 'required',
             'religion' => 'required',
@@ -292,16 +304,15 @@ class EmployeeController extends Controller
             'designation' => 'required',
             'date_of_joining' => 'required',
             'address' => 'required',
+            'qualification' => 'required',
         ]);
 
         try {
             $full_name = explode(" ", $request->name);
-            if(count($full_name) > 1) {
+            if (count($full_name) > 1) {
                 $lastname = array_pop($full_name);
                 $firstname = implode(" ", $full_name);
-            }
-            else
-            {
+            } else {
                 $firstname = $request->name;
                 $lastname = " ";
             }
@@ -310,7 +321,7 @@ class EmployeeController extends Controller
             $user = User::find($request->edit_id);
             $user->first_name = $firstname;
             $user->last_name = $lastname;
-            $user->email = $request->email ?? $request->email;
+            $user->email = $request->email ?? $request->employee_code . rand(10000, 99999) . '@gmail.com';
             $user->mobile = $request->mobile ?? $request->mobile;
 
             $user->dob = date('Y-m-d', strtotime($request->dob));
@@ -332,34 +343,32 @@ class EmployeeController extends Controller
             $employee->father_name = $request->father_name;
             $employee->mother_name = $request->mother_name;
             $employee->religion = $request->religion;
+            $employee->additional_mobile = $request->additional_mobile;
             $employee->category = $request->category;
             $employee->designation = $request->designation;
-            $employee->date_of_joining =  date('Y-m-d', strtotime($request->date_of_joining));
+            $employee->date_of_joining = date('Y-m-d', strtotime($request->date_of_joining));
             $employee->address = $request->address;
             $employee->aadhar_card = $request->aadhar_card;
             $employee->pancard = $request->pancard;
             $employee->bank_name = $request->bank_name;
             $employee->bank_acc_no = $request->bank_acc_no;
+            $employee->qualification = $request->qualification;
             $employee->ifsc_code = $request->ifsc_code;
             $employee->save();
 
             $frontOfficeRole = Role::where('name', 'Front Office')->first();
 
             //detaching role
-            if($user->hasRole('Front Office')){
+            if ($user->hasRole('Front Office')) {
                 $user->removeRole('Front Office');
                 $employee->is_front_office = false;
-                $user->email = $request->employee_code.rand(10000,99999).'@gmail.com';
             }
 
             //for front office
-            if($request->is_front_office == 1 || $request->is_front_office == '1'){
-                //update email
-                if(isset($request->email))
-                    $user->email = $request->email;
+            if ($request->is_front_office == 1 || $request->is_front_office == '1') {
                 //update password
-                if(isset($request->password)){
-                    $employee_plaintext_password = $request->password ?? rand(10000,99999);
+                if (isset($request->password)) {
+                    $employee_plaintext_password = $request->password ?? rand(10000, 99999);
                     $user->password = Hash::make($employee_plaintext_password);
                 }
                 //assigning role

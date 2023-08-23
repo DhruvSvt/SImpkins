@@ -31,6 +31,18 @@
                                     {!! Form::text('name', null, ['placeholder' => __('name'), 'class' => 'form-control']) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
+                                    <label>{{ __('email') }} <span class="text-danger">*</span></label>
+                                    {!! Form::text('email', null, ['placeholder' => __('email'), 'class' => 'form-control']) !!}
+                                </div>
+                                <div class="form-group col-sm-12 col-md-4">
+                                    <label>{{ __('mobile') }} <span class="text-danger">*</span></label>
+                                    {!! Form::text('mobile', null, ['placeholder' => __('mobile'), 'class' => 'form-control']) !!}
+                                </div>
+                                <div class="form-group col-sm-12 col-md-4">
+                                    <label>{{ __('additional_mobile') }}</label>
+                                    {!! Form::text('additional_mobile', null, ['placeholder' => __('additional_mobile'), 'class' => 'form-control']) !!}
+                                </div>
+                                <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('father_name') }} <span class="text-danger">*</span></label>
                                     {!! Form::text('father_name', null, ['placeholder' => __('father_name'), 'class' => 'form-control']) !!}
                                 </div>
@@ -87,11 +99,14 @@
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('date_of_joining') }} <span class="text-danger">*</span></label>
-                                    {!! Form::text('date_of_joining', null, ['placeholder' => __('date_of_joining'), 'class' => 'datepicker-popup form-control']) !!}
+                                    {!! Form::text('date_of_joining', null, [
+                                        'placeholder' => __('date_of_joining'),
+                                        'class' => 'datepicker-popup form-control',
+                                    ]) !!}
                                 </div>
                                 <div class="form-group col-12">
                                     <label>{{ __('address') }} <span class="text-danger">*</span></label>
-                                    {!! Form::textarea('address', null, ['placeholder' => __('address'), 'class' => 'form-control', 'rows' => 2,]) !!}
+                                    {!! Form::textarea('address', null, ['placeholder' => __('address'), 'class' => 'form-control', 'rows' => 2]) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('aadhar_card') }}</label>
@@ -110,6 +125,10 @@
                                     {!! Form::text('bank_acc_no', null, ['placeholder' => __('bank_acc_no'), 'class' => 'form-control']) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
+                                    <label>{{ __('qualification') }} <span class="text-danger">*</span></label>
+                                    {!! Form::text('qualification', null, ['placeholder' => __('qualification'), 'class' => 'form-control']) !!}
+                                </div>
+                                <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('ifsc_code') }}</label>
                                     {!! Form::text('ifsc_code', null, ['placeholder' => __('ifsc_code'), 'class' => 'form-control']) !!}
                                 </div>
@@ -117,16 +136,16 @@
                             </div>
                             <div class="form-group col-sm-12 col-md-4">
                                 <label>{{ __('front_office') }}</label>
-                                {{ Form::checkbox('front_office', '1', false, ['id' => 'front_office','placeholder' => __('front_office')]) }}
+                                {{ Form::checkbox('front_office', '1', false, ['id' => 'front_office', 'placeholder' => __('front_office')]) }}
                             </div>
                             <div class="row" id="front_office_container" style="display: none">
                                 <div class="form-group col-sm-12 col-md-6">
-                                    <label>{{ __('email') }} <span class="text-danger">*</span></label>
-                                    {!! Form::email('email', null, ['placeholder' => __('email'), 'class' => 'form-control']) !!}
-                                </div>
-                                <div class="form-group col-sm-12 col-md-6">
                                     <label>{{ __('password') }} <span class="text-danger">*</span></label>
-                                    {!! Form::password('password', null, ['placeholder' => __('password'), 'class' => 'form-control', 'autocomplete' => 'off']) !!}
+                                    {!! Form::password('password', null, [
+                                        'placeholder' => __('password'),
+                                        'class' => 'form-control',
+                                        'autocomplete' => 'off',
+                                    ]) !!}
                                 </div>
                             </div>
                             <input class="btn btn-theme" type="submit" value={{ __('submit') }}>
@@ -142,8 +161,7 @@
         $('#front_office').change(function() {
             if ($(this).is(':checked')) {
                 $('#front_office_container').show();
-            }
-            else {
+            } else {
                 $('#front_office_container').hide();
             }
         });

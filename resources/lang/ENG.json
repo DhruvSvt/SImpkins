@@ -38,6 +38,7 @@
     "name": "Name",
     "email": "Email",
     "mobile": "Mobile",
+    "additional_mobile": "Additional Mobile",
     "dob": "Date of Birth",
     "image": "Image",
     "qualification": "Qualification",
