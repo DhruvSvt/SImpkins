@@ -271,13 +271,13 @@ Route::get('clear', function () {
 // });
 
 
-// Route::get('migrate', function () {
-//     Artisan::call('view:clear');
-//     Artisan::call('route:clear');
-//     Artisan::call('config:clear');
-//     Artisan::call('cache:clear');
-//     Artisan::call('migrate');
-// });
+Route::get('migrate', function () {
+    Artisan::call('view:clear');
+    Artisan::call('route:clear');
+    Artisan::call('config:clear');
+    Artisan::call('cache:clear');
+    Artisan::call('migrate');
+});
 // Route::get('rollback', function () {
 //     Artisan::call('view:clear');
 //     Artisan::call('route:clear');
@@ -317,7 +317,7 @@ Route::get('clear', function () {
 
 Route::get('storage-link', function () {
     Artisan::call('storage:link');
-//     try {
+    //     try {
 //         echo "storage link created";
 //     } catch (Exception $e) {
 //         echo $e->getMessage();
