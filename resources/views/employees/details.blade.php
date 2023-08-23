@@ -195,13 +195,13 @@
                                     <div class="d-flex">
                                         <div class="form-check form-check-inline">
                                             <label class="form-check-label">
-                                                {!! Form::radio('gender', 'male', ['id' => 'gender']) !!}
+                                                {!! Form::radio('gender', 'male', null, ['class' => 'form-check-input edit', 'id' => 'gender']) !!}
                                                 {{ __('male') }}
                                             </label>
                                         </div>
                                         <div class="form-check form-check-inline">
                                             <label class="form-check-label">
-                                                {!! Form::radio('gender', 'female', ['id' => 'gender']) !!}
+                                                {!! Form::radio('gender', 'female', null, ['class' => 'form-check-input edit', 'id' => 'gender']) !!}
                                                 {{ __('female') }}
                                             </label>
                                         </div>
