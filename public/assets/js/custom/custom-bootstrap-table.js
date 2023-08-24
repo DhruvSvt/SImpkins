@@ -514,7 +514,9 @@ window.pageEvents = {
         $('#edit_id').val(row.id);
         $('#edit_page_name').val(row.page_name);
         $('#edit_menu_id').val(row.menu_id);
-        $('#edit_content').val(row.content);
+        // $('#usingckeditor').val(row.content);
+        CKEDITOR.instances.usingckeditor.setData(row.content);
+
         $('#edit-banner-image-tag').attr('src', row.banner_image);
         $('#edit-content-image-tag').attr('src', row.content_image);
     }

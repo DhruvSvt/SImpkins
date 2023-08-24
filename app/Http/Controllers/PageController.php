@@ -41,6 +41,7 @@ class PageController extends Controller
      */
     public function store(Request $request)
     {
+        // dd(request()->all());
         // if (!Auth::user()->can('employee-create') || !Auth::user()->can('employee-edit')) {
         //     $response = array(
         //         'message' => trans('no_permission_message')
@@ -51,16 +52,16 @@ class PageController extends Controller
             'menu_id' => 'required',
             'page_name' => 'required',
             'banner_image' => 'required|mimes:jpeg,png,jpg|image|max:2048',
-            'content_image' => 'required|mimes:jpeg,png,jpg|image|max:2048',
+            'content_image' => 'mimes:jpeg,png,jpg|image|max:2048',
         ]);
 
         try {
             $menu = Menu::findOrFail($request->menu_id);
 
             $page = new Page();
-            $page->menu_id = $request->menu_id;
+            $page->menu_id = $menu->id;
             $page->page_name = $request->page_name;
-            $page->content = $request->content;
+            $page->content = $request->input('content');
             $page->banner_image = $request->file('banner_image')->store('menu_banners', 'public');
             $page->content_image = $request->file('content_image')->store('page_content', 'public');
             $page->save();
@@ -177,8 +178,8 @@ class PageController extends Controller
         $request->validate([
             'menu_id' => 'required',
             'page_name' => 'required',
-            'banner_image' => 'required|mimes:jpeg,png,jpg|image|max:2048',
-            'content_image' => 'required|mimes:jpeg,png,jpg|image|max:2048',
+            'banner_image' => 'mimes:jpeg,png,jpg|image|max:2048',
+            'content_image' => 'mimes:jpeg,png,jpg|image|max:2048',
         ]);
 
         try {

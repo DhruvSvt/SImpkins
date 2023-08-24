@@ -48,12 +48,12 @@
                                         </span>
                                     </div>
                                 </div>
-                                <div class="form-group col-sm-12 col-md-4">
+                                <div class="form-group col-sm-12">
                                     <label>{{ __('content') }}</label>
-                                    {!! Form::text('content', null, ['placeholder' => __('content'), 'class' => 'form-control']) !!}
+                                    <textarea class="ckeditor form-control" id="usingckeditor" name="content" placeholder="Content"></textarea>
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('content_image') }} <span class="text-danger">*</span></label>
+                                    <label>{{ __('content_image') }}</label>
                                     <input type="file" name="content_image" class="file-upload-default" />
                                     <div class="input-group col-xs-12">
                                         <input type="text" class="form-control file-upload-info" disabled=""
@@ -72,4 +72,12 @@
             </div>
         </div>
     </div>
+@endsection
+@section('script')
+<script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.ckeditor').ckeditor();
+    });
+</script>
 @endsection

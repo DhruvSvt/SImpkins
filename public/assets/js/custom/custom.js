@@ -172,6 +172,12 @@ $('#edit-form,.editform').on('submit', function (e) {
     data.append("_method", "PUT");
     let url = $(this).attr('action') + "/" + data.get('edit_id');
 
+    //ck-editor
+    let ck_field = document.getElementById('usingckeditor');
+    if (ck_field !== null) {
+        data.append('content', CKEDITOR.instances['usingckeditor'].getData());
+    }
+
     function successCallback(response) {
         $('#table_list').bootstrapTable('refresh');
         setTimeout(function () {
@@ -1305,6 +1311,10 @@ $('.student-registration-form').on('submit', function (e) {
     let url = $(this).attr('action');
     let data = new FormData(this);
 
+    let ck_field = document.getElementById('usingckeditor');
+    if (ck_field !== null) {
+        data.append('content', CKEDITOR.instances['usingckeditor'].getData());
+    }
     function successCallback() {
         window.location.reload();
     }
