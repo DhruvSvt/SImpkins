@@ -6,7 +6,7 @@
 
             <div class="slider-active" style="background: #141b22;">
                 <div class="single-slider slider-bg"
-                    style="background-image:linear-gradient(rgba(2,2,2,0) 38%,#000 100%,rgba(1,1,1,.66)),url(assets/img/slider/AF1QipOkSeNIjWdozkFduU4ifj4XOZ8ptLcI2UoHiCTX=s1536.jpeg); background-size: cover;">
+                    style="background-image:linear-gradient(rgba(2,2,2,0) 38%,#000 100%,rgba(1,1,1,.66)),url({{ config('app.url') }}assets/img/slider/AF1QipOkSeNIjWdozkFduU4ifj4XOZ8ptLcI2UoHiCTX=s1536.jpeg); background-size: cover;">
                     <div class="container">
                         <div class="row justify-content-md-center">
 
@@ -26,7 +26,7 @@
                     </div>
                 </div>
                 <div class="single-slider slider-bg"
-                    style="background-image:linear-gradient(rgba(2,2,2,0) 38%,#000 100%,rgba(1,1,1,.66)),url(assets/img/slider/photo.jpeg); background-size: cover;">
+                    style="background-image:linear-gradient(rgba(2,2,2,0) 38%,#000 100%,rgba(1,1,1,.66)),url({{ config('app.url') }}assets/img/slider/photo.jpeg); background-size: cover;">
                     <div class="container">
                         <div class="row justify-content-md-center">
 
@@ -54,7 +54,7 @@
 
         <!-- about-area -->
         <section class="about-area about-p pt-60 pb-60 p-relative fix" style="background: #fff;">
-            <div class="animations-02"><img src="assets/img/bg/an-img-02.png" alt="contact-bg-an-01"></div>
+            <div class="animations-02"><img src="{{ config('app.url') }}visitors/assets/img/bg/an-img-02.png" alt="contact-bg-an-01"></div>
             <div class="container">
                 <div class="row justify-content-center align-items-center">
                     <div class="col-lg-6 col-md-12 col-sm-12">
@@ -78,7 +78,7 @@
 
                             <a href="#" class="button-inner ">
                                 <p class="button_text">Read more</p><img
-                                    src="assets/img/features/5f3ed15cfcf155b03d5adbe9_blue-arrow-03.svg" alt="Arrow"
+                                    src="{{ config('app.url') }}visitors/assets/img/features/5f3ed15cfcf155b03d5adbe9_blue-arrow-03.svg" alt="Arrow"
                                     class="arrow_img">
                                 <div class="button_background" style="width: 40px; height: 40px;"></div>
                             </a>
@@ -93,7 +93,7 @@
                                     <div>
                                         <div class="link-card-circle dark-blue"
                                             style="background-color: rgba(0, 90, 169, 0.1);"><img
-                                                src="assets/img/features/5f3ed15cfcf15581365adbea_uni placements-icon-04.svg"
+                                                src="{{ config('app.url') }}visitors/assets/img/features/5f3ed15cfcf15581365adbea_uni placements-icon-04.svg"
                                                 loading="lazy" alt="Placements"></div>
                                     </div>
                                     <div class="_10px-padding"></div>
@@ -109,7 +109,7 @@
                                     <div>
                                         <div class="link-card-circle dark-blue"
                                             style="background-color: rgba(0, 90, 169, 0.1);"><img
-                                                src="assets/img/features/64119eac1e4464f50bbb8597_scholarship-icon.png"
+                                                src="{{ config('app.url') }}visitors/assets/img/features/64119eac1e4464f50bbb8597_scholarship-icon.png"
                                                 loading="lazy" alt="Placements"></div>
                                     </div>
                                     <div class="_10px-padding"></div>
@@ -126,7 +126,7 @@
                                     <div>
                                         <div class="link-card-circle dark-blue"
                                             style="background-color: rgba(0, 90, 169, 0.1);"><img
-                                                src="assets/img/features/5f3ed15cfcf155745e5adbeb_results-icon-04.svg"
+                                                src="{{ config('app.url') }}visitors/assets/img/features/5f3ed15cfcf155745e5adbeb_results-icon-04.svg"
                                                 loading="lazy" alt="Placements"></div>
                                     </div>
                                     <div class="_10px-padding"></div>
@@ -142,7 +142,7 @@
                                     <div>
                                         <div class="link-card-circle dark-blue"
                                             style="background-color: rgba(0, 90, 169, 0.1);"><img
-                                                src="assets/img/features/5f3ed15cfcf15546cf5adbed_awards-icon-04.svg"
+                                                src="{{ config('app.url') }}visitors/assets/img/features/5f3ed15cfcf15546cf5adbed_awards-icon-04.svg"
                                                 loading="lazy" alt="Placements"></div>
                                     </div>
                                     <div class="_10px-padding"></div>
@@ -163,7 +163,7 @@
         </section>
         <!-- about-area-end -->
         <section class="steps-area p-relative" style="background-color: #40B9EB;">
-            <div class="animations-10"><img src="assets/img/bg/an-img-10.png" alt="an-img-01"></div>
+            <div class="animations-10"><img src="{{ config('app.url') }}visitors/assets/img/bg/an-img-10.png" alt="an-img-01"></div>
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-md-12">
@@ -177,7 +177,7 @@
                                 <div class="step-box wow fadeInUp animated" data-animation="fadeInUp" data-delay=".4s">
                                     <div class="dnumber">
                                         <div class="date-box"><img
-                                                src="assets/img/features/6094dedbd09b7e7e99655d08_pointer-icon.png"
+                                                src="{{ config('app.url') }}visitors/assets/img/features/6094dedbd09b7e7e99655d08_pointer-icon.png"
                                                 alt="icon"></div>
                                     </div>
                                     <div class="text">
@@ -191,7 +191,7 @@
                                 <div class="step-box wow fadeInUp animated" data-animation="fadeInUp" data-delay=".4s">
                                     <div class="dnumber">
                                         <div class="date-box"><img
-                                                src="assets/img/features/6094dedbd09b7e7e99655d08_pointer-icon.png"
+                                                src="{{ config('app.url') }}visitors/assets/img/features/6094dedbd09b7e7e99655d08_pointer-icon.png"
                                                 alt="icon"></div>
                                     </div>
                                     <div class="text">
@@ -205,7 +205,7 @@
                                 <div class="step-box wow fadeInUp animated" data-animation="fadeInUp" data-delay=".4s">
                                     <div class="dnumber">
                                         <div class="date-box"><img
-                                                src="assets/img/features/6094dedbd09b7e7e99655d08_pointer-icon.png"
+                                                src="{{ config('app.url') }}visitors/assets/img/features/6094dedbd09b7e7e99655d08_pointer-icon.png"
                                                 alt="icon"></div>
                                     </div>
                                     <div class="text">
@@ -220,7 +220,7 @@
                     </div>
                     <div class="col-lg-6 col-md-12">
                         <div class="step-img wow fadeInLeft animated" data-animation="fadeInLeft" data-delay=".4s">
-                            <img src="assets/img/slider/photo1).jpeg" alt="class image">
+                            <img src="{{ config('app.url') }}visitors/assets/img/slider/photo1).jpeg" alt="class image">
                         </div>
                     </div>
                 </div>
@@ -229,13 +229,13 @@
         <!-- courses-area -->
 
         <section class="about-area about-p pt-90 pb-90 p-relative fix"
-            style="background-image: url(assets/img/features/6094de56e25239dee2b95d18_stars.png),none,none; background-position: 96% 262px,8px 250px,10px 40px;background-repeat: no-repeat;">
+            style="background-image: url({{ config('app.url') }}assets/img/features/6094de56e25239dee2b95d18_stars.png),none,none; background-position: 96% 262px,8px 250px,10px 40px;background-repeat: no-repeat;">
             <div class="container">
                 <div class="row justify-content-center align-items-center">
                     <div class="col-lg-6 col-md-12 col-sm-12">
                         <div class="s-about-img p-relative  wow fadeInLeft animated" data-animation="fadeInLeft"
                             data-delay=".4s">
-                            <img src="assets/img/features/GALL-51.jpg" alt="img">
+                            <img src="{{ config('app.url') }}visitors/assets/img/features/GALL-51.jpg" alt="img">
 
                         </div>
                     </div>
@@ -277,10 +277,10 @@
                     <div class="offset-lg-1 col-lg-6 col-md-12 col-sm-12">
                         <div class="s-about-img p-relative  wow fadeInLeft animated" data-animation="fadeInLeft"
                             data-delay=".4s">
-                            <img src="assets/img/features/GALL-52.jpg" alt="img">
+                            <img src="{{ config('app.url') }}visitors/assets/img/features/GALL-52.jpg" alt="img">
 
                         </div>
-                        <img src="assets/img/features/609507dc6ac5fd7a99c02759_spiral-bulb-png.png" loading="lazy"
+                        <img src="{{ config('app.url') }}visitors/assets/img/features/609507dc6ac5fd7a99c02759_spiral-bulb-png.png" loading="lazy"
                             alt="" class="choose-cbse" style="position: absolute;right: 74px;">
                     </div>
                 </div>
@@ -316,8 +316,8 @@
         <div class="white-curve-main"></div>
         <!-- frequently-area -->
         <section class="faq-area pt-90 pb-90 p-relative fix">
-            <div class="animations-10"><img src="assets/img/bg/an-img-04.png" alt="an-img-01"></div>
-            <div class="animations-08"><img src="assets/img/bg/an-img-05.png" alt="contact-bg-an-01"></div>
+            <div class="animations-10"><img src="{{ config('app.url') }}visitors/assets/img/bg/an-img-04.png" alt="an-img-01"></div>
+            <div class="animations-08"><img src="{{ config('app.url') }}visitors/assets/img/bg/an-img-05.png" alt="contact-bg-an-01"></div>
             <div class="container">
                 <div class="row justify-content-center  align-items-center">
                     <div class="col-lg-7">
@@ -472,13 +472,13 @@
                         <div class="testimonial-active wow fadeInUp animated" data-animation="fadeInUp" data-delay=".4s">
                             <div class="single-testimonial text-center">
                                 <div class="qt-img">
-                                    <img src="assets/img/testimonial/qt-icon.png" alt="img">
+                                    <img src="{{ config('app.url') }}visitors/assets/img/testimonial/qt-icon.png" alt="img">
                                 </div>
                                 <p>the opportunity to explore their own learning at their own pace. It has given my
                                     child a nurturing environment as well as polish her natural skills. I am happy that
                                     she has developed a sense of ownership and better self-confidence through ECAs.</p>
                                 <div class="testi-author">
-                                    <img src="assets/img/features/6214941bece17314c7c37488_Sweta Kesarwani.png"
+                                    <img src="{{ config('app.url') }}visitors/assets/img/features/6214941bece17314c7c37488_Sweta Kesarwani.png"
                                         alt="img">
                                 </div>
                                 <div class="ta-info">
@@ -488,13 +488,13 @@
                             </div>
                             <div class="single-testimonial text-center">
                                 <div class="qt-img">
-                                    <img src="assets/img/testimonial/qt-icon.png" alt="img">
+                                    <img src="{{ config('app.url') }}visitors/assets/img/testimonial/qt-icon.png" alt="img">
                                 </div>
                                 <p>the opportunity to explore their own learning at their own pace. It has given my
                                     child a nurturing environment as well as polish her natural skills. I am happy that
                                     she has developed a sense of ownership and better self-confidence through ECAs.</p>
                                 <div class="testi-author">
-                                    <img src="assets/img/features/6214941bece17314c7c37488_Sweta Kesarwani.png"
+                                    <img src="{{ config('app.url') }}visitors/assets/img/features/6214941bece17314c7c37488_Sweta Kesarwani.png"
                                         alt="img">
                                 </div>
                                 <div class="ta-info">
@@ -504,13 +504,13 @@
                             </div>
                             <div class="single-testimonial text-center">
                                 <div class="qt-img">
-                                    <img src="assets/img/testimonial/qt-icon.png" alt="img">
+                                    <img src="{{ config('app.url') }}visitors/assets/img/testimonial/qt-icon.png" alt="img">
                                 </div>
                                 <p>the opportunity to explore their own learning at their own pace. It has given my
                                     child a nurturing environment as well as polish her natural skills. I am happy that
                                     she has developed a sense of ownership and better self-confidence through ECAs.</p>
                                 <div class="testi-author">
-                                    <img src="assets/img/features/6214941bece17314c7c37488_Sweta Kesarwani.png"
+                                    <img src="{{ config('app.url') }}visitors/assets/img/features/6214941bece17314c7c37488_Sweta Kesarwani.png"
                                         alt="img">
                                 </div>
                                 <div class="ta-info">
@@ -520,13 +520,13 @@
                             </div>
                             <div class="single-testimonial text-center">
                                 <div class="qt-img">
-                                    <img src="assets/img/testimonial/qt-icon.png" alt="img">
+                                    <img src="{{ config('app.url') }}visitors/assets/img/testimonial/qt-icon.png" alt="img">
                                 </div>
                                 <p>the opportunity to explore their own learning at their own pace. It has given my
                                     child a nurturing environment as well as polish her natural skills. I am happy that
                                     she has developed a sense of ownership and better self-confidence through ECAs.</p>
                                 <div class="testi-author">
-                                    <img src="assets/img/features/6214941bece17314c7c37488_Sweta Kesarwani.png"
+                                    <img src="{{ config('app.url') }}visitors/assets/img/features/6214941bece17314c7c37488_Sweta Kesarwani.png"
                                         alt="img">
                                 </div>
                                 <div class="ta-info">
@@ -536,13 +536,13 @@
                             </div>
                             <div class="single-testimonial text-center">
                                 <div class="qt-img">
-                                    <img src="assets/img/testimonial/qt-icon.png" alt="img">
+                                    <img src="{{ config('app.url') }}visitors/assets/img/testimonial/qt-icon.png" alt="img">
                                 </div>
                                 <p>the opportunity to explore their own learning at their own pace. It has given my
                                     child a nurturing environment as well as polish her natural skills. I am happy that
                                     she has developed a sense of ownership and better self-confidence through ECAs.</p>
                                 <div class="testi-author">
-                                    <img src="assets/img/features/6214941bece17314c7c37488_Sweta Kesarwani.png"
+                                    <img src="{{ config('app.url') }}visitors/assets/img/features/6214941bece17314c7c37488_Sweta Kesarwani.png"
                                         alt="img">
                                 </div>
                                 <div class="ta-info">
@@ -579,7 +579,7 @@
                         <div class="single-post2 hover-zoomin mb-30 wow fadeInUp animated" data-animation="fadeInUp"
                             data-delay=".4s">
                             <div class="blog-thumb2">
-                                <a href="#"><img src="assets/img/features/GALL-65.jpg" alt="img"></a>
+                                <a href="#"><img src="{{ config('app.url') }}visitors/assets/img/features/GALL-65.jpg" alt="img"></a>
                             </div>
                         </div>
                     </div>
@@ -587,7 +587,7 @@
                         <div class="single-post2 hover-zoomin mb-30 wow fadeInUp animated" data-animation="fadeInUp"
                             data-delay=".4s">
                             <div class="blog-thumb2">
-                                <a href="#"><img src="assets/img/features/GALL-66.jpg" alt="img"></a>
+                                <a href="#"><img src="{{ config('app.url') }}visitors/assets/img/features/GALL-66.jpg" alt="img"></a>
                             </div>
                         </div>
                     </div>
@@ -595,7 +595,7 @@
                         <div class="single-post2 hover-zoomin mb-30 wow fadeInUp animated" data-animation="fadeInUp"
                             data-delay=".4s">
                             <div class="blog-thumb2">
-                                <a href="#"><img src="assets/img/features/GALL-64.jpg" alt="img"></a>
+                                <a href="#"><img src="{{ config('app.url') }}visitors/assets/img/features/GALL-64.jpg" alt="img"></a>
                             </div>
                         </div>
                     </div>
@@ -603,7 +603,7 @@
                         <div class="single-post2 hover-zoomin mb-30 wow fadeInUp animated" data-animation="fadeInUp"
                             data-delay=".4s">
                             <div class="blog-thumb2">
-                                <a href="#"><img src="assets/img/features/GALL-68.jpg" alt="img"></a>
+                                <a href="#"><img src="{{ config('app.url') }}visitors/assets/img/features/GALL-68.jpg" alt="img"></a>
                             </div>
                         </div>
                     </div>
@@ -612,7 +612,7 @@
                         <div class="single-post2 hover-zoomin mb-30 wow fadeInUp animated" data-animation="fadeInUp"
                             data-delay=".4s">
                             <div class="blog-thumb2">
-                                <a href="#"><img src="assets/img/features/GALL-56 (1).jpg" alt="img"></a>
+                                <a href="#"><img src="{{ config('app.url') }}visitors/assets/img/features/GALL-56 (1).jpg" alt="img"></a>
                             </div>
                         </div>
                     </div>
@@ -620,7 +620,7 @@
                         <div class="single-post2 hover-zoomin mb-30 wow fadeInUp animated" data-animation="fadeInUp"
                             data-delay=".4s">
                             <div class="blog-thumb2">
-                                <a href="#"><img src="assets/img/features/GALL-54.jpg" alt="img"></a>
+                                <a href="#"><img src="{{ config('app.url') }}visitors/assets/img/features/GALL-54.jpg" alt="img"></a>
                             </div>
                         </div>
                     </div>
@@ -628,7 +628,7 @@
                         <div class="single-post2 hover-zoomin mb-30 wow fadeInUp animated" data-animation="fadeInUp"
                             data-delay=".4s">
                             <div class="blog-thumb2">
-                                <a href="#"><img src="assets/img/features/GALL-62.jpg" alt="img"></a>
+                                <a href="#"><img src="{{ config('app.url') }}visitors/assets/img/features/GALL-62.jpg" alt="img"></a>
                             </div>
                         </div>
                     </div>
@@ -636,7 +636,7 @@
                         <div class="single-post2 hover-zoomin mb-30 wow fadeInUp animated" data-animation="fadeInUp"
                             data-delay=".4s">
                             <div class="blog-thumb2">
-                                <a href="#"><img src="assets/img/features/GALL-63.jpg" alt="img"></a>
+                                <a href="#"><img src="{{ config('app.url') }}visitors/assets/img/features/GALL-63.jpg" alt="img"></a>
                             </div>
                         </div>
                     </div>
