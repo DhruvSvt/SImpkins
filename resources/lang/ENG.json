@@ -325,5 +325,6 @@
     "page_details": "Page Details",
     "banner_image": "Banner Image",
     "content": "Content",
-    "content_image": "Content Image"
+    "content_image": "Content Image",
+    "slug": "Slug"
 }

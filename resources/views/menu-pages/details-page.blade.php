@@ -41,6 +41,8 @@
                                             <th scope="col" data-field="no" data-sortable="true">{{ __('no') }}</th>
                                             <th scope="col" data-field="page_name" data-sortable="false">
                                                 {{ __('page') . ' ' . _('name') }}</th>
+                                            <th scope="col" data-field="slug" data-sortable="false">
+                                                {{ __('slug') }}</th>
                                             <th scope="col" data-field="menu_name" data-sortable="false">
                                                 {{ __('menu') . ' ' . _('name') }}</th>
                                             <th scope="col" data-field="banner_image"

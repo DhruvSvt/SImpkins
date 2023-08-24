@@ -7,6 +7,7 @@ use App\Models\Page;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use Throwable;
 
 class PageController extends Controller
@@ -61,6 +62,7 @@ class PageController extends Controller
             $page = new Page();
             $page->menu_id = $menu->id;
             $page->page_name = $request->page_name;
+            $page->slug = Str::slug($request->page_name);
             $page->content = $request->input('content');
             $page->banner_image = $request->file('banner_image')->store('menu_banners', 'public');
             $page->content_image = $request->file('content_image')->store('page_content', 'public');
@@ -143,6 +145,7 @@ class PageController extends Controller
             $tempRow['menu_id'] = $row->menu_id;
             $tempRow['menu_name'] = $row->name;
             $tempRow['page_name'] = $row->page_name;
+            $tempRow['slug'] = $row->slug;
             $tempRow['banner_image'] = "storage/".$row->banner_image;
             $tempRow['content'] = $row->content;
             $tempRow['content_image'] = "storage/".$row->content_image;
@@ -186,6 +189,7 @@ class PageController extends Controller
             $page = Page::where('id', $id)->firstOrFail();
             $page->menu_id = $request->menu_id;
             $page->page_name = $request->page_name;
+            $page->slug = Str::slug($request->page_name);
             $page->content = $request->content;
 
             if ($request->hasFile('banner_image')) {
