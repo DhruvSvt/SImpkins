@@ -35,7 +35,7 @@ class HomeController extends Controller
      */
     public function login() {
         if (Auth::user()) {
-            return redirect('/');
+            return redirect('/dashboard');
         } else {
             return view('auth.login');
         }

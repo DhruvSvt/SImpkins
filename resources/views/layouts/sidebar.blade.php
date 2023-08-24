@@ -3,7 +3,7 @@
     <ul class="nav">
         {{-- dashboard --}}
         <li class="nav-item">
-            <a href="{{ url('/') }}" class="nav-link"><i class="fa fa-home menu-icon"></i> <span
+            <a href="{{ url('/dashboard') }}" class="nav-link"><i class="fa fa-home menu-icon"></i> <span
                     class="menu-title">{{ __('dashboard') }}</span></a>
         </li>
 

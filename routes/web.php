@@ -54,11 +54,12 @@ use App\Http\Controllers\PageController;
 */
 
 Auth::routes();
-Route::get('/', [HomeController::class, 'login']);
+Route::view('/','visitors.index');
+// Route::get('/login', [HomeController::class, 'login'])->name('login');
 
-Route::group(['middleware' => ['Role', 'auth']], function () {
+Route::group(['middleware' => ['Role', 'auth'],], function () {
     Route::group(['middleware' => 'language'], function () {
-        Route::get('/', [HomeController::class, 'index']);
+        Route::get('/dashboard', [HomeController::class, 'index']);
         Route::get('home', [HomeController::class, 'index'])->name('home');
         Route::get('/logout', [HomeController::class, 'logout'])->name('logout');
         Route::get('subject-by-class-section', [HomeController::class, 'getSubjectByClassSection'])->name('class-section.by.subject');
