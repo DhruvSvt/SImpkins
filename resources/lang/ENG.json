@@ -315,5 +315,15 @@
     "in_time": "In Time",
     "out_time": "Out Time",
     "purpose": "Purpose",
-    "remarks": "Remarks"
+    "remarks": "Remarks",
+    "menu": "Menu",
+    "menus": "Menus",
+    "menu_details": "Menu Details",
+    "page": "Page",
+    "pages": "Pages",
+    "page_add": "Add Page",
+    "page_details": "Page Details",
+    "banner_image": "Banner Image",
+    "content": "Content",
+    "content_image": "Content Image"
 }

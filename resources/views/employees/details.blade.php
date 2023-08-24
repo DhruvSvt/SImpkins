@@ -101,7 +101,7 @@
         </div>
     </div>
 
-    @can('student-edit')
+    @can('employee-edit')
         <div class="modal fade" id="editModal" data-backdrop="static" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">

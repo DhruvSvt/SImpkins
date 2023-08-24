@@ -164,6 +164,42 @@
             </li>
         @endcanany
 
+        {{-- menu --}}
+        {{-- @canany(['menu-list', 'menu-edit', 'menu-delete']) --}}
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#menu-menu" aria-expanded="false"
+                    aria-controls="academics-menu">
+                    <i class="fa fa-users menu-icon"></i>
+                    <span class="menu-title">{{ __('menu') }}</span>
+                </a>
+                <div class="collapse" id="menu-menu">
+                    <ul class="nav flex-column sub-menu">
+                        {{-- @can('menu-list') --}}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('menus.index') }}">
+                                    {{ __('menu_details') }}
+                                </a>
+                            </li>
+                        {{-- @endcan --}}
+                        {{-- @can('menu-list') --}}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('pages.create') }}">
+                                    {{ __('page_add') }}
+                                </a>
+                            </li>
+                        {{-- @endcan --}}
+                        {{-- @can('menu-list') --}}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('pages.index') }}">
+                                {{ __('page_details') }}
+                            </a>
+                        </li>
+                    {{-- @endcan --}}
+                    </ul>
+                </div>
+            </li>
+        {{-- @endcanany --}}
+
         {{-- Front Office --}}
         @canany(['admission-enquiry-list', 'admission-enquiry-create', 'admission-enquiry-edit',
             'admission-enquiry-delete', 'visitor-book-list', 'visitor-book-create', 'visitor-book-edit',

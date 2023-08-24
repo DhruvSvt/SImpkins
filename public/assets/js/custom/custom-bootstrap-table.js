@@ -499,6 +499,27 @@ window.visitorRoomEvents = {
     }
 };
 
+window.menuEvents = {
+    'click .editdata': function (e, value, row, index) {
+        $('#edit_id').val(row.id);
+        $('#edit_name').val(row.name);
+        $('#edit_order').val(row.order);
+
+    }
+};
+
+
+window.pageEvents = {
+    'click .editdata': function (e, value, row, index) {
+        $('#edit_id').val(row.id);
+        $('#edit_page_name').val(row.page_name);
+        $('#edit_menu_id').val(row.menu_id);
+        $('#edit_content').val(row.content);
+        $('#edit-banner-image-tag').attr('src', row.banner_image);
+        $('#edit-content-image-tag').attr('src', row.content_image);
+    }
+};
+
 window.assignmentSubmissionEvents = {
     'click .edit-data': function (e, value, row, index) {
         let file_html = "";
@@ -742,6 +763,12 @@ function fatherImageFormatter(value, row) {
 }
 function motherImageFormatter(value, row) {
     return "<a data-toggle='lightbox' href='" + row.mother_image + "'><img src='" + row.mother_image + "' class='img-fluid'  alt='image'  /></a>";
+}
+function bannerImageFormatter(value, row) {
+    return "<a data-toggle='lightbox' href='" + row.banner_image + "'><img src='" + row.banner_image + "' class='img-fluid'  alt='image'  /></a>";
+}
+function contentImageFormatter(value, row) {
+    return "<a data-toggle='lightbox' href='" + row.content_image + "'><img src='" + row.content_image + "' class='img-fluid'  alt='image'  /></a>";
 }
 
 function examTimetableFormatter(value, row) {
