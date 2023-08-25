@@ -250,18 +250,18 @@ class ParentsController extends Controller
         if ($request->type == "father") {
             $parent = Parents::where(function ($query) use ($request) {
                 $query->orWhere('email', 'like', '%' . $request->email . '%')
-                    ->orWhere('full_name', 'like', '%' . $request->email . '%')
+                    ->orWhere('full_name', 'like', '%' . $request->email . '%');
             })
                 ->where('gender', 'Male')->get();
         } elseif ($request->type == "mother") {
             $parent = Parents::where(function ($query) use ($request) {
                 $query->orWhere('email', 'like', '%' . $request->email . '%')
-                    ->orWhere('full_name', 'like', '%' . $request->email . '%')
+                    ->orWhere('full_name', 'like', '%' . $request->email . '%');
             })
                 ->where('gender', 'Female')->get();
         } else {
             $parent = Parents::where('email', 'like', '%' . $request->email . '%')
-                ->orWhere('full_name', 'like', '%' . $request->email . '%')
+                ->orWhere('full_name', 'like', '%' . $request->email . '%');
         }
 
         if (!empty($parent)) {

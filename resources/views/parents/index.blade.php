@@ -208,11 +208,6 @@
 
                             </div>
                             <div class="form-group col-sm-12 col-md-6">
-                                <label>{{ __('occupation') }}</label>
-                                {!! Form::text('occupation', null, ['required', 'placeholder' => __('occupation'), 'class' => 'form-control', 'id' => 'occupation']) !!}
-
-                            </div>
-                            <div class="form-group col-sm-12 col-md-6">
                                 <label>{{ __('annual_income') }} <span class="text-danger">*</span></label>
                                 {!! Form::text('annual_income', null, ['required', 'placeholder' => __('annual_income'), 'class' => 'form-control', 'id' => 'annual_income']) !!}
 
