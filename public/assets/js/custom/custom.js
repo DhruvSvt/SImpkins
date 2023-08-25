@@ -724,9 +724,9 @@ parentSearch($(".father-search"), baseUrl + "/parent/search", {'type': 'father'}
             email: true,
         });
 
-        $(".father_image").rules("add", {
-            required: true,
-        });
+        // $(".father_image").rules("add", {
+        //     required: true,
+        // });
         $('#father_first_name').val('').attr('readonly', false);
         $('#father_last_name').val('').attr('readonly', false);
         $('#father_mobile').val('').attr('readonly', false);

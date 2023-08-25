@@ -170,7 +170,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('image') }} <span class="text-danger">*</span></label>
+                                    <label>{{ __('image') }}</label>
                                     <input type="file" name="image" class="file-upload-default" />
                                     <div class="input-group col-xs-12">
                                         <input type="text" class="form-control file-upload-info" disabled=""
@@ -273,7 +273,7 @@
                                     </select>
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('height') }} <span class="text-danger">*</span></label>
+                                    <label>{{ __('height') }} </label>
                                     {!! Form::text('height', null, [
                                         'placeholder' => __('height'),
                                         'class' => 'form-control',
@@ -281,7 +281,7 @@
                                     ]) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('weight') }} <span class="text-danger">*</span></label>
+                                    <label>{{ __('weight') }} </label>
                                     {!! Form::text('weight', null, [
                                         'placeholder' => __('weight'),
                                         'class' => 'form-control',
@@ -341,7 +341,7 @@
                             <h4>Parent Guardian Details</h4><br>
                             <div class="row">
                                 <div class="form-group col-sm-12 col-md-12">
-                                    <label>{{ __('father_email') }} <span class="text-danger">*</span></label>
+                                    <label>{{ __('father_email') }}</label>
                                     <select class="edit-father-search w-100" id="edit_father_email"
                                         name="father_email"></select>
                                 </div>
@@ -367,7 +367,7 @@
                                     ]) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('father') . ' ' . __('mobile') }} <span class="text-danger">*</span></label>
+                                    <label>{{ __('father') . ' ' . __('mobile') }}</label>
                                     {!! Form::text('father_mobile', null, [
                                         'placeholder' => __('father') . ' ' . __('mobile'),
                                         'class' => 'form-control',
@@ -376,7 +376,7 @@
                                     ]) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('father') . ' ' . __('dob') }} <span class="text-danger">*</span></label>
+                                    <label>{{ __('father') . ' ' . __('dob') }}</label>
                                     {!! Form::text('father_dob', null, [
                                         'placeholder' => __('father') . ' ' . __('dob'),
                                         'class' => 'form-control datepicker-popup form-control',
@@ -405,7 +405,7 @@
                                     ]) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('father') . ' ' . __('image') }} <span class="text-danger">*</span></label>
+                                    <label>{{ __('father') . ' ' . __('image') }}</label>
                                     <input type="file" name="father_image" class="father_image file-upload-default" />
                                     <div class="input-group col-xs-12">
                                         <input type="text" class="form-control file-upload-info" disabled=""
@@ -424,7 +424,7 @@
                             <hr>
                             <div class="row">
                                 <div class="form-group col-sm-12 col-md-12">
-                                    <label>{{ __('mother_email') }} <span class="text-danger">*</span></label>
+                                    <label>{{ __('mother_email') }} </label>
                                     <select class="edit-mother-search w-100" id="edit_mother_email"
                                         name="mother_email"></select>
                                 </div>
@@ -460,7 +460,7 @@
                                     ]) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('mother') . ' ' . __('dob') }} <span class="text-danger">*</span></label>
+                                    <label>{{ __('mother') . ' ' . __('dob') }}</label>
                                     {!! Form::text('mother_dob', null, [
                                         'placeholder' => __('mother') . ' ' . __('dob'),
                                         'class' => 'form-control datepicker-popup form-control',
@@ -469,8 +469,7 @@
                                     ]) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('mother') . ' ' . __('occupation') }} <span
-                                            class="text-danger">*</span></label>
+                                    <label>{{ __('mother') . ' ' . __('occupation') }}</label>
                                     {!! Form::text('mother_occupation', null, [
                                         'placeholder' => __('mother') . ' ' . __('occupation'),
                                         'class' => 'form-control',
@@ -479,7 +478,7 @@
                                     ]) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('mother') . ' ' . __('image') }} <span class="text-danger">*</span></label>
+                                    <label>{{ __('mother') . ' ' . __('image') }} </label>
                                     <input type="file" name="mother_image" class="file-upload-default" />
                                     <div class="input-group col-xs-12">
                                         <input type="text" class="form-control file-upload-info" disabled=""
@@ -505,14 +504,13 @@
                             </div>
                             <div class="row" id="edit_guardian_div" style="display:none;">
                                 <div class="form-group col-sm-12 col-md-12">
-                                    <label>{{ __('guardian') . ' ' . __('email') }} <span class="text-danger">*</span></label>
+                                    <label>{{ __('guardian') . ' ' . __('email') }}</label>
                                     <select class="edit-guardian-search form-control" id="edit_guardian_email"
                                         name="guardian_email"></select>
                                 </div>
 
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('guardian') . ' ' . __('first_name') }} <span
-                                            class="text-danger">*</span></label>
+                                    <label>{{ __('guardian') . ' ' . __('first_name') }}</label>
                                     {!! Form::text('guardian_first_name', null, [
                                         'placeholder' => __('guardian') . ' ' . __('first_name'),
                                         'class' => 'form-control',
@@ -522,8 +520,7 @@
                                 </div>
 
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('guardian') . ' ' . __('last_name') }} <span
-                                            class="text-danger">*</span></label>
+                                    <label>{{ __('guardian') . ' ' . __('last_name') }}</label>
                                     {!! Form::text('guardian_last_name', null, [
                                         'placeholder' => __('guardian') . ' ' . __('last_name'),
                                         'class' => 'form-control',
@@ -532,8 +529,7 @@
                                     ]) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('guardian') . ' ' . __('mobile') }} <span
-                                            class="text-danger">*</span></label>
+                                    <label>{{ __('guardian') . ' ' . __('mobile') }}</label>
                                     {!! Form::text('guardian_mobile', null, [
                                         'placeholder' => __('guardian') . ' ' . __('mobile'),
                                         'class' => 'form-control',
@@ -542,7 +538,7 @@
                                     ]) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('guardian') . ' ' . __('dob') }} <span class="text-danger">*</span></label>
+                                    <label>{{ __('guardian') . ' ' . __('dob') }}</label>
                                     {!! Form::text('guardian_dob', null, [
                                         'placeholder' => __('guardian') . ' ' . __('dob'),
                                         'class' => 'form-control datepicker-popup form-control',
@@ -551,8 +547,7 @@
                                     ]) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('guardian') . ' ' . __('occupation') }} <span
-                                            class="text-danger">*</span></label>
+                                    <label>{{ __('guardian') . ' ' . __('occupation') }}</label>
                                     {!! Form::text('guardian_occupation', null, [
                                         'placeholder' => __('guardian') . ' ' . __('occupation'),
                                         'class' => 'form-control',
@@ -561,7 +556,7 @@
                                     ]) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('guardian') . ' ' . __('image') }} <span class="text-danger">*</span></label>
+                                    <label>{{ __('guardian') . ' ' . __('image') }} </label>
                                     <input type="file" name="guardian_image" class="file-upload-default" />
                                     <div class="input-group col-xs-12">
                                         <input type="text" class="form-control file-upload-info" disabled=""

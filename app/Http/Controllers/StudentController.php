@@ -134,8 +134,8 @@ class StudentController extends Controller
             //            'caste' => 'required',
             //            'religion' => 'required',
             'admission_date' => 'required',
-            'height' => 'required',
-            'weight' => 'required',
+            // 'height' => 'required',
+            // 'weight' => 'required',
             'current_address' => 'required',
             'permanent_address' => 'required',
             // 'father_email' => 'required',
@@ -174,11 +174,13 @@ class StudentController extends Controller
             //Add Father in User and Parent table data
             if (!intval($request->father_email)) {
                 $father_user = new User();
-                $father_user->image = $request->file('father_image')->store('parents', 'public');
+                if($request->hasFile('father_image')){
+                    $father_user->image = $request->file('father_image')->store('parents', 'public');
+                }
                 $father_user->password = Hash::make(str_replace('/', '', $request->father_dob));
                 $father_user->first_name = $request->father_first_name;
                 $father_user->last_name = $request->father_last_name;
-                $father_user->email = $request->father_email;
+                $father_user->email = $request->father_email ?? $father_user->first_name. time(). '@gmail.com';
                 $father_user->mobile = $request->father_mobile;
                 $father_user->dob = date('Y-m-d', strtotime($request->father_dob));
                 $father_user->gender = 'Male';
@@ -189,7 +191,7 @@ class StudentController extends Controller
                 $father_parent->first_name = $request->father_first_name;
                 $father_parent->last_name = $request->father_last_name;
                 $father_parent->image = $father_user->getRawOriginal('image');
-                $father_parent->occupation = $request->father_occupation;
+                $father_parent->occupation = $request->father_occupation ?? time().'occupation';
                 $father_parent->annual_income = $request->father_annual_income;
                 $father_parent->mobile = $request->father_mobile;
                 $father_parent->email = $request->father_email;
@@ -208,7 +210,7 @@ class StudentController extends Controller
                 $mother_user->password = Hash::make(str_replace('/', '', $request->mother_dob));
                 $mother_user->first_name = $request->mother_first_name;
                 $mother_user->last_name = $request->mother_last_name;
-                $mother_user->email = $request->mother_email;
+                $mother_user->email = $request->mother_email ?? $mother_user->first_name. time(). '@gmail.com';
                 $mother_user->mobile = $request->mother_mobile;
                 $mother_user->dob = date('Y-m-d', strtotime($request->mother_dob));
                 $mother_user->gender = 'Female';
@@ -219,7 +221,7 @@ class StudentController extends Controller
                 $mother_parent->first_name = $request->mother_first_name;
                 $mother_parent->last_name = $request->mother_last_name;
                 $mother_parent->image = $mother_user->getRawOriginal('image');
-                $mother_parent->occupation = $request->mother_occupation;
+                $mother_parent->occupation = $request->mother_occupation ?? time().'occupation';
                 $mother_parent->mobile = $request->mother_mobile;
                 $mother_parent->email = $request->mother_email;
                 $mother_parent->dob = date('Y-m-d', strtotime($request->mother_dob));
@@ -237,7 +239,7 @@ class StudentController extends Controller
                     $guardian_parent->first_name = $request->guardian_first_name;
                     $guardian_parent->last_name = $request->guardian_last_name;
                     $guardian_parent->image = $request->file('guardian_image')->store('parents', 'public');;
-                    $guardian_parent->occupation = $request->guardian_occupation;
+                    $guardian_parent->occupation = $request->guardian_occupation ?? time().'occupation';
                     $guardian_parent->mobile = $request->guardian_mobile;
                     $guardian_parent->email = $request->guardian_email;
                     $guardian_parent->dob = date('Y-m-d', strtotime($request->guardian_dob));
@@ -332,8 +334,8 @@ class StudentController extends Controller
             //            'caste' => 'required',
             //            'religion' => 'required',
             'admission_date' => 'required',
-            'height' => 'required',
-            'weight' => 'required',
+            // 'height' => 'required',
+            // 'weight' => 'required',
             'current_address' => 'required',
             'permanent_address' => 'required',
 
@@ -374,9 +376,11 @@ class StudentController extends Controller
             //Add Father in User and Parent table data
             $father_plaintext_password = str_replace('-', '', date('d-m-Y', strtotime($request->father_dob)));
             if (!intval($request->father_email)) {
-                $father_email = $request->father_email;
+                $father_email = $request->father_first_name  .time(). '@gmail.com';
                 $father_user = new User();
-                $father_user->image = $request->file('father_image')->store('parents', 'public');
+                if($request->hasFile('father_image')){
+                    $father_user->image = $request->file('father_image')->store('parents', 'public');
+                }
                 $father_user->password = Hash::make($father_plaintext_password);
                 $father_user->first_name = $request->father_first_name;
                 $father_user->last_name = $request->father_last_name;
@@ -392,7 +396,7 @@ class StudentController extends Controller
                 $father_parent->first_name = $request->father_first_name;
                 $father_parent->last_name = $request->father_last_name;
                 $father_parent->image = $father_user->getRawOriginal('image');
-                $father_parent->occupation = $request->father_occupation;
+                $father_parent->occupation = $request->father_occupation ?? time().'occupation';
                 $father_parent->annual_income = $request->father_annual_income;
                 $father_parent->mobile = $request->father_mobile;
                 $father_parent->email = $request->father_email;
@@ -411,9 +415,11 @@ class StudentController extends Controller
             //Add Mother in User and Parent table data
             $mother_plaintext_password = str_replace('-', '', date('d-m-Y', strtotime($request->mother_dob)));
             if (!intval($request->mother_email)) {
-                $mother_email = $request->mother_email;
+                $mother_email = $request->mother_first_name  .time(). '@gmail.com';
                 $mother_user = new User();
-                $mother_user->image = $request->file('mother_image')->store('parents', 'public');
+                if($request->hasFile('mother_image')){
+                    $mother_user->image = $request->file('mother_image')->store('parents', 'public');
+                }
                 $mother_user->password = Hash::make($mother_plaintext_password);
                 $mother_user->first_name = $request->mother_first_name;
                 $mother_user->last_name = $request->mother_last_name;
@@ -429,7 +435,7 @@ class StudentController extends Controller
                 $mother_parent->first_name = $request->mother_first_name;
                 $mother_parent->last_name = $request->mother_last_name;
                 $mother_parent->image = $mother_user->getRawOriginal('image');
-                $mother_parent->occupation = $request->mother_occupation;
+                $mother_parent->occupation = $request->mother_occupation ?? time().'occupation';
                 $mother_parent->mobile = $request->mother_mobile;
                 $mother_parent->email = $request->mother_email;
                 $mother_parent->dob = date('Y-m-d', strtotime($request->mother_dob));
@@ -451,8 +457,10 @@ class StudentController extends Controller
                     $guardian_parent->user_id = 0;
                     $guardian_parent->first_name = $request->guardian_first_name;
                     $guardian_parent->last_name = $request->guardian_last_name;
-                    $guardian_parent->image = $request->file('guardian_image')->store('parents', 'public');;
-                    $guardian_parent->occupation = $request->guardian_occupation;
+                    if($request->hasFile('guardian_image')){
+                        $guardian_parent->image = $request->file('guardian_image')->store('parents', 'public');
+                    }
+                    $guardian_parent->occupation = $request->guardian_occupation ?? time().'occupation';
                     $guardian_parent->mobile = $request->guardian_mobile;
                     $guardian_parent->email = $guardian_email;
                     $guardian_parent->dob = date('Y-m-d', strtotime($request->guardian_dob));
@@ -471,7 +479,9 @@ class StudentController extends Controller
 
             $user = new User();
             $child_plaintext_password = str_replace('-', '', date('d-m-Y', strtotime($request->dob)));
-            $user->image = $request->file('image')->store('students', 'public');
+            if($request->hasFile('image')){
+                $user->image = $request->file('image')->store('students', 'public');
+            }
             $user->password = Hash::make($child_plaintext_password);
             $user->first_name = $request->first_name;
             $user->last_name = $request->last_name;
@@ -480,8 +490,8 @@ class StudentController extends Controller
             $user->gender = $request->gender;
             $user->mobile = $request->mobile;
             $user->dob = date('Y-m-d', strtotime($request->dob));
-            $user->current_address = $request->current_address;
-            $user->permanent_address = $request->permanent_address;
+            $user->current_address = $request->current_address ?? '';
+            $user->permanent_address = $request->permanent_address ?? '';
             $user->save();
             $user->assignRole($studentRole);
 
@@ -521,9 +531,9 @@ class StudentController extends Controller
                 'child_password' => ' ' . $child_plaintext_password,
             ];
 
-            Mail::send('students.email', $father_data, function ($message) use ($father_data) {
-                $message->to($father_data['email'])->subject($father_data['subject']);
-            });
+            // Mail::send('students.email', $father_data, function ($message) use ($father_data) {
+            //     $message->to($father_data['email'])->subject($father_data['subject']);
+            // });
 
             $mother_data = [
                 'subject' => 'Welcome to ' . $school_name['school_name'],
@@ -536,9 +546,15 @@ class StudentController extends Controller
                 'child_password' => ' ' . $child_plaintext_password,
             ];
 
-            Mail::send('students.email', $mother_data, function ($message) use ($mother_data) {
-                $message->to($mother_data['email'])->subject($mother_data['subject']);
-            });
+            // try{
+
+            //     Mail::send('students.email', $mother_data, function ($message) use ($mother_data) {
+            //         $message->to($mother_data['email'])->subject($mother_data['subject']);
+            //     });
+            // }
+            // catch(Exception $e){
+
+            // }
             $response = [
                 'error' => false,
                 'message' => trans('data_store_successfully')
