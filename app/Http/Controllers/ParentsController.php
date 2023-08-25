@@ -44,8 +44,7 @@ class ParentsController extends Controller
     //            return response()->json($response);
     //        }
     //        $request->validate([
-    //            'first_name' => 'required',
-    //            'last_name' => 'required',
+    //            'full_name' => 'required',
     //            'gender' => 'required',
     //            'email' => 'required|unique:users,email',
     //            'mobile' => 'required',
@@ -70,8 +69,7 @@ class ParentsController extends Controller
     //                }
     //                $user->password = Hash::make('parents');
     //            }
-    //            $user->first_name = $request->first_name;
-    //            $user->last_name = $request->last_name;
+    //            $user->full_name = $request->full_name;
     //            $user->gender = $request->gender;
     //            $user->current_address = $request->current_address;
     //            $user->permanent_address = $request->permanent_address;
@@ -135,8 +133,7 @@ class ParentsController extends Controller
         if (isset($_GET['search']) && !empty($_GET['search'])) {
             $search = $_GET['search'];
             $sql->where('id', 'LIKE', "%$search%")
-                ->orwhere('first_name', 'LIKE', "%$search%")
-                ->orwhere('last_name', 'LIKE', "%$search%")
+                ->orwhere('full_name', 'LIKE', "%$search%")
                 ->orwhere('gender', 'LIKE', "%$search%")
                 ->orwhere('email', 'LIKE', "%$search%")
                 ->orwhere('mobile', 'LIKE', "%$search%")
@@ -167,8 +164,7 @@ class ParentsController extends Controller
             $tempRow['id'] = $row->id;
             $tempRow['no'] = $no++;
             $tempRow['user_id'] = $row->user_id;
-            $tempRow['first_name'] = $row->first_name;
-            $tempRow['last_name'] = $row->last_name;
+            $tempRow['full_name'] = $row->full_name;
             $tempRow['gender'] = $row->gender;
             $tempRow['email'] = $row->email;
             $tempRow['dob'] = date($data['date_formate'], strtotime($row->dob));
@@ -200,8 +196,7 @@ class ParentsController extends Controller
         }
         $request->validate([
             'edit_id' => 'required',
-            'first_name' => 'required',
-            'last_name' => 'required',
+            'full_name' => 'required',
             'gender' => 'required',
             'email' => 'unique:parents,email,' . $id,
             'mobile' => 'required',
@@ -209,8 +204,7 @@ class ParentsController extends Controller
         ]);
         try {
             $parents = Parents::findOrFail($id);
-            $parents->first_name = $request->first_name;
-            $parents->last_name = $request->last_name;
+            $parents->full_name = $request->full_name;
             $parents->gender = $request->gender;
             $parents->email = $request->email;
             $parents->mobile = $request->mobile;
@@ -227,8 +221,7 @@ class ParentsController extends Controller
             $parents->save();
             if ($parents->user) {
                 $user = $parents->user;
-                $user->first_name = $request->first_name;
-                $user->last_name = $request->last_name;
+                $user->full_name = $request->full_name;
                 $user->gender = $request->gender;
                 $user->current_address = $request->current_address;
                 $user->permanent_address = $request->permanent_address;
@@ -257,21 +250,18 @@ class ParentsController extends Controller
         if ($request->type == "father") {
             $parent = Parents::where(function ($query) use ($request) {
                 $query->orWhere('email', 'like', '%' . $request->email . '%')
-                    ->orWhere('first_name', 'like', '%' . $request->email . '%')
-                    ->orWhere('last_name', 'like', '%' . $request->email . '%');
+                    ->orWhere('full_name', 'like', '%' . $request->email . '%')
             })
                 ->where('gender', 'Male')->get();
         } elseif ($request->type == "mother") {
             $parent = Parents::where(function ($query) use ($request) {
                 $query->orWhere('email', 'like', '%' . $request->email . '%')
-                    ->orWhere('first_name', 'like', '%' . $request->email . '%')
-                    ->orWhere('last_name', 'like', '%' . $request->email . '%');
+                    ->orWhere('full_name', 'like', '%' . $request->email . '%')
             })
                 ->where('gender', 'Female')->get();
         } else {
             $parent = Parents::where('email', 'like', '%' . $request->email . '%')
-                ->orWhere('first_name', 'like', '%' . $request->email . '%')
-                ->orWhere('last_name', 'like', '%' . $request->email . '%')->get();
+                ->orWhere('full_name', 'like', '%' . $request->email . '%')
         }
 
         if (!empty($parent)) {

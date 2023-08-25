@@ -304,8 +304,7 @@ window.classSubjectEvents = {
 window.parentEvents = {
     'click .editdata': function (e, value, row, index) {
         $('#edit_id').val(row.id);
-        $('#first_name').val(row.first_name);
-        $('#last_name').val(row.last_name);
+        $('#full_name').val(row.full_name);
         $('input[name=gender][value=' + row.gender + '].edit').prop('checked', true);
         $('#email').val(row.email);
         $('#mobile').val(row.mobile);

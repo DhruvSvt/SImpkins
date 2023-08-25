@@ -23,8 +23,8 @@
                             @csrf
                             <div class="row">
                                 <div class="form-group col-sm-12 col-md-6">
-                                    <label>{{ __('first_name') }} <span class="text-danger">*</span></label>
-                                    {!! Form::text('first_name', null, ['required', 'placeholder' => __('first_name'), 'class' => 'form-control']) !!}
+                                    <label>{{ __('full_name') }} <span class="text-danger">*</span></label>
+                                    {!! Form::text('full_name', null, ['required', 'placeholder' => __('full_name'), 'class' => 'form-control']) !!}
 
                                 </div>
                                 <div class="form-group col-sm-12 col-md-6">
@@ -120,10 +120,8 @@
                                             <th scope="col" data-field="no" data-sortable="true">{{ __('no') }}</th>
                                             <th scope="col" data-field="user_id" data-sortable="false"
                                                 data-visible="false">{{ __('user_id') }}</th>
-                                            <th scope="col" data-field="first_name" data-sortable="false">
-                                                {{ __('first_name') }}</th>
-                                            <th scope="col" data-field="last_name" data-sortable="false">
-                                                {{ __('last_name') }}</th>
+                                            <th scope="col" data-field="full_name" data-sortable="false">
+                                                {{ __('full_name') }}</th>
                                             <th scope="col" data-field="gender" data-sortable="false">
                                                 {{ __('gender') }}
                                             </th>
@@ -169,13 +167,9 @@
                         <input type="hidden" name="edit_id" id="edit_id">
                         <div class="row form-group">
                             <div class="form-group col-sm-12 col-md-6">
-                                <label>{{ __('first_name') }} <span class="text-danger">*</span></label>
-                                {!! Form::text('first_name', null, ['required', 'placeholder' => __('first_name'), 'class' => 'form-control', 'id' => 'first_name']) !!}
+                                <label>{{ __('full_name') }} <span class="text-danger">*</span></label>
+                                {!! Form::text('full_name', null, ['required', 'placeholder' => __('full_name'), 'class' => 'form-control', 'id' => 'full_name']) !!}
 
-                            </div>
-                            <div class="form-group col-sm-12 col-md-6">
-                                <label>{{ __('last_name') }} <span class="text-danger">*</span></label>
-                                {!! Form::text('last_name', null, ['required', 'placeholder' => __('last_name'), 'class' => 'form-control', 'id' => 'last_name']) !!}
                             </div>
                         </div>
                         <div class="row form-group">
