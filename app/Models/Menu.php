@@ -19,4 +19,8 @@ class Menu extends Model
             $builder->orderBy('menus.order');
         });
     }
+
+    public function pages(){
+        return $this->hasMany(Page::class);
+    }
 }

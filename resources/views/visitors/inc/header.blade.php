@@ -5,7 +5,8 @@
                 <div class="row align-items-center">
                     <div class="col-xl-3 col-lg-3">
                         <div class="logo">
-                            <a href="/"><img src="{{ config('app.url') }}visitors/assets/img/logo/logo.png" alt="logo"></a>
+                            <a href="/"><img src="{{ config('app.url') }}visitors/assets/img/logo/logo.png"
+                                    alt="logo"></a>
                         </div>
                     </div>
                     <div class="col-xl-9 col-lg-9">
@@ -13,7 +14,8 @@
                             <nav class="nav-menu-top-wrapper w-nav-menu d-none d-lg-block mt-1">
                                 <ul>
 
-                                    <li><a href="{{ config('app.url') }}visitors/assets/doc/NOTI-1.pdf" target="_blank">Mandatory Public
+                                    <li><a href="{{ config('app.url') }}visitors/assets/doc/NOTI-1.pdf"
+                                            target="_blank">Mandatory Public
                                             Disclosure</a></li>
 
                                     <li><a href="#"><i class="icon fal fa-lock"></i> Login</a></li>
@@ -26,64 +28,22 @@
                             <nav id="mobile-menu">
                                 <ul>
                                     <li><a href="/">Home</a></li>
-                                    <li class="has-sub">
-                                        <a href="about.html">About Us</a>
-                                        <ul>
-                                            <li><a href="directors-message.php"> Director’s Message </a></li>
-                                            <li><a href="managers-message.php"> Manager’s Message </a></li>
-                                            <li><a href="principals-message.php"> Principal’s Message</a></li>
-                                            <li><a href="mission-vision.php"> Mission & Vision</a></li>
-                                            <li><a href="fast-facts.php"> Fast Facts </a></li>
-                                            <li><a href="achievements.php"> Achievements </a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="has-sub">
-                                        <a href="#">Facilities</a>
-                                        <ul>
-                                            <li><a href="Cafeteria.php"> Cafeteria </a></li>
-                                            <li><a href="computer-lab.php"> Computer Lab </a></li>
-                                            <li><a href="digital-classrooms.php"> Digital Classrooms </a></li>
-                                            <li><a href="infirmary.php"> Infirmary </a></li>
-                                            <li><a href="laboratories.php"> Laboratories </a></li>
-                                            <li><a href="library.php"> Library </a></li>
-                                            <li><a href="meditation-room.php"> Meditation Room </a></li>
-                                            <li><a href="security-safety.php"> Security & Safety </a></li>
-                                            <li><a href="transportation.php"> Transportation </a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="has-sub">
-                                        <a href="#">Student Life</a>
-                                        <ul>
-                                            <li><a href="admission-registration.php"> Admission Registration </a>
-                                            </li>
-                                            <li><a href="hobby-clubs.php"> Hobby Clubs </a></li>
-                                            <li><a href="house-system.php"> House System </a></li>
-                                            <li><a href="social-commitment.php"> Social Commitment </a></li>
-                                            <li><a href="students-counseling.php"> Students Counseling </a></li>
-                                            <li><a href="alumni.php"> Alumni </a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="has-sub">
-                                        <a href="qeducato/courses.html">Academics</a>
-                                        <ul>
-                                            <li><a href="affiliation.php"> Affiliation </a></li>
-                                            <li><a href="admission-rules.php"> Admission Rules </a></li>
-                                            <li><a href="curriculum.php"> Curriculum </a></li>
-                                            <li><a href="how-we-teach.php"> How We Teach </a></li>
-                                            <li><a href="enhancement-enrichment-classes.php"> Enhancement &
-                                                    Enrichment Classes </a></li>
-                                            <li><a href="experiential-learning.php"> Experiential Learning </a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="has-sub"><a href="#">Curriculam</a>
-                                        <ul>
-                                            <li><a href="#"> Fees Structure </a></li>
-                                            <li><a href="school-timing.php"> School Timings </a></li>
-                                            <li><a href="school-uniform.php"> School Uniform </a></li>
-                                            <li><a href="faq.php"> Faqs </a></li>
-                                            <li><a href="download-tc.php"> Download TC </a></li>
-                                        </ul>
-                                    </li>
+                                    @php
+                                        $menus = App\Models\Menu::get();
+                                    @endphp
+                                    @foreach ($menus as $menu)
+                                        <li class="has-sub">
+                                            <a href="about.html">{{ $menu->name }}</a>
+                                            @if (isset($menu->pages) && count($menu->pages) > 0)
+                                                <ul>
+                                                    @foreach ($menu->pages as $page)
+                                                        <li><a href="/{{ $page->slug }}"> {{ $page->page_name }} </a>
+                                                        </li>
+                                                    @endforeach
+                                                </ul>
+                                            @endif
+                                        </li>
+                                    @endforeach
                                     <li class="has-sub">
                                         <a href="qeducato/blog.html">Resources</a>
                                         <ul>

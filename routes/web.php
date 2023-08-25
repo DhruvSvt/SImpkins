@@ -39,6 +39,7 @@ use App\Http\Controllers\FrontOffice\ResumeSubmitController;
 use App\Http\Controllers\StudentSessionController;
 use App\Http\Controllers\SubjectTeacherController;
 use App\Http\Controllers\FrontOffice\VisitorBookController;
+use App\Http\Controllers\IndexController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\PageController;
 
@@ -344,3 +345,5 @@ Route::get('storage-link', function () {
 // Route::get('/', function () {
 //     return view('auth.login');
 // });
+
+Route::get('/{slug}',[IndexController::class, 'pages'])->name('pages');
