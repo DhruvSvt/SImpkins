@@ -127,17 +127,17 @@
                                             <th scope="col" data-field="gender" data-sortable="false">
                                                 {{ __('gender') }}
                                             </th>
-                                            <th scope="col" data-field="email" data-sortable="false">{{ __('email') }}
-                                            </th>
-                                            <th scope="col" data-field="dob" data-sortable="false">{{ __('dob') }}
-                                            </th>
+                                            {{-- <th scope="col" data-field="email" data-sortable="false">{{ __('email') }}
+                                            </th> --}}
+                                            {{-- <th scope="col" data-field="dob" data-sortable="false">{{ __('dob') }}
+                                            </th> --}}
                                             <th scope="col" data-field="annual_income" data-sortable="false">
                                                 {{ __('annual_income') }}
                                             </th>
-                                            <th scope="col" data-field="image" data-sortable="false"
-                                                data-formatter="imageFormatter">{{ __('image') }}</th>
-                                            <th scope="col" data-field="occupation" data-sortable="false">
-                                                {{ __('occupation') }}</th>
+                                            {{-- <th scope="col" data-field="image" data-sortable="false"
+                                                data-formatter="imageFormatter">{{ __('image') }}</th> --}}
+                                            {{-- <th scope="col" data-field="occupation" data-sortable="false">
+                                                {{ __('occupation') }}</th> --}}
                                             <th data-events="parentEvents" scope="col" data-field="operate"
                                                 data-sortable="false">{{ __('action') }}</th>
                                         </tr>
@@ -196,14 +196,14 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group col-sm-12 col-md-6">
+                            {{-- <div class="form-group col-sm-12 col-md-6">
                                 <label>{{ __('dob') }} <span class="text-danger">*</span></label>
                                 {!! Form::text('dob', null, ['required', 'readonly', 'placeholder' => __('dob'), 'class' => 'datepicker-popup form-control', 'id' => 'dob']) !!}
                                 <span class="input-group-addon input-group-append">
                                 </span>
-                            </div>
+                            </div> --}}
                             <div class="form-group col-sm-12 col-md-6">
-                                <label>{{ __('email') }} <span class="text-danger">*</span></label>
+                                <label>{{ __('email') }} </label>
                                 {!! Form::text('email', null, ['required', 'placeholder' => __('email'), 'class' => 'form-control', 'id' => 'email']) !!}
                             </div>
                         </div>
@@ -214,7 +214,7 @@
 
                             </div>
                             <div class="form-group col-sm-12 col-md-6">
-                                <label>{{ __('occupation') }} <span class="text-danger">*</span></label>
+                                <label>{{ __('occupation') }}</label>
                                 {!! Form::text('occupation', null, ['required', 'placeholder' => __('occupation'), 'class' => 'form-control', 'id' => 'occupation']) !!}
 
                             </div>

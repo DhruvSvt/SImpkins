@@ -203,9 +203,9 @@ class ParentsController extends Controller
             'first_name' => 'required',
             'last_name' => 'required',
             'gender' => 'required',
-            'email' => 'required|unique:parents,email,' . $id,
+            'email' => 'unique:parents,email,' . $id,
             'mobile' => 'required',
-            'dob' => 'required',
+            // 'dob' => 'required',
         ]);
         try {
             $parents = Parents::findOrFail($id);

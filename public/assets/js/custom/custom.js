@@ -753,9 +753,9 @@ parentSearch($(".mother-search"), baseUrl + "/parent/search", {'type': 'mother'}
         $(".mother-search").rules("add", {
             email: true,
         });
-        $(".mother_image").rules("add", {
-            required: true,
-        });
+        // $(".mother_image").rules("add", {
+        //     required: true,
+        // });
         $('#mother_first_name').val('').attr('readonly', false);
         $('#mother_last_name').val('').attr('readonly', false);
         $('#mother_mobile').val('').attr('readonly', false);
@@ -847,9 +847,9 @@ parentSearch($(".edit-mother-search"), baseUrl + "/parent/search", {'type': 'mot
         $(".edit-mother-search").rules("add", {
             email: true,
         });
-        $(".mother_image").rules("add", {
-            required: true,
-        });
+        // $(".mother_image").rules("add", {
+        //     required: true,
+        // });
         $('#edit_mother_first_name').val('').attr('readonly', false);
         $('#edit_mother_last_name').val('').attr('readonly', false);
         $('#edit_mother_mobile').val('').attr('readonly', false);
