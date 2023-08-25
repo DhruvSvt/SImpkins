@@ -129,7 +129,7 @@ class StudentController extends Controller
             'admitted_class' => 'required',
             'class_section_id' => 'required',
             'category_id' => 'required',
-            'admission_no' => 'required|unique:users,email,' . $request->edit_id,
+            'admission_no' => 'unique:users,email,' . $request->edit_id,
             'roll_number' => 'required',
             //            'caste' => 'required',
             //            'religion' => 'required',
@@ -138,34 +138,34 @@ class StudentController extends Controller
             'weight' => 'required',
             'current_address' => 'required',
             'permanent_address' => 'required',
-            'father_email' => 'required',
+            // 'father_email' => 'required',
             'father_first_name' => 'required',
             'father_mobile' => 'required',
-            'father_occupation' => 'required',
+            // 'father_occupation' => 'required',
             'mother_first_name' => 'required',
             'mother_last_name' => 'required',
             'mother_mobile' => 'required',
-            'mother_occupation' => 'required',
+            // 'mother_occupation' => 'required',
         ]);
         if (!intval($request->father_email)) {
             $request->validate([
-                'father_email' => 'required|email|unique:users,email,' . $request->father_email,
-                'father_image' => 'required|mimes:jpeg,png,jpg|image|max:2048',
+                'father_email' => 'email|unique:users,email,' . $request->father_email,
+                'father_image' => 'mimes:jpeg,png,jpg|image|max:2048',
             ]);
         }
 
         if (!intval($request->mother_email)) {
             $request->validate([
-                'mother_email' => 'required|email|unique:users,email,' . $request->mother_email . '|unique:parents,email,' . $request->mother_email,
-                'mother_image' => 'required|mimes:jpeg,png,jpg|image|max:2048',
+                'mother_email' => 'email|unique:users,email,' . $request->mother_email . '|unique:parents,email,' . $request->mother_email,
+                'mother_image' => 'mimes:jpeg,png,jpg|image|max:2048',
             ]);
         }
 
         if (isset($request->guardian_email)) {
             if (!intval($request->guardian_email)) {
                 $request->validate([
-                    'guardian_email' => 'required|email|unique:parents,email,' . $request->guardian_email,
-                    'guardian_image' => 'required|mimes:jpeg,png,jpg|image|max:2048',
+                    'guardian_email' => 'email|unique:parents,email,' . $request->guardian_email,
+                    'guardian_image' => 'mimes:jpeg,png,jpg|image|max:2048',
                 ]);
             }
         }
@@ -327,7 +327,7 @@ class StudentController extends Controller
             'admitted_class' => 'required',
             'class_section_id' => 'required',
             'category_id' => 'required',
-            'admission_no' => 'required|unique:users,email',
+            'admission_no' => 'unique:users,email',
             'roll_number' => 'required',
             //            'caste' => 'required',
             //            'religion' => 'required',
@@ -340,31 +340,31 @@ class StudentController extends Controller
             'father_first_name' => 'required',
             'father_last_name' => 'required',
             'father_mobile' => 'required',
-            'father_occupation' => 'required',
+            // 'father_occupation' => 'required',
 
             'mother_first_name' => 'required',
             'mother_last_name' => 'required',
             'mother_mobile' => 'required',
-            'mother_occupation' => 'required',
+            // 'mother_occupation' => 'required',
         ]);
         if (!intval($request->father_email)) {
             $request->validate([
-                'father_email' => 'required|email|unique:users,email|unique:parents,email',
-                'father_image' => 'required|mimes:jpeg,png,jpg|image|max:2048',
+                'father_email' => 'email|unique:users,email|unique:parents,email',
+                'father_image' => 'mimes:jpeg,png,jpg|image|max:2048',
             ]);
         }
 
         if (!intval($request->mother_email)) {
             $request->validate([
-                'mother_email' => 'required|email|unique:users,email|unique:parents,email',
-                'mother_image' => 'required|mimes:jpeg,png,jpg|image|max:2048',
+                'mother_email' => 'email|unique:users,email|unique:parents,email',
+                'mother_image' => 'mimes:jpeg,png,jpg|image|max:2048',
             ]);
         }
 
         if (isset($request->guardian_email)) {
             $request->validate([
-                'guardian_email' => 'required|email|unique:parents,email',
-                'guardian_image' => 'required|mimes:jpeg,png,jpg|image|max:2048',
+                'guardian_email' => 'email|unique:parents,email',
+                'guardian_image' => 'mimes:jpeg,png,jpg|image|max:2048',
             ]);
         }
         $response = array();
