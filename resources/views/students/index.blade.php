@@ -34,7 +34,7 @@
 
                                 </div> --}}
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('mobile') }} <span class="text-danger">*</span></label>
+                                    <label>{{ __('mobile') }}</label>
                                     {!! Form::text('mobile', null, ['placeholder' => __('mobile'), 'class' => 'form-control']) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-12">
