@@ -326,5 +326,8 @@
     "banner_image": "Banner Image",
     "content": "Content",
     "content_image": "Content Image",
-    "slug": "Slug"
+    "slug": "Slug",
+    "full_name": "Full Name",
+    "status": "Status"
+
 }

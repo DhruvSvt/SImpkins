@@ -58,13 +58,11 @@
                                                 data-visible="false">{{ __('user_id') }}</th>
                                             <th scope="col" data-field="admission_no" data-sortable="false">
                                                 {{ __('admission_no') }}</th>
-                                            <th scope="col" data-field="first_name" data-sortable="false">
-                                                {{ __('first_name') }}</th>
-                                            <th scope="col" data-field="last_name" data-sortable="false">
-                                                {{ __('last_name') }}</th>
-                                            <th scope="col" data-field="father_first_name" data-sortable="false">
+                                            <th scope="col" data-field="full_name" data-sortable="false">
+                                                {{ __('full_name') }}</th>
+                                            <th scope="col" data-field="father_full_name" data-sortable="false">
                                                 {{ __('father') . ' ' . __('name') }}</th>
-                                            <th scope="col" data-field="mother_first_name" data-sortable="false">
+                                            <th scope="col" data-field="mother_full_name" data-sortable="false">
                                                 {{ __('mother') . ' ' . __('name') }}</th>
                                             <th scope="col" data-field="religion" data-sortable="false">
                                                 {{ __('religion') }}</th>
@@ -131,20 +129,11 @@
 
                             <div class="row">
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('first_name') }} <span class="text-danger">*</span></label>
-                                    {!! Form::text('first_name', null, [
-                                        'placeholder' => __('first_name'),
+                                    <label>{{ __('full_name') }} <span class="text-danger">*</span></label>
+                                    {!! Form::text('full_name', null, [
+                                        'placeholder' => __('full_name'),
                                         'class' => 'form-control',
-                                        'id' => 'edit_first_name',
-                                    ]) !!}
-
-                                </div>
-                                <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('last_name') }} <span class="text-danger">*</span></label>
-                                    {!! Form::text('last_name', null, [
-                                        'placeholder' => __('last_name'),
-                                        'class' => 'form-control',
-                                        'id' => 'edit_last_name',
+                                        'id' => 'edit_full_name',
                                     ]) !!}
 
                                 </div>
@@ -273,20 +262,20 @@
                                     </select>
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('height') }} </label>
-                                    {!! Form::text('height', null, [
-                                        'placeholder' => __('height'),
+                                    <label>{{ __('session') }} </label>
+                                    {!! Form::text('session', null, [
+                                        'placeholder' => __('session'),
                                         'class' => 'form-control',
-                                        'id' => 'edit_height',
+                                        'id' => 'edit_session',
                                     ]) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('weight') }} </label>
-                                    {!! Form::text('weight', null, [
-                                        'placeholder' => __('weight'),
-                                        'class' => 'form-control',
-                                        'id' => 'edit_weight',
-                                    ]) !!}
+                                    <label>{{ __('status') }} </label>
+                                    <select name="status" class="form-control edit">
+                                        <option value="">{{ __('select') . ' ' . __('status') }}</option>
+                                        <option value="1" id="active_status">Active</option>
+                                        <option value="0" id="inactive_status">Inactive</option>
+                                    </select>
                                 </div>
                                 <div class="form-group col-12">
                                     <label>{{ __('address') }} <span class="text-danger">*</span></label>
@@ -299,7 +288,7 @@
                                     ]) !!}
                                 </div>
                                 <div class="form-group col-12">
-                                    <label>{{ __('permanent_address') }} <span class="text-danger">*</span></label>
+                                    <label>{{ __('permanent_address') }}</label>
                                     {!! Form::textarea('permanent_address', null, [
                                         'placeholder' => __('permanent_address'),
                                         'class' => 'form-control',
@@ -347,22 +336,12 @@
                                 </div>
 
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('father') . ' ' . __('first_name') }} <span
+                                    <label>{{ __('father') . ' ' . __('full_name') }} <span
                                             class="text-danger">*</span></label>
-                                    {!! Form::text('father_first_name', null, [
-                                        'placeholder' => __('father') . ' ' . __('first_name'),
+                                    {!! Form::text('father_full_name', null, [
+                                        'placeholder' => __('father') . ' ' . __('full_name'),
                                         'class' => 'form-control',
-                                        'id' => 'edit_father_first_name',
-                                        'readonly' => true,
-                                    ]) !!}
-                                </div>
-                                <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('father') . ' ' . __('last_name') }} <span
-                                            class="text-danger">*</span></label>
-                                    {!! Form::text('father_last_name', null, [
-                                        'placeholder' => __('father') . ' ' . __('last_name'),
-                                        'class' => 'form-control',
-                                        'id' => 'edit_father_last_name',
+                                        'id' => 'edit_father_full_name',
                                         'readonly' => true,
                                     ]) !!}
                                 </div>
@@ -430,23 +409,12 @@
                                 </div>
 
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('mother') . ' ' . __('first_name') }} <span
+                                    <label>{{ __('mother') . ' ' . __('full_name') }} <span
                                             class="text-danger">*</span></label>
-                                    {!! Form::text('mother_first_name', null, [
-                                        'placeholder' => __('mother') . ' ' . __('first_name'),
+                                    {!! Form::text('mother_full_name', null, [
+                                        'placeholder' => __('mother') . ' ' . __('full_name'),
                                         'class' => 'form-control',
-                                        'id' => 'edit_mother_first_name',
-                                        'readonly' => true,
-                                    ]) !!}
-                                </div>
-
-                                <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('mother') . ' ' . __('last_name') }} <span
-                                            class="text-danger">*</span></label>
-                                    {!! Form::text('mother_last_name', null, [
-                                        'placeholder' => __('mother') . ' ' . __('last_name'),
-                                        'class' => 'form-control',
-                                        'id' => 'edit_mother_last_name',
+                                        'id' => 'edit_mother_full_name',
                                         'readonly' => true,
                                     ]) !!}
                                 </div>
@@ -510,24 +478,15 @@
                                 </div>
 
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('guardian') . ' ' . __('first_name') }}</label>
-                                    {!! Form::text('guardian_first_name', null, [
-                                        'placeholder' => __('guardian') . ' ' . __('first_name'),
+                                    <label>{{ __('guardian') . ' ' . __('full_name') }}</label>
+                                    {!! Form::text('guardian_full_name', null, [
+                                        'placeholder' => __('guardian') . ' ' . __('full_name'),
                                         'class' => 'form-control',
-                                        'id' => 'edit_guardian_first_name',
+                                        'id' => 'edit_guardian_full_name',
                                         'readonly' => true,
                                     ]) !!}
                                 </div>
 
-                                <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('guardian') . ' ' . __('last_name') }}</label>
-                                    {!! Form::text('guardian_last_name', null, [
-                                        'placeholder' => __('guardian') . ' ' . __('last_name'),
-                                        'class' => 'form-control',
-                                        'id' => 'edit_guardian_last_name',
-                                        'readonly' => true,
-                                    ]) !!}
-                                </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('guardian') . ' ' . __('mobile') }}</label>
                                     {!! Form::text('guardian_mobile', null, [

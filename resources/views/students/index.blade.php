@@ -24,17 +24,17 @@
                             @csrf
                             <div class="row">
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('first_name') }} <span class="text-danger">*</span></label>
-                                    {!! Form::text('first_name', null, ['placeholder' => __('first_name'), 'class' => 'form-control']) !!}
+                                    <label>{{ __('full_name') }} <span class="text-danger">*</span></label>
+                                    {!! Form::text('full_name', null, ['placeholder' => __('full_name'), 'class' => 'form-control']) !!}
 
                                 </div>
-                                <div class="form-group col-sm-12 col-md-4">
+                                {{-- <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('last_name') }} <span class="text-danger">*</span></label>
                                     {!! Form::text('last_name', null, ['placeholder' => __('last_name'), 'class' => 'form-control']) !!}
 
-                                </div>
+                                </div> --}}
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('mobile') }}</label>
+                                    <label>{{ __('mobile') }} <span class="text-danger">*</span></label>
                                     {!! Form::text('mobile', null, ['placeholder' => __('mobile'), 'class' => 'form-control']) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-12">
@@ -98,14 +98,13 @@
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('admission_no') }}</label>
                                     {!! Form::text('admission_no', $admission_no, [
-                                        'readonly',
                                         'placeholder' => __('admission_no'),
                                         'class' => 'form-control',
                                     ]) !!}
 
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('roll_no') }} <span class="text-danger">*</span></label>
+                                    <label>{{ __('roll_no') }}</label>
                                     {!! Form::text('roll_number', null, ['placeholder' => __('roll_no'), 'class' => 'form-control']) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
@@ -128,7 +127,7 @@
                                     </span>
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('blood_group') }} <span class="text-danger">*</span></label>
+                                    <label>{{ __('blood_group') }}</label>
                                     <select name="blood_group" class="form-control">
                                         <option value="">{{ __('select') . ' ' . __('blood_group') }}</option>
                                         <option value="A+">A+</option>
@@ -142,12 +141,16 @@
                                     </select>
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('height') }} </label>
-                                    {!! Form::text('height', null, ['placeholder' => __('height'), 'class' => 'form-control']) !!}
+                                    <label>{{ __('session') }} </label>
+                                    {!! Form::text('session', null, ['placeholder' => __('session'), 'class' => 'form-control']) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('weight') }} </label>
-                                    {!! Form::text('weight', null, ['placeholder' => __('weight'), 'class' => 'form-control']) !!}
+                                    <label>{{ __('status') }} </label>
+                                    <select name="status" class="form-control">
+                                        <option value="">{{ __('select') . ' ' . __('status') }}</option>
+                                        <option value="1">Active</option>
+                                        <option value="0-">Inactive</option>
+                                    </select>
                                 </div>
                                 <div class="form-group col-12">
                                     <label>{{ __('current_address') }} <span class="text-danger">*</span></label>
@@ -159,7 +162,7 @@
                                     ]) !!}
                                 </div>
                                 <div class="form-group col-12">
-                                    <label>{{ __('permanent_address') }} <span class="text-danger">*</span></label>
+                                    <label>{{ __('permanent_address') }}</label>
                                     {!! Form::textarea('permanent_address', null, [
                                         'placeholder' => __('permanent_address'),
                                         'class' => 'form-control',
@@ -168,7 +171,7 @@
                                     ]) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('admitted_class') }} <span class="text-danger">*</span></label>
+                                    <label>{{ __('admitted_class') }}</label>
                                     {!! Form::text('admitted_class', null, ['placeholder' => __('admitted_class'), 'class' => 'form-control']) !!}
                                 </div>
                                 <div class="form-group col-12 d-flex">
@@ -199,21 +202,12 @@
                                 </div>
 
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('father') . ' ' . __('first_name') }} <span
+                                    <label>{{ __('father') . ' ' . __('full_name') }} <span
                                             class="text-danger">*</span></label>
-                                    {!! Form::text('father_first_name', null, [
-                                        'placeholder' => __('father') . ' ' . __('first_name'),
+                                    {!! Form::text('father_full_name', null, [
+                                        'placeholder' => __('father') . ' ' . __('full_name'),
                                         'class' => 'form-control',
-                                        'id' => 'father_first_name',
-                                    ]) !!}
-                                </div>
-                                <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('father') . ' ' . __('last_name') }} <span
-                                            class="text-danger">*</span></label>
-                                    {!! Form::text('father_last_name', null, [
-                                        'placeholder' => __('father') . ' ' . __('last_name'),
-                                        'class' => 'form-control',
-                                        'id' => 'father_last_name',
+                                        'id' => 'father_full_name',
                                     ]) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
@@ -275,22 +269,12 @@
                                 </div>
 
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('mother') . ' ' . __('first_name') }} <span
+                                    <label>{{ __('mother') . ' ' . __('full_name') }} <span
                                             class="text-danger">*</span></label>
-                                    {!! Form::text('mother_first_name', null, [
-                                        'placeholder' => __('mother') . ' ' . __('first_name'),
+                                    {!! Form::text('mother_full_name', null, [
+                                        'placeholder' => __('mother') . ' ' . __('full_name'),
                                         'class' => 'form-control',
-                                        'id' => 'mother_first_name',
-                                    ]) !!}
-                                </div>
-
-                                <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('mother') . ' ' . __('last_name') }} <span
-                                            class="text-danger">*</span></label>
-                                    {!! Form::text('mother_last_name', null, [
-                                        'placeholder' => __('mother') . ' ' . __('last_name'),
-                                        'class' => 'form-control',
-                                        'id' => 'mother_last_name',
+                                        'id' => 'mother_full_name',
                                     ]) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
@@ -345,30 +329,20 @@
                             </div>
                             <div class="row" id="guardian_div" style="display:none;">
                                 <div class="form-group col-sm-12 col-md-12">
-                                    <label>{{ __('guardian') . ' ' . __('email') }} <span
-                                            class="text-danger">*</span></label>
+                                    <label>{{ __('guardian') . ' ' . __('email') }}</label>
                                     <select class="guardian-search form-control" id="guardian_email"
                                         name="guardian_email"></select>
                                 </div>
 
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('guardian') . ' ' . __('first_name') }} <span
-                                            class="text-danger">*</span></label>
-                                    {!! Form::text('guardian_first_name', null, [
-                                        'placeholder' => __('guardian') . ' ' . __('first_name'),
+                                    <label>{{ __('guardian') . ' ' . __('full_name') }}</label>
+                                    {!! Form::text('guardian_full_name', null, [
+                                        'placeholder' => __('guardian') . ' ' . __('full_name'),
                                         'class' => 'form-control',
-                                        'id' => 'guardian_first_name',
+                                        'id' => 'guardian_full_name',
                                     ]) !!}
                                 </div>
 
-                                <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('guardian') . ' ' . __('last_name') }}</label>
-                                    {!! Form::text('guardian_last_name', null, [
-                                        'placeholder' => __('guardian') . ' ' . __('last_name'),
-                                        'class' => 'form-control',
-                                        'id' => 'guardian_last_name',
-                                    ]) !!}
-                                </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('guardian') . ' ' . __('mobile') }}</label>
                                     {!! Form::text('guardian_mobile', null, [

@@ -330,8 +330,8 @@ window.parentEvents = {
 window.studentEvents = {
     'click .editdata': function (e, value, row, index) {
         $('#edit_id').val(row.user_id);
-        $('#edit_first_name').val(row.first_name);
-        $('#edit_last_name').val(row.last_name);
+        $('#edit_full_name').val(row.full_name);
+        // $('#edit_last_name').val(row.last_name);
         $('#edit_mobile').val(row.mobile);
         $('#edit_dob').val(row.dob);
         $('#edit_class_section_id').val(row.class_section_id);
@@ -342,8 +342,14 @@ window.studentEvents = {
         $('#edit_religion').val(row.religion);
         $('#edit_admission_date').val(row.admission_date);
         $('#edit_blood_group').val(row.blood_group);
-        $('#edit_height').val(row.height);
-        $('#edit_weight').val(row.weight);
+        $('#edit_session').val(row.session);
+        if(parseInt(row.status)){
+            $('#active_status').prop('selected', true);
+        }
+        else{
+            $('#inactive_status').prop('selected', true);
+        }
+        // $('option[value=' + row.status + '].edit').prop('checked', true);
         $('#edit_current_address').val(row.current_address);
         $('#edit_permanent_address').val(row.permanent_address);
         $('#edit_admitted_class').val(row.admitted_class);
@@ -367,8 +373,7 @@ window.studentEvents = {
         });
         //Adding delay to fill data so that select2 code and this code don't conflict each other
         setTimeout(function () {
-            $('#edit_father_first_name').val(row.father_first_name).attr('readonly', true);
-            $('#edit_father_last_name').val(row.father_last_name).attr('readonly', true);
+            $('#edit_father_full_name').val(row.father_full_name).attr('readonly', true);
             $('#edit_father_mobile').val(row.father_mobile).attr('readonly', true);
             $('#edit_father_dob').val(row.father_dob).attr('readonly', true);
             $('#edit_father_occupation').val(row.father_occupation).attr('readonly', true);
@@ -388,8 +393,7 @@ window.studentEvents = {
         });
         //Adding delay to fill data so that select2 code and this code don't conflict each other
         setTimeout(function () {
-            $('#edit_mother_first_name').val(row.mother_first_name).attr('readonly', true);
-            $('#edit_mother_last_name').val(row.mother_last_name).attr('readonly', true);
+            $('#edit_mother_full_name').val(row.mother_full_name).attr('readonly', true);
             $('#edit_mother_mobile').val(row.mother_mobile).attr('readonly', true);
             $('#edit_mother_dob').val(row.mother_dob).attr('readonly', true);
             $('#edit_mother_occupation').val(row.mother_occupation).attr('readonly', true);
@@ -416,8 +420,7 @@ window.studentEvents = {
 
         //Adding delay to fill data so that select2 code and this code don't conflict each other
         setTimeout(function () {
-            $('#edit_guardian_first_name').val(row.guardian_first_name).attr('readonly', true);
-            $('#edit_guardian_last_name').val(row.guardian_last_name).attr('readonly', true);
+            $('#edit_guardian_full_name').val(row.guardian_full_name).attr('readonly', true);
             $('#edit_guardian_mobile').val(row.guardian_mobile).attr('readonly', true);
             $('#edit_guardian_dob').val(row.guardian_dob).attr('readonly', true);
             $('#edit_guardian_occupation').val(row.guardian_occupation).attr('readonly', true);
