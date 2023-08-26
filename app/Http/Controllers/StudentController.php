@@ -85,7 +85,7 @@ class StudentController extends Controller
         }
         $validator = Validator::make($request->all(), [
             'class_section_id' => 'required',
-            'file' => 'required|mimes:csv'
+            // 'file' => 'required|mimes:csv'
         ]);
         if ($validator->fails()) {
             $response = array(

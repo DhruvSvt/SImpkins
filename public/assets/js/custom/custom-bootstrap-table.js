@@ -330,6 +330,7 @@ window.studentEvents = {
     'click .editdata': function (e, value, row, index) {
         $('#edit_id').val(row.user_id);
         $('#edit_full_name').val(row.full_name);
+        $('input[name=gender][value=' + row.gender + '].edit').prop('checked', true);
         // $('#edit_last_name').val(row.last_name);
         $('#edit_mobile').val(row.mobile);
         $('#edit_dob').val(row.dob);
