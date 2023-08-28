@@ -264,7 +264,7 @@
                     <i class="fa fa-user menu-icon"></i>
                     <span class="menu-title">{{ __('teacher') }}</span>
                 </a>
-                <div class="collapse" id="menu-menu">
+                <div class="collapse" id="teacher-menu">
                     <ul class="nav flex-column sub-menu">
                         {{-- @can('teacher-list') --}}
                         <li class="nav-item">
