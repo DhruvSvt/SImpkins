@@ -75,7 +75,7 @@
                                         <option value="">{{ __('select_class_section') }}</option>
                                         @foreach ($class_section as $class)
                                         <option value={{ $class->id }}>
-                                            {{ $class->class->name . ' ' . $class->section->name . ' ' . $class->class->medium->name }}
+                                            {{ $class->class->name . ' ' . $class->section->name }}
                                         </option>
                                         @endforeach
                                     </select>
