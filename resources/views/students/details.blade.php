@@ -248,7 +248,7 @@
                                     </span>
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('blood_group') }} <span class="text-danger">*</span></label>
+                                    <label>{{ __('blood_group') }}</label>
                                     <select name="blood_group" class="form-control" id="edit_blood_group">
                                         <option value="">{{ __('select') . ' ' . __('blood_group') }}</option>
                                         <option value="A+">A+</option>
@@ -365,8 +365,7 @@
                                 </div>
 
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('father') . ' ' . __('occupation') }} <span
-                                            class="text-danger">*</span></label>
+                                    <label>{{ __('father') . ' ' . __('occupation') }}</label>
                                     {!! Form::text('father_occupation', null, [
                                         'placeholder' => __('father') . ' ' . __('occupation'),
                                         'class' => 'form-control',
