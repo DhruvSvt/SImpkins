@@ -46,7 +46,7 @@ class EmployeeController extends Controller
         }
 
         $employee_count = Employee::select('id')->latest('id')->pluck('id')->first();
-        $employee_code = 'SSE' . ($employee_count + 1);
+        $employee_code = 'SSE' . ($employee_count + 1000 + 1);
         return view('employees.index', compact('employee_code'));
     }
 

@@ -47,7 +47,7 @@ class TeacherController extends Controller
             return redirect(route('home'))->withErrors($response);
         }
         $teacher_count = Teacher::count();
-        $teacher_code = 'SST'. ($teacher_count + 1);
+        $teacher_code = 'SST'. ($teacher_count + 1000 + 1);
 
         return view('teacher.index',compact('teacher_code'));
     }
@@ -121,6 +121,8 @@ class TeacherController extends Controller
             $teacher->pincode = $request->pincode;
             $teacher->salary_mode = $request->salary_mode;
             $teacher->save();
+
+            $user->assignRole('Teacher');
 
             $response = [
                 'error' => false,
