@@ -43,7 +43,7 @@ class TeacherApiController extends Controller
     public function login(Request $request)
     {
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-            return $auth = Auth::user();
+            $auth = Auth::user();
             if ($request->fcm_id) {
                 $auth->fcm_id = $request->fcm_id;
                 $auth->save();
