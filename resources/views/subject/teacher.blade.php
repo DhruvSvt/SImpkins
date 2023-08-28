@@ -28,7 +28,7 @@
                                 <select name="class_section_id" id="class_section_id" class="class_section_id form-control" style="width:100%;" tabindex="-1" aria-hidden="true">
                                     <option value="">{{ __('select') }}</option>
                                     @foreach ($class_section as $section)
-                                    <option value="{{$section->id}}" data-class="{{ $section->class->id }}"> {{ $section->class->name . ' ' . $section->section->name . ' - ' . $section->class->medium->name }}</option>
+                                    <option value="{{$section->id}}" data-class="{{ $section->class->id }}"> {{ $section->class->name . ' ' . $section->section->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
