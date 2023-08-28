@@ -88,12 +88,12 @@ class TeacherApiController extends Controller
         try {
             $user = $request->user()->teacher;
             //Find the class in which teacher is assigns as Class Teacher
-            $class_teacher = $user->class_section->load('section');
+            $class_teacher = $user->class_section->load('class','section');
 
             //Find the Classes in which teacher is taking subjects
             $class_section_ids = $user->classes()->pluck('class_section_id');
 
-            $class_section = ClassSection::whereIN('id', $class_section_ids)->with('section');
+            $class_section = ClassSection::whereIN('id', $class_section_ids)->with('class.medium','section');
             if ($class_teacher) {
                 $class_section = $class_section->where(function ($q) use ($class_teacher) {
                     $q->where('class_id', '!=', $class_teacher->class_id)->whereOr('section_id', '!=', $class_teacher->section_id);
