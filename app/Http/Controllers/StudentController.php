@@ -285,7 +285,7 @@ class StudentController extends Controller
             $student->admission_date = date('Y-m-d', strtotime($request->admission_date));
             $student->blood_group = $request->blood_group;
             $student->session = $request->session;
-            $student->status = (int)$request->status;
+            $student->status = (int)$request->status ?? 1;
             $student->father_id = $father_parent_id;
             $student->mother_id = $mother_parent_id;
             $student->guardian_id = $guardian_parent_id;
@@ -509,7 +509,7 @@ class StudentController extends Controller
             $student->admission_date = date('Y-m-d', strtotime($request->admission_date));
             $student->blood_group = $request->blood_group;
             $student->session = $request->session;
-            $student->status = (int)$request->status;
+            $student->status = (int)$request->status ?? 1;
             $student->father_id = $father_parent_id;
             $student->mother_id = $mother_parent_id;
             $student->guardian_id = $guardian_parent_id;

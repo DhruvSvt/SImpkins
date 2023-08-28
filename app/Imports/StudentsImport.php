@@ -253,7 +253,7 @@ class StudentsImport implements ToCollection, WithHeadingRow
             $student->admission_date = date('Y-m-d', strtotime($row['admission_date']));
             $student->blood_group = $row['blood_group'];
             $student->session = $row['session'];
-            $student->status = (int)$row['status'];
+            $student->status = (int)$row['status'] ?? 1;
             $student->father_id = $father_parent_id;
             $student->mother_id = $mother_parent_id;
             $student->guardian_id = $guardian_parent_id;
