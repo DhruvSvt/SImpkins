@@ -51,6 +51,20 @@ class TeacherApiController extends Controller
 
             $token = $auth->createToken($auth->first_name ?? $auth->full_name)->plainTextToken;
             $user = $auth->load(['teacher']);
+
+            //first and last name
+            if (!isset($user->first_name) || !isset($user->last_name)) {
+                $parts = explode(" ", $user->full_name);
+                if (count($parts) > 1) {
+                    $lastname = array_pop($parts);
+                    $firstname = implode(" ", $parts);
+                } else {
+                    $firstname = $name;
+                    $lastname = " ";
+                }
+                $user->first_name = $firstname;
+                $user->last_name = $lastname;
+            }
             $response = array(
                 'error' => false,
                 'message' => 'User logged-in!',
@@ -2133,8 +2147,8 @@ class TeacherApiController extends Controller
             return response()->json($response);
         }
         try {
-        $teacher_id = Auth::user()->teacher->id;
-        $class_data = ClassSection::where('class_teacher_id', $teacher_id)->with('class.medium', 'section')->get()->first();
+            $teacher_id = Auth::user()->teacher->id;
+            $class_data = ClassSection::where('class_teacher_id', $teacher_id)->with('class.medium', 'section')->get()->first();
 
             $exam_marks_db = ExamClass::with(['exam.timetable' => function ($q) use ($request, $class_data) {
                 $q->where('class_id', $class_data->class_id)->with(['exam_marks' => function ($q) use ($request) {
@@ -2237,7 +2251,7 @@ class TeacherApiController extends Controller
                     'code' => 200,
                 );
             }
-        }catch (\Exception $e) {
+        } catch (\Exception $e) {
             $response = array(
                 'error' => true,
                 'message' => trans('error_occurred'),
