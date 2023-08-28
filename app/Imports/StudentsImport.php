@@ -65,19 +65,22 @@ class StudentsImport implements ToCollection, WithHeadingRow
         $studentRole = Role::where('name', 'Student')->first();
 
         foreach ($rows as $row) {
-            $validator = Validator::make($row->toArray(), [
-                'father_email' => 'required|email:dns',
-                'mother_email' => 'required|email:dns'
-            ]);
-            $validator->validate();
-            if ($validator->fails()) {
-                $response = array(
-                    'error' => true,
-                    'message' => $validator->errors()->first()
-                );
-                return response()->json($response);
-            }
-            $father_email_check = Parents::select('email')->where('email', $row['father_email'])->count();
+            $mother_email = $row['mother_full_name']  . time() . '@gmail.com';
+            $father_email = $row['father_full_name'] . time(). '@gmail.com';
+
+            // $validator = Validator::make($row->toArray(), [
+            //     'father_email' => 'required|email:dns',
+            //     'mother_email' => 'required|email:dns'
+            // ]);
+            // $validator->validate();
+            // if ($validator->fails()) {
+            //     $response = array(
+            //         'error' => true,
+            //         'message' => $validator->errors()->first()
+            //     );
+            //     return response()->json($response);
+            // }
+            $father_email_check = Parents::select('email')->where('email', $father_email)->count();
             $father_plaintext_password = str_replace('-', '', date('d-m-Y', strtotime($row['father_dob'])));
             if ($father_email_check == 0) {
                 $validator = Validator::make($row->toArray(), [
@@ -99,7 +102,7 @@ class StudentsImport implements ToCollection, WithHeadingRow
                 $father_user = new User();
                 $father_user->full_name = $row['father_full_name'];
                 // $father_user->last_name = $row['father_last_name'];
-                $father_user->email = $row['father_email'];
+                $father_user->email = $father_email;
                 $father_user->password = Hash::make($father_plaintext_password);
                 $father_user->mobile = $row['father_mobile'];
                 $father_user->image = 'dummy_logo.jpg';
@@ -116,19 +119,19 @@ class StudentsImport implements ToCollection, WithHeadingRow
                 $father_parent->occupation = $row['father_occupation'];
                 $father_parent->annual_income = $row['father_annual_income'];
                 $father_parent->mobile = $row['father_mobile'];
-                $father_parent->email = $row['father_email'];
+                $father_parent->email = $father_email;
                 $father_parent->dob = date('Y-m-d', strtotime($row['father_dob']));
                 $father_parent->gender = 'Male';
                 $father_parent->save();
                 $father_parent_id = $father_parent->id;
-                $father_email = $row['father_email'];
+                $father_email = $father_email;
                 $father_name = $row['father_full_name'];
             } else {
-                $father_parent_id = Parents::where('email', $row['father_email'])->pluck('id')->first();
-                $father_name = Parents::where('email', $row['father_email'])->pluck('full_name')->first();
-                $father_email = $row['father_email'];
+                $father_parent_id = Parents::where('email', $father_email)->pluck('id')->first();
+                $father_name = Parents::where('email', $father_email)->pluck('full_name')->first();
+                $father_email = $father_email;
             }
-            $mother_email_check = Parents::select('email')->where('email', $row['mother_email'])->count();
+            $mother_email_check = Parents::select('email')->where('email', $mother_email)->count();
             $mother_plaintext_password = str_replace('-', '', date('d-m-Y', strtotime($row['mother_dob'])));
             if ($mother_email_check == 0) {
                 $validator = Validator::make($row->toArray(), [
@@ -152,7 +155,7 @@ class StudentsImport implements ToCollection, WithHeadingRow
                 $mother_user->password = Hash::make($mother_plaintext_password);
                 $mother_user->full_name = $row['mother_full_name'];
                 // $mother_user->last_name = $row['mother_last_name'];
-                $mother_user->email = $row['mother_email'];
+                $mother_user->email = $mother_email;
                 $mother_user->mobile = $row['mother_mobile'];
                 $mother_user->dob = date('Y-m-d', strtotime($row['mother_dob'])) ?? '';
                 $mother_user->gender = 'Female';
@@ -166,23 +169,24 @@ class StudentsImport implements ToCollection, WithHeadingRow
                 $mother_parent->image = 'dummy_logo.jpg';
                 $mother_parent->occupation = $row['mother_occupation'];
                 $mother_parent->mobile = $row['mother_mobile'];
-                $mother_parent->email = $row['mother_email'];
+                $mother_parent->email = $mother_email;
                 $mother_parent->dob = date('Y-m-d', strtotime($row['mother_dob'])) ?? '';
                 $mother_parent->gender = 'Female';
                 $mother_parent->save();
                 $mother_parent_id = $mother_parent->id;
-                $mother_email = $row['mother_email'];
+                $mother_email = $mother_email;
                 $mother_name = $row['mother_full_name'];
             } else {
-                $mother_parent_id = Parents::where('email', $row['mother_email'])->pluck('id')->first();
-                $mother_name = Parents::where('email', $row['mother_email'])->pluck('full_name')->first();
-                $mother_email = $row['mother_email'];
+                $mother_parent_id = Parents::where('email', $mother_email)->pluck('id')->first();
+                $mother_name = Parents::where('email', $mother_email)->pluck('full_name')->first();
+                $mother_email = $mother_email;
             }
             if ($row['guardian'] == "yes") {
-                Validator::make($row->toArray(), [
-                    'guardian_email' => 'required|email:dns',
-                ])->validate();
-                $guardian_email_check = Parents::select('email')->where('email', $row['guardian_email'])->count();
+                $guardian_email = $row['guardian_email']  . time() . '@gmail.com';
+                // Validator::make($row->toArray(), [
+                //     'guardian_email' => 'required|email:dns',
+                // ])->validate();
+                $guardian_email_check = Parents::select('email')->where('email', $guardian_email)->count();
                 if ($guardian_email_check == 0) {
                     // $validator = Validator::make($row->toArray(), [
                     //     'guardian_full_name' => 'required|alpha',
@@ -207,17 +211,17 @@ class StudentsImport implements ToCollection, WithHeadingRow
                     $guardian_parent->image = 'dummy_logo.jpg';
                     $guardian_parent->occupation = $row['guardian_occupation'];
                     $guardian_parent->mobile = $row['guardian_mobile'];
-                    $guardian_parent->email = $row['guardian_email'];
+                    $guardian_parent->email = $guardian_email;
                     $guardian_parent->dob = date('Y-m-d', strtotime($row['guardian_dob']));
                     $guardian_parent->gender = $row['guardian_gender'];
                     $guardian_parent->save();
                     $guardian_parent_id = $guardian_parent->id;
-                    $guardian_email = $row['guardian_email'];
+                    $guardian_email = $guardian_email;
                     $guardian_name = $row['guardian_full_name'];
                 } else {
-                    $guardian_parent_id = Parents::where('email', $row['guardian_email'])->pluck('id')->first();
-                    $guardian_name = Parents::where('email', $row['guardian_email'])->pluck('id')->first();
-                    $guardian_email = $row['guardian_email'];
+                    $guardian_parent_id = Parents::where('email', $guardian_email)->pluck('id')->first();
+                    $guardian_name = Parents::where('email', $guardian_email)->pluck('id')->first();
+                    $guardian_email = $guardian_email;
                 }
             } else {
                 $guardian_parent_id = 0;
