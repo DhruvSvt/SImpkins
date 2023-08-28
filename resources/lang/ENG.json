@@ -331,6 +331,15 @@
     "status": "Status",
     "teacher_add": "Teacher Add",
     "teacher_details": "Teacher Details",
-    "teacher_code": "Teacher Code"
+    "teacher_code": "Teacher Code",
+    "marital_status": "Marital Status",
+    "married": "Married",
+    "unmarried": "Unmarried",
+    "not_to_be_disclosed": "Not to be disclosed",
+    "spouse": "Spouse",
+    "pincode": "Pincode",
+    "salary_mode": "Salary Mode",
+    "cash": "Cash",
+    "bank": "Bank"
 
 }

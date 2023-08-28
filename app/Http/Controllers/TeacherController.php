@@ -115,6 +115,11 @@ class TeacherController extends Controller
             $teacher->bank_acc_no = $request->bank_acc_no;
             $teacher->qualification = $request->qualification;
             $teacher->ifsc_code = $request->ifsc_code;
+
+            $teacher->spouse = $request->spouse;
+            $teacher->marital_status = $request->marital_status;
+            $teacher->pincode = $request->pincode;
+            $teacher->salary_mode = $request->salary_mode;
             $teacher->save();
 
             $response = [
@@ -236,6 +241,11 @@ class TeacherController extends Controller
             $tempRow['qualification'] = $row->qualification;
             $tempRow['ifsc_code'] = $row->ifsc_code;
 
+            $tempRow['spouse'] = $row->spouse;
+            $tempRow['marital_status'] = $row->marital_status;
+            $tempRow['pincode'] = $row->pincode;
+            $tempRow['salary_mode'] = $row->salary_mode;
+
 
             $tempRow['operate'] = $operate;
             $rows[] = $tempRow;
@@ -325,6 +335,11 @@ class TeacherController extends Controller
             $teacher->bank_acc_no = $request->bank_acc_no;
             $teacher->qualification = $request->qualification;
             $teacher->ifsc_code = $request->ifsc_code;
+
+            $teacher->spouse = $request->spouse;
+            $teacher->marital_status = $request->marital_status;
+            $teacher->pincode = $request->pincode;
+            $teacher->salary_mode = $request->salary_mode;
             $teacher->save();
 
             $response = [

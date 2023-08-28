@@ -343,10 +343,10 @@ window.studentEvents = {
         $('#edit_admission_date').val(row.admission_date);
         $('#edit_blood_group').val(row.blood_group);
         $('#edit_session').val(row.session);
-        if(parseInt(row.status)){
+        if (parseInt(row.status)) {
             $('#active_status').prop('selected', true);
         }
-        else{
+        else {
             $('#inactive_status').prop('selected', true);
         }
         // $('option[value=' + row.status + '].edit').prop('checked', true);
@@ -487,6 +487,14 @@ window.teacherEvents = {
         $('#edit_qualification').val(row.qualification);
         $('#edit_ifsc_code').val(row.ifsc_code);
         $('#edit-teacher-image-tag').attr('src', row.image_link);
+
+        $('input[name=marital_status][value=' + row.marital_status + '].edit').prop('checked', true);
+        $('select').val(row.salary_mode);
+        $('#edit_spouse').val(row.spouse);
+        $('#edit_pincode').val(row.pincode);
+        // $('#edit_pincode').val(row.pincode);
+        // $('#edit_pincode').val(row.pincode);
+
 
         //front-office checkbox
         $('#edit_is_front_office').val('1');

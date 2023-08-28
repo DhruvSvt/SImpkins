@@ -128,6 +128,47 @@
                                     <label>{{ __('ifsc_code') }}</label>
                                     {!! Form::text('ifsc_code', null, ['placeholder' => __('ifsc_code'), 'class' => 'form-control']) !!}
                                 </div>
+
+                                <div class="form-group col-sm-12 col-md-12">
+                                    <label>{{ __('marital_status') }}</label><br>
+                                    <div class="d-flex">
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">
+                                                {!! Form::radio('marital_status', 'Married') !!}
+                                                {{ __('married') }}
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">
+                                                {!! Form::radio('marital_status', 'Unmarried') !!}
+                                                {{ __('unmarried') }}
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">
+                                                {!! Form::radio('marital_status', 'Not to be disclosed') !!}
+                                                {{ __('not_to_be_disclosed') }}
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-sm-12 col-md-4">
+                                    <label>{{ __('spouse') }}</label>
+                                    {!! Form::text('spouse', null, ['placeholder' => __('spouse'), 'class' => 'form-control']) !!}
+                                </div>
+                                <div class="form-group col-sm-12 col-md-4">
+                                    <label>{{ __('pincode') }}</label>
+                                    {!! Form::number('pincode', null, ['placeholder' => __('pincode'), 'class' => 'form-control']) !!}
+                                </div>
+                                <div class="form-group col-sm-12 col-md-4">
+                                    <label>{{ __('salary_mode') }}</label>
+                                    <select required name="salary_mode" class="form-control" id="edit_salary_mode">
+                                        <option value="" selected disabled>{{ __('select') . ' ' . __('salary_mode') }}
+                                        <option value="{{ __('cash') }}"> {{ __('cash') }}</option>
+                                        <option value="{{ __('bank') }}">{{ __('bank') }}</option>
+                                    </select>
+                                    {{-- {!! Form::text('pincode', null, ['placeholder' => __('pincode'), 'class' => 'form-control']) !!} --}}
+                                </div>
                             </div>
                             <input class="btn btn-theme" type="submit" value={{ __('submit') }}>
                         </form>
