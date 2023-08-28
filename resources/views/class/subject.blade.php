@@ -73,7 +73,7 @@
                                     <option value="">{{ __('select_class') }}</option>
                                     @foreach ($classes as $class)
                                     <option value="{{ $class->id}}" data-medium="{{$class->medium_id}}">
-                                        {{ $class->name . ' - ' . $class->medium->name }}</option>
+                                        {{ $class->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
