@@ -45,7 +45,7 @@
                                 <select multiple name="teacher_id[]" class="form-control js-example-basic-single select2-hidden-accessible" style="width:100%;" tabindex="-1" aria-hidden="true">
                                     @foreach ($teachers as $teacher)
                                     <option value="{{ $teacher->id }}">
-                                        {{ $teacher->user->first_name . ' ' . $teacher->user->last_name }}
+                                        {{ $teacher->user->full_name }}
                                     </option>
                                     @endforeach
                                 </select>
@@ -75,7 +75,7 @@
                                         <option value="">{{ __('select_class_section') }}</option>
                                         @foreach ($class_section as $class)
                                         <option value={{ $class->id }}>
-                                            {{ $class->class->name . ' ' . $class->section->name }}
+                                            {{ $class->class->name . ' ' . $class->section->name    }}
                                         </option>
                                         @endforeach
                                     </select>
