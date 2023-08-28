@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Employee;
 use App\Models\User;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -43,7 +44,10 @@ class EmployeeController extends Controller
             );
             return redirect(route('home'))->withErrors($response);
         }
-        return view('employees.index');
+
+        $employee_count = Employee::select('id')->latest('id')->pluck('id')->first();
+        $employee_code = 'SSE' . ($employee_count + 1);
+        return view('employees.index', compact('employee_code'));
     }
 
     /**
@@ -64,7 +68,7 @@ class EmployeeController extends Controller
             'employee_code' => 'required',
             'image' => 'required|mimes:jpeg,png,jpg|image|max:2048',
             'name' => 'required',
-            'email' => 'required',
+            // 'email' => 'required',
             'mobile' => 'required',
             'father_name' => 'required',
             'mother_name' => 'required',
@@ -80,25 +84,17 @@ class EmployeeController extends Controller
         ]);
 
         try {
-            $full_name = explode(" ", $request->name);
-            if (count($full_name) > 1) {
-                $lastname = array_pop($full_name);
-                $firstname = implode(" ", $full_name);
-            } else {
-                $firstname = $request->name;
-                $lastname = " ";
-            }
-            $employee_plaintext_password = $request->password ?? rand(10000, 99999);
+            $employee_plaintext_password = str_replace('-', '', date('d-m-Y', strtotime($request->dob)));
 
             $user = new User();
             $user->image = $request->file('image')->store('employees', 'public');
             $user->password = Hash::make($employee_plaintext_password);
-            $user->first_name = $firstname;
-            $user->last_name = $lastname;
-            $user->email = $request->email ?? $request->employee_code . rand(10000, 99999);
+            $user->full_name = $request->name;
+            // $user->last_name = $lastname;
+            $user->email = $request->employee_code;
             $user->dob = date('Y-m-d', strtotime($request->dob));
             $user->gender = $request->gender;
-            $user->email = $request->email;
+            // $user->email = $request->email;
             $user->mobile = $request->mobile;
             $user->current_address = $request->address;
             $user->save();
@@ -227,8 +223,8 @@ class EmployeeController extends Controller
             $tempRow['id'] = $row->id;
             $tempRow['no'] = $no++;
             $tempRow['user_id'] = $row->user_id;
-            $tempRow['first_name'] = $row->user->first_name;
-            $tempRow['last_name'] = $row->user->last_name;
+            $tempRow['full_name'] = $row->user->full_name;
+            // $tempRow['last_name'] = $row->user->last_name;
             $tempRow['email'] = $row->user->email;
             $tempRow['dob'] = date($data['date_formate'], strtotime($row->user->dob));
             $tempRow['mobile'] = $row->user->mobile;
@@ -293,7 +289,7 @@ class EmployeeController extends Controller
             'employee_code' => 'required',
             'image' => 'mimes:jpeg,png,jpg|image|max:2048',
             'name' => 'required',
-            'email' => 'required',
+            // 'email' => 'required',
             'mobile' => 'required',
             'father_name' => 'required',
             'mother_name' => 'required',
@@ -308,21 +304,20 @@ class EmployeeController extends Controller
         ]);
 
         try {
-            $full_name = explode(" ", $request->name);
-            if (count($full_name) > 1) {
-                $lastname = array_pop($full_name);
-                $firstname = implode(" ", $full_name);
-            } else {
-                $firstname = $request->name;
-                $lastname = " ";
-            }
+            // $full_name = explode(" ", $request->name);
+            // if (count($full_name) > 1) {
+            //     $lastname = array_pop($full_name);
+            //     $firstname = implode(" ", $full_name);
+            // } else {
+            //     $firstname = $request->name;
+            //     $lastname = " ";
+            // }
 
             //Create Employee User First
             $user = User::find($request->edit_id);
-            $user->first_name = $firstname;
-            $user->last_name = $lastname;
-            $user->email = $request->email ?? $request->employee_code . rand(10000, 99999) . '@gmail.com';
-            $user->mobile = $request->mobile ?? $request->mobile;
+            $user->full_name = $request->name;
+            $user->email = $request->employee_code;
+            $user->mobile = $request->mobile ?? $user->mobile;
 
             $user->dob = date('Y-m-d', strtotime($request->dob));
             $user->current_address = $request->address;

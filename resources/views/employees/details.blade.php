@@ -45,10 +45,8 @@
                                                 {{ __('employee_code') }}</th>
                                             <th scope="col" data-field="is_front_office_text" data-sortable="false">
                                                 {{ __('front_office') }}</th>
-                                            <th scope="col" data-field="first_name" data-sortable="false">
-                                                {{ __('first_name') }}</th>
-                                            <th scope="col" data-field="last_name" data-sortable="false">
-                                                {{ __('last_name') }}</th>
+                                            <th scope="col" data-field="full_name" data-sortable="false">
+                                                {{ __('full_name') }}</th>
                                             <th scope="col" data-field="email" data-sortable="false">
                                                 {{ __('email') }}</th>
                                             <th scope="col" data-field="mobile" data-sortable="false">
@@ -137,7 +135,7 @@
                                         'required' => true,
                                     ]) !!}
                                 </div>
-                                <div class="form-group col-sm-12 col-md-4">
+                                {{-- <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('email') }} <span class="text-danger">*</span></label>
                                     {!! Form::email('email', null, [
                                         'id' => 'edit_email',
@@ -145,7 +143,7 @@
                                         'class' => 'form-control',
                                         'required' => true,
                                     ]) !!}
-                                </div>
+                                </div> --}}
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('mobile') }} <span class="text-danger">*</span></label>
                                     {!! Form::text('mobile', null, [

@@ -436,7 +436,7 @@ window.employeeEvents = {
     'click .editdata': function (e, value, row, index) {
         $('#edit_id').val(row.user_id);
         $('#edit_employee_code').val(row.employee_code);
-        $('#edit_name').val(row.first_name+ ' ' +(row.last_name ?? ''));
+        $('#edit_name').val(row.full_name);
         $('#edit_email').val(row.email);
         $('#edit_mobile').val(row.mobile);
         $('#edit_additional_mobile').val(row.additional_mobile);

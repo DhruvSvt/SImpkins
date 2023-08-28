@@ -24,16 +24,16 @@
                             <div class="row">
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('employee_code') }} <span class="text-danger">*</span></label>
-                                    {!! Form::text('employee_code', null, ['placeholder' => __('employee_code'), 'class' => 'form-control']) !!}
+                                    {!! Form::text('employee_code', $employee_code, ['placeholder' => __('employee_code'), 'readonly' => true, 'class' => 'form-control']) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('name') }} <span class="text-danger">*</span></label>
                                     {!! Form::text('name', null, ['placeholder' => __('name'), 'class' => 'form-control']) !!}
                                 </div>
-                                <div class="form-group col-sm-12 col-md-4">
+                                {{-- <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('email') }} <span class="text-danger">*</span></label>
                                     {!! Form::text('email', null, ['placeholder' => __('email'), 'class' => 'form-control']) !!}
-                                </div>
+                                </div> --}}
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('mobile') }} <span class="text-danger">*</span></label>
                                     {!! Form::text('mobile', null, ['placeholder' => __('mobile'), 'class' => 'form-control']) !!}
