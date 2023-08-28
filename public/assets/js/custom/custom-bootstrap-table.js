@@ -463,6 +463,37 @@ window.employeeEvents = {
     }
 };
 
+window.teacherEvents = {
+    'click .editdata': function (e, value, row, index) {
+        $('#edit_id').val(row.user_id);
+        $('#edit_teacher_code').val(row.teacher_code);
+        $('#edit_name').val(row.full_name);
+        $('#edit_email').val(row.email);
+        $('#edit_mobile').val(row.mobile);
+        $('#edit_additional_mobile').val(row.additional_mobile);
+        $('#edit_father_name').val(row.father_name);
+        $('#edit_mother_name').val(row.mother_name);
+        $('#edit_religion').val(row.religion);
+        $('input[name=gender][value=' + row.gender + '].edit').prop('checked', true);
+        $('#edit_category').val(row.category);
+        $('#edit_dob').val(row.dob);
+        $('#edit_designation').val(row.designation);
+        $('#edit_date_of_joining').val(row.date_of_joining);
+        $('#edit_address').val(row.address);
+        $('#edit_aadhar_card').val(row.aadhar_card);
+        $('#edit_pancard').val(row.pancard);
+        $('#edit_bank_name').val(row.bank_name);
+        $('#edit_bank_acc_no').val(row.bank_acc_no);
+        $('#edit_qualification').val(row.qualification);
+        $('#edit_ifsc_code').val(row.ifsc_code);
+        $('#edit-teacher-image-tag').attr('src', row.image_link);
+
+        //front-office checkbox
+        $('#edit_is_front_office').val('1');
+        $('#edit_is_front_office').prop('checked', parseInt(row.is_front_office)).trigger('change');
+    }
+};
+
 window.admissionEnquiryEvents = {
     'click .editdata': function (e, value, row, index) {
         $('#edit_id').val(row.id);

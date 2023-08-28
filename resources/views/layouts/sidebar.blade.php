@@ -166,38 +166,38 @@
 
         {{-- menu --}}
         {{-- @canany(['menu-list', 'menu-edit', 'menu-delete']) --}}
-            <li class="nav-item">
-                <a class="nav-link" data-toggle="collapse" href="#menu-menu" aria-expanded="false"
-                    aria-controls="academics-menu">
-                    <i class="fa fa-users menu-icon"></i>
-                    <span class="menu-title">{{ __('menu') }}</span>
-                </a>
-                <div class="collapse" id="menu-menu">
-                    <ul class="nav flex-column sub-menu">
-                        {{-- @can('menu-list') --}}
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('menus.index') }}">
-                                    {{ __('menu_details') }}
-                                </a>
-                            </li>
-                        {{-- @endcan --}}
-                        {{-- @can('menu-list') --}}
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('pages.create') }}">
-                                    {{ __('page_add') }}
-                                </a>
-                            </li>
-                        {{-- @endcan --}}
-                        {{-- @can('menu-list') --}}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('pages.index') }}">
-                                {{ __('page_details') }}
-                            </a>
-                        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#menu-menu" aria-expanded="false"
+                aria-controls="academics-menu">
+                <i class="fa fa-users menu-icon"></i>
+                <span class="menu-title">{{ __('menu') }}</span>
+            </a>
+            <div class="collapse" id="menu-menu">
+                <ul class="nav flex-column sub-menu">
+                    {{-- @can('menu-list') --}}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('menus.index') }}">
+                            {{ __('menu_details') }}
+                        </a>
+                    </li>
                     {{-- @endcan --}}
-                    </ul>
-                </div>
-            </li>
+                    {{-- @can('menu-list') --}}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('pages.create') }}">
+                            {{ __('page_add') }}
+                        </a>
+                    </li>
+                    {{-- @endcan --}}
+                    {{-- @can('menu-list') --}}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('pages.index') }}">
+                            {{ __('page_details') }}
+                        </a>
+                    </li>
+                    {{-- @endcan --}}
+                </ul>
+            </div>
+        </li>
         {{-- @endcanany --}}
 
         {{-- Front Office --}}
@@ -259,8 +259,29 @@
         {{-- teacher --}}
         @can('teacher-create')
             <li class="nav-item">
-                <a href="{{ route('teachers.index') }}" class="nav-link"><i class="fa fa-user menu-icon"></i>
-                    <span class="menu-title">{{ __('teacher') }}</span> </a>
+                <a class="nav-link" data-toggle="collapse" href="#teacher-menu"
+                    aria-expanded="false" aria-controls="academics-menu">
+                    <i class="fa fa-user menu-icon"></i>
+                    <span class="menu-title">{{ __('teacher') }}</span>
+                </a>
+                <div class="collapse" id="menu-menu">
+                    <ul class="nav flex-column sub-menu">
+                        {{-- @can('teacher-list') --}}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('teachers.create') }}">
+                                {{ __('teacher_add') }}
+                            </a>
+                        </li>
+                        {{-- @endcan --}}
+                        {{-- @can('teacher-list') --}}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('teachers.index') }}">
+                                {{ __('teacher_details') }}
+                            </a>
+                        </li>
+                        {{-- @endcan --}}
+                    </ul>
+                </div>
             </li>
         @endcan
 
@@ -466,7 +487,8 @@
         @can('session-year-create')
             <li class="nav-item">
                 <a href="{{ route('session-years.index') }}" class="nav-link"> <i
-                        class="fa fa-calendar-o menu-icon"></i> <span class="menu-title">{{ __('session_years') }}</span>
+                        class="fa fa-calendar-o menu-icon"></i> <span
+                        class="menu-title">{{ __('session_years') }}</span>
                 </a>
             </li>
         @endcan
