@@ -114,7 +114,7 @@ class TeacherApiController extends Controller
                 'code' => 200,
             );
             return response()->json($response, 200);
-        } catch (\Exception $e) {
+        } catch (Throwable  $e) {
             $response = array(
                 'error' => true,
                 'message' => trans('error_occurred'),
