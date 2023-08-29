@@ -1,14 +1,14 @@
 @extends('layouts.master')
 
 @section('title')
-    {{ __('visitor-book') }}
+    {{ __('student-book') }}
 @endsection
 
 @section('content')
     <div class="content-wrapper">
         <div class="page-header">
             <h3 class="page-title">
-                {{ __('manage') . ' ' . __('visitor-book') }}
+                {{ __('manage') . ' ' . __('student-book') }}
             </h3>
         </div>
         <div class="row">
@@ -16,7 +16,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">
-                            {{ __('create') . ' ' . __('visitor-book') }}
+                            {{ __('create') . ' ' . __('student-book') }}
                         </h4>
                         <form class="pt-3 student-registration-form" enctype="multipart/form-data"
                             action="{{ route('visitor-book.store') }}" method="POST" novalidate="novalidate">
@@ -24,10 +24,10 @@
                             <div class="row">
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('visitor_name') }} <span class="text-danger">*</span></label>
-                                    {!! Form::text('visitor_name', null, ['placeholder' => __('visitor_name'), 'class' => 'form-control']) !!}
+                                    {!! Form::text('visitor_name', null, ['placeholder' => __('student_name'), 'class' => 'form-control']) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('date') }} <span class="text-danger">*</span></label>
+                                    <label>{{ __('date') }}</label>
                                     {!! Form::text('date', null, ['placeholder' => __('date'), 'class' => 'datepicker-popup form-control']) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
@@ -39,11 +39,11 @@
                                     {!! Form::time('out_time', null, ['placeholder' => __('out_time'), 'class' => 'form-control']) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('purpose') }} <span class="text-danger">*</span></label>
+                                    <label>{{ __('purpose') }}</label>
                                     {!! Form::text('purpose', null, ['placeholder' => __('purpose'), 'class' => 'form-control']) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('remarks') }} <span class="text-danger">*</span></label>
+                                    <label>{{ __('remarks') }}</label>
                                     {!! Form::text('remarks', null, ['placeholder' => __('remarks'), 'class' => 'form-control']) !!}
                                 </div>
                             </div>

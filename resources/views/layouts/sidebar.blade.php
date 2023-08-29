@@ -229,12 +229,12 @@
                         @can('visitor-book-create')
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('visitor-book.create') }}">
-                                    {{ __('visitor-book') . ' ' . _('add') }}
+                                    {{ __('student-book') . ' ' . _('add') }}
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('visitor-book.index') }}">
-                                    {{ __('visitor-book') . ' ' . _('details') }}
+                                    {{ __('student-book') . ' ' . _('details') }}
                                 </a>
                             </li>
                         @endcan

@@ -61,18 +61,18 @@ class VisitorBookController extends Controller
         }
         $request->validate([
             'visitor_name' => 'required',
-            'date' => 'required',
+            // 'date' => 'required',
             'in_time' => 'required',
-            'purpose' => 'required',
-            'remarks' => 'required',
+            // 'purpose' => 'required',
+            // 'remarks' => 'required',
         ]);
 
         try {
             $resume = new VisitorBook();
             $resume->visitor_name = $request->visitor_name;
             $resume->date = date('Y-m-d', strtotime($request->date));
-            $resume->in_time = Carbon::parse($request->in_time);
-            $resume->out_time = Carbon::parse($request->out_time);
+            $resume->in_time = $request->in_time ? Carbon::parse($request->in_time) : null;
+            $resume->out_time = $request->out_time ? Carbon::parse($request->out_time) : null;
             $resume->purpose = $request->purpose;
             $resume->remarks = $request->remarks;
             $resume->save();

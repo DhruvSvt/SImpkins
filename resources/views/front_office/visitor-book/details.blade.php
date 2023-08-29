@@ -1,14 +1,14 @@
 @extends('layouts.master')
 
 @section('title')
-    {{ __('visitor-book') }}
+    {{ __('student-book') }}
 @endsection
 
 @section('content')
     <div class="content-wrapper">
         <div class="page-header">
             <h3 class="page-title">
-                {{ __('manage') . ' ' . __('visitor-book') }}
+                {{ __('manage') . ' ' . __('student-book') }}
             </h3>
         </div>
 
@@ -17,7 +17,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">
-                            {{ __('list') . ' ' . __('visitor-book') }}
+                            {{ __('list') . ' ' . __('student-book') }}
                         </h4>
                         <div class="row">
                             <div class="col-12">
@@ -29,7 +29,7 @@
                                     data-fixed-columns="true" data-fixed-number="2" data-fixed-right-number="1"
                                     data-trim-on-search="false" data-mobile-responsive="true" data-sort-name="id"
                                     data-sort-order="desc" data-maintain-selected="true" data-export-types='["txt","excel"]'
-                                    data-export-options='{ "fileName": "visitor-book-list-<?= date('d-m-y') ?>"
+                                    data-export-options='{ "fileName": "student-book-list-<?= date('d-m-y') ?>"
                                     ,"ignoreColumn":
                                     ["operate"]}' data-query-params="StudentDetailQueryParams"
                                     data-check-on-init="true">
@@ -75,7 +75,7 @@
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="exampleModalLabel">{{ __('edit') . ' ' . __('visitor-book') }}</h4><br>
+                    <h4 class="modal-title" id="exampleModalLabel">{{ __('edit') . ' ' . __('student-book') }}</h4><br>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true"><i class="fa fa-close"></i></span>
                     </button>
