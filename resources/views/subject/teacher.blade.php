@@ -116,21 +116,16 @@
                                 data-query-params="AssignSubjectTeacherQueryParams">
                                 <thead>
                                     <tr>
-                                        <th scope="col" data-field="id" data-sortable="true" data-visible="false">
-                                            {{ __('id') }}</th>
-                                        <th scope="col" data-field="no" data-sortable="true">{{ __('no') }}
-                                        </th>
+                                        <th scope="col" data-field="id" data-sortable="true" data-visible="false">{{ __('id') }}</th>
+                                        <th scope="col" data-field="no" data-sortable="true">{{ __('no') }}</th>
                                         <th scope="col" data-field="class_section_id" data-sortable="false" data-visible="false">{{ __('class_section_id') }}</th>
-                                        <th scope="col" data-field="class_section_name" data-sortable="false">
-                                            {{ __('class') . ' ' . __('section') . ' ' . __('name') }}</th>
+                                        <th scope="col" data-field="class_section_name" data-sortable="false">{{ __('class') . ' ' . __('section') . ' ' . __('name') }}</th>
                                         <th scope="col" data-field="subject_id" data-sortable="true" data-visible="false">{{ __('subject_id') }}</th>
-                                        <th scope="col" data-field="subject_name" data-sortable="false">
-                                            {{ __('subject') . ' ' . __('name') }}</th>
+                                        <th scope="col" data-field="subject_name" data-sortable="false">{{ __('subject') . ' ' . __('name') }}</th>
                                         <th scope="col" data-field="teacher_id" data-sortable="true" data-visible="false">{{ __('teacher_id') }}</th>
-                                        <th scope="col" data-field="teacher_name" data-sortable="false">
-                                            {{ __('teacher') . ' ' . __('name') }}</th>
+                                        <th scope="col" data-field="teacher_name" data-sortable="false">{{ __('teacher') . ' ' . __('name') }}</th>
                                         @canany(['subject-teacher-edit', 'subject-teacher-delete'])
-                                        <th data-events="actionEvents" scope="col" data-field="operate" data-sortable="false">{{ __('action') }}</th>
+                                            <th data-events="actionEvents" scope="col" data-field="operate" data-sortable="false">{{ __('action') }}</th>
                                         @endcanany
                                     </tr>
                                 </thead>
@@ -183,7 +178,7 @@
                             <select name="teacher_id" id="edit_teacher_id" class="form-control select2" style="width:100%;">
                                 @foreach ($teachers as $teacher)
                                 <option value="{{ $teacher->id }}">
-                                    {{ $teacher->user->first_name . ' ' . $teacher->user->last_name }}
+                                    {{ $teacher->user->full_name }}
                                 </option>
                                 @endforeach
                             </select>

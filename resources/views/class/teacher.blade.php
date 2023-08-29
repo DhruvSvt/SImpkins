@@ -85,7 +85,7 @@
                                     <select name="teacher_id" id="teacher_id" class="form-control">
                                         @foreach ($teachers as $teacher)
                                         <option value="{{ $teacher->id }}">
-                                            {{ $teacher->user->first_name . ' ' . $teacher->user->last_name }}
+                                            {{ $teacher->user->full_name }}
                                         </option>
                                         @endforeach
                                     </select>

@@ -133,7 +133,7 @@ class ClassTeacherController extends Controller
             $tempRow['no'] = $no++;
             $tempRow['class'] = $row->class->name . ' - ' . $row->class->medium->name;
             $tempRow['section'] = $row->section->name;
-            $tempRow['teacher'] = ($row->teacher) ? ($row->teacher->user->first_name . ' ' . $row->teacher->user->last_name) : '';
+            $tempRow['teacher'] = ($row->teacher) ? ($row->teacher->user->full_name) : '';
             $tempRow['operate'] = $operate;
             $rows[] = $tempRow;
         }

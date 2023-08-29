@@ -171,13 +171,13 @@ class SubjectTeacherController extends Controller
                 });
         }
 
-        if (isset($_GET['class_id'])) {
+        if (isset($_GET['class_id']) && !empty($_GET['class_id'])) {
             $sql = $sql->where('class_section_id', $_GET['class_id']);
         }
-        if (isset($_GET['teacher_id'])) {
+        if (isset($_GET['teacher_id']) && !empty($_GET['teacher_id'])) {
             $sql = $sql->where('teacher_id', $_GET['teacher_id']);
         }
-        if (isset($_GET['subject_id'])) {
+        if (isset($_GET['subject_id']) && !empty($_GET['subject_id'])) {
             $sql = $sql->where('subject_id', $_GET['subject_id']);
         }
 
@@ -199,11 +199,11 @@ class SubjectTeacherController extends Controller
             $tempRow['id'] = $row->id;
             $tempRow['no'] = $no++;
             $tempRow['class_section_id'] = $row->class_section_id;
-            // $tempRow['class_section_name'] = $row->class_section->class->name . ' - ' . $row->class_section->section->name;
+            $tempRow['class_section_name'] = $row->class_section->class->name . ' - ' . $row->class_section->section->name;
             $tempRow['subject_id'] = $row->subject_id;
             $tempRow['subject_name'] = $row->subject->name;
             $tempRow['teacher_id'] = $row->teacher_id;
-            $tempRow['teacher_name'] = ($row->teacher) ? ($row->teacher->user->first_name . ' ' . $row->teacher->user->last_name) : '';
+            $tempRow['teacher_name'] = ($row->teacher) ? ($row->teacher->user->full_name) : '';
             $tempRow['operate'] = $operate;
             $rows[] = $tempRow;
         }

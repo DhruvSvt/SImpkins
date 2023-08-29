@@ -61,7 +61,7 @@
                                 <div class="wrapper d-flex align-items-center py-2 border-bottom">
                                     <img class="img-sm rounded-circle" src="{{$row->user->image}}" alt="profile">
                                     <div class="wrapper ml-3">
-                                        <h6 class="ml-1 mb-1">{{$row->user->first_name.' '.$row->user->last_name}}</h6>
+                                        <h6 class="ml-1 mb-1">{{$row->user->full_name}}</h6>
                                         <small class="text-muted mb-0">
                                             <i class="mdi mdi-map-marker-outline mr-1"></i>{{$row->qualification}}</small>
                                     </div>
