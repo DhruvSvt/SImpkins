@@ -8,6 +8,6 @@ use Illuminate\Http\Request;
 class IndexController extends Controller
 {
     public function pages($slug){
-        return $page = Page::whereSlug($slug)->firstOrFail();
+     $page = Page::whereSlug($slug)->firstOrFail();
     }
 }

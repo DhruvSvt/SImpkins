@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\TeacherImport;
 use Illuminate\Support\Facades\Mail;
 use Throwable;
 use App\Models\User;
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
+use Maatwebsite\Excel\Facades\Excel;
 
 class TeacherController extends Controller
 {
@@ -50,6 +52,50 @@ class TeacherController extends Controller
         $teacher_code = 'SST'. ($teacher_count + 1000 + 1);
 
         return view('teacher.index',compact('teacher_code'));
+    }
+
+    public function createBulkData()
+    {
+        if (!Auth::user()->can('teacher-create')) {
+            $response = array(
+                'message' => trans('no_permission_message')
+            );
+            return redirect(route('home'))->withErrors($response);
+        }
+        // $class_section = ClassSection::with('class', 'section')->get();
+        // $category = Category::where('status', 1)->get();
+        // $data = getSettings('session_year');
+        // $session_year = SessionYear::select('name')->where('id', $data['session_year'])->pluck('name')->first();
+        // $get_teacher = Students::select('id')->latest('id')->pluck('id')->first();
+        // $admission_no = $session_year . ($get_teacher + 1);
+
+        return view('teacher.add_bulk_data');
+    }
+
+    public function storeBulkData(Request $request)
+    {
+        if (!Auth::user()->can('teacher-create') || !Auth::user()->can('teacher-edit')) {
+            $response = array(
+                'message' => trans('no_permission_message')
+            );
+            return response()->json($response);
+        }
+        
+        try {
+            $class_section_id = $request->class_section_id;
+            Excel::import(new TeacherImport($class_section_id), $request->file);
+            $response = [
+                'error' => false,
+                'message' => trans('data_store_successfully')
+            ];
+        } catch (\Maatwebsite\Excel\Validators\ValidationException $e) {
+            $response = array(
+                'error' => true,
+                'message' => trans('error_occurred'),
+                'data' => $e->failures()
+            );
+        }
+        return response()->json($response);
     }
 
     /**

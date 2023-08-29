@@ -80,8 +80,11 @@ Route::group(['middleware' => ['Role', 'auth'],], function () {
         Route::resource('medium', MediumController::class);
         Route::get('medium_list', [MediumController::class, 'show']);
 
+        Route::get('teachers/create_bulk', [TeacherController::class, 'createBulkData'])->name('teachers.create-bulk-data');
+        Route::post('teachers/store_bulk', [TeacherController::class, 'storeBulkData'])->name('teachers.store-bulk-data');
         Route::resource('teachers', TeacherController::class);
         Route::get('teacher_list', [TeacherController::class, 'show']);
+
 
         Route::resource('section', SectionController::class);
         Route::get('section_list', [SectionController::class, 'show']);

@@ -280,6 +280,14 @@
                             </a>
                         </li>
                         {{-- @endcan --}}
+
+                        @if (Auth::user()->hasRole('Super Admin'))
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('teachers.create-bulk-data') }}">
+                                {{ __('add_bulk_data') }}
+                            </a>
+                        </li>
+                        @endif
                     </ul>
                 </div>
             </li>
