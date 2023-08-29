@@ -30,10 +30,10 @@
                                     <label>{{ __('name') }} <span class="text-danger">*</span></label>
                                     {!! Form::text('name', null, ['placeholder' => __('name'), 'class' => 'form-control']) !!}
                                 </div>
-                                {{-- <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('email') }} <span class="text-danger">*</span></label>
+                                <div class="form-group col-sm-12 col-md-4">
+                                    <label>{{ __('email') }}</label>
                                     {!! Form::text('email', null, ['placeholder' => __('email'), 'class' => 'form-control']) !!}
-                                </div> --}}
+                                </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('mobile') }} <span class="text-danger">*</span></label>
                                     {!! Form::text('mobile', null, ['placeholder' => __('mobile'), 'class' => 'form-control']) !!}

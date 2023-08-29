@@ -91,7 +91,8 @@ class EmployeeController extends Controller
             $user->password = Hash::make($employee_plaintext_password);
             $user->full_name = $request->name;
             // $user->last_name = $lastname;
-            $user->email = $request->employee_code;
+            $user->email = $request->email ?? $request->employee_code;
+            $user->user_code = $request->employee_code;
             $user->dob = date('Y-m-d', strtotime($request->dob));
             $user->gender = $request->gender;
             // $user->email = $request->email;
@@ -316,7 +317,7 @@ class EmployeeController extends Controller
             //Create Employee User First
             $user = User::find($request->edit_id);
             $user->full_name = $request->name;
-            $user->email = $request->employee_code;
+            $user->email = $request->email ?? $user->email;
             $user->mobile = $request->mobile ?? $user->mobile;
 
             $user->dob = date('Y-m-d', strtotime($request->dob));
@@ -334,7 +335,7 @@ class EmployeeController extends Controller
 
             $employee = Employee::where('user_id', $user->id)->firstOrFail();
             $employee->user_id = $user->id;
-            $employee->code = $request->employee_code;
+            // $employee->code = $request->employee_code;
             $employee->father_name = $request->father_name;
             $employee->mother_name = $request->mother_name;
             $employee->religion = $request->religion;

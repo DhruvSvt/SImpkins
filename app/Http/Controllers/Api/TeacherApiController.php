@@ -35,6 +35,7 @@ use App\Models\AssignmentSubmission;
 use App\Models\ExamClass;
 use App\Models\ExamResult;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
@@ -42,8 +43,14 @@ class TeacherApiController extends Controller
 {
     public function login(Request $request)
     {
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+        $user = User::where('email', $request->email)
+                    ->orWhere('user_code', $request->email)
+                    ->first();
+        if (Hash::check($request->password, $user->password)) {
+            //user logged in
+            Auth::login($user);
             $auth = Auth::user();
+
             if ($request->fcm_id) {
                 $auth->fcm_id = $request->fcm_id;
                 $auth->save();
@@ -88,12 +95,12 @@ class TeacherApiController extends Controller
         try {
             $user = $request->user()->teacher;
             //Find the class in which teacher is assigns as Class Teacher
-            $class_teacher = $user->class_section->load('class','section');
+            $class_teacher = $user->class_section->load('class', 'section');
 
             //Find the Classes in which teacher is taking subjects
             $class_section_ids = $user->classes()->pluck('class_section_id');
 
-            $class_section = ClassSection::whereIN('id', $class_section_ids)->with('class.medium','section');
+            $class_section = ClassSection::whereIN('id', $class_section_ids)->with('class.medium', 'section');
             if ($class_teacher) {
                 $class_section = $class_section->where(function ($q) use ($class_teacher) {
                     $q->where('class_id', '!=', $class_teacher->class_id)->whereOr('section_id', '!=', $class_teacher->section_id);

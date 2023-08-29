@@ -39,6 +39,10 @@
                                     {!! Form::text('additional_mobile', null, ['placeholder' => __('additional_mobile'), 'class' => 'form-control']) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
+                                    <label>{{ __('email') }}</label>
+                                    {!! Form::text('email', null, ['placeholder' => __('email'), 'class' => 'form-control']) !!}
+                                </div>
+                                <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('father_name') }} <span class="text-danger">*</span></label>
                                     {!! Form::text('father_name', null, ['placeholder' => __('father_name'), 'class' => 'form-control']) !!}
                                 </div>

@@ -124,6 +124,7 @@
                                         'class' => 'form-control',
                                         'id' => 'edit_employee_code',
                                         'required' => true,
+                                        'readonly' => true,
                                     ]) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
@@ -135,15 +136,14 @@
                                         'required' => true,
                                     ]) !!}
                                 </div>
-                                {{-- <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('email') }} <span class="text-danger">*</span></label>
+                                <div class="form-group col-sm-12 col-md-4">
+                                    <label>{{ __('email') }}</label>
                                     {!! Form::email('email', null, [
                                         'id' => 'edit_email',
                                         'placeholder' => __('email'),
-                                        'class' => 'form-control',
-                                        'required' => true,
+                                        'class' => 'form-control'
                                     ]) !!}
-                                </div> --}}
+                                </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('mobile') }} <span class="text-danger">*</span></label>
                                     {!! Form::text('mobile', null, [

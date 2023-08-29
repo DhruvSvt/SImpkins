@@ -49,6 +49,8 @@
                                                 {{ __('mobile') }}</th>
                                             <th scope="col" data-field="additional_mobile" data-sortable="false">
                                                 {{ __('additional_mobile') }}</th>
+                                            <th scope="col" data-field="email" data-sortable="false">
+                                                {{ __('email') }}</th>
                                             <th scope="col" data-field="father_name" data-sortable="false">
                                                 {{ __('father') . ' ' . __('name') }}</th>
                                             <th scope="col" data-field="mother_name" data-sortable="false">
@@ -146,6 +148,14 @@
                                         'placeholder' => __('additional_mobile'),
                                         'class' => 'form-control',
                                         'id' => 'edit_additional_mobile',
+                                    ]) !!}
+                                </div>
+                                <div class="form-group col-sm-12 col-md-4">
+                                    <label>{{ __('email') }}</label>
+                                    {!! Form::text('email', null, [
+                                        'placeholder' => __('email'),
+                                        'class' => 'form-control',
+                                        'id' => 'edit_email',
                                     ]) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">

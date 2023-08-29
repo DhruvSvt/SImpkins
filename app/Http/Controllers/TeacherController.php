@@ -91,7 +91,8 @@ class TeacherController extends Controller
             $user->image = $request->file('image')->store('teachers', 'public');
             $user->password = Hash::make($teacher_plaintext_password);
             $user->full_name = $request->name;
-            $user->email = $request->teacher_code;
+            $user->email = $request->email ?? $request->teacher_code;
+            $user->user_code = $request->teacher_code;
             $user->dob = date('Y-m-d', strtotime($request->dob));
             $user->gender = $request->gender;
             $user->mobile = $request->mobile;
@@ -300,7 +301,7 @@ class TeacherController extends Controller
             //Create Teacher User First
             $user = User::find($request->edit_id);
             $user->full_name = $request->name;
-            $user->email = $request->teacher_code;
+            $user->email = $request->email ?? $user->email;
             $user->mobile = $request->mobile ?? $request->mobile;
 
             $user->dob = date('Y-m-d', strtotime($request->dob));
@@ -322,7 +323,7 @@ class TeacherController extends Controller
 
             $teacher = Teacher::where('user_id', $user->id)->firstOrFail();
             $teacher->user_id = $user->id;
-            $teacher->code = $request->teacher_code;
+            // $teacher->code = $request->teacher_code;
             $teacher->father_name = $request->father_name;
             $teacher->mother_name = $request->mother_name;
             $teacher->religion = $request->religion;
