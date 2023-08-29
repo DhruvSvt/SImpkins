@@ -133,9 +133,9 @@ class TeacherApiController extends Controller
         // try {
             $user = $request->user()->teacher;
             //Find the class in which teacher is assigns as Class Teacher
-            $class_teacher = [];
+            $class_teacher = null;
             if(isset($user->class_section)){
-                $class_teacher = $user->class_section->load('class.medium', 'section') ?? [];
+                $class_teacher = $user->class_section->load('class.medium', 'section') ?? '';
             }
 
             //Find the Classes in which te
