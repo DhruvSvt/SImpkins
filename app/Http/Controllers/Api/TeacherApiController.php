@@ -66,7 +66,7 @@ class TeacherApiController extends Controller
                     $lastname = array_pop($parts);
                     $firstname = implode(" ", $parts);
                 } else {
-                    $firstname = $name;
+                    $firstname = $user->full_name;
                     $lastname = " ";
                 }
                 $user->first_name = $firstname;
