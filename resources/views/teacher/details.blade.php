@@ -31,7 +31,7 @@
                                     data-sort-order="desc" data-maintain-selected="true" data-export-types='["txt","excel"]'
                                     data-export-options='{ "fileName": "teacher-list-<?= date('d-m-y') ?>"
                                     ,"ignoreColumn":
-                                    ["operate"]}' data-query-params="StudentDetailQueryParams"
+                                    ["operate"]}' data-show-export="true" data-query-params="StudentDetailQueryParams"
                                     data-check-on-init="true">
 
                                     <thead>
@@ -41,6 +41,7 @@
                                             <th scope="col" data-field="no" data-sortable="true">{{ __('no') }}</th>
                                             <th scope="col" data-field="user_id" data-sortable="false"
                                                 data-visible="false">{{ __('user_id') }}</th>
+                                            <th scope="col" data-field="image" data-formatter="imageFormatter" data-sortable="true">{{ __('image') }}</th>
                                             <th scope="col" data-field="teacher_code" data-sortable="false">
                                                 {{ __('teacher_code') }}</th>
                                             <th scope="col" data-field="full_name" data-sortable="false">
@@ -82,6 +83,16 @@
                                                 {{ __('qualification') }}</th>
                                             <th scope="col" data-field="ifsc_code" data-sortable="false">
                                                 {{ __('ifsc_code') }}</th>
+                                            <th scope="col" data-field="is_front_office" data-sortable="false">
+                                                {{ __('is_front_office') }}</th>
+                                            <th scope="col" data-field="spouse" data-sortable="false">
+                                                {{ __('spouse') }}</th>
+                                            <th scope="col" data-field="marital_status" data-sortable="false">
+                                                {{ __('marital_status') }}</th>
+                                            <th scope="col" data-field="pincode" data-sortable="false">
+                                                {{ __('pincode') }}</th>
+                                            <th scope="col" data-field="salary_mode" data-sortable="false">
+                                                {{ __('salary_mode') }}</th>
                                             {{-- @canany(['teacher-edit', 'teacher-delete']) --}}
                                                 <th data-events="teacherEvents" scope="col" data-field="operate"
                                                     data-sortable="false">{{ __('action') }}</th>
