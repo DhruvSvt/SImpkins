@@ -54,10 +54,11 @@ use App\Http\Controllers\PageController;
 |
 */
 
-Auth::routes();
 Route::view('/','visitors.index');
+Route::view('/page/privacy-policy','visitors.privacy-policy');
 // Route::get('/login', [HomeController::class, 'login'])->name('login');
 
+Auth::routes();
 Route::group(['middleware' => ['Role', 'auth'],], function () {
     Route::group(['middleware' => 'language'], function () {
         Route::get('/dashboard', [HomeController::class, 'index']);
