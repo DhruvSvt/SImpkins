@@ -113,7 +113,7 @@ class TeacherApiController extends Controller
             $response = array(
                 'error' => false,
                 'message' => 'Teacher Classes Fetched Successfully.',
-                'data' => ['class_teacher' => $class_teacher, 'other' => $class_section],
+                'data' => ['other' => $class_section],
                 'code' => 200,
             );
             return response()->json($response, 200);
@@ -127,6 +127,37 @@ class TeacherApiController extends Controller
         //     return response()->json($response, 200);
         // }
     }
+
+    public function primaryClass(Request $request)
+    {
+        // try {
+            $user = $request->user()->teacher;
+            //Find the class in which teacher is assigns as Class Teacher
+            $class_teacher = [];
+            if(isset($user->class_section)){
+                $class_teacher = $user->class_section->load('class.medium', 'section') ?? [];
+            }
+
+            //Find the Classes in which te
+            $response = array(
+                'error' => false,
+                'message' => 'Teacher Classes Fetched Successfully.',
+                'data' => ['class_teacher' => $class_teacher],
+                'code' => 200,
+            );
+            return response()->json($response, 200);
+        // } catch (Throwable  $e) {
+        //     $response = array(
+        //         'error' => false,
+        //         'message' => 'Teacher Classes Fetched Successfully.',
+        //         'data' => ['class_teacher' => [], 'other' => []],
+        //         'code' => 200,
+        //     );
+        //     return response()->json($response, 200);
+        // }
+    }
+
+
 
     public function subjects(Request $request)
     {

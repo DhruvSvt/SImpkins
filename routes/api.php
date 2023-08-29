@@ -87,6 +87,7 @@ Route::group(['prefix' => 'teacher'], function () {
     //Authenticated APIs
     Route::group(['middleware' => ['auth:sanctum',]], function () {
         Route::get('classes', [TeacherApiController::class, 'classes']);
+        Route::get('primary-classes', [TeacherApiController::class, 'primaryClass']);
 
         Route::get('subjects', [TeacherApiController::class, 'subjects']);
 
