@@ -118,7 +118,7 @@ class TeacherApiController extends Controller
             $response = array(
                 'error' => false,
                 'message' => 'Teacher Classes Fetched Successfully.',
-                'data' => ['class_teacher' => [], 'other' => []],
+                'data' => ['class_teacher' => (object)[], 'other' => []],
                 'code' => 200,
             );
             return response()->json($response, 200);
