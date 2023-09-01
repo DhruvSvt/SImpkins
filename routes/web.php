@@ -32,6 +32,7 @@ use App\Http\Controllers\LessonTopicController;
 use App\Http\Controllers\SessionYearController;
 use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\ClassTeacherController;
+use App\Http\Controllers\ContactEnquiryController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\EnquiryController;
 use App\Http\Controllers\EventNoticeController;
@@ -44,6 +45,7 @@ use App\Http\Controllers\FrontOffice\VisitorBookController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\PageController;
+use App\Models\ContactEnquiry;
 
 /*
 |--------------------------------------------------------------------------
@@ -147,6 +149,10 @@ Route::group(['middleware' => ['Role', 'auth'],], function () {
         //Menu and Pages
         Route::resource('event-notice', EventNoticeController::class);
         Route::get('event-notice-list', [EventNoticeController::class, 'show'])->name('event-notice.list');
+
+        //contact enquiry
+        Route::resource('contact-enquiry', ContactEnquiryController::class);
+        Route::get('contact-enquiry-list', [ContactEnquiryController::class, 'show'])->name('contact-enquiry.list');
 
 
         Route::get('admission-enquiry-list', [AdmissionEnquiryController::class, 'show'])->name('admission-enquiry.list');

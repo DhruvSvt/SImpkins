@@ -228,6 +228,27 @@
         </li>
         {{-- @endcanany --}}
 
+        {{-- @canany(['event-notice-list', 'event-notice-edit', 'event-notice-delete']) --}}
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#enquiry-menu" aria-expanded="false"
+                aria-controls="academics-menu">
+                <i class="fa fa-users menu-icon"></i>
+                <span class="menu-title">{{ __('enquiry') }}</span>
+            </a>
+            <div class="collapse" id="enquiry-menu">
+                <ul class="nav flex-column sub-menu">
+                    {{-- @can('menu-list') --}}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('contact-enquiry.index') }}">
+                            {{ __('contact-enquiry') }}
+                        </a>
+                    </li>
+                    {{-- @endcan --}}
+                </ul>
+            </div>
+        </li>
+        {{-- @endcanany --}}
+
         {{-- Front Office --}}
         @canany(['admission-enquiry-list', 'admission-enquiry-create', 'admission-enquiry-edit',
             'admission-enquiry-delete', 'visitor-book-list', 'visitor-book-create', 'visitor-book-edit',

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\AdmissionEnquiry;
 use App\Models\ContactEnquiry;
 use App\Models\ContactEnuiry;
+use App\Models\EventNotice;
 use Illuminate\Http\Request;
 use Throwable;
 
@@ -76,4 +77,5 @@ class EnquiryController extends Controller
         }
         return redirect()->back()->with('response', $response);
     }
+
 }
