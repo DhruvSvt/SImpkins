@@ -322,23 +322,23 @@ Route::get('migrate', function () {
 // });
 
 
-// Route::get('/storage-link', function(){
-//     $target = storage_path('app/public');
-//     $link = public_path('/storage');
-//     symlink($target, $link);
-//     echo "symbolic link created successfully";
-// });
-
-
-Route::get('storage-link', function () {
-    Artisan::call('storage:link');
-    //     try {
-//         echo "storage link created";
-//     } catch (Exception $e) {
-//         echo $e->getMessage();
-//         echo "Storage Link already exists";
-//     }
+Route::get('/storage-link', function(){
+    $target = storage_path('app/public');
+    $link = public_path('/storage');
+    symlink($target, $link);
+    echo "symbolic link created successfully";
 });
+
+
+// Route::get('storage-link', function () {
+//     Artisan::call('storage:link');
+//     //     try {
+// //         echo "storage link created";
+// //     } catch (Exception $e) {
+// //         echo $e->getMessage();
+// //         echo "Storage Link already exists";
+// //     }
+// });
 
 // Route::get('/command', function()
 // {
