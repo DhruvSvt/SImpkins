@@ -343,46 +343,63 @@
                                     </li>
                                 </ul>
                                 <div class="tab-content" id="myTabContent">
-                                    <div class="tab-pane fade show active" id="home" role="tabpanel"
-                                        aria-labelledby="home-tab">
-                                        <marquee behavior="scroll" direction="up" scrollamount="4"
-                                            style="height: 309px;    overflow-y: auto;" onmouseover="this.stop()"
-                                            onmouseout="this.start()">
-                                            <ul class="mCSB_container">
+                                    @if ($notices && count($notices) > 0)
+                                        <div class="tab-pane fade show active" id="home" role="tabpanel"
+                                            aria-labelledby="home-tab">
+                                            <marquee behavior="scroll" direction="up" scrollamount="4"
+                                                style="height: 309px;    overflow-y: auto;" onmouseover="this.stop()"
+                                                onmouseout="this.start()">
+                                                <ul class="mCSB_container">
+                                                    @foreach ($notices as $notice)
+                                                        <li class="notification">
+                                                            <a href="#" target="_blank">
+                                                                {{ $notice->title }}
+                                                                @if ($notice->is_new)
+                                                                    <img
+                                                                        src="https://mdayurvediccollege.in/demo/vtedu/assets/frontend/default/img/new_icon_blink.gif"width="20">
+                                                                @endif
+                                                            </a>
+                                                        </li>
+                                                    @endforeach
+                                                    {{-- <li class="notification"> <a href="#" target="_blank">
+                                                            Composite
+                                                            Allotment of NEET (UG) 2022 <br> AIQ Counselling for Reference
+                                                            Purpose Second Round </a>
+                                                    </li>
+                                                    <li class="notification"> <a href="#" target="_blank">
+                                                            Composite
+                                                            Allotment of NEET (UG) 2022 <br> AIQ Counselling for Reference
+                                                            Purpose Second Round </a>
+                                                    </li>
+                                                    <li class="notification"> <a href="#" target="_blank"> JEE
+                                                            (Main+Advanced) - Classroom / Online Courses &amp; Fee 2023-24
+                                                            <img src="https://mdayurvediccollege.in/demo/vtedu/assets/frontend/default/img/new_icon_blink.gif"
+                                                                width="20"> </a>
+                                                    </li> --}}
 
-
-                                                <li class="notification"> <a href="#" target="_blank"> Composite
-                                                        Allotment of NEET (UG) 2022 <br> AIQ Counselling for Reference
-                                                        Purpose Second Round <img
-                                                            src="https://mdayurvediccollege.in/demo/vtedu/assets/frontend/default/img/new_icon_blink.gif"
-                                                            width="20"> </a>
-                                                </li>
-                                                <li class="notification"> <a href="#" target="_blank"> Composite
-                                                        Allotment of NEET (UG) 2022 <br> AIQ Counselling for Reference
-                                                        Purpose Second Round </a>
-                                                </li>
-                                                <li class="notification"> <a href="#" target="_blank"> Composite
-                                                        Allotment of NEET (UG) 2022 <br> AIQ Counselling for Reference
-                                                        Purpose Second Round </a>
-                                                </li>
-                                                <li class="notification"> <a href="#" target="_blank"> JEE
-                                                        (Main+Advanced) - Classroom / Online Courses &amp; Fee 2023-24
-                                                        <img src="https://mdayurvediccollege.in/demo/vtedu/assets/frontend/default/img/new_icon_blink.gif"
-                                                            width="20"> </a>
-                                                </li>
-
-                                            </ul>
-                                        </marquee>
-                                    </div>
+                                                </ul>
+                                            </marquee>
+                                        </div>
+                                    @endif
+                                    @if ($events && count($events) > 0)
                                     <div class="tab-pane fade" id="profile" role="tabpanel"
                                         aria-labelledby="profile-tab">
                                         <marquee behavior="scroll" direction="up" scrollamount="4"
                                             style="height: 309px;    overflow-y: auto;" onmouseover="this.stop()"
                                             onmouseout="this.start()">
                                             <ul class="mCSB_container">
-
-
-                                                <li class="notification"> <a href="#" target="_blank"> Pre-Medical
+                                                @foreach ($events as $event)
+                                                    <li class="notification">
+                                                        <a href="#" target="_blank">
+                                                            {{ $event->title }}
+                                                            @if ($event->is_new)
+                                                                <img
+                                                                    src="https://mdayurvediccollege.in/demo/vtedu/assets/frontend/default/img/new_icon_blink.gif"width="20">
+                                                            @endif
+                                                        </a>
+                                                    </li>
+                                                @endforeach
+                                                {{-- <li class="notification"> <a href="#" target="_blank"> Pre-Medical
                                                         (NEET-UG) - Classroom / Online Courses &amp; Fee 2023-24 <img
                                                             src="https://mdayurvediccollege.in/demo/vtedu/assets/frontend/default/img/new_icon_blink.gif"
                                                             width="20"> </a>
@@ -399,13 +416,12 @@
                                                         (Main+Advanced) - Classroom / Online Courses &amp; Fee 2023-24
                                                         <img src="https://mdayurvediccollege.in/demo/vtedu/assets/frontend/default/img/new_icon_blink.gif"
                                                             width="20"> </a>
-                                                </li>
+                                                </li> --}}
                                             </ul>
                                         </marquee>
                                     </div>
-
+                                    @endif
                                 </div>
-
                             </div>
                         </div>
 

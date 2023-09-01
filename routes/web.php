@@ -55,7 +55,7 @@ use App\Http\Controllers\PageController;
 |
 */
 
-Route::view('/','visitors.index');
+Route::get('/',[IndexController::class, 'index']);
 Route::view('/admission','visitors.admission-enquiry');
 Route::view('/page/privacy-policy','visitors.privacy-policy');
 // Route::get('/login', [HomeController::class, 'login'])->name('login');
