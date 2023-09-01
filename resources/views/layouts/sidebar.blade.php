@@ -200,6 +200,34 @@
         </li>
         {{-- @endcanany --}}
 
+        {{-- @canany(['event-notice-list', 'event-notice-edit', 'event-notice-delete']) --}}
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#event-notice-menu" aria-expanded="false"
+                aria-controls="academics-menu">
+                <i class="fa fa-users menu-icon"></i>
+                <span class="menu-title">{{ __('event-notice') }}</span>
+            </a>
+            <div class="collapse" id="event-notice-menu">
+                <ul class="nav flex-column sub-menu">
+                    {{-- @can('menu-list') --}}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('event-notice.create') }}">
+                            {{ __('event-notice-add') }}
+                        </a>
+                    </li>
+                    {{-- @endcan --}}
+                    {{-- @can('menu-list') --}}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('event-notice.index') }}">
+                            {{ __('event-notice-details') }}
+                        </a>
+                    </li>
+                    {{-- @endcan --}}
+                </ul>
+            </div>
+        </li>
+        {{-- @endcanany --}}
+
         {{-- Front Office --}}
         @canany(['admission-enquiry-list', 'admission-enquiry-create', 'admission-enquiry-edit',
             'admission-enquiry-delete', 'visitor-book-list', 'visitor-book-create', 'visitor-book-edit',

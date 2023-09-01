@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>Welcome to Simpkins School</title>
+    <title>{{ $title ?? 'Welcome to Simpkins School' }}</title>
     <meta name="description"
         content="Providing opportunities to enable young people to be best positioned, consequent to their education" />
     <link rel="canonical" href="https://mdayurvediccollege.in/demo/simpkins" />
@@ -85,4 +85,3 @@
 </body>
 
 </html>
-

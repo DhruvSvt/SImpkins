@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 class IndexController extends Controller
 {
     public function pages($slug){
-     $page = Page::whereSlug($slug)->firstOrFail();
+     $page = Page::with('menu')->whereSlug($slug)->firstOrFail();
+     return view('visitors.menu-details',compact('page'));
     }
 }

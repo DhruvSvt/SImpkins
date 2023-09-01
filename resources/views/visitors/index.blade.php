@@ -54,7 +54,8 @@
 
         <!-- about-area -->
         <section class="about-area about-p pt-60 pb-60 p-relative fix" style="background: #fff;">
-            <div class="animations-02"><img src="{{ config('app.url') }}visitors/assets/img/bg/an-img-02.png" alt="contact-bg-an-01"></div>
+            <div class="animations-02"><img src="{{ config('app.url') }}visitors/assets/img/bg/an-img-02.png"
+                    alt="contact-bg-an-01"></div>
             <div class="container">
                 <div class="row justify-content-center align-items-center">
                     <div class="col-lg-6 col-md-12 col-sm-12">
@@ -78,8 +79,8 @@
 
                             <a href="#" class="button-inner ">
                                 <p class="button_text">Read more</p><img
-                                    src="{{ config('app.url') }}visitors/assets/img/features/5f3ed15cfcf155b03d5adbe9_blue-arrow-03.svg" alt="Arrow"
-                                    class="arrow_img">
+                                    src="{{ config('app.url') }}visitors/assets/img/features/5f3ed15cfcf155b03d5adbe9_blue-arrow-03.svg"
+                                    alt="Arrow" class="arrow_img">
                                 <div class="button_background" style="width: 40px; height: 40px;"></div>
                             </a>
                         </div>
@@ -163,7 +164,8 @@
         </section>
         <!-- about-area-end -->
         <section class="steps-area p-relative" style="background-color: #40B9EB;">
-            <div class="animations-10"><img src="{{ config('app.url') }}visitors/assets/img/bg/an-img-10.png" alt="an-img-01"></div>
+            <div class="animations-10"><img src="{{ config('app.url') }}visitors/assets/img/bg/an-img-10.png"
+                    alt="an-img-01"></div>
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-md-12">
@@ -280,8 +282,8 @@
                             <img src="{{ config('app.url') }}visitors/assets/img/features/GALL-52.jpg" alt="img">
 
                         </div>
-                        <img src="{{ config('app.url') }}visitors/assets/img/features/609507dc6ac5fd7a99c02759_spiral-bulb-png.png" loading="lazy"
-                            alt="" class="choose-cbse" style="position: absolute;right: 74px;">
+                        <img src="{{ config('app.url') }}visitors/assets/img/features/609507dc6ac5fd7a99c02759_spiral-bulb-png.png"
+                            loading="lazy" alt="" class="choose-cbse" style="position: absolute;right: 74px;">
                     </div>
                 </div>
             </div>
@@ -316,8 +318,10 @@
         <div class="white-curve-main"></div>
         <!-- frequently-area -->
         <section class="faq-area pt-90 pb-90 p-relative fix">
-            <div class="animations-10"><img src="{{ config('app.url') }}visitors/assets/img/bg/an-img-04.png" alt="an-img-01"></div>
-            <div class="animations-08"><img src="{{ config('app.url') }}visitors/assets/img/bg/an-img-05.png" alt="contact-bg-an-01"></div>
+            <div class="animations-10"><img src="{{ config('app.url') }}visitors/assets/img/bg/an-img-04.png"
+                    alt="an-img-01"></div>
+            <div class="animations-08"><img src="{{ config('app.url') }}visitors/assets/img/bg/an-img-05.png"
+                    alt="contact-bg-an-01"></div>
             <div class="container">
                 <div class="row justify-content-center  align-items-center">
                     <div class="col-lg-7">
@@ -472,7 +476,8 @@
                         <div class="testimonial-active wow fadeInUp animated" data-animation="fadeInUp" data-delay=".4s">
                             <div class="single-testimonial text-center">
                                 <div class="qt-img">
-                                    <img src="{{ config('app.url') }}visitors/assets/img/testimonial/qt-icon.png" alt="img">
+                                    <img src="{{ config('app.url') }}visitors/assets/img/testimonial/qt-icon.png"
+                                        alt="img">
                                 </div>
                                 <p>the opportunity to explore their own learning at their own pace. It has given my
                                     child a nurturing environment as well as polish her natural skills. I am happy that
@@ -488,7 +493,8 @@
                             </div>
                             <div class="single-testimonial text-center">
                                 <div class="qt-img">
-                                    <img src="{{ config('app.url') }}visitors/assets/img/testimonial/qt-icon.png" alt="img">
+                                    <img src="{{ config('app.url') }}visitors/assets/img/testimonial/qt-icon.png"
+                                        alt="img">
                                 </div>
                                 <p>the opportunity to explore their own learning at their own pace. It has given my
                                     child a nurturing environment as well as polish her natural skills. I am happy that
@@ -504,7 +510,8 @@
                             </div>
                             <div class="single-testimonial text-center">
                                 <div class="qt-img">
-                                    <img src="{{ config('app.url') }}visitors/assets/img/testimonial/qt-icon.png" alt="img">
+                                    <img src="{{ config('app.url') }}visitors/assets/img/testimonial/qt-icon.png"
+                                        alt="img">
                                 </div>
                                 <p>the opportunity to explore their own learning at their own pace. It has given my
                                     child a nurturing environment as well as polish her natural skills. I am happy that
@@ -520,7 +527,8 @@
                             </div>
                             <div class="single-testimonial text-center">
                                 <div class="qt-img">
-                                    <img src="{{ config('app.url') }}visitors/assets/img/testimonial/qt-icon.png" alt="img">
+                                    <img src="{{ config('app.url') }}visitors/assets/img/testimonial/qt-icon.png"
+                                        alt="img">
                                 </div>
                                 <p>the opportunity to explore their own learning at their own pace. It has given my
                                     child a nurturing environment as well as polish her natural skills. I am happy that
@@ -536,7 +544,8 @@
                             </div>
                             <div class="single-testimonial text-center">
                                 <div class="qt-img">
-                                    <img src="{{ config('app.url') }}visitors/assets/img/testimonial/qt-icon.png" alt="img">
+                                    <img src="{{ config('app.url') }}visitors/assets/img/testimonial/qt-icon.png"
+                                        alt="img">
                                 </div>
                                 <p>the opportunity to explore their own learning at their own pace. It has given my
                                     child a nurturing environment as well as polish her natural skills. I am happy that
@@ -579,7 +588,9 @@
                         <div class="single-post2 hover-zoomin mb-30 wow fadeInUp animated" data-animation="fadeInUp"
                             data-delay=".4s">
                             <div class="blog-thumb2">
-                                <a href="#"><img src="{{ config('app.url') }}visitors/assets/img/features/GALL-65.jpg" alt="img"></a>
+                                <a href="#"><img
+                                        src="{{ config('app.url') }}visitors/assets/img/features/GALL-65.jpg"
+                                        alt="img"></a>
                             </div>
                         </div>
                     </div>
@@ -587,7 +598,9 @@
                         <div class="single-post2 hover-zoomin mb-30 wow fadeInUp animated" data-animation="fadeInUp"
                             data-delay=".4s">
                             <div class="blog-thumb2">
-                                <a href="#"><img src="{{ config('app.url') }}visitors/assets/img/features/GALL-66.jpg" alt="img"></a>
+                                <a href="#"><img
+                                        src="{{ config('app.url') }}visitors/assets/img/features/GALL-66.jpg"
+                                        alt="img"></a>
                             </div>
                         </div>
                     </div>
@@ -595,7 +608,9 @@
                         <div class="single-post2 hover-zoomin mb-30 wow fadeInUp animated" data-animation="fadeInUp"
                             data-delay=".4s">
                             <div class="blog-thumb2">
-                                <a href="#"><img src="{{ config('app.url') }}visitors/assets/img/features/GALL-64.jpg" alt="img"></a>
+                                <a href="#"><img
+                                        src="{{ config('app.url') }}visitors/assets/img/features/GALL-64.jpg"
+                                        alt="img"></a>
                             </div>
                         </div>
                     </div>
@@ -603,7 +618,9 @@
                         <div class="single-post2 hover-zoomin mb-30 wow fadeInUp animated" data-animation="fadeInUp"
                             data-delay=".4s">
                             <div class="blog-thumb2">
-                                <a href="#"><img src="{{ config('app.url') }}visitors/assets/img/features/GALL-68.jpg" alt="img"></a>
+                                <a href="#"><img
+                                        src="{{ config('app.url') }}visitors/assets/img/features/GALL-68.jpg"
+                                        alt="img"></a>
                             </div>
                         </div>
                     </div>
@@ -612,7 +629,9 @@
                         <div class="single-post2 hover-zoomin mb-30 wow fadeInUp animated" data-animation="fadeInUp"
                             data-delay=".4s">
                             <div class="blog-thumb2">
-                                <a href="#"><img src="{{ config('app.url') }}visitors/assets/img/features/GALL-56 (1).jpg" alt="img"></a>
+                                <a href="#"><img
+                                        src="{{ config('app.url') }}visitors/assets/img/features/GALL-56 (1).jpg"
+                                        alt="img"></a>
                             </div>
                         </div>
                     </div>
@@ -620,7 +639,9 @@
                         <div class="single-post2 hover-zoomin mb-30 wow fadeInUp animated" data-animation="fadeInUp"
                             data-delay=".4s">
                             <div class="blog-thumb2">
-                                <a href="#"><img src="{{ config('app.url') }}visitors/assets/img/features/GALL-54.jpg" alt="img"></a>
+                                <a href="#"><img
+                                        src="{{ config('app.url') }}visitors/assets/img/features/GALL-54.jpg"
+                                        alt="img"></a>
                             </div>
                         </div>
                     </div>
@@ -628,7 +649,9 @@
                         <div class="single-post2 hover-zoomin mb-30 wow fadeInUp animated" data-animation="fadeInUp"
                             data-delay=".4s">
                             <div class="blog-thumb2">
-                                <a href="#"><img src="{{ config('app.url') }}visitors/assets/img/features/GALL-62.jpg" alt="img"></a>
+                                <a href="#"><img
+                                        src="{{ config('app.url') }}visitors/assets/img/features/GALL-62.jpg"
+                                        alt="img"></a>
                             </div>
                         </div>
                     </div>
@@ -636,7 +659,9 @@
                         <div class="single-post2 hover-zoomin mb-30 wow fadeInUp animated" data-animation="fadeInUp"
                             data-delay=".4s">
                             <div class="blog-thumb2">
-                                <a href="#"><img src="{{ config('app.url') }}visitors/assets/img/features/GALL-63.jpg" alt="img"></a>
+                                <a href="#"><img
+                                        src="{{ config('app.url') }}visitors/assets/img/features/GALL-63.jpg"
+                                        alt="img"></a>
                             </div>
                         </div>
                     </div>

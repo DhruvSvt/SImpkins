@@ -33,6 +33,7 @@ use App\Http\Controllers\SessionYearController;
 use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\ClassTeacherController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\EventNoticeController;
 use App\Http\Controllers\SystemUpdateController;
 use App\Http\Controllers\ExamTimetableController;
 use App\Http\Controllers\FrontOffice\ResumeSubmitController;
@@ -55,6 +56,7 @@ use App\Http\Controllers\PageController;
 */
 
 Route::view('/','visitors.index');
+Route::view('/admission','visitors.admission-enquiry');
 Route::view('/page/privacy-policy','visitors.privacy-policy');
 // Route::get('/login', [HomeController::class, 'login'])->name('login');
 
@@ -135,6 +137,10 @@ Route::group(['middleware' => ['Role', 'auth'],], function () {
         Route::resource('pages', PageController::class);
         Route::get('menus-list', [MenuController::class, 'show'])->name('menus.list');
         Route::get('pages-list', [PageController::class, 'show'])->name('pages.list');
+
+        //Menu and Pages
+        Route::resource('event-notice', EventNoticeController::class);
+        Route::get('event-notice-list', [EventNoticeController::class, 'show'])->name('event-notice.list');
 
 
         Route::get('admission-enquiry-list', [AdmissionEnquiryController::class, 'show'])->name('admission-enquiry.list');

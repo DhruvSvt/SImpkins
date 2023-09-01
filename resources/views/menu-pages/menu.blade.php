@@ -1,14 +1,14 @@
 @extends('layouts.master')
 
 @section('title')
-    {{ __('pages') }}
+    {{ __('menus') }}
 @endsection
 
 @section('content')
     <div class="content-wrapper">
         <div class="page-header">
             <h3 class="page-title">
-                {{ __('manage') . ' ' . __('pages') }}
+                {{ __('manage') . ' ' . __('menus') }}
             </h3>
         </div>
 
@@ -17,19 +17,19 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">
-                            {{ __('list') . ' ' . __('pages') }}
+                            {{ __('list') . ' ' . __('menus') }}
                         </h4>
                         <div class="row">
                             <div class="col-12">
                                 <table aria-describedby="mydesc" class='table table-responsive' id='table_list'
-                                    data-toggle="table" data-url="{{ url('pages-list') }}" data-click-to-select="true"
+                                    data-toggle="table" data-url="{{ url('menus-list') }}" data-click-to-select="true"
                                     data-side-pagination="server" data-pagination="true"
                                     data-page-list="[5, 10, 20, 50, 100, 200, All]" data-search="true"
                                     data-toolbar="#toolbar" data-show-columns="true" data-show-refresh="true"
                                     data-fixed-columns="true" data-fixed-number="2" data-fixed-right-number="1"
                                     data-trim-on-search="false" data-mobile-responsive="true" data-sort-name="id"
                                     data-sort-order="desc" data-maintain-selected="true" data-export-types='["txt","excel"]'
-                                    data-export-options='{ "fileName": "pages-list-<?= date('d-m-y') ?>"
+                                    data-export-options='{ "fileName": "menus-list-<?= date('d-m-y') ?>"
                                     ,"ignoreColumn":
                                     ["operate"]}' data-query-params="StudentDetailQueryParams"
                                     data-check-on-init="true">
@@ -41,15 +41,9 @@
                                             <th scope="col" data-field="no" data-sortable="true">{{ __('no') }}</th>
                                             <th scope="col" data-field="name" data-sortable="false">
                                                 {{ __('name') }}</th>
-                                            <th scope="col" data-field="page_name" data-sortable="false">
-                                                    {{ __('page_name') }}</th>
-                                            <th scope="col" data-field="banner_image" data-sortable="false">
-                                                {{ __('banner_image') }}</th>
-                                            <th scope="col" data-field="content_image" data-sortable="false">
-                                                    {{ __('content_image') }}</th>
                                             <th scope="col" data-field="order" data-sortable="false">
                                                 {{ __('order') }}</th>
-                                            {{-- @canany(['pages-edit', 'pages-delete']) --}}
+                                            {{-- @canany(['menus-edit', 'menus-delete']) --}}
                                                 <th data-events="pageEvents" scope="col" data-field="operate"
                                                     data-sortable="false">{{ __('action') }}</th>
                                             {{-- @endcanany --}}
@@ -64,19 +58,19 @@
         </div>
     </div>
 
-    {{-- @can('pages-edit') --}}
+    {{-- @can('menus-edit') --}}
         <div class="modal fade" id="editModal" data-backdrop="static" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title" id="exampleModalLabel">{{ __('edit') . ' ' . __('pages') }}</h4><br>
+                        <h4 class="modal-title" id="exampleModalLabel">{{ __('edit') . ' ' . __('menus') }}</h4><br>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true"><i class="fa fa-close"></i></span>
                         </button>
                     </div>
                     <form id="edit-form" class="edit-student-registration-form" novalidate="novalidate"
-                        action="{{ url('pages') }}" enctype="multipart/form-data">
+                        action="{{ url('menus') }}" enctype="multipart/form-data">
                         @csrf
                         <div class="modal-body">
                             <input type="hidden" name="edit_id" id="edit_id">

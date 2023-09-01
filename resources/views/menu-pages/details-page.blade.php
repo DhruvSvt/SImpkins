@@ -22,7 +22,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <table aria-describedby="mydesc" class='table table-responsive' id='table_list'
-                                    data-toggle="table" data-url="{{ url('pages.list') }}" data-click-to-select="true"
+                                    data-toggle="table" data-url="{{ url('pages-list') }}" data-click-to-select="true"
                                     data-side-pagination="server" data-pagination="true"
                                     data-page-list="[5, 10, 20, 50, 100, 200, All]" data-search="true"
                                     data-toolbar="#toolbar" data-show-columns="true" data-show-refresh="true"

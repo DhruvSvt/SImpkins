@@ -564,6 +564,17 @@ window.pageEvents = {
     }
 };
 
+window.noticeEvents = {
+    'click .editdata': function (e, value, row, index) {
+        $('#edit_id').val(row.id);
+        $('#edit_title').val(row.title);
+        $('select').val(row.type);
+        $('#edit_order').val(row.order);
+        $('#edit_is_new').val('1');
+        $('#edit_is_new').prop('checked', parseInt(row.is_new)).trigger('change');
+    }
+};
+
 window.assignmentSubmissionEvents = {
     'click .edit-data': function (e, value, row, index) {
         let file_html = "";

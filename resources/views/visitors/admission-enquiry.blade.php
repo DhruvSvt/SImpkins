@@ -1,4 +1,4 @@
-@extends('layouts.visitorsApp')
+@extends('layouts.visitorsApp',['title' => 'Admission Enquiry' .' | '. config('app.name')])
 @section('content')
     <!-- main-area -->
     <main>
