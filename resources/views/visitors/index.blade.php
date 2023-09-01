@@ -352,7 +352,7 @@
                                                 <ul class="mCSB_container">
                                                     @foreach ($notices as $notice)
                                                         <li class="notification">
-                                                            <a href="#" target="_blank">
+                                                            <a href="{{ config('app.url') }}storage/{{ $notice->link }}" target="_blank">
                                                                 {{ $notice->title }}
                                                                 @if ($notice->is_new)
                                                                     <img
@@ -361,22 +361,6 @@
                                                             </a>
                                                         </li>
                                                     @endforeach
-                                                    {{-- <li class="notification"> <a href="#" target="_blank">
-                                                            Composite
-                                                            Allotment of NEET (UG) 2022 <br> AIQ Counselling for Reference
-                                                            Purpose Second Round </a>
-                                                    </li>
-                                                    <li class="notification"> <a href="#" target="_blank">
-                                                            Composite
-                                                            Allotment of NEET (UG) 2022 <br> AIQ Counselling for Reference
-                                                            Purpose Second Round </a>
-                                                    </li>
-                                                    <li class="notification"> <a href="#" target="_blank"> JEE
-                                                            (Main+Advanced) - Classroom / Online Courses &amp; Fee 2023-24
-                                                            <img src="https://mdayurvediccollege.in/demo/vtedu/assets/frontend/default/img/new_icon_blink.gif"
-                                                                width="20"> </a>
-                                                    </li> --}}
-
                                                 </ul>
                                             </marquee>
                                         </div>
@@ -390,7 +374,7 @@
                                             <ul class="mCSB_container">
                                                 @foreach ($events as $event)
                                                     <li class="notification">
-                                                        <a href="#" target="_blank">
+                                                        <a href="{{ config('app.url') }}storage/{{ $notice->link }}" target="_blank">
                                                             {{ $event->title }}
                                                             @if ($event->is_new)
                                                                 <img
@@ -399,24 +383,6 @@
                                                         </a>
                                                     </li>
                                                 @endforeach
-                                                {{-- <li class="notification"> <a href="#" target="_blank"> Pre-Medical
-                                                        (NEET-UG) - Classroom / Online Courses &amp; Fee 2023-24 <img
-                                                            src="https://mdayurvediccollege.in/demo/vtedu/assets/frontend/default/img/new_icon_blink.gif"
-                                                            width="20"> </a>
-                                                </li>
-                                                <li class="notification"> <a href="#" target="_blank"> Composite
-                                                        Allotment of NEET (UG) 2022 <br> AIQ Counselling for Reference
-                                                        Purpose Second Round </a>
-                                                </li>
-                                                <li class="notification"> <a href="#" target="_blank"> Composite
-                                                        Allotment of NEET (UG) 2022 <br> AIQ Counselling for Reference
-                                                        Purpose Second Round </a>
-                                                </li>
-                                                <li class="notification"> <a href="#" target="_blank"> JEE
-                                                        (Main+Advanced) - Classroom / Online Courses &amp; Fee 2023-24
-                                                        <img src="https://mdayurvediccollege.in/demo/vtedu/assets/frontend/default/img/new_icon_blink.gif"
-                                                            width="20"> </a>
-                                                </li> --}}
                                             </ul>
                                         </marquee>
                                     </div>
@@ -434,12 +400,13 @@
                                     Make An Enquiry
                                 </h2>
                             </div>
-                            <form action="#" method="post" class="contact-form mt-30 wow fadeInUp animated"
+                            <form action="{{ route('visitor.contact') }}" method="post" class="contact-form mt-30 wow fadeInUp animated"
                                 data-animation="fadeInUp" data-delay=".4s">
+                                @csrf
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="contact-field p-relative c-name mb-20">
-                                            <input type="text" id="firstn" name="firstn" placeholder="First Name"
+                                            <input type="text" id="name" name="name" placeholder="Name"
                                                 required>
                                         </div>
                                     </div>
@@ -451,13 +418,13 @@
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="contact-field p-relative c-subject mb-20">
-                                            <input type="text" id="phone" name="phone" placeholder="Phone No."
+                                            <input type="text" id="phone" name="mobile" placeholder="Phone No."
                                                 required>
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="contact-field p-relative c-message mb-0">
-                                            <textarea name="message" id="message" cols="30" rows="10" placeholder="Write comments"></textarea>
+                                            <textarea name="comments" id="message" cols="30" rows="10" placeholder="Write comments"></textarea>
                                         </div>
                                         <div class="slider-btn">
                                             <button class="btn ss-btn" data-animation="fadeInRight"

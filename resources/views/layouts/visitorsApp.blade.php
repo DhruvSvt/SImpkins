@@ -57,9 +57,9 @@
 
     <!-- footer -->
     @include('visitors.inc.footer')
-    <div class="div-block-189 button-enq tokyo noida-sticky-right-btn"><a href="admission-enquiry.html"
-            class="button-14 enquire w-button">Enquire Now</a><a href="contact.html" target="_blank"
-            class="button-14 book-a-tour-button w-button">BOOK A TOUR</a>
+    <div class="div-block-189 button-enq tokyo noida-sticky-right-btn">
+        <a href="{{ route('visitor.admission') }}" class="button-14 enquire w-button">Enquire Now</a>
+        <a href="{{ route('visitor.contact') }}" class="button-14 book-a-tour-button w-button" target="_blank" >BOOK A TOUR</a>
     </div>
     <!-- footer-end -->
 

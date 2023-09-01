@@ -212,6 +212,30 @@ class EventNoticeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // if (!Auth::user()->can('employee-delete')) {
+        //     $response = array(
+        //         'message' => trans('no_permission_message')
+        //     );
+        //     return response()->json($response);
+        // }
+        try{
+            // $employee_id = EventNotice::select('id')->where('user_id', $id)->pluck('id')->first();
+            $event_notice = EventNotice::find($id);
+            if ($event_notice->link != "" && Storage::disk('public')->exists($event_notice->link)) {
+                Storage::disk('public')->delete($event_notice->link);
+            }
+            $event_notice->delete();
+
+            $response = [
+                'error' => false,
+                'message' => trans('data_delete_successfully')
+            ];
+        } catch (Throwable $e) {
+            $response = array(
+                'error' => true,
+                'message' => trans('error_occurred')
+            );
+        }
+        return response()->json($response);
     }
 }

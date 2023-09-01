@@ -33,7 +33,7 @@
                                     @endphp
                                     @foreach ($menus as $menu)
                                         <li class="has-sub">
-                                            <a href="about.html">{{ $menu->name }}</a>
+                                            <a href="javascript:void(0)">{{ $menu->name }}</a>
                                             @if (isset($menu->pages) && count($menu->pages) > 0)
                                                 <ul>
                                                     @foreach ($menu->pages as $page)
@@ -52,7 +52,7 @@
                                             <li><a href="events.html">Upcoming Events </a></li>
                                         </ul>
                                     </li>
-                                    <li><a class="book_tour" href="contact.html">Book A Tour</a></li>
+                                    <li><a class="book_tour" href="{{ route('visitor.contact') }}">Book A Tour</a></li>
                                 </ul>
                             </nav>
                         </div>

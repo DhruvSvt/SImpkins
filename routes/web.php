@@ -33,6 +33,7 @@ use App\Http\Controllers\SessionYearController;
 use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\ClassTeacherController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\EnquiryController;
 use App\Http\Controllers\EventNoticeController;
 use App\Http\Controllers\SystemUpdateController;
 use App\Http\Controllers\ExamTimetableController;
@@ -56,8 +57,13 @@ use App\Http\Controllers\PageController;
 */
 
 Route::get('/',[IndexController::class, 'index']);
-Route::view('/admission','visitors.admission-enquiry');
-Route::view('/page/privacy-policy','visitors.privacy-policy');
+Route::view('/admission','visitors.admission-enquiry')->name('visitor.admission');
+Route::post('/admission', [EnquiryController::class, 'enuiryAdmission'])->name('visitor.admission');
+
+Route::view('/contact','visitors.contact')->name('visitor.contact');
+Route::post('/contact',[EnquiryController::class, 'enuiryContact'])->name('visitor.contact');
+
+Route::view('/page/privacy-policy','visitors.privacy-policy')->name('visitor.privacy-policy');
 // Route::get('/login', [HomeController::class, 'login'])->name('login');
 
 Auth::routes();

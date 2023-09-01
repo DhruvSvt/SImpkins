@@ -4,7 +4,7 @@
     <main>
         <!-- breadcrumb-area -->
         <section class="breadcrumb-area d-flex  p-relative align-items-center"
-            style="background-image:linear-gradient(rgba(2,2,2,0) 38%,#000 100%,rgba(1,1,1,.66)),url(assets/img/features/shutterstock_263211977.avif); background-size: cover;">
+            style="background-image:linear-gradient(rgba(2,2,2,0) 38%,#000 100%,rgba(1,1,1,.66)),url({{ config('app.url') }}visitors/assets/img/features/shutterstock_263211977.avif); background-size: cover;">
 
             <div class="container">
                 <div class="row align-items-center">
@@ -43,9 +43,9 @@
                                 </h2>
                             </div>
                             <form class="contact-form mt-30 contact-field " enctype="multipart/form-data"
-                                action="https://simpkins.mdayurvediccollege.in/admission-enquiry" method="POST"
+                                action="{{ route('visitor.admission') }}" method="POST"
                                 novalidate="novalidate">
-                                <input type="hidden" name="_token" value="t6AmPTUXy8sQmOufESFGpcpWrqOkAlAC7IYqgYP1">
+                                @csrf
                                 <div class="row">
                                     <div class="form-group col-sm-12 col-md-4">
                                         <label>Student Name <span class="text-danger">*</span></label>

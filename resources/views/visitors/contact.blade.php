@@ -19,7 +19,7 @@
 
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item"><a href="/">Home</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Contact Enquiry</li>
                             </ol>
                         </nav>
@@ -119,12 +119,13 @@
                                     Make An Enquiry
                                 </h2>
                             </div>
-                            <form action="#" method="post" class="contact-form mt-30 wow fadeInUp animated"
+                            <form action="{{ route('visitor.contact') }}" method="post" class="contact-form mt-30 wow fadeInUp animated"
                                 data-animation="fadeInUp" data-delay=".4s">
+                                @csrf
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="contact-field p-relative c-name mb-20">
-                                            <input type="text" id="firstn" name="firstn" placeholder="First Name"
+                                            <input type="text" id="name" name="name" placeholder="Name"
                                                 required>
                                         </div>
                                     </div>
@@ -136,13 +137,13 @@
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="contact-field p-relative c-subject mb-20">
-                                            <input type="text" id="phone" name="phone" placeholder="Phone No."
+                                            <input type="text" id="phone" name="mobile" placeholder="Phone No."
                                                 required>
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="contact-field p-relative c-message mb-0">
-                                            <textarea name="message" id="message" cols="30" rows="10" placeholder="Write comments"></textarea>
+                                            <textarea name="comments" id="message" cols="30" rows="10" placeholder="Write comments"></textarea>
                                         </div>
                                         <div class="slider-btn">
                                             <button class="btn ss-btn" data-animation="fadeInRight"

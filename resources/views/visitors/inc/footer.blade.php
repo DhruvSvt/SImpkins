@@ -6,8 +6,8 @@
                     <div class="footer-widget pr-30">
                         <div class="f-widget-title">
                             <div class="logo">
-                                <a href="/"><img src="{{ config('app.url') }}visitors/assets/img/logo/logo.png" alt="logo"
-                                        style="    height: auto;
+                                <a href="/"><img src="{{ config('app.url') }}visitors/assets/img/logo/logo.png"
+                                        alt="logo" style="    height: auto;
 width: auto;
 max-width: 100%;"></a>
                             </div>
