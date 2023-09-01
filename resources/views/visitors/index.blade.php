@@ -6,7 +6,7 @@
 
             <div class="slider-active" style="background: #141b22;">
                 <div class="single-slider slider-bg"
-                    style="background-image:linear-gradient(rgba(2,2,2,0) 38%,#000 100%,rgba(1,1,1,.66)),url({{ config('app.url') }}assets/img/slider/AF1QipOkSeNIjWdozkFduU4ifj4XOZ8ptLcI2UoHiCTX=s1536.jpeg); background-size: cover;">
+                    style="background-image:linear-gradient(rgba(2,2,2,0) 38%,#000 100%,rgba(1,1,1,.66)),url({{ config('app.url') }}visitors/assets/img/slider/AF1QipOkSeNIjWdozkFduU4ifj4XOZ8ptLcI2UoHiCTX=s1536.jpeg); background-size: cover;">
                     <div class="container">
                         <div class="row justify-content-md-center">
 
@@ -26,7 +26,7 @@
                     </div>
                 </div>
                 <div class="single-slider slider-bg"
-                    style="background-image:linear-gradient(rgba(2,2,2,0) 38%,#000 100%,rgba(1,1,1,.66)),url({{ config('app.url') }}assets/img/slider/photo.jpeg); background-size: cover;">
+                    style="background-image:linear-gradient(rgba(2,2,2,0) 38%,#000 100%,rgba(1,1,1,.66)),url({{ config('app.url') }}visitors/assets/img/slider/photo.jpeg); background-size: cover;">
                     <div class="container">
                         <div class="row justify-content-md-center">
 
@@ -229,7 +229,7 @@
         <!-- courses-area -->
 
         <section class="about-area about-p pt-90 pb-90 p-relative fix"
-            style="background-image: url({{ config('app.url') }}assets/img/features/6094de56e25239dee2b95d18_stars.png),none,none; background-position: 96% 262px,8px 250px,10px 40px;background-repeat: no-repeat;">
+            style="background-image: url({{ config('app.url') }}visitors/assets/img/features/6094de56e25239dee2b95d18_stars.png),none,none; background-position: 96% 262px,8px 250px,10px 40px;background-repeat: no-repeat;">
             <div class="container">
                 <div class="row justify-content-center align-items-center">
                     <div class="col-lg-6 col-md-12 col-sm-12">
