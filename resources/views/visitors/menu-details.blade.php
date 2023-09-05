@@ -33,7 +33,7 @@
 
         <!-- about-area -->
         <section class="gmp-2 mission-wrp about-area about-p pt-60 pb-60 p-relative fix">
-            <div class="animations-02"><img src="assets/img/bg/an-img-02.png" alt="contact-bg-an-01"></div>
+            <div class="animations-02"><img src="{{ config('app.url') }}storage/{{ $page->content_image }}" alt="contact-bg-an-01"></div>
             <div class="container">
                 <div class="row justify-content-center align-items-center">
                     <div class="col-lg-12 col-md-12 col-sm-12 text-center">
