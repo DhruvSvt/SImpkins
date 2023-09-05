@@ -52,7 +52,7 @@ class PageController extends Controller
         $request->validate([
             'menu_id' => 'required',
             'page_name' => 'required',
-            'banner_image' => 'required|mimes:jpeg,png,jpg|image|max:2048',
+            // 'banner_image' => 'required|mimes:jpeg,png,jpg|image|max:2048',
             'content_image' => 'mimes:jpeg,png,jpg|image|max:2048',
         ]);
 
@@ -181,7 +181,7 @@ class PageController extends Controller
         $request->validate([
             'menu_id' => 'required',
             'page_name' => 'required',
-            'banner_image' => 'mimes:jpeg,png,jpg|image|max:2048',
+            // 'banner_image' => 'mimes:jpeg,png,jpg|image|max:2048',
             'content_image' => 'mimes:jpeg,png,jpg|image|max:2048',
         ]);
 

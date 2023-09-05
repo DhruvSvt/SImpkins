@@ -37,7 +37,7 @@
                                     </select>
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('banner_image') }} <span class="text-danger">*</span></label>
+                                    <label>{{ __('banner_image') }}</label>
                                     <input type="file" name="banner_image" class="file-upload-default" />
                                     <div class="input-group col-xs-12">
                                         <input type="text" class="form-control file-upload-info" disabled=""
