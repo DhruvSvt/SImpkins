@@ -3,9 +3,9 @@
     <!-- main-area -->
     <main>
         <!-- breadcrumb-area -->
-        <section class="breadcrumb-area d-flex  p-relative align-items-center"
-            style="background-image:linear-gradient(rgba(2,2,2,0) 38%,#000 100%,rgba(1,1,1,.66)),
-                url({{config('app.url')}}storage/{{ $page->banner_image }}); background-size: cover;">
+        <section class="breadcrumb-area d-flex  p-relative align-items-center" style="    min-height: auto;
+        padding: 70px 0;
+        background: #00adee;">
 
             <div class="container">
                 <div class="row align-items-center">
@@ -21,7 +21,7 @@
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="/">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">{{ $page->menu ? $page->menu->name : '-' }}</li>
+                                <li class="breadcrumb-item active" aria-current="page">{{ $page->page_name ?? '-' }}</li>
                             </ol>
                         </nav>
                     </div>
@@ -33,24 +33,20 @@
 
         <!-- about-area -->
         <section class="gmp-2 mission-wrp about-area about-p pt-60 pb-60 p-relative fix">
-            <div class="animations-02"><img src="{{ config('app.url') }}storage/{{ $page->content_image }}" alt="contact-bg-an-01"></div>
-            <div class="container">
+           <div class="container">
                 <div class="row justify-content-center align-items-center">
-                    <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+                    <div class="col-lg-8 col-sm-12 text-left">
                         <div class="about-content s-about-content pl-15 wow fadeInRight  animated mb-5"
                             data-animation="fadeInRight" data-delay=".4s">
-                            {{-- <div class="about-title second-title pb-15">
-                                <h2>Welcome to Simpkins School in Agra</h2>
-                            </div> --}}
-                            <p class="txt-clr">
-                                {!! $page->content !!}
-                            </p>
+<div> {!! $page->content !!}</div>
                         </div>
                     </div>
-
-
+                    <div class="col-lg-4 d-flex col-sm-12 text-center">
+                        <img src="{{ config('app.url') }}storage/{{ $page->content_image }}" class="m-auto img-fluid img-bordered img-thumbnail" alt="{{ $page->page_name ?? '-' }}">
+                    </div>
                 </div>
             </div>
+
         </section>
         <!-- about-area-end -->
     </main>
