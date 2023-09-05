@@ -44,14 +44,14 @@
                                             @endif
                                         </li>
                                     @endforeach
-                                    <li class="has-sub">
+                                    {{-- <li class="has-sub">
                                         <a href="qeducato/blog.html">Resources</a>
                                         <ul>
                                             <li><a href="gallery.html"> Photo Gallery </a></li>
                                             <li><a href="notice.html"> Latest Notice</a></li>
                                             <li><a href="events.html">Upcoming Events </a></li>
                                         </ul>
-                                    </li>
+                                    </li> --}}
                                     <li><a class="book_tour" href="{{ route('visitor.contact') }}">Book A Tour</a></li>
                                 </ul>
                             </nav>

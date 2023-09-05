@@ -1830,7 +1830,7 @@ class TeacherApiController extends Controller
             $user = Auth::user()->teacher;
             $class_section_id = $request->class_section_id;
             $get_class_section_id = ClassSection::select('id')->where('id', $class_section_id)->where('class_teacher_id', $user->id)->get()->pluck('id');
-            $sql = Students::with('user:id,first_name,last_name,image,gender,dob,current_address,permanent_address', 'class_section')->whereIn('class_section_id', $get_class_section_id);
+            $sql = Students::with('user:id,first_name,last_name,full_name,image,gender,dob,current_address,permanent_address', 'class_section')->whereIn('class_section_id', $get_class_section_id);
             $data = $sql->orderBy('id')->get();
 
             $response = array(
