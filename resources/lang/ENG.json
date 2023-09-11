@@ -346,6 +346,9 @@
     "event-notice-details": "Event Notice Details",
     "new": "New",
     "contact-enquiry": "Contact Enquiry",
-    "comments": "Comments"
+    "comments": "Comments",
+    "gallery": "Gallery",
+    "gallery_add": "Add Gallery",
+    "gallery_details": "Gallery Details"
 
 }

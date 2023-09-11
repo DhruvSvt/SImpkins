@@ -42,6 +42,7 @@ use App\Http\Controllers\FrontOffice\ResumeSubmitController;
 use App\Http\Controllers\StudentSessionController;
 use App\Http\Controllers\SubjectTeacherController;
 use App\Http\Controllers\FrontOffice\VisitorBookController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\PageController;
@@ -149,6 +150,9 @@ Route::group(['middleware' => ['Role', 'auth'],], function () {
         //Menu and Pages
         Route::resource('event-notice', EventNoticeController::class);
         Route::get('event-notice-list', [EventNoticeController::class, 'show'])->name('event-notice.list');
+
+        Route::resource('gallery', GalleryController::class);
+        Route::get('gallery-list', [GalleryController::class, 'show'])->name('gallery.list');
 
         //contact enquiry
         Route::resource('contact-enquiry', ContactEnquiryController::class);

@@ -564,6 +564,14 @@ window.pageEvents = {
     }
 };
 
+window.pageEvents = {
+    'click .editdata': function (e, value, row, index) {
+        $('#edit_id').val(row.id);
+        $('#edit_order').val(row.order);
+        $('#edit-image-tag').attr('src', row.image);
+    }
+};
+
 window.noticeEvents = {
     'click .editdata': function (e, value, row, index) {
         $('#edit_id').val(row.id);
