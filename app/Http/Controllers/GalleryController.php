@@ -209,4 +209,9 @@ class GalleryController extends Controller
         $photos = Gallery::all();
         return view('visitors.photo-gallery', compact('photos'));
     }
+
+    public function video_gallery()
+    {
+        return view('visitors.video-gallery');
+    }
 }

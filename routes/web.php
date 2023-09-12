@@ -373,6 +373,7 @@ Route::get('/storage-link', function(){
 // });
 
 Route::get('/photo-gallery',[GalleryController::class,'photo_gallery'])->name('photo-gallery');
+Route::get('/video-gallery',[GalleryController::class,'video_gallery'])->name('video-gallery');
 
 Route::get('/{slug}',[IndexController::class, 'pages'])->name('pages');
 
