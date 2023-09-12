@@ -21,7 +21,20 @@
                         </h4>
                         <div class="row">
                             <div class="col-12">
-                                <table aria-describedby="mydesc" class='table table-responsive' id='table_list'
+                                {{-- <table aria-describedby="mydesc" class='table table-responsive' id='table_list'
+                                    data-toggle="table" data-url="{{ url('gallery-list') }}" data-click-to-select="true"
+                                    data-side-pagination="server" data-pagination="true"
+                                    data-page-list="[5, 10, 20, 50, 100, 200, All]" data-search="true"
+                                    data-toolbar="#toolbar" data-show-columns="true" data-show-refresh="true"
+                                    data-fixed-columns="true" data-fixed-number="2" data-fixed-right-number="1"
+                                    data-trim-on-search="false" data-mobile-responsive="true" data-sort-name="order"
+                                    data-sort-order="desc" data-maintain-selected="true" data-export-types='["txt","excel"]'
+                                    data-export-options='{ "fileName": "gallery-list-<?= date('d-m-y') ?>"
+                                    ,"ignoreColumn":
+                                    ["operate"]}' data-query-params="StudentDetailQueryParams"
+                                    data-check-on-init="true"> --}}
+
+                                    <table aria-describedby="mydesc" class='table table-responsive' id='table_list'
                                     data-toggle="table" data-url="{{ url('gallery-list') }}" data-click-to-select="true"
                                     data-side-pagination="server" data-pagination="true"
                                     data-page-list="[5, 10, 20, 50, 100, 200, All]" data-search="true"
@@ -43,7 +56,7 @@
                                                 data-formatter="imageFormatter" data-sortable="false">
                                                 {{ __('image') }}</th>
                                             {{-- @canany(['gallery-edit', 'gallery-delete']) --}}
-                                            <th data-events="galleryEvents" scope="col" data-field="operate"
+                                            <th data-events="   " scope="col" data-field="operate"
                                                 data-sortable="false">{{ __('action') }}</th>
                                             {{-- @endcanany --}}
                                         </tr>

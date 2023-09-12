@@ -203,4 +203,10 @@ class GalleryController extends Controller
         }
         return response()->json($response);
     }
+
+    public function photo_gallery()
+    {
+        $photos = Gallery::all();
+        return view('visitors.photo-gallery', compact('photos'));
+    }
 }

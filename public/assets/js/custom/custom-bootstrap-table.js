@@ -550,6 +550,15 @@ window.menuEvents = {
     }
 };
 
+window.galleryEvents = {
+    'click .editdata': function (e, value, row, index) {
+        $('#edit_id').val(row.id);
+        $('#edit-image-tag').attr('src', row.image);
+        $('#edit_order').val(row.order);
+
+    }
+};
+
 
 window.pageEvents = {
     'click .editdata': function (e, value, row, index) {

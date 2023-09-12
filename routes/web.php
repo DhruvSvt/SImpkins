@@ -372,4 +372,7 @@ Route::get('/storage-link', function(){
 //     return view('auth.login');
 // });
 
+Route::get('/photo-gallery',[GalleryController::class,'photo_gallery'])->name('photo-gallery');
+
 Route::get('/{slug}',[IndexController::class, 'pages'])->name('pages');
+
