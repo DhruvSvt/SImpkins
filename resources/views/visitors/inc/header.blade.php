@@ -21,8 +21,8 @@
         <div class="row">
             <div class="col-lg-2 col-12 text-center d-flex">
                 <a href="" class="m-auto">
-                    <img loading="lazy" src="{{ config('app.url') }}visitors/assets/img/logo/simpkins.jpg" alt="logo"
-                        style="width: 80px; aspect-ratio: 409/512">
+                    <img loading="lazy" src="{{ config('app.url') }}visitors/assets/img/logo/simpkins_logo.jpg" alt="logo"
+                    style="height: 94px;width: 106px;" aspect-ratio: 409/512">
                 </a>
             </div>
             <div class="col-lg-8 col-12">
