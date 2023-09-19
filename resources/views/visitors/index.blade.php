@@ -87,76 +87,47 @@
                     </div>
                     <div class="offset-lg-1 col-lg-5 col-md-12 col-sm-12">
                         <div class="row justify-content-center align-items-center">
-                            <div class="col-lg-6 col-md-12 col-sm-12 mb-3">
-                                <a href="#"
-                                    class="link-card-colorful dark-blue w-inline-block wow fadeInLeft animated"
-                                    data-animation="fadeInLeft" data-delay=".4s">
-                                    <div>
-                                        <div class="link-card-circle dark-blue"
-                                            style="background-color: rgba(0, 90, 169, 0.1);"><img
-                                                src="{{ config('app.url') }}visitors/assets/img/features/5f3ed15cfcf15581365adbea_uni placements-icon-04.svg"
-                                                loading="lazy" alt="Placements"></div>
-                                    </div>
-                                    <div class="_10px-padding"></div>
-                                    <h4>University Placements</h4>
-                                    <div class="_12px-text" style="color: rgba(40, 51, 56, 0.6);">Our accomplished
-                                        students have been accepted in over 50 universities around the world.</div>
-                                </a>
+                            <div class="section-title wow fadeInDown animated" data-animation="fadeInDown" data-delay=".4s">
+                                <h2>
+                                    Make An Enquiry
+                                </h2>
                             </div>
-                            <div class="col-lg-6 col-md-12 col-sm-12 mb-3">
-                                <a href="#"
-                                    class="link-card-colorful dark-blue w-inline-block wow fadeInLeft animated"
-                                    data-animation="fadeInLeft" data-delay=".5s">
-                                    <div>
-                                        <div class="link-card-circle dark-blue"
-                                            style="background-color: rgba(0, 90, 169, 0.1);"><img
-                                                src="{{ config('app.url') }}visitors/assets/img/features/64119eac1e4464f50bbb8597_scholarship-icon.png"
-                                                loading="lazy" alt="Placements"></div>
+                            <form action="{{ route('visitor.contact') }}" method="post"
+                                class="contact-form mt-30 wow fadeInUp animated" data-animation="fadeInUp" data-delay=".4s">
+                                @csrf
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="contact-field p-relative c-name mb-20">
+                                            <input type="text" id="name" name="name" placeholder="Name" required>
+                                        </div>
                                     </div>
-                                    <div class="_10px-padding"></div>
-                                    <h4>Scholarships</h4>
-                                    <div class="_12px-text" style="color: rgba(40, 51, 56, 0.6);">Our accomplished
-                                        students have been accepted in over 50 universities around the world.</div>
-                                </a>
-                            </div>
-
-                            <div class="col-lg-6 col-md-12 col-sm-12 mb-3">
-                                <a href="#"
-                                    class="link-card-colorful dark-blue w-inline-block wow fadeInLeft animated"
-                                    data-animation="fadeInLeft" data-delay=".4s">
-                                    <div>
-                                        <div class="link-card-circle dark-blue"
-                                            style="background-color: rgba(0, 90, 169, 0.1);"><img
-                                                src="{{ config('app.url') }}visitors/assets/img/features/5f3ed15cfcf155745e5adbeb_results-icon-04.svg"
-                                                loading="lazy" alt="Placements"></div>
+                                    <div class="col-lg-12">
+                                        <div class="contact-field p-relative c-subject mb-20">
+                                            <input type="text" id="email" name="email" placeholder="Email"
+                                                required>
+                                        </div>
                                     </div>
-                                    <div class="_10px-padding"></div>
-                                    <h4>Top Results</h4>
-                                    <div class="_12px-text" style="color: rgba(40, 51, 56, 0.6);">Our accomplished
-                                        students have been accepted in over 50 universities around the world.</div>
-                                </a>
-                            </div>
-                            <div class="col-lg-6 col-md-12 col-sm-12 mb-3">
-                                <a href="#"
-                                    class="link-card-colorful dark-blue w-inline-block wow fadeInLeft animated"
-                                    data-animation="fadeInLeft" data-delay=".5s">
-                                    <div>
-                                        <div class="link-card-circle dark-blue"
-                                            style="background-color: rgba(0, 90, 169, 0.1);"><img
-                                                src="{{ config('app.url') }}visitors/assets/img/features/5f3ed15cfcf15546cf5adbed_awards-icon-04.svg"
-                                                loading="lazy" alt="Placements"></div>
+                                    <div class="col-lg-12">
+                                        <div class="contact-field p-relative c-subject mb-20">
+                                            <input type="text" id="phone" name="mobile" placeholder="Phone No."
+                                                required>
+                                        </div>
                                     </div>
-                                    <div class="_10px-padding"></div>
-                                    <h4>Awards Recoginision</h4>
-                                    <div class="_12px-text" style="color: rgba(40, 51, 56, 0.6);">Our accomplished
-                                        students have been accepted in over 50 universities around the world.</div>
-                                </a>
-                            </div>
+                                    <div class="col-lg-12">
+                                        <div class="contact-field p-relative c-message mb-0">
+                                            <textarea name="comments" id="message" cols="30" rows="4" placeholder="Write comments"></textarea>
+                                        </div>
+                                        <div class="slider-btn">
+                                            <button class="btn ss-btn" data-animation="fadeInRight"
+                                                data-delay=".8s"><span>Submit Now</span> <i
+                                                    class="fal fa-angle-right"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
 
 
                         </div>
-
-
                     </div>
 
                 </div>
@@ -317,7 +288,7 @@
         </div>
         <div class="white-curve-main"></div>
         <!-- frequently-area -->
-        <section class="faq-area pt-90 pb-90 p-relative fix">
+        {{-- <section class="faq-area pt-90 pb-90 p-relative fix">
             <div class="animations-10"><img src="{{ config('app.url') }}visitors/assets/img/bg/an-img-04.png"
                     alt="an-img-01"></div>
             <div class="animations-08"><img src="{{ config('app.url') }}visitors/assets/img/bg/an-img-05.png"
@@ -352,7 +323,8 @@
                                                 <ul class="mCSB_container">
                                                     @foreach ($notices as $notice)
                                                         <li class="notification">
-                                                            <a href="{{ config('app.url') }}storage/{{ $notice->link }}" target="_blank">
+                                                            <a href="{{ config('app.url') }}storage/{{ $notice->link }}"
+                                                                target="_blank">
                                                                 {{ $notice->title }}
                                                                 @if ($notice->is_new)
                                                                     <img
@@ -366,26 +338,27 @@
                                         </div>
                                     @endif
                                     @if ($events && count($events) > 0)
-                                    <div class="tab-pane fade" id="profile" role="tabpanel"
-                                        aria-labelledby="profile-tab">
-                                        <marquee behavior="scroll" direction="up" scrollamount="4"
-                                            style="height: 309px;    overflow-y: auto;" onmouseover="this.stop()"
-                                            onmouseout="this.start()">
-                                            <ul class="mCSB_container">
-                                                @foreach ($events as $event)
-                                                    <li class="notification">
-                                                        <a href="{{ config('app.url') }}storage/{{ $notice->link }}" target="_blank">
-                                                            {{ $event->title }}
-                                                            @if ($event->is_new)
-                                                                <img
-                                                                    src="https://mdayurvediccollege.in/demo/vtedu/assets/frontend/default/img/new_icon_blink.gif"width="20">
-                                                            @endif
-                                                        </a>
-                                                    </li>
-                                                @endforeach
-                                            </ul>
-                                        </marquee>
-                                    </div>
+                                        <div class="tab-pane fade" id="profile" role="tabpanel"
+                                            aria-labelledby="profile-tab">
+                                            <marquee behavior="scroll" direction="up" scrollamount="4"
+                                                style="height: 309px;    overflow-y: auto;" onmouseover="this.stop()"
+                                                onmouseout="this.start()">
+                                                <ul class="mCSB_container">
+                                                    @foreach ($events as $event)
+                                                        <li class="notification">
+                                                            <a href="{{ config('app.url') }}storage/{{ $notice->link }}"
+                                                                target="_blank">
+                                                                {{ $event->title }}
+                                                                @if ($event->is_new)
+                                                                    <img
+                                                                        src="https://mdayurvediccollege.in/demo/vtedu/assets/frontend/default/img/new_icon_blink.gif"width="20">
+                                                                @endif
+                                                            </a>
+                                                        </li>
+                                                    @endforeach
+                                                </ul>
+                                            </marquee>
+                                        </div>
                                     @endif
                                 </div>
                             </div>
@@ -438,7 +411,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
         <!-- frequently-area-end -->
         <!-- video-area -->
 
@@ -451,7 +424,7 @@
                             data-delay=".4s">
 
                             <h2>
-                                Hear what parents have to say about us
+                                Hear what parents have to say about us 
                             </h2>
                         </div>
                     </div>

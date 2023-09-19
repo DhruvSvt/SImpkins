@@ -51,7 +51,11 @@
             <div class="main-menu text-left text-xl-right masonry-gallery-huge">
                 <nav id="mobile-menu">
                     <ul>
-                        <li><a href="/">Home</a></li>
+                        <li>
+                            <a href="/">
+                                <i class="fa fa-home" aria-hidden="true" style="color:#fff; font-size: 18px;"></i>
+                            </a>
+                        </li>
                         @php
                             $menus = App\Models\Menu::get();
                         @endphp
