@@ -45,24 +45,26 @@
                 </div>
             </div> --}}
             <!-- Background video -->
-                <div class="video-background-holder">
-                    <div class="video-background-overlay">
-                        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" preload="auto">
-                            <source src="{{ config('app.url') }}visitors/assets/video/demo_video.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="video-background-content container h-100">
-                        <div class="d-flex h-100 text-center align-items-center">
-                            <div class="w-100 text-white">
-                                <h1 class="text-white">Repeatedly ranked #1</h1>
-                                <p class="lead mb-0">Simpkins School is located in the heart of the historical city of Agra. The
-                                    school was founded three decades<br> back with a commitment to excellence and for<br> providing
-                                    opportunities to enable young people<br> to be best positioned, consequent to their education.
-                                </p>
-                            </div>
+            <div class="video-background-holder">
+                <div class="video-background-overlay">
+                    <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" preload="auto">
+                        <source src="{{ config('app.url') }}visitors/assets/video/demo_video.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-background-content container h-100">
+                    <div class="d-flex h-100 text-center align-items-center">
+                        <div class="w-100 text-white">
+                            <h1 class="text-white">Repeatedly ranked #1</h1>
+                            <p class="lead mb-0">Simpkins School is located in the heart of the historical city of Agra. The
+                                school was founded three decades<br> back with a commitment to excellence and for<br>
+                                providing
+                                opportunities to enable young people<br> to be best positioned, consequent to their
+                                education.
+                            </p>
                         </div>
                     </div>
                 </div>
+            </div>
             <!-- End -->
 
         </section>
@@ -432,14 +434,95 @@
         <!-- frequently-area-end -->
         <!-- video-area -->
 
-        <section class="gmp-2 mission-wrp testimonial-area pt-90 pb-90 p-relative fix">
+        <!-- Aluminai Cards Start -->
+        <div class="container">
+            <div class="row row-cols-3 g-3">
+                <div class="col">
+                    <div class="card">
+                        <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp" class="card-img-top"
+                            alt="Hollywood Sign on The Hill" />
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">
+                                This is a longer card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/042.webp" class="card-img-top"
+                            alt="Palm Springs Road" />
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">
+                                This is a longer card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/043.webp" class="card-img-top"
+                            alt="Los Angeles Skyscrapers" />
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                                additional content.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/044.webp" class="card-img-top"
+                            alt="Skyscrapers" />
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">
+                                This is a longer card with supporting text below as a natural lead-in to
+                                additional content.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/046.webp" class="card-img-top"
+                            alt="Skyscrapers" />
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">
+                                This is a longer card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/050.webp" class="card-img-top"
+                            alt="Skyscrapers" />
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">
+                                This is a longer card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Aluminai Cards Start -->
 
+        <section class="gmp-2 mission-wrp testimonial-area pt-90 pb-90 p-relative fix">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-title text-center mb-50 wow fadeInDown animated" data-animation="fadeInDown"
                             data-delay=".4s">
-
                             <h2>
                                 Hear what parents have to say about us
                             </h2>

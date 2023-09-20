@@ -58,9 +58,72 @@
     <!-- footer -->
     @include('visitors.inc.footer')
     <div class="div-block-189 button-enq tokyo noida-sticky-right-btn">
-        <a href="{{ route('visitor.admission') }}" class="button-14 enquire w-button">Enquire Now</a>
-        <a href="{{ route('visitor.contact') }}" class="button-14 book-a-tour-button w-button" target="_blank" >BOOK A TOUR</a>
+        <a href="#" class="button-14 enquire w-button" data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop">Enquire Now</a>
+        <a href="{{ route('visitor.contact') }}" class="button-14 book-a-tour-button w-button" target="_blank">BOOK A
+            TOUR</a>
     </div>
+
+    <!-- Modal -->
+    <!-- Button trigger modal -->
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="col-lg-12 col-md-12 col-sm-12 mt-2 mb-2 p-3">
+                    <div class="row justify-content-center align-items-center">
+                        <div class="section-title wow fadeInDown animated" data-animation="fadeInDown" data-delay=".2s">
+                            <h2 class="d-inline-block">
+                                Make An Enquiry
+                            </h2>
+                            <div class="d-inline-block" style="float: right;">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                        </div>
+                        <form action="http://127.0.0.1:8000/contact" method="post"
+                            class="contact-form mt-30 wow fadeInUp animated" data-animation="fadeInUp" data-delay=".4s">
+                            <input type="hidden" name="_token" value="0JA1HsCTNZX0cso4VaaTxgHWdeLM6qxwVV8tuC3F">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="contact-field p-relative c-name mb-20">
+                                        <input type="text" id="name" name="name" placeholder="Name"
+                                            required="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="contact-field p-relative c-subject mb-20">
+                                        <input type="text" id="email" name="email" placeholder="Email"
+                                            required="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="contact-field p-relative c-subject mb-20">
+                                        <input type="text" id="phone" name="mobile" placeholder="Phone No."
+                                            required="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="contact-field p-relative c-message mb-0">
+                                        <textarea name="comments" id="message" cols="30" rows="4" placeholder="Write comments"></textarea>
+                                    </div>
+                                    <div class="slider-btn">
+                                        <button class="btn ss-btn" data-animation="fadeInRight"
+                                            data-delay=".8s"><span>Submit Now</span> <i
+                                                class="fal fa-angle-right"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal End -->
+
     <!-- footer-end -->
 
     <!-- JS here -->
