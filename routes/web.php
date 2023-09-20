@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AluminaiController;
 use App\Http\Controllers\FrontOffice\AdmissionEnquiryController;
 use App\Models\ExamTimetable;
 use App\Models\Grade;
@@ -46,6 +47,7 @@ use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\PageController;
+use App\Models\Aluminai;
 use App\Models\ContactEnquiry;
 
 /*
@@ -168,6 +170,16 @@ Route::group(['middleware' => ['Role', 'auth'],], function () {
 
         Route::resource('subject-teachers', SubjectTeacherController::class);
         Route::get('subject-teachers-list', [SubjectTeacherController::class, 'show']);
+
+        // Aluminai Route
+        Route::resource('aluminai', AluminaiController::class);
+        // Route::get('/aluminai', [AluminaiController::class, 'index'])->name('aluminai');
+        // Route::get('/aluminai/create', [AluminaiController::class, 'create'])->name('aluminai.create');
+        // Route::post('/aluminai/store', [AluminaiController::class, 'store'])->name('aluminai.store');
+        // Route::get('/aluminai/edit/{id}', [AluminaiController::class, 'edit'])->name('aluminai.edit');
+        // Route::put('/aluminai/update/{id}', [AluminaiController::class, 'update'])->name('aluminai.update');
+        Route::get('aluminai_list', [AluminaiController::class, 'show']);
+
 
         Route::resource('timetable', TimetableController::class);
         Route::get('timetable-list', [TimetableController::class, 'show']);

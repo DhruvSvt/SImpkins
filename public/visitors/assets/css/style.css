@@ -12365,6 +12365,58 @@ blockquote cite {
     margin-top: 0;
     margin-bottom: 1rem;
 }
+.block-inline-blockasu-edu-anim-content-buttons .animated-content-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  .block-inline-blockasu-edu-anim-content-buttons .animated-content-section .content-section {
+    background-size: cover;
+    height: 600px;
+    width: 400px;
+    min-width: 300px;
+    position: relative;
+    transition: all 1s cubic-bezier(0.19,1,0.19,1);
+    margin: 0 1rem;
+      margin-top: 0px;
+      margin-bottom: 0px;
+  }
+  .block-inline-blockasu-edu-anim-content-buttons .animated-content-section .image-holder::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to top,rgba(25,25,25,0.75) 0%,rgba(25,25,25,0) 100%);
+  }
+  @media screen and (min-width: 992px) {
+    .block-inline-blockasu-edu-anim-content-buttons .animated-content-section .hidden-details {
+      transition: all 1s cubic-bezier(0.19,1,0.19,1);
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+    }
+
+    .block-inline-blockasu-edu-anim-content-buttons .animated-content-section .content-section:hover {
+      transform: scale(1.1);
+    }
+    .block-inline-blockasu-edu-anim-content-buttons .animated-content-section .content-section:hover .hidden-details {
+        max-height: 300px;
+        opacity: 1;
+      }
+  }
+.image-holder:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to top,rgba(25,25,25,0.75) 0%,rgba(25,25,25,0) 100%);
+}
 @media screen and (max-width: 480px) {
     .video-background-holder .container h1 {
         font-size: 1.8rem;

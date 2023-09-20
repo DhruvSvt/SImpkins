@@ -323,8 +323,8 @@
         {{-- teacher --}}
         @can('teacher-create')
             <li class="nav-item">
-                <a class="nav-link" data-toggle="collapse" href="#teacher-menu"
-                    aria-expanded="false" aria-controls="academics-menu">
+                <a class="nav-link" data-toggle="collapse" href="#teacher-menu" aria-expanded="false"
+                    aria-controls="academics-menu">
                     <i class="fa fa-user menu-icon"></i>
                     <span class="menu-title">{{ __('teacher') }}</span>
                 </a>
@@ -346,16 +346,52 @@
                         {{-- @endcan --}}
 
                         @if (Auth::user()->hasRole('Super Admin'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('teachers.create-bulk-data') }}">
-                                {{ __('add_bulk_data') }}
-                            </a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('teachers.create-bulk-data') }}">
+                                    {{ __('add_bulk_data') }}
+                                </a>
+                            </li>
                         @endif
                     </ul>
                 </div>
             </li>
         @endcan
+
+            {{-- aluminai start --}}
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#aluminai-menu" aria-expanded="false"
+                    aria-controls="academics-menu">
+                    <i class="fa fa-user menu-icon"></i>
+                    <span class="menu-title">{{ __('aluminai') }}</span>
+                </a>
+                <div class="collapse" id="aluminai-menu">
+                    <ul class="nav flex-column sub-menu">
+                        {{-- @can('teacher-list') --}}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('aluminai.create') }}">
+                                {{ __('aluminai_add') }}
+                            </a>
+                        </li>
+                        {{-- @endcan --}}
+                        {{-- @can('teacher-list') --}}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('aluminai.index') }}">
+                                {{ __('aluminai_details') }}
+                            </a>
+                        </li>
+                        {{-- @endcan --}}
+
+                        {{-- @if (Auth::user()->hasRole('Super Admin'))
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('teachers.create-bulk-data') }}">
+                                    {{ __('add_bulk_data') }}
+                                </a>
+                            </li>
+                        @endif --}}
+                    </ul>
+                </div>
+            </li>
+            {{-- aluminai end --}}
 
         {{-- parents --}}
         @can('parents-create')
@@ -499,8 +535,8 @@
         {{-- announceent --}}
         @can('announcement-create')
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('announcement.index') }}"><i class="fa fa-check menu-icon"></i> <span
-                        class="menu-title">{{ __('announcement') }}</span>
+                <a class="nav-link" href="{{ route('announcement.index') }}"><i class="fa fa-check menu-icon"></i>
+                    <span class="menu-title">{{ __('announcement') }}</span>
                 </a>
             </li>
         @endcan

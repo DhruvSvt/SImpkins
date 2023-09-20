@@ -502,6 +502,16 @@ window.teacherEvents = {
     }
 };
 
+window.aluminaiEvents = {
+    'click .editdata': function (e, value, row, index) {
+        $('#edit_id').val(row.id);
+        $('#edit_name').val(row.name);
+        $('#edit_std_title').val(row.std_title);
+        $('#edit_description').val(row.description);
+        $('#edit-aluminai-image-tag').attr('src', row.image);
+    }
+};
+
 window.admissionEnquiryEvents = {
     'click .editdata': function (e, value, row, index) {
         $('#edit_id').val(row.id);

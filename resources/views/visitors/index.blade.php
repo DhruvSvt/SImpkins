@@ -435,87 +435,167 @@
         <!-- video-area -->
 
         <!-- Aluminai Cards Start -->
-        <div class="container">
-            <div class="row row-cols-3 g-3">
-                <div class="col">
-                    <div class="card">
-                        <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp" class="card-img-top"
-                            alt="Hollywood Sign on The Hill" />
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">
-                                This is a longer card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.
-                            </p>
-                        </div>
+        <div class="container  center-container">
+            <h2 class="text-center m-4" style="visibility: visible;">
+                Our Alumni</h2>
+                <div class="row">
+                    <div class="row row-cols-1 row-cols-lg-3 row-cols-sm-1 g-3">
+                        @foreach ($aluminais as $alu )
+                       
+                            <div class="card" style="border: none;">
+                                <img src="{{ config('app.url') }}storage/images/{{ $alu->image }}" class="card-img-top"
+                                    style="width: 275px; height: 183px" alt="img" />
+                                <div class="card-body">
+                                    <p class="card-text">
+                                        {{ $alu->description }}
+                                    </p>
+                                    <h5 class="card-title">{{ $alu->name }}</h5>
+                                    <p class="card-text">{{ $alu->std_title }}</p>
+                                </div>
+                            </div>
+                    
+                        @endforeach
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/042.webp" class="card-img-top"
-                            alt="Palm Springs Road" />
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">
-                                This is a longer card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/043.webp" class="card-img-top"
-                            alt="Los Angeles Skyscrapers" />
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                                additional content.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/044.webp" class="card-img-top"
-                            alt="Skyscrapers" />
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">
-                                This is a longer card with supporting text below as a natural lead-in to
-                                additional content.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/046.webp" class="card-img-top"
-                            alt="Skyscrapers" />
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">
-                                This is a longer card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/050.webp" class="card-img-top"
-                            alt="Skyscrapers" />
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">
-                                This is a longer card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
         <!-- Aluminai Cards Start -->
+
+        <div
+            class="block-inline-blockasu-edu-anim-content-buttons bg white-bg bg-top bg-percent-100 max-size-container center-container  pt-90 pb-90">
+            <div class="container">
+                <h2 class="text-center m-4" style="visibility: visible;">
+                    Our Succes story</h2>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="content-section my-2"
+                            style="background: url(https://www.asu.edu/sites/default/files/2022-08/AE-pillar-RichaTeaching.jpg) rgb(0 0 0 / 36%);
+                                        background-blend-mode: multiply;
+                                        padding: 41px 13px;
+                                        color: #fff;">
+                            <div class="image-holder"></div>
+                            <div class="content-holder px-4">
+                                <h2 style="font-size: 30px;color: #fff;font-weight: 700;">Experience world-class academics
+                                </h2>
+                                <div class="hidden-details">
+                                    <div class="long-text mt-1 mb-3">
+                                        <p style="color: #fff;font-weight: 400;">As a comprehensive public research
+                                            university, ASU is committed to
+                                            providing excellence in education through the Academic Enterprise,
+                                            and enables the success of each unique student and increases access
+                                            to higher education for all.</p>
+                                    </div>
+
+                                    <div class="link-area mb-3">
+                                    </div>
+
+                                    <div class="tags-area mb-3">
+                                    </div>
+
+                                    <div class="button-area">
+                                        <!-- START INSERT: Button Component -->
+                                        <a href="https://www.asu.edu/academics" class="btn btn-md btn-gold"
+                                            role="link"
+                                            data-ga-animated-content-section-section="experience world-class academics"
+                                            data-ga-animated-content-section="learn more">
+                                            Learn more
+                                        </a>
+
+                                        <!-- END INSERT: Button Component -->
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="content-section my-2"
+                            style="background: url('https://www.asu.edu/sites/default/files/2022-08/KE-pillar-macroTech_0.jpg') rgb(0 0 0 / 36%);
+                                        background-blend-mode: multiply;
+                                        padding: 41px 13px;
+                                        color: #fff;">
+                            <div class="image-holder"></div>
+                            <div class="content-holder px-4">
+                                <h2 style="font-size: 30px;color: #fff;font-weight: 700;">Experience world-class academics
+                                </h2>
+                                <div class="hidden-details">
+                                    <div class="long-text mt-1 mb-3">
+                                        <p style="color: #fff;font-weight: 400;">As a comprehensive public research
+                                            university, ASU is committed to
+                                            providing excellence in education through the Academic Enterprise,
+                                            and enables the success of each unique student and increases access
+                                            to higher education for all.</p>
+                                    </div>
+
+                                    <div class="link-area mb-3">
+                                    </div>
+
+                                    <div class="tags-area mb-3">
+                                    </div>
+
+                                    <div class="button-area">
+                                        <!-- START INSERT: Button Component -->
+                                        <a href="https://www.asu.edu/academics" class="btn btn-md btn-gold"
+                                            role="link"
+                                            data-ga-animated-content-section-section="experience world-class academics"
+                                            data-ga-animated-content-section="learn more">
+                                            Learn more
+                                        </a>
+
+                                        <!-- END INSERT: Button Component -->
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="content-section my-2"
+                            style="background: url('https://www.asu.edu/sites/default/files/2022-08/LE-pillar-online.jpg') rgb(0 0 0 / 36%);
+                                        background-blend-mode: multiply;
+                                        padding: 41px 13px;
+                                        color: #fff;">
+                            <div class="image-holder"></div>
+                            <div class="content-holder px-4">
+                                <h2 style="font-size: 30px;color: #fff;font-weight: 700;">Experience world-class academics
+                                </h2>
+                                <div class="hidden-details">
+                                    <div class="long-text mt-1 mb-3">
+                                        <p style="color: #fff;font-weight: 400;">As a comprehensive public research
+                                            university, ASU is committed to
+                                            providing excellence in education through the Academic Enterprise,
+                                            and enables the success of each unique student and increases access
+                                            to higher education for all.</p>
+                                    </div>
+
+                                    <div class="link-area mb-3">
+                                    </div>
+
+                                    <div class="tags-area mb-3">
+                                    </div>
+
+                                    <div class="button-area">
+                                        <!-- START INSERT: Button Component -->
+                                        <a href="https://www.asu.edu/academics" class="btn btn-md btn-gold"
+                                            role="link"
+                                            data-ga-animated-content-section-section="experience world-class academics"
+                                            data-ga-animated-content-section="learn more">
+                                            Learn more
+                                        </a>
+
+                                        <!-- END INSERT: Button Component -->
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
 
         <section class="gmp-2 mission-wrp testimonial-area pt-90 pb-90 p-relative fix">
             <div class="container">
