@@ -357,41 +357,53 @@
             </li>
         @endcan
 
-            {{-- aluminai start --}}
-            <li class="nav-item">
-                <a class="nav-link" data-toggle="collapse" href="#aluminai-menu" aria-expanded="false"
-                    aria-controls="academics-menu">
-                    <i class="fa fa-user menu-icon"></i>
-                    <span class="menu-title">{{ __('aluminai') }}</span>
-                </a>
-                <div class="collapse" id="aluminai-menu">
-                    <ul class="nav flex-column sub-menu">
-                        {{-- @can('teacher-list') --}}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('aluminai.create') }}">
-                                {{ __('aluminai_add') }}
-                            </a>
-                        </li>
-                        {{-- @endcan --}}
-                        {{-- @can('teacher-list') --}}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('aluminai.index') }}">
-                                {{ __('aluminai_details') }}
-                            </a>
-                        </li>
-                        {{-- @endcan --}}
+        {{-- aluminai start --}}
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#aluminai-menu" aria-expanded="false"
+                aria-controls="academics-menu">
+                <i class="fa fa-user menu-icon"></i>
+                <span class="menu-title">{{ __('aluminai') }}</span>
+            </a>
+            <div class="collapse" id="aluminai-menu">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('aluminai.create') }}">
+                            {{ __('Aluminai Add') }}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('aluminai.index') }}">
+                            {{ __('Aluminai Details') }}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        {{-- aluminai end --}}
 
-                        {{-- @if (Auth::user()->hasRole('Super Admin'))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('teachers.create-bulk-data') }}">
-                                    {{ __('add_bulk_data') }}
-                                </a>
-                            </li>
-                        @endif --}}
-                    </ul>
-                </div>
-            </li>
-            {{-- aluminai end --}}
+         {{-- Success Story start --}}
+         <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#success_story-menu" aria-expanded="false"
+                aria-controls="academics-menu">
+                <i class="fa fa-user menu-icon"></i>
+                <span class="menu-title">{{ __('success_story') }}</span>
+            </a>
+            <div class="collapse" id="success_story-menu">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('success_story.create') }}">
+                            {{ __('Success Story Add') }}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('success_story.index') }}">
+                            {{ __('Success Story Details') }}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        {{-- Success Story end --}}
 
         {{-- parents --}}
         @can('parents-create')

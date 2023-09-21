@@ -1,14 +1,14 @@
 @extends('layouts.master')
 
 @section('title')
-    {{ __('aluminai') }}
+    {{ __('success_story') }}
 @endsection
 
 @section('content')
     <div class="content-wrapper">
         <div class="page-header">
             <h3 class="page-title">
-                {{ __('manage') . ' ' . __('aluminai') }}
+                {{ __('manage') . ' ' . __('success_story') }}
             </h3>
         </div>
 
@@ -17,12 +17,12 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">
-                            {{ __('list') . ' ' . __('aluminai') }}
+                            {{ __('list') . ' ' . __('success story') }}
                         </h4>
                         <div class="row">
                             <div class="col-12">
                                 <table aria-describedby="mydesc" class='table table-responsive' id='table_list'
-                                    data-toggle="table" data-url="{{ url('aluminai_list') }}" data-click-to-select="true"
+                                    data-toggle="table" data-url="{{ url('success_story_list') }}" data-click-to-select="true"
                                     data-side-pagination="server" data-pagination="true"
                                     data-page-list="[5, 10, 20, 50, 100, 200, All]" data-search="true"
                                     data-toolbar="#toolbar" data-show-columns="true" data-show-refresh="true"
@@ -39,15 +39,13 @@
                                             <th scope="col" data-field="image" data-formatter="imageFormatter"
                                                 data-sortable="true">{{ __('image') }}</th>
 
-                                            <th scope="col" data-field="name" data-sortable="true" data-visible="true">
-                                                {{ __('Name') }}</th>
-                                            <th scope="col" data-field="std_title" data-sortable="true">
-                                                {{ __('Student Title') }}</th>
+                                            <th scope="col" data-field="title" data-sortable="true">
+                                                {{ __('Title') }}</th>
 
                                             <th scope="col" data-field="description" data-sortable="false">
                                                 {{ __('description') }}</th>
 
-                                            <th data-events="aluminaiEvents" scope="col" data-field="operate"
+                                            <th data-events="success_storyEvents" scope="col" data-field="operate"
                                                 data-sortable="false">{{ __('action') }}
                                             </th>
                                         </tr>
@@ -67,33 +65,24 @@
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="exampleModalLabel">{{ __('edit') . ' ' . __('Aluminai') }}</h4><br>
+                    <h4 class="modal-title" id="exampleModalLabel">{{ __('edit') . ' ' . __('Success Story') }}</h4><br>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true"><i class="fa fa-close"></i></span>
                     </button>
                 </div>
                 <form id="edit-form" class="edit-student-registration-form" novalidate="novalidate"
-                    action="{{ url('aluminai') }}" enctype="multipart/form-data">
+                    action="{{ url('success_story') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="modal-body">
                         <input type="hidden" name="edit_id" id="edit_id">
 
                         <div class="row">
                             <div class="form-group col-sm-12 col-md-4">
-                                <label>{{ __('name') }} <span class="text-danger">*</span></label>
-                                {!! Form::text('name', null, [
-                                    'placeholder' => __('name'),
+                                <label>{{ __('Title') }} <span class="text-danger">*</span></label>
+                                {!! Form::text('title', null, [
+                                    'placeholder' => __('title'),
                                     'class' => 'form-control',
-                                    'id' => 'edit_name',
-                                    'required' => true,
-                                ]) !!}
-                            </div>
-                            <div class="form-group col-sm-12 col-md-4">
-                                <label>{{ __('Student Title') }} <span class="text-danger">*</span></label>
-                                {!! Form::text('std_title', null, [
-                                    'placeholder' => __('std_title'),
-                                    'class' => 'form-control',
-                                    'id' => 'edit_std_title',
+                                    'id' => 'edit_title',
                                     'required' => true,
                                 ]) !!}
                             </div>
@@ -118,7 +107,7 @@
                                     </span>
                                 </div>
                                 <div style="width: 100px;">
-                                    <img src="" id="edit-aluminai-image-tag" class="img-fluid w-100" />
+                                    <img src="" id="edit-success_story-image-tag" class="img-fluid w-100" />
                                 </div>
                             </div>
                         </div>

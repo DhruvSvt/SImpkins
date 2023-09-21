@@ -134,7 +134,7 @@ class TeacherController extends Controller
             $teacher_plaintext_password = str_replace('-', '', date('d-m-Y', strtotime($request->dob)));
 
             $user = new User();
-            $user->image = $request->file('image')->store('teachers', 'public');
+            $user->image = $request->file('image')->store('teachers', 'public');    
             $user->password = Hash::make($teacher_plaintext_password);
             $user->full_name = $request->name;
             $user->email = $request->email ?? $request->teacher_code;
@@ -143,7 +143,7 @@ class TeacherController extends Controller
             $user->gender = $request->gender;
             $user->mobile = $request->mobile;
             $user->current_address = $request->address;
-            $user->save();
+            $user->save();  
 
             $teacher = new Teacher();
             $teacher->user_id = $user->id;

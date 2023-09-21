@@ -512,6 +512,15 @@ window.aluminaiEvents = {
     }
 };
 
+window.success_storyEvents = {
+    'click .editdata': function (e, value, row, index) {
+        $('#edit_id').val(row.id);
+        $('#edit_title').val(row.title);
+        $('#edit_description').val(row.description);
+        $('#edit-aluminai-image-tag').attr('src', row.success_story);
+    }
+};
+
 window.admissionEnquiryEvents = {
     'click .editdata': function (e, value, row, index) {
         $('#edit_id').val(row.id);

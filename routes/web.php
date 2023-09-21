@@ -47,6 +47,7 @@ use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\SuccessStoryController;
 use App\Models\Aluminai;
 use App\Models\ContactEnquiry;
 
@@ -173,12 +174,11 @@ Route::group(['middleware' => ['Role', 'auth'],], function () {
 
         // Aluminai Route
         Route::resource('aluminai', AluminaiController::class);
-        // Route::get('/aluminai', [AluminaiController::class, 'index'])->name('aluminai');
-        // Route::get('/aluminai/create', [AluminaiController::class, 'create'])->name('aluminai.create');
-        // Route::post('/aluminai/store', [AluminaiController::class, 'store'])->name('aluminai.store');
-        // Route::get('/aluminai/edit/{id}', [AluminaiController::class, 'edit'])->name('aluminai.edit');
-        // Route::put('/aluminai/update/{id}', [AluminaiController::class, 'update'])->name('aluminai.update');
         Route::get('aluminai_list', [AluminaiController::class, 'show']);
+
+        // Success Story Route
+        Route::resource('success_story', SuccessStoryController::class);
+        Route::get('success_story_list', [SuccessStoryController::class, 'show']);
 
 
         Route::resource('timetable', TimetableController::class);
