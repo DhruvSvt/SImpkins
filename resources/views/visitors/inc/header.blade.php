@@ -1,4 +1,4 @@
-<div style="background:#00adee">
+<div style="background:#ffc627">
     <div class="main-menu text-right text-xl-right .mini-header">
         <nav class="nav-menu-top-wrapper w-nav-menu">
             <ul class="first-ul" style="margin-right: 3.2rem;">
@@ -58,7 +58,7 @@
 </header>
 <div class="menu-area">
     <div class="second-menu">
-        <div class="row align-items-center" style="background: #00adee">
+        <div class="row align-items-center" style="background: #ffc627">
 
             <div class="main-menu text-left text-xl-right masonry-gallery-huge">
                 <nav id="mobile-menu">

@@ -1,7 +1,12 @@
 @extends('layouts.visitorsApp')
 @section('content')
     <!-- main-area -->
+    <div class="splash-container">
+        <img src="{{ config('app.url') }}visitors/assets/img/features/icon.png" alt="">
+        <span class="school-name">Simpkins</span>
+      </div>
     <main>
+
         <section id="home" class="slider-area fix p-relative">
 
             {{-- <div class="slider-active" style="background: #141b22;">
@@ -153,7 +158,7 @@
             </div>
         </section>
         <!-- about-area-end -->
-        <section class="steps-area p-relative" style="background-color: #40B9EB;">
+        <section class="steps-area p-relative" style="background-color: #ffc627;">
             <div class="animations-10"><img src="{{ config('app.url') }}visitors/assets/img/bg/an-img-10.png"
                     alt="an-img-01"></div>
             <div class="container">
@@ -444,7 +449,7 @@
                        
                             <div class="card" style="border: none;">
                                 <img src="{{ config('app.url') }}storage/images/{{ $alu->image }}" class="card-img-top"
-                                    style="width: 275px; height: 183px" alt="img" />
+                                    style="width: 275px; height: 183px;margin: auto;" alt="img" />
                                 <div class="card-body">
                                     <p class="card-text">
                                         {{ $alu->description }}
@@ -702,7 +707,7 @@
 
         <!-- brand-area-end -->
         <!-- blog-area -->
-        <section id="blog" class="blog-area p-relative fix pt-90 pb-90" style="">
+        <section id="blog" class="blog-area p-relative fix pt-90 pb-45" style="">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-12">
