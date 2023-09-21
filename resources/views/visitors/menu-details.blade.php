@@ -6,7 +6,7 @@
         <section class="breadcrumb-area d-flex  p-relative align-items-center"
             style="    min-height: auto;
         padding: 70px 0;
-        background: #00adee;">
+        background: #ffc627;">
 
             <div class="container">
                 <div class="row align-items-center">
