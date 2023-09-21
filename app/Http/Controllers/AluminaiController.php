@@ -45,18 +45,32 @@ class AluminaiController extends Controller
             'description' => 'required',
             'image' => 'required|image',
         ]);
+        try 
+        {
+            $fileName = time() . '.' . $request->image->extension();
+            $request->image->storeAs('public/images', $fileName);
 
-        $fileName = time() . '.' . $request->image->extension();
-        $request->image->storeAs('public/images', $fileName);
+            $aluminai = new Aluminai;
+            $aluminai->name = $request->name;
+            $aluminai->std_title = $request->std_title;
+            $aluminai->description = $request->description;
+            $aluminai->image = $fileName;
+            $aluminai->save();
+            $response = [
+                'error' => false,
+                'message' => trans('data_store_successfully')
+            ];
+        } catch (Throwable $e) {
+            $response = array(
+                'error' => true,
+                'message' => trans('error_occurred'),
+                'data' => $e
+            );
 
-        $aluminai = new Aluminai;
-        $aluminai->name = $request->name;
-        $aluminai->std_title = $request->std_title;
-        $aluminai->description = $request->description;
-        $aluminai->image = $fileName;
-        $aluminai->save();
+            return response()->json($response);
+        }
 
-        return redirect()->route('aluminai');
+        return response()->json($response);
     }
 
     /**
@@ -117,7 +131,7 @@ class AluminaiController extends Controller
             $tempRow['name'] = $row->name;
             $tempRow['std_title'] = $row->std_title;
             $tempRow['description'] = $row->description;
-            $tempRow['image'] = 'storage/images/'.$row->image;
+            $tempRow['image'] = 'storage/images/' . $row->image;
             $tempRow['operate'] = $operate;
             $rows[] = $tempRow;
         }
