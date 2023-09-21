@@ -135,6 +135,29 @@
             </li>
         @endcanany
 
+        {{-- stuedent attendance --}}
+        @canany(['student-create', 'student-list', 'category-create', 'student-reset-password', 'class-teacher'])
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#student-att-menu" aria-expanded="false"
+                    aria-controls="academics-menu"><i class="fa fa-graduation-cap menu-icon"></i> <span
+                        class="menu-title">{{ __('students attendance') }}</span>
+
+                </a>
+                <div class="collapse" id="student-att-menu">
+                    <ul class="nav flex-column sub-menu">
+                        @can('student-create')
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('students.create') }}">
+                                    {{ __('mark attendance') }}
+                                </a>
+                            </li>
+                        @endcan
+                    </ul>
+                </div>
+            </li>
+        @endcanany
+        
+
         {{-- employee --}}
         @canany(['employee-list', 'employee-create', 'employee-edit', 'employee-delete'])
             <li class="nav-item">
@@ -315,6 +338,31 @@
                                 </a>
                             </li>
                         @endcan
+                        <li class="nav-item">
+                            <a class="nav-link"  href="#attendance-menu" aria-expanded="false"
+                                aria-controls="attendance-menu"><span
+                                    class="menu-title">{{ __('attendance') }}</span> </a>
+                            <div id="attendance-menu">
+                                <ul class="nav flex-column sub-menu">
+                                    @can('attendance-create')
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ route('attendance.index') }}">
+                                                {{ __('add_attendance') }}
+                                            </a>
+                                        </li>
+                                    @endcan
+            
+                                    {{-- view attendance --}}
+                                    @can('attendance-list')
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ route('attendance.view') }}">
+                                                {{ __('view_attendance') }}
+                                            </a>
+                                        </li>
+                                    @endcan
+                                </ul>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </li>
@@ -381,8 +429,8 @@
         </li>
         {{-- aluminai end --}}
 
-         {{-- Success Story start --}}
-         <li class="nav-item">
+        {{-- Success Story start --}}
+        <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#success_story-menu" aria-expanded="false"
                 aria-controls="academics-menu">
                 <i class="fa fa-user menu-icon"></i>
@@ -425,7 +473,8 @@
                     <ul class="nav flex-column sub-menu">
                         @can('timetable-create')
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('timetable.index') }}">{{ __('create_timetable') }} </a>
+                                <a class="nav-link" href="{{ route('timetable.index') }}">{{ __('create_timetable') }}
+                                </a>
                             </li>
                         @endcan
                         @canany(['class-timetable', 'class-teacher'])
