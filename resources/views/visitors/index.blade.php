@@ -460,51 +460,51 @@
         </div>
         <!-- Aluminai Cards Start -->
 
-        <div
-            class="block-inline-blockasu-edu-anim-content-buttons bg white-bg bg-top bg-percent-100 max-size-container center-container  pt-50 pb-30">
+        <!-- Success Story Cards Start -->
+        <div class="block-inline-blockasu-edu-anim-content-buttons bg white-bg bg-top bg-percent-100 max-size-container center-container  pt-50 pb-30">
             <div class="container">
                 <h2 class="text-center m-4" style="visibility: visible;">
                     Our Succes story</h2>
                 <div class="row">
-                    <div class="col-sm-4">
-                        <div class="content-section my-2"
-                            style="background: url(https://www.asu.edu/sites/default/files/2022-08/AE-pillar-RichaTeaching.jpg) rgb(0 0 0 / 36%);
-                            background-blend-mode: multiply;
-                            padding: 41px 13px;
-                            color: #fff;">
-                            <div class="image-holder"></div>
-                            <div class="content-holder px-4">
-                                <h2 style="font-size: 30px;color: #fff;font-weight: 700;">Experience world-class academics
-                                </h2>
-                                <div class="hidden-details">
-                                    <div class="long-text mt-1 mb-3">
-                                        <p style="color: #fff;font-weight: 400; ">As a comprehensive public research
-                                            university, ASU is committed to providing excellence in education through the Academic Enterprise,
-                                            and enables the success of each unique student and increases access to higher education for all.</p>
-                                    </div>
-                    
-                                    <div class="link-area mb-3">
-                                    </div>
-                    
-                                    <div class="tags-area mb-3">
-                                    </div>
-                    
-                                    <div class="button-area">
-                                        <!-- START INSERT: Button Component -->
-                                        <a href="https://www.asu.edu/academics" class="btn btn-md btn-gold"
-                                            role="link"
-                                            data-ga-animated-content-section-section="experience world-class academics"
-                                            data-ga-animated-content-section="learn more">
-                                            Learn more
-                                        </a>
-                                        <!-- END INSERT: Button Component -->
+                    @foreach ($success_story as $ss )
+                        <div class="col-sm-4">
+                            <div class="content-section my-2"
+                                style="background: url({{ config('app.url') }}storage/success_story/{{ $ss->image }}) rgb(0 0 0 / 36%);
+                                background-blend-mode: multiply;
+                                padding: 41px 13px;
+                                color: #fff;">
+                                <div class="image-holder"></div>
+                                <div class="content-holder px-4">
+                                    <h2 style="font-size: 30px;color: #fff;font-weight: 700;">{{ $ss->title }}
+                                    </h2>
+                                    <div class="hidden-details">
+                                        <div class="long-text mt-1 mb-3">
+                                            <p style="color: #fff;font-weight: 400; ">{{ $ss->description }}</p>
+                                        </div>
+                        
+                                        <div class="link-area mb-3">
+                                        </div>
+                        
+                                        <div class="tags-area mb-3">
+                                        </div>
+                        
+                                        <div class="button-area">
+                                            <!-- START INSERT: Button Component -->
+                                            <a href="https://www.asu.edu/academics" class="btn btn-md btn-gold"
+                                                role="link"
+                                                data-ga-animated-content-section-section="experience world-class academics"
+                                                data-ga-animated-content-section="learn more">
+                                                Learn more
+                                            </a>
+                                            <!-- END INSERT: Button Component -->
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    @endforeach
                     
-                    <div class="col-sm-4">
+                    {{-- <div class="col-sm-4">
                         <div class="content-section my-2"
                             style="background: url('https://www.asu.edu/sites/default/files/2022-08/KE-pillar-macroTech_0.jpg') rgb(0 0 0 / 36%);
                                         background-blend-mode: multiply;
@@ -585,7 +585,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
 
                 </div>
             </div>
