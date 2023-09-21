@@ -12392,6 +12392,7 @@ blockquote cite {
     left: 0;
     background-image: linear-gradient(to top,rgba(25,25,25,0.75) 0%,rgba(25,25,25,0) 100%);
   }
+
   @media screen and (min-width: 992px) {
     .block-inline-blockasu-edu-anim-content-buttons .animated-content-section .hidden-details {
       transition: all 1s cubic-bezier(0.19,1,0.19,1);
@@ -12408,15 +12409,7 @@ blockquote cite {
         opacity: 1;
       }
   }
-.image-holder:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-image: linear-gradient(to top,rgba(25,25,25,0.75) 0%,rgba(25,25,25,0) 100%);
-}
+
 @media screen and (max-width: 480px) {
     .video-background-holder .container h1 {
         font-size: 1.8rem;
