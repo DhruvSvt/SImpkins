@@ -172,8 +172,8 @@ class AluminaiController extends Controller
             //Create Aluminai
             $aluminai = Aluminai::find($request->edit_id);
             $aluminai->name = $request->name;
-            $aluminai->std_title = $request->email ?? $aluminai->std_title;
-            $aluminai->description = $request->mobile ?? $aluminai->description;
+            $aluminai->std_title = $request->std_title ?? $aluminai->std_title;
+            $aluminai->description = $request->description ?? $aluminai->description;
 
 
             //If Image exists then upload new image and delete the old image
