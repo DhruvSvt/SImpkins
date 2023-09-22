@@ -27,7 +27,7 @@
                                     {!! Form::text('name', null, ['placeholder' => __('name'), 'class' => 'form-control']) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('std_title') }} <span class="text-danger">*</span></label>
+                                    <label>{{ __('Student Title') }} <span class="text-danger">*</span></label>
                                     {!! Form::text('std_title', null, ['placeholder' => __('Student Titile'), 'class' => 'form-control']) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">

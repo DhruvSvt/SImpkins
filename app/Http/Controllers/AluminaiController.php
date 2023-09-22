@@ -47,15 +47,14 @@ class AluminaiController extends Controller
         ]);
         try 
         {
-            // $fileName = time() . '.' . $request->image->extension();
-            // $request->image->storeAs('public/images', $fileName);
+            $fileName = time() . '.' . $request->image->extension();
+            $request->image->storeAs('public/images', $fileName);
 
             $aluminai = new Aluminai;
             $aluminai->name = $request->name;
             $aluminai->std_title = $request->std_title;
             $aluminai->description = $request->description;
-            // $aluminai->image = $fileName;
-            $aluminai->image = $request->file('image')->store('images', 'public');
+            $aluminai->image = $fileName;
             $aluminai->save();
             $response = [
                 'error' => false,
@@ -182,7 +181,11 @@ class AluminaiController extends Controller
                 if (Storage::disk('public')->exists($aluminai->image)) {
                     Storage::disk('public')->delete($aluminai->image);
                 }
-                $aluminai->image = $request->file('image')->store('image', 'public');
+                // $aluminai->image = $request->file('image')->store('aluminai', 'public');
+                $fileName = time() . '.' . $request->image->extension();
+                $request->image->storeAs('public/images', $fileName);
+                $aluminai->image = $fileName;
+
             }
             $aluminai->save();
 
