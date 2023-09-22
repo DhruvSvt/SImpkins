@@ -474,7 +474,7 @@
                     @foreach ($success_story as $ss )
                         <div class="col-sm-4">
                             <div class="content-section my-2"
-                                style="background: url({{ config('app.url') }}storage/success_story/{{ $ss->image }}) rgb(0 0 0 / 36%);
+                                style="background: url({{ config('app.url') }}storage/{{ $ss->image }}) rgb(0 0 0 / 36%);
                                 background-blend-mode: multiply;
                                 padding: 41px 13px;
                                 color: #fff;">
