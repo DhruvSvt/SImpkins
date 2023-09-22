@@ -448,7 +448,7 @@
                         @foreach ($aluminais as $alu )
                        
                             <div class="card" style="border: none;">
-                                <img src="{{ config('app.url') }}storage/images/{{ $alu->image }}" class="card-img-top"
+                                <img src="{{ config('app.url') }}storage/{{ $alu->image }}" class="card-img-top"
                                     style="width: 275px; height: 183px;margin: auto;" alt="img" />
                                 <div class="card-body">
                                     <p class="card-text">
