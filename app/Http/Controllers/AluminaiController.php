@@ -131,7 +131,7 @@ class AluminaiController extends Controller
             $tempRow['name'] = $row->name;
             $tempRow['std_title'] = $row->std_title;
             $tempRow['description'] = $row->description;
-            $tempRow['image'] = 'storage/images/' . $row->image;
+            $tempRow['image'] = 'storage/' . $row->image;
             $tempRow['operate'] = $operate;
             $rows[] = $tempRow;
         }
