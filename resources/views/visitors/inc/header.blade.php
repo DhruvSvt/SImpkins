@@ -48,7 +48,7 @@
                     <p class=".address{" style="font-size: 0.7rem; line-height: 1.5;">
                         CBSE Affiliation No. 1234567<br>
                         Date : <?= date('Y-m-d') ?><br>
-                        Current Time: <?php echo date('H:i:s'); ?>
+                        Current Time:<span id="current-time">Loading...</span>
                     </p>
                 </div>
             </div>
@@ -100,5 +100,16 @@
             </div>
         </div>
     </div>
-
 </div>
+<script>
+    // Function to update the time
+    function updateTime() {
+        const currentTimeElement = document.getElementById('current-time');
+        const currentTime = new Date().toLocaleTimeString();
+        currentTimeElement.textContent = currentTime;
+    }
+
+    // Update the time initially and set an interval to update it every second
+    updateTime();
+    setInterval(updateTime, 1000); // Update every 1 second (1000 milliseconds)
+</script>
