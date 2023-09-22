@@ -338,35 +338,39 @@
                                 </a>
                             </li>
                         @endcan
-                        <li class="nav-item">
-                            <a class="nav-link"  href="#attendance-menu" aria-expanded="false"
-                                aria-controls="attendance-menu"><span
-                                    class="menu-title">{{ __('attendance') }}</span> </a>
-                            <div id="attendance-menu">
-                                <ul class="nav flex-column sub-menu">
-                                    @can('attendance-create')
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ route('attendance.index') }}">
-                                                {{ __('add_attendance') }}
-                                            </a>
-                                        </li>
-                                    @endcan
-            
-                                    {{-- view attendance --}}
-                                    @can('attendance-list')
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ route('attendance.view') }}">
-                                                {{ __('view_attendance') }}
-                                            </a>
-                                        </li>
-                                    @endcan
-                                </ul>
-                            </div>
-                        </li>
                     </ul>
                 </div>
             </li>
         @endcanany
+
+        {{-- Attendance for admin --}}
+        @if (Auth::user()->hasRole('Super Admin'))
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#attendance-menu" aria-expanded="false"
+                    aria-controls="attendance-menu"><i class="fa fa-check menu-icon"></i> <span
+                        class="menu-title">{{ __('attendance') }}</span> </a>
+                <div class="collapse" id="attendance-menu">
+                    <ul class="nav flex-column sub-menu">
+                        @can('attendance-create')
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('attendance.index') }}">
+                                    {{ __('add_attendance') }}
+                                </a>
+                            </li>
+                        @endcan
+
+                        {{-- view attendance --}}
+                        @can('attendance-list')
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('attendance.view') }}">
+                                    {{ __('view_attendance') }}
+                                </a>
+                            </li>
+                        @endcan
+                    </ul>
+                </div>
+            </li>
+        @endif
 
         {{-- teacher --}}
         @can('teacher-create')
@@ -593,6 +597,8 @@
                 </div>
             </li>
         @endcanany
+
+        
         {{-- announceent --}}
         @can('announcement-create')
             <li class="nav-item">
