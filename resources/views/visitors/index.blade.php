@@ -53,12 +53,12 @@
             <div class="video-background-holder">
                 <div class="video-background-overlay">
                     <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" preload="auto">
-                        <source src="{{ config('app.url') }}visitors/assets/video/demo_video.mp4" type="video/mp4">
+                        <source src="{{ config('app.url') }}visitors/assets/video/HomePage.mp4" type="video/mp4">
                     </video>
                 </div>
                 <div class="video-background-content container h-100">
                     <div class="d-flex h-100 text-center align-items-center">
-                        <div class="w-100 text-white">
+                        {{-- <div class="w-100 text-white">
                             <h1 class="text-white">Repeatedly ranked #1</h1>
                             <p class="lead mb-0">Simpkins School is located in the heart of the historical city of Agra. The
                                 school was founded three decades<br> back with a commitment to excellence and for<br>
@@ -66,7 +66,7 @@
                                 opportunities to enable young people<br> to be best positioned, consequent to their
                                 education.
                             </p>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
