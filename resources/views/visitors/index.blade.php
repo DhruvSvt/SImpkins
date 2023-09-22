@@ -3,7 +3,7 @@
     <!-- main-area -->
     <div class="splash-container">
         <img src="{{ config('app.url') }}visitors/assets/img/features/icon.png" alt="">
-        <span class="school-name">Simpkins</span>
+        <div class="school-name">Simpkins</div>
       </div>
     <main>
 

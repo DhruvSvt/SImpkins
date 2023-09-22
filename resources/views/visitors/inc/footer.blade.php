@@ -139,11 +139,11 @@ max-width: 100%;"></a>
             <div class="container" id="endorsed-footer">
                 <div class="row">
                     <div class="col-md" id="endorsed-logo">
-                        <a href="https://www.asu.edu/" data-ga-footer-type="internal link"
+                        <a href="/" data-ga-footer-type="internal link"
                             data-ga-footer-section="primary footer" data-ga-footer="asu logo"
                             data-ga-footer-component="">
                         </a>
-                        <a href="#">
+                        <a href="/">
                             <img src="{{ config('app.url') }}visitors/assets/img/logo/logo.png" alt="Simpkins School"
                                 loading="lazy" style="width: 300px;" typeof="foaf:Image" class="img-fluid">
                         </a>
@@ -154,29 +154,27 @@ max-width: 100%;"></a>
                             <a class="nav-link" href="#" data-ga-footer-type="external link"
                                 data-ga-footer-section="primary footer" data-ga-footer="facebook icon"
                                 data-ga-footer-component="">
-                                <i class="fa-brands fa-square-facebook" style="color: #ffffff; font-si ze: 20px;"></i>
+                                <i class="fa-brands fa-square-facebook" style="color: #ffffff;"></i>
                             </a>
                             <a class="nav-link" href="#" data-ga-footer-type="external link"
                                 data-ga-footer-section="primary footer" data-ga-footer="twitter icon"
                                 data-ga-footer-component="">
-                                <i class="fa-brands fa-square-x-twitter"
-                                    style="color: #ffffff; font-siz e: 20px;"></i>
+                                <i class="fa-brands fa-square-x-twitter" style="color: #ffffff;"></i>
                             </a>
                             <a class="nav-link" href="#" data-ga-footer-type="external link"
                                 data-ga-footer-section="primary footer" data-ga-footer="instagram icon"
                                 data-ga-footer-component="">
-                                <i class="fa-brands fa-square-instagram"
-                                    style="color: #ffffff; font-si ze: 20px;"></i>
+                                <i class="fa-brands fa-square-instagram" style="color: #ffffff;"></i>
                             </a>
                             <a class="nav-link" href="#" data-ga-footer-type="external link"
                                 data-ga-footer-section="primary footer" data-ga-footer="youtube icon"
                                 data-ga-footer-component="">
-                                <i class="fa-brands fa-square-youtube" style="color: #ffffff; font-siz e:20px;"></i>
+                                <i class="fa-brands fa-square-youtube" style="color: #ffffff;"></i>
                             </a>
                             <a class="nav-link" href="#" data-ga-footer-type="external link"
                                 data-ga-footer-section="primary footer" data-ga-footer="linkedin icon"
                                 data-ga-footer-component="">
-                                <i class="fa-brands fa-square-linkedin" style="color: #ffffff; font-si ze:20px;"></i>
+                                <i class="fa-brands fa-square-linkedin" style="color: #ffffff;"></i>
                             </a>
                         </nav>
                     </div>
@@ -191,28 +189,28 @@ max-width: 100%;"></a>
                     <div class="col">
                         <div class="d-flex footer-innovation-links">
                             <nav class="nav" aria-label="University Services">
-                                <a class="nav-link" href="#"
-                                    data-ga-footer-type="internal link" data-ga-footer-section="secondary footer"
-                                    data-ga-footer="maps and locations" data-ga-footer-component="">Maps and
+                                <a class="nav-link" href="#" data-ga-footer-type="internal link"
+                                    data-ga-footer-section="secondary footer" data-ga-footer="maps and locations"
+                                    data-ga-footer-component="">Maps and
                                     Locations</a>
-                                <a class="nav-link" href="#"
-                                    data-ga-footer-type="internal link" data-ga-footer-section="secondary footer"
-                                    data-ga-footer="jobs" data-ga-footer-component="">Jobs</a>
-                                <a class="nav-link" href="#"
-                                    data-ga-footer-type="internal link" data-ga-footer-section="secondary footer"
-                                    data-ga-footer="directory" data-ga-footer-component="">Directory</a>
-                                <a class="nav-link" href="#"
-                                    data-ga-footer-type="internal link" data-ga-footer-section="secondary footer"
-                                    data-ga-footer="contact asu" data-ga-footer-component="">Contact ASU</a>
+                                <a class="nav-link" href="#" data-ga-footer-type="internal link"
+                                    data-ga-footer-section="secondary footer" data-ga-footer="jobs"
+                                    data-ga-footer-component="">Jobs</a>
+                                <a class="nav-link" href="#" data-ga-footer-type="internal link"
+                                    data-ga-footer-section="secondary footer" data-ga-footer="directory"
+                                    data-ga-footer-component="">Directory</a>
+                                <a class="nav-link" href="#" data-ga-footer-type="internal link"
+                                    data-ga-footer-section="secondary footer" data-ga-footer="contact asu"
+                                    data-ga-footer-component="">Contact ASU</a>
                                 <a class="nav-link" href="#" data-ga-footer-type="internal link"
                                     data-ga-footer-section="secondary footer" data-ga-footer="my asu"
                                     data-ga-footer-component="">My ASU</a>
                             </nav>
-                            <a class="img-link p-4 " href="#"
-                                data-ga-footer-type="internal link" data-ga-footer-section="secondary footer"
+                            <a class="img-link p-4 " href="/" data-ga-footer-type="internal link"
+                                data-ga-footer-section="secondary footer"
                                 data-ga-footer="#1 in the u.s. for innovation" data-ga-footer-component="">
-                                <img src="{{ config('app.url') }}visitors/assets/img/logo/logo.png"
-                                    loading="lazy" style="width: 300px;"
+                                <img src="{{ config('app.url') }}visitors/assets/img/logo/logo.png" loading="lazy"
+                                    style="width: 300px;"
                                     alt="Repeatedly ranked #1 for innovation, sustainability, and global impact">
                             </a>
                         </div>
@@ -220,105 +218,33 @@ max-width: 100%;"></a>
                 </div>
             </div>
         </div>
-
-        {{-- <div class="wrapper" id="wrapper-footer-colophon">
-            <div class="container" id="footer-colophon">
-                <div class="row">
-                    <div class="col">
-                        <div class="footer-legal-links">
-                            <nav class="nav colophon" aria-label="University Legal and Compliance">
-                                <a class="nav-link" href="https://www.asu.edu/about/copyright-trademark"
-                                    data-ga-footer-type="internal link" data-ga-footer-section="tertiary footer"
-                                    data-ga-footer="copyright and trademark" data-ga-footer-component="">Copyright and
-                                    Trademark</a>
-                                <a class="nav-link" href="https://www.asu.edu/accessibility/"
-                                    data-ga-footer-type="internal link" data-ga-footer-section="tertiary footer"
-                                    data-ga-footer="accessibility" data-ga-footer-component="">Accessibility</a>
-                                <a class="nav-link" href="https://www.asu.edu/about/privacy"
-                                    data-ga-footer-type="internal link" data-ga-footer-section="tertiary footer"
-                                    data-ga-footer="privacy" data-ga-footer-component="">Privacy</a>
-                                <a class="nav-link" href="https://www.asu.edu/about/terms-of-use"
-                                    data-ga-footer-type="internal link" data-ga-footer-section="tertiary footer"
-                                    data-ga-footer="terms of use" data-ga-footer-component="">Terms of Use</a>
-                                <a class="nav-link" href="https://www.asu.edu/emergency/"
-                                    data-ga-footer-type="internal link" data-ga-footer-section="tertiary footer"
-                                    data-ga-footer="emergency" data-ga-footer-component="">Emergency</a>
-                                <a class="nav-link" href="https://eoss.asu.edu/health/announcements/coronavirus"
-                                    data-ga-footer-type="internal link" data-ga-footer-section="tertiary footer"
-                                    data-ga-footer="covid-19 information">COVID-19 Information</a>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> --}}
-
-
     </div>
-
     <div id="block-cardandimagecssresponsiveonmobile"
         class="block block-block-content block-block-content650145e8-efc1-4854-9d68-1ae336ad609a clearfix default">
-
-
-
-
-
         <div class="formatted-text">
-            <style type="text/css">
-                <!--/*
-                -->
-            <![CDATA[/* ><!--*/
-  
-  <!--/*--><![CDATA[/* ><!--*/
-  @media screen and (max-width: 576px) {
-    .uds-card-and-image {
-      height: 0;
-    }
-  }
-  .uds-video-hero .container h1 span.highlight-white {
-    line-height: 4.45rem;
-  }
-  
-  /*--><!]]]]>
-            <![CDATA[>*/
-  
-  /*--><!]]>*/
-            </style>
-        </div>
 
+        <style type="text/css">
+            @media screen and (max-width: 576px) {
+            .uds-card-and-image {
+            height: 0;
+            }
+        }
+        .uds-video-hero .container h1 span.highlight-white {
+            line-height: 4.45rem;
+        }
+        </style>
+
+        </div>
     </div>
 
     <div id="block-emergencypagecsstemp"
         class="block block-block-content block-block-contentfdbbb6bc-b9ba-455a-a9a1-595e609c74dd clearfix default">
-
-
-
-
-
         <div class="formatted-text">
             <style type="text/css">
-                <!--/*
-                -->
-            <![CDATA[/* ><!--*/
-  
-  <!--/*--><![CDATA[/* ><!--*/
-  div#banner-close {
-    display: none;
-  }
-  @media only screen and (max-width: 992px) {
-  body {
-      padding-top: 110px;
-  }
-  }
-  
-  /*--><!]]]]>
-            <![CDATA[>*/
-  
-  /*--><!]]>*/
+            div#banner-close {
+                display: none;
+            }
             </style>
         </div>
-
     </div>
-
-
 </footer>

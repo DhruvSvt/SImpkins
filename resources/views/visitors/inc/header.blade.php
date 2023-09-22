@@ -20,7 +20,7 @@
 
         <div class="row">
             <div class="col-lg-2 col-12 text-center d-flex">
-                <a href="" class="m-auto">
+                <a href="/" class="m-auto">
                     <img loading="lazy" src="{{ config('app.url') }}visitors/assets/img/logo/simpkins_logo.jpg"
                         alt="logo" style="height: 94px;width: 106px;" aspect-ratio: 409/512">
                 </a>
@@ -45,7 +45,7 @@
                     <?php
                     date_default_timezone_set('Asia/Kolkata'); // Set the timezone to India (Asia/Kolkata)
                     ?>
-                    <p class=".address{" style="font-size: 0.7rem;">
+                    <p class=".address{" style="font-size: 0.7rem; line-height: 1.5;">
                         CBSE Affiliation No. 1234567<br>
                         Date : <?= date('Y-m-d') ?><br>
                         Current Time: <?php echo date('H:i:s'); ?>

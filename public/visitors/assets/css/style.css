@@ -284,7 +284,7 @@ h4 {
 }
 .button-14.book-a-tour-button {
     z-index: 999;
-    background-color: #f6921e;
+    background-color: #ffc627;
     position: static;
     top: auto;
     bottom: 18%;
@@ -311,7 +311,7 @@ h4 {
     direction: ltr;
     color: #fff;
     text-align: left;
-    background-color: #ffc627;
+    background-color: #8c1d40;
     border-radius: 5px;
     flex: 0 auto;
     justify-content: flex-end;
@@ -395,7 +395,7 @@ label {
 
 .btn {
     cursor: pointer;
-    background-color: #ffc627;
+    background-color: #8c1d40;
     border-radius: 40px;
     margin-top: 20px;
     padding: 10px 25px;
@@ -1090,7 +1090,6 @@ label {
     border-top: 0;
     position: relative;
     z-index: 9;
-    box-shadow: 0 10px 15px rgba(25, 25, 25, 0.1);
 }
 .header-three .sticky-menu {
     margin-top: 0;
@@ -12585,8 +12584,10 @@ blockquote cite {
     position: absolute;
     background: #ffc627;
     width: 100%;
-    height: 100%;
+    height: 179px;
     inset: 0;
+    top: -36px;
+    
     transform-origin: right;
     -webkit-animation: revealName 600ms 750ms 1 forwards ease-out;
             animation: revealName 600ms 750ms 1 forwards ease-out;
