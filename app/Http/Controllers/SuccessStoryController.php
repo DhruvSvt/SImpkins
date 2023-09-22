@@ -169,11 +169,8 @@ class SuccessStoryController extends Controller
                 if (Storage::disk('public')->exists($success_story->image)) {
                     Storage::disk('public')->delete($success_story->image);
                 }
-                // $fileName = time() . '.' . $request->image->extension();
-                // $request->image->storeAs('public/success_story', $fileName);
-    
+
                 $success_story->image = $request->file('image')->store('success_story', 'public');
-                // $request->image->storeAs('public/success_story', $fileName);
             }
             $success_story->save();
 
