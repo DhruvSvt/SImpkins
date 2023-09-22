@@ -517,7 +517,7 @@ window.success_storyEvents = {
         $('#edit_id').val(row.id);
         $('#edit_title').val(row.title);
         $('#edit_description').val(row.description);
-        $('#edit-aluminai-image-tag').attr('src', row.success_story);
+        $('#edit-success_story-image-tag').attr('src', row.image);
     }
 };
 

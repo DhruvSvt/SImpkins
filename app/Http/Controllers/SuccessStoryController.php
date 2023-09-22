@@ -45,13 +45,10 @@ class SuccessStoryController extends Controller
             'image' => 'required|image',
         ]);
         try {
-            $fileName = time() . '.' . $request->image->extension();
-            $request->image->storeAs('public/success_story', $fileName);
-
             $success_story = new Success_Story;
             $success_story->title = $request->title;
             $success_story->description = $request->description;
-            $success_story->image = $fileName;
+            $success_story->image = $request->file('image')->store('success_story', 'public');
             $success_story->save();
             $response = [
                 'error' => false,
@@ -125,7 +122,7 @@ class SuccessStoryController extends Controller
             $tempRow['no'] = $no++;
             $tempRow['title'] = $row->title;
             $tempRow['description'] = $row->description;
-            $tempRow['image'] = 'storage/success_story/' . $row->image;
+            $tempRow['image'] = 'storage/' . $row->image;
             $tempRow['operate'] = $operate;
             $rows[] = $tempRow;
         }
@@ -172,6 +169,9 @@ class SuccessStoryController extends Controller
                 if (Storage::disk('public')->exists($success_story->image)) {
                     Storage::disk('public')->delete($success_story->image);
                 }
+                // $fileName = time() . '.' . $request->image->extension();
+                // $request->image->storeAs('public/success_story', $fileName);
+    
                 $success_story->image = $request->file('image')->store('success_story', 'public');
                 // $request->image->storeAs('public/success_story', $fileName);
             }
@@ -202,7 +202,7 @@ class SuccessStoryController extends Controller
         try {
             $success_story = Success_Story::find($id);
             if ($success_story->image != "" && Storage::disk('public')->exists($success_story->image)) {
-                Storage::disk('public/success_story')->delete($success_story->image);
+                Storage::disk('public')->delete($success_story->image);
             }
             $success_story->delete();
             $response = [
