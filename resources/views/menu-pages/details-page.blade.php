@@ -33,7 +33,7 @@
                                     ,"ignoreColumn":
                                     ["operate"]}' data-query-params="StudentDetailQueryParams"
                                     data-check-on-init="true">
-                                    
+
 
                                     <thead>
                                         <tr>
