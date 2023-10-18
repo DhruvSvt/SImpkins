@@ -116,13 +116,13 @@
                                 </a>
                             </li>
                         @endcan
-                        @can('student-reset-password')
+                        {{-- @can('student-reset-password')
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('students.reset_password') }}">
                                     {{ __('students') . ' ' . __('reset_password') }}
                                 </a>
                             </li>
-                        @endcan
+                        @endcan --}}
                         @if (Auth::user()->hasRole('Super Admin'))
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('students.create-bulk-data') }}">
@@ -136,7 +136,7 @@
         @endcanany
 
         {{-- stuedent attendance --}}
-        @canany(['student-create', 'student-list', 'category-create', 'student-reset-password', 'class-teacher'])
+        {{-- @canany(['student-create', 'student-list', 'category-create', 'student-reset-password', 'class-teacher'])
             <li class="nav-item">
                 <a class="nav-link" data-toggle="collapse" href="#student-att-menu" aria-expanded="false"
                     aria-controls="academics-menu"><i class="fa fa-graduation-cap menu-icon"></i> <span
@@ -155,8 +155,8 @@
                     </ul>
                 </div>
             </li>
-        @endcanany
-        
+        @endcanany --}}
+
 
         {{-- employee --}}
         @canany(['employee-list', 'employee-create', 'employee-edit', 'employee-delete'])
@@ -220,18 +220,18 @@
                     {{-- @endcan --}}
 
                     {{-- @can('menu-list') --}}
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link" href="{{ route('gallery.create') }}">
                             {{ __('gallery_add') }}
                         </a>
-                    </li>
+                    </li> --}}
                     {{-- @endcan --}}
                     {{-- @can('menu-list') --}}
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link" href="{{ route('gallery.index') }}">
                             {{ __('gallery_details') }}
                         </a>
-                    </li>
+                    </li> --}}
                     {{-- @endcan --}}
                 </ul>
             </div>
@@ -562,12 +562,12 @@
                 </div>
             </li>
         @endcanany
-        @can('slider-create')
+        {{-- @can('slider-create')
             <li class="nav-item">
                 <a href="{{ route('sliders.index') }}" class="nav-link"><i class="fa fa-list menu-icon"></i> <span
                         class="menu-title">{{ __('sliders') }}</span> </a>
             </li>
-        @endcan
+        @endcan --}}
 
         {{-- attendance --}}
         @canany(['class-teacher'])
@@ -598,7 +598,7 @@
             </li>
         @endcanany
 
-        
+
         {{-- announceent --}}
         @can('announcement-create')
             <li class="nav-item">
