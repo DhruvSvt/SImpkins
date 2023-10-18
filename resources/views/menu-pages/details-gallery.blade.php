@@ -56,7 +56,7 @@
                                                 data-formatter="imageFormatter" data-sortable="false">
                                                 {{ __('image') }}</th>
                                             {{-- @canany(['gallery-edit', 'gallery-delete']) --}}
-                                            <th data-events="   " scope="col" data-field="operate"
+                                            <th data-events="galleryEvents" scope="col" data-field="operate"
                                                 data-sortable="false">{{ __('action') }}</th>
                                             {{-- @endcanany --}}
                                         </tr>
