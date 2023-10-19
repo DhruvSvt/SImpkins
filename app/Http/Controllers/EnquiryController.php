@@ -53,9 +53,8 @@ class EnquiryController extends Controller
         return redirect()->back()->with('response', $response);
     }
 
-    public function enuiryContact(Request $request){
+    public function enuiryContact(Request $request) {
         try {
-
             $enquiry = new ContactEnquiry;
             $enquiry->name = $request->name;
             $enquiry->email = $request->email;
@@ -64,18 +63,10 @@ class EnquiryController extends Controller
             $enquiry->ip = $request->ip();
             $enquiry->save();
 
-            $response = [
-                'error' => false,
-                'message' => trans('data_store_successfully')
-            ];
-        } catch (Throwable $e) {
-            $response = array(
-                'error' => true,
-                'message' => trans('error_occurred'),
-                'data' => $e
-            );
+            return redirect()->back()->with('success', 'Thank you !! \n We have Reached Out You Soon ');
         }
-        return redirect()->back()->with('response', $response);
+            catch (Throwable $e) {
+            return redirect()->back()->withError(trans('error_occurred'))->with('data', $e);
+        }
     }
-
 }
