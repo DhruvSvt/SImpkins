@@ -156,11 +156,11 @@ max-width: 100%;"></a>
                                 data-ga-footer-component="">
                                 <i class="fa-brands fa-square-facebook" style="color: #ffffff;"></i>
                             </a>
-                            <a class="nav-link" href="#" data-ga-footer-type="external link"
+                            {{-- <a class="nav-link" href="#" data-ga-footer-type="external link"
                                 data-ga-footer-section="primary footer" data-ga-footer="twitter icon"
                                 data-ga-footer-component="">
                                 <i class="fa-brands fa-square-x-twitter" style="color: #ffffff;"></i>
-                            </a>
+                            </a> --}}
                             <a class="nav-link" href="https://www.instagram.com/simpkinsschool/" data-ga-footer-type="external link"
                                 data-ga-footer-section="primary footer" data-ga-footer="instagram icon"
                                 data-ga-footer-component="">
