@@ -30,7 +30,7 @@
                 <div class="text-center mt-10">
 
                     <h2 class="d-inline w-100 simpkins" style="font-size: 2.2rem">
-                        Simpkins School
+                        SIMPKINS SCHOOL
                     </h2>
                     <p class=".address{" style="font-size: 0.7rem;">
                         (Maruti Estate, Bodla Road, Shahganj, Agra, U.P – 282010)
@@ -65,7 +65,7 @@
                     <ul>
                         <li>
                             <a href="/">
-                                <i class="fa fa-home" aria-hidden="true" style="color:#fff; font-size: 18px;"></i>
+                                <i class="fa fa-home" aria-hidden="true" style="color:black; font-size: 18px;"></i>
                             </a>
                         </li>
                         @php
@@ -73,7 +73,7 @@
                         @endphp
                         @foreach ($menus as $menu)
                             <li class="has-sub">
-                                <a href="javascript:void(0)">{{ $menu->name }}</a>
+                                <a href="javascript:void(0)" style="color: black;font-size: 20px;">{{ $menu->name }}</a>
                                 @if (isset($menu->pages) && count($menu->pages) > 0)
                                     <ul>
                                         @foreach ($menu->pages as $page)
