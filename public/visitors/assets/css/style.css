@@ -6324,7 +6324,7 @@ section:hover .section-title h2::before {
     box-shadow: none !important;
 }
 .gmp-2.mission-wrp {
-    background-image: linear-gradient(#fff, #edf8fe);
+    background-color:#fdf8e4;
     overflow: hidden;
 }
 .testimonial-active .slick-slide {
