@@ -57,6 +57,7 @@
                     <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" preload="auto">
                         <source src="{{ config('app.url') }}visitors/assets/video/HomePage.mp4" type="video/mp4">
                     </video>
+                    {{-- <iframe src="https://www.youtube.com/embed/ql7TjZuRzQM?si=WnxgzXQFNf9f7A_B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> --}}
                 </div>
                 <div class="video-background-content container h-100">
                     <div class="d-flex h-100 text-center align-items-center">
@@ -79,12 +80,12 @@
 
 
         <!-- about-area -->
-        <section class="about-area about-p pt-60 pb-60 p-relative fix" style="background: #fff;">
+        <section class="about-area about-p pt-60 pb-60 p-relative fix" style="background-image:url('visitors/assets/img/bg-img.avif');background-size: cover;background-position: right;">
             <div class="animations-02"><img src="{{ config('app.url') }}visitors/assets/img/bg/an-img-02.png"
                     alt="contact-bg-an-01"></div>
             <div class="container">
                 <div class="row justify-content-center align-items-center">
-                    <div class="col-lg-6 col-md-12 col-sm-12">
+                    <div class="col-lg-6 col-md-12 col-sm-12 mb-145" style="padding-left: 156px;">
                         <div class="about-content s-about-content pl-15 wow fadeInRight  animated mb-5"
                             data-animation="fadeInRight" data-delay=".4s">
                             <div class="about-title second-title pb-15">
@@ -92,8 +93,8 @@
                                 <h2>Welcome to Simpkins School in Agra</h2>
                             </div>
                             <p class="txt-clr">‘If your plan is for one year, plant rice; If your plan is for ten years,
-                                plant trees; If your plan is for a hundred years, Educate children.’- Confucius</p>
-                            <p>Simpkins School is located in the heart of the historical city of Agra. The school was
+                                plant trees; If your plan is for a hundred years, Educate children.’- Confucius
+                                Simpkins School is located in the heart of the historical city of Agra. The school was
                                 founded three decades back with a commitment to excellence and for providing
                                 opportunities to enable young people to be best positioned, consequent to their
                                 education. Today, we have grown into one of the city’s leading institutions with
@@ -199,7 +200,7 @@
                     <div class="col-lg-6 col-md-12">
                         <div class="section-title mb-35 wow fadeInDown animated" data-animation="fadeInDown"
                             data-delay=".4s">
-                            <h2>Why Simkins is the best school for your child</h2>
+                            <h2 style="color: black;">Why Simkins is the best school for your child</h2>
 
                         </div>
                         <ul class="pr-20">
@@ -211,8 +212,8 @@
                                                 alt="icon"></div>
                                     </div>
                                     <div class="text">
-                                        <h3>Best Teachers</h3>
-                                        <p>Each of our teacher is well qualified & trained so that they can do justice
+                                        <h3 style="color: black;">Best Teachers</h3>
+                                        <p style="color: black;font-size: 17px;">Each of our teacher is well qualified & trained so that they can do justice
                                             while delivering a world class curriculum.</p>
                                     </div>
                                 </div>
@@ -225,8 +226,8 @@
                                                 alt="icon"></div>
                                     </div>
                                     <div class="text">
-                                        <h3>Activity Based Learning</h3>
-                                        <p>Convert every class to a lab. All our learning happens in experiential
+                                        <h3 style="color: black;">Activity Based Learning</h3>
+                                        <p style="color: black;font-size: 17px;">Convert every class to a lab. All our learning happens in experiential
                                             learning mode.</p>
                                     </div>
                                 </div>
@@ -239,8 +240,8 @@
                                                 alt="icon"></div>
                                     </div>
                                     <div class="text">
-                                        <h3>Safety & Security</h3>
-                                        <p> Students are safeguarded to the best and taken utmost care with measures
+                                        <h3 style="color: black;">Safety & Security</h3>
+                                        <p style="color: black;font-size: 17px;"> Students are safeguarded to the best and taken utmost care with measures
                                             like 24/7 guardhouse, CCTV cameras, and more.</p>
                                     </div>
                                 </div>
@@ -258,7 +259,7 @@
         </section>
         <!-- courses-area -->
 
-        <section class="about-area about-p pt-90 pb-90 p-relative fix"
+        {{-- <section class="about-area about-p pt-90 pb-90 p-relative fix"
             style="background-image: url({{ config('app.url') }}visitors/assets/img/features/6094de56e25239dee2b95d18_stars.png),none,none; background-position: 96% 262px,8px 250px,10px 40px;background-repeat: no-repeat;">
             <div class="container">
                 <div class="row justify-content-center align-items-center">
@@ -315,7 +316,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
 
         <div class="white-curve-main top"></div>
         <div class="stats-main-div">
