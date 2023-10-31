@@ -153,27 +153,27 @@ max-width: 100%;"></a>
                         <nav class="nav justify-content-end" aria-label="Social Media">
                             <a class="nav-link" href="https://www.facebook.com/SimpkinsSchoolAgra" data-ga-footer-type="external link"
                                 data-ga-footer-section="primary footer" data-ga-footer="facebook icon"
-                                data-ga-footer-component="">
+                                data-ga-footer-component="" target="_blank">
                                 <i class="fa-brands fa-square-facebook" style="color: #ffffff;"></i>
                             </a>
                             {{-- <a class="nav-link" href="#" data-ga-footer-type="external link"
                                 data-ga-footer-section="primary footer" data-ga-footer="twitter icon"
-                                data-ga-footer-component="">
+                                data-ga-footer-component="" target="_blank">
                                 <i class="fa-brands fa-square-x-twitter" style="color: #ffffff;"></i>
                             </a> --}}
                             <a class="nav-link" href="https://www.instagram.com/simpkinsschool/" data-ga-footer-type="external link"
                                 data-ga-footer-section="primary footer" data-ga-footer="instagram icon"
-                                data-ga-footer-component="">
+                                data-ga-footer-component="" target="_blank">
                                 <i class="fa-brands fa-square-instagram" style="color: #ffffff;"></i>
                             </a>
                             <a class="nav-link" href="https://www.youtube.com/@simpkinsschool" data-ga-footer-type="external link"
                                 data-ga-footer-section="primary footer" data-ga-footer="youtube icon"
-                                data-ga-footer-component="">
+                                data-ga-footer-component="" target="_blank">
                                 <i class="fa-brands fa-square-youtube" style="color: #ffffff;"></i>
                             </a>
                             <a class="nav-link" href="https://www.linkedin.com/feed/" data-ga-footer-type="external link"
                                 data-ga-footer-section="primary footer" data-ga-footer="linkedin icon"
-                                data-ga-footer-component="">
+                                data-ga-footer-component="" target="_blank">
                                 <i class="fa-brands fa-square-linkedin" style="color: #ffffff;"></i>
                             </a>
                         </nav>
