@@ -54,7 +54,7 @@
             <div class="container">
                 <div class="row">
                     @foreach($photos as $photo)
-                    <div class="col-lg-3 col-md-6 col-6">
+                    <div class="col-lg-3 col-md-6 col-6" style="margin-right: 40px;">
                         <div class="single-post2 hover-zoomin mb-30 wow fadeInUp animated" data-animation="fadeInUp"
                             data-delay=".4s">
                             <div class="blog-thumb2" style="width: 110%;">
