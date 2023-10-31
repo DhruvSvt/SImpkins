@@ -322,25 +322,24 @@
         <div class="stats-main-div">
             <div class="main-stats-wrapper">
                 <div>
-                    <h3 class="counter main-stats">35</h3>
-                    <h4 class="stats-caption">Campus World Wide</h4>
+                    <h3 class="counter main-stats">4</h3>
+                    <h4 class="stats-caption">Campus</h4>
                 </div>
                 <div>
-                    <h3 class="counter main-stats">10</h3>
-                    <h4 class="stats-caption">Countries</h4>
+                    <div class="hor-div-3 centre-align">
+                        <h3 class="counter main-stats">1.5k+</h3>
+                    </div>
+                    <h4 class="stats-caption">Active Students</h4>
                 </div>
                 <div id="w-node-_2be81a79-976a-16ed-c2f4-7f0694264efe-2207cad4">
                     <div class="hor-div-3 centre-align">
-                        <h3 class="counter main-stats">2,300</h3>
+                        <h3 class="counter main-stats">100+</h3>
                     </div>
                     <h4 class="stats-caption">Faculty</h4>
                 </div>
                 <div>
-                    <div class="hor-div-3 centre-align">
-                        <h3 class="counter main-stats">31,500</h3>
-                        <h3 class="stasts-symbol-white plus-wrap hide">+</h3>
-                    </div>
-                    <h4 class="stats-caption">Active Students</h4>
+                    <h3 class="counter main-stats">20k+</h3>
+                    <h4 class="stats-caption">Alumni</h4>
                 </div>
             </div>
         </div>

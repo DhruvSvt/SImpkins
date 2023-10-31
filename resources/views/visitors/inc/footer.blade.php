@@ -151,7 +151,7 @@ max-width: 100%;"></a>
                     </div>
                     <div class="col-md mt-4" id="social-media">
                         <nav class="nav justify-content-end" aria-label="Social Media">
-                            <a class="nav-link" href="#" data-ga-footer-type="external link"
+                            <a class="nav-link" href="https://www.facebook.com/SimpkinsSchoolAgra" data-ga-footer-type="external link"
                                 data-ga-footer-section="primary footer" data-ga-footer="facebook icon"
                                 data-ga-footer-component="">
                                 <i class="fa-brands fa-square-facebook" style="color: #ffffff;"></i>
@@ -161,17 +161,17 @@ max-width: 100%;"></a>
                                 data-ga-footer-component="">
                                 <i class="fa-brands fa-square-x-twitter" style="color: #ffffff;"></i>
                             </a>
-                            <a class="nav-link" href="#" data-ga-footer-type="external link"
+                            <a class="nav-link" href="https://www.instagram.com/simpkinsschool/" data-ga-footer-type="external link"
                                 data-ga-footer-section="primary footer" data-ga-footer="instagram icon"
                                 data-ga-footer-component="">
                                 <i class="fa-brands fa-square-instagram" style="color: #ffffff;"></i>
                             </a>
-                            <a class="nav-link" href="#" data-ga-footer-type="external link"
+                            <a class="nav-link" href="https://www.youtube.com/@simpkinsschool" data-ga-footer-type="external link"
                                 data-ga-footer-section="primary footer" data-ga-footer="youtube icon"
                                 data-ga-footer-component="">
                                 <i class="fa-brands fa-square-youtube" style="color: #ffffff;"></i>
                             </a>
-                            <a class="nav-link" href="#" data-ga-footer-type="external link"
+                            <a class="nav-link" href="https://www.linkedin.com/feed/" data-ga-footer-type="external link"
                                 data-ga-footer-section="primary footer" data-ga-footer="linkedin icon"
                                 data-ga-footer-component="">
                                 <i class="fa-brands fa-square-linkedin" style="color: #ffffff;"></i>
@@ -189,14 +189,14 @@ max-width: 100%;"></a>
                     <div class="col">
                         <div class="d-flex footer-innovation-links">
                             <nav class="nav" aria-label="University Services">
-                                <a class="nav-link" href="#" data-ga-footer-type="internal link"
+                                <a class="nav-link" href="/{{ 'complete-detail' }}" data-ga-footer-type="internal link"
                                     data-ga-footer-section="secondary footer" data-ga-footer="maps and locations"
                                     data-ga-footer-component="">Maps and
                                     Locations</a>
-                                <a class="nav-link" href="#" data-ga-footer-type="internal link"
+                                <a class="nav-link" href="/{{ 'job-opening' }}" data-ga-footer-type="internal link"
                                     data-ga-footer-section="secondary footer" data-ga-footer="jobs"
                                     data-ga-footer-component="">Jobs</a>
-                                <a class="nav-link" href="#" data-ga-footer-type="internal link"
+                                {{-- <a class="nav-link" href="#" data-ga-footer-type="internal link"
                                     data-ga-footer-section="secondary footer" data-ga-footer="directory"
                                     data-ga-footer-component="">Directory</a>
                                 <a class="nav-link" href="#" data-ga-footer-type="internal link"
@@ -204,7 +204,7 @@ max-width: 100%;"></a>
                                     data-ga-footer-component="">Contact ASU</a>
                                 <a class="nav-link" href="#" data-ga-footer-type="internal link"
                                     data-ga-footer-section="secondary footer" data-ga-footer="my asu"
-                                    data-ga-footer-component="">My ASU</a>
+                                    data-ga-footer-component="">My ASU</a> --}}
                             </nav>
                             <a class="img-link p-4 " href="/" data-ga-footer-type="internal link"
                                 data-ga-footer-section="secondary footer"
