@@ -12309,7 +12309,8 @@ blockquote cite {
 .video-background-holder {
     position: relative;
     background-color: black;
-    height: calc(100vh - 72px);
+    /* height: calc(100vh - 60px); */
+    height: 72vh;
     min-height: 25rem;
     width: 100%;
     overflow: hidden;
