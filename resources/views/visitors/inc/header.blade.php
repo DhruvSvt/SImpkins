@@ -32,10 +32,10 @@
                     <h2 class="d-inline w-100 simpkins" style="font-size: 2.2rem">
                         SIMPKINS SCHOOL
                     </h2>
-                    <p class=".address{" style="font-size: 0.7rem;">
+                    <p class=".address{" style="font-size: 0.90rem; color: black;font-weight: bolder;padding-bottom: 5px">
                         (Maruti Estate, Bodla Road, Shahganj, Agra, U.P – 282010)
                     </p>
-                    <p class="address" style="text-transform: uppercase; font-size: 0.74rem">
+                    <p class="address" style="text-transform: uppercase;font-size: 0.90rem;color: black;font-weight: bolder;">
                         Affiliated to central board of secondary education, New Delhi
                     </p>
                 </div>
@@ -45,9 +45,9 @@
                     <?php
                     date_default_timezone_set('Asia/Kolkata'); // Set the timezone to India (Asia/Kolkata)
                     ?>
-                    <p class=".address{" style="font-size: 0.7rem; line-height: 1.5;">
-                        CBSE Affiliation No. 1234567<br>
-                        Date : <?= date('Y-m-d') ?><br>
+                    <p class=".address{" style="font-size: 0.90rem; line-height: 1.5;color: black;font-weight: bolder;">
+                        CBSE Affiliation No. 2130149<br>
+                        Date : <?= date('d-F-y') ?><br>
                         Current Time:<span id="current-time">Loading...</span>
                     </p>
                 </div>
