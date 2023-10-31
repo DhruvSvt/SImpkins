@@ -1,15 +1,23 @@
 <div style="background:#ffc627">
     <div class="main-menu text-right text-xl-right .mini-header">
         <nav class="nav-menu-top-wrapper w-nav-menu">
-            <ul class="first-ul" style="margin-right: 3.2rem;">
-                <li><a class="d-none d-md-block" href="{{ config('app.url') }}visitors/assets/doc/NOTI-1.pdf"
-                        target="_blank">Mandatory Public
-                        Disclosure</a></li>
-                <li><a href="#"><i class="icon fal fa-lock"></i> Login</a></li>
-                <li><a href="admission-enquiry.html"><i class="icon fal fa-envelope"></i>
-                        Admission Enquiry</a></li>
-                <li><a href="contact.html"><i class="icon fal fa-phone-office"></i> Contact
-                        Us</a></li>
+            <ul class="first-ul" style="margin-right: 5.2rem;">
+                <li>
+                    <a class="d-none d-md-block" href="{{ config('app.url') }}visitors/assets/doc/NOTI-1.pdf"
+                        target="_blank" style="color: black;font-weight: bolder; font-size: 1rem;">Mandatory Public
+                        Disclosure</a>
+                </li>
+                <li>
+                    <a href="#" style="color: black;font-weight: bolder; font-size: 1rem;">
+                        <i class="icon fal fa-lock"></i> ERP Login</a>
+                </li>
+                {{-- <li>
+                    <a href="admission-enquiry.html" style="color: black;font-weight: bolder; font-size: 1rem;"><i class="icon fal fa-envelope"></i>
+                        Admission Enquiry</a>
+                </li> --}}
+                <li>
+                    <a href="/{{ 'complete-detail' }}" style="color: black;font-weight: bolder; font-size: 1rem;"><i class="icon fal fa-phone-office"></i> Contact Us</a>
+                </li>
                 {{-- <li><a class="book_tour" href="{{ route('visitor.contact') }}">Book A Tour</a></li> --}}
             </ul>
         </nav>
