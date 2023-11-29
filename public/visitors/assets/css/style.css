@@ -6516,11 +6516,14 @@ section:hover .section-title h2::before {
 }
 .s-about-content .txt-clr {
     color: #000;
-    font-size: 15px;
+    font-size: 15px;    text-align: justify;
     line-height: initial;
 }
 .f-widget-title img {
     width: 50%;
+}
+.block-inline-blockasu-edu-anim-content-buttons .content-section{
+    height: 100%;
 }
 
 .footer-link ul li i {
