@@ -104,7 +104,7 @@
                                 from classes Pre Nursery to 12th. This day-school is co-educational and the medium of
                                 instruction here is English. School Session runs from April to March.</p>
 
-                            <a href="#" class="button-inner ">
+                            <a href="#0" class="button-inner ">
                                 <p class="button_text">Read more</p><img
                                     src="{{ config('app.url') }}visitors/assets/img/features/5f3ed15cfcf155b03d5adbe9_blue-arrow-03.svg"
                                     alt="Arrow" class="arrow_img">
@@ -195,7 +195,7 @@
         <section class="steps-area p-relative" style="background-color: #ffc627;">
             <div class="animations-10"><img src="{{ config('app.url') }}visitors/assets/img/bg/an-img-10.png"
                     alt="an-img-01"></div>
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-md-12">
                         <div class="section-title mb-35 wow fadeInDown animated" data-animation="fadeInDown"
@@ -635,18 +635,14 @@
                     </div>
                     <div class="col-lg-12">
                         <div class="testimonial-active wow fadeInUp animated" data-animation="fadeInUp" data-delay=".4s">
+
                             <div class="single-testimonial text-center">
                                 <div class="qt-img">
                                     <img src="{{ config('app.url') }}visitors/assets/img/testimonial/qt-icon.png"
                                         alt="img">
                                 </div>
-                                <p>the opportunity to explore their own learning at their own pace. It has given my
-                                    child a nurturing environment as well as polish her natural skills. I am happy that
-                                    she has developed a sense of ownership and better self-confidence through ECAs.</p>
-                                <div class="testi-author">
-                                    <img src="{{ config('app.url') }}visitors/assets/img/features/6214941bece17314c7c37488_Sweta Kesarwani.png"
-                                        alt="img">
-                                </div>
+                                <p>"I would like to show my appreciation to the teachers who have taught my son and has guided him to achieving amazing results in his IGs and A levels. they have been a source of confidence and inspiration for my child to work hard and achieve the level where he is today! Wishing the teachers all the best in their future endeavors"</p>
+
                                 <div class="ta-info">
                                     <h6>Sneha Som</h6>
                                     <span>Mother of Aavya Singh KG</span>
@@ -657,16 +653,11 @@
                                     <img src="{{ config('app.url') }}visitors/assets/img/testimonial/qt-icon.png"
                                         alt="img">
                                 </div>
-                                <p>the opportunity to explore their own learning at their own pace. It has given my
-                                    child a nurturing environment as well as polish her natural skills. I am happy that
-                                    she has developed a sense of ownership and better self-confidence through ECAs.</p>
-                                <div class="testi-author">
-                                    <img src="{{ config('app.url') }}visitors/assets/img/features/6214941bece17314c7c37488_Sweta Kesarwani.png"
-                                        alt="img">
-                                </div>
+                                <p>“I would like to say that I am very impressed with the children's events and their performances. Thank You for all the effort the teachers have put in with them. The events are very fun, entertaining and educational for them. Keep it up Simpkins!”</p>
+
                                 <div class="ta-info">
-                                    <h6>Sneha Som</h6>
-                                    <span>Mother of Aavya Singh KG</span>
+                                    <h6>Richa Mishra</h6>
+                                    <span>Mother of Riya Mishra LKG</span>
                                 </div>
                             </div>
                             <div class="single-testimonial text-center">
@@ -674,52 +665,14 @@
                                     <img src="{{ config('app.url') }}visitors/assets/img/testimonial/qt-icon.png"
                                         alt="img">
                                 </div>
-                                <p>the opportunity to explore their own learning at their own pace. It has given my
-                                    child a nurturing environment as well as polish her natural skills. I am happy that
-                                    she has developed a sense of ownership and better self-confidence through ECAs.</p>
-                                <div class="testi-author">
-                                    <img src="{{ config('app.url') }}visitors/assets/img/features/6214941bece17314c7c37488_Sweta Kesarwani.png"
-                                        alt="img">
-                                </div>
+                                <p>"Being efficient and receiving the curriculum email has been really helpful. I am writing to express my gratitude to the head for sharing the same. Using this as a guide would really help parents like me to understand the curriculum and provide support to my child. Thank You"</p>
+
                                 <div class="ta-info">
-                                    <h6>Sneha Som</h6>
-                                    <span>Mother of Aavya Singh KG</span>
+                                    <h6>Reshma verma</h6>
+                                    <span>Mother of Kavya verma KG</span>
                                 </div>
                             </div>
-                            <div class="single-testimonial text-center">
-                                <div class="qt-img">
-                                    <img src="{{ config('app.url') }}visitors/assets/img/testimonial/qt-icon.png"
-                                        alt="img">
-                                </div>
-                                <p>the opportunity to explore their own learning at their own pace. It has given my
-                                    child a nurturing environment as well as polish her natural skills. I am happy that
-                                    she has developed a sense of ownership and better self-confidence through ECAs.</p>
-                                <div class="testi-author">
-                                    <img src="{{ config('app.url') }}visitors/assets/img/features/6214941bece17314c7c37488_Sweta Kesarwani.png"
-                                        alt="img">
-                                </div>
-                                <div class="ta-info">
-                                    <h6>Sneha Som</h6>
-                                    <span>Mother of Aavya Singh KG</span>
-                                </div>
-                            </div>
-                            <div class="single-testimonial text-center">
-                                <div class="qt-img">
-                                    <img src="{{ config('app.url') }}visitors/assets/img/testimonial/qt-icon.png"
-                                        alt="img">
-                                </div>
-                                <p>the opportunity to explore their own learning at their own pace. It has given my
-                                    child a nurturing environment as well as polish her natural skills. I am happy that
-                                    she has developed a sense of ownership and better self-confidence through ECAs.</p>
-                                <div class="testi-author">
-                                    <img src="{{ config('app.url') }}visitors/assets/img/features/6214941bece17314c7c37488_Sweta Kesarwani.png"
-                                        alt="img">
-                                </div>
-                                <div class="ta-info">
-                                    <h6>Sneha Som</h6>
-                                    <span>Mother of Aavya Singh KG</span>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -749,7 +702,7 @@
                         <div class="single-post2 hover-zoomin mb-30 wow fadeInUp animated" data-animation="fadeInUp"
                             data-delay=".4s">
                             <div class="blog-thumb2">
-                                <a href="#"><img
+                                <a href="#0"><img
                                         src="{{ config('app.url') }}visitors/assets/img/features/GALL-65.jpg"
                                         alt="img"></a>
                             </div>
@@ -759,7 +712,7 @@
                         <div class="single-post2 hover-zoomin mb-30 wow fadeInUp animated" data-animation="fadeInUp"
                             data-delay=".4s">
                             <div class="blog-thumb2">
-                                <a href="#"><img
+                                <a href="#0"><img
                                         src="{{ config('app.url') }}visitors/assets/img/features/GALL-66.jpg"
                                         alt="img"></a>
                             </div>
@@ -769,7 +722,7 @@
                         <div class="single-post2 hover-zoomin mb-30 wow fadeInUp animated" data-animation="fadeInUp"
                             data-delay=".4s">
                             <div class="blog-thumb2">
-                                <a href="#"><img
+                                <a href="#0"><img
                                         src="{{ config('app.url') }}visitors/assets/img/features/GALL-64.jpg"
                                         alt="img"></a>
                             </div>
@@ -779,7 +732,7 @@
                         <div class="single-post2 hover-zoomin mb-30 wow fadeInUp animated" data-animation="fadeInUp"
                             data-delay=".4s">
                             <div class="blog-thumb2">
-                                <a href="#"><img
+                                <a href="#0"><img
                                         src="{{ config('app.url') }}visitors/assets/img/features/GALL-68.jpg"
                                         alt="img"></a>
                             </div>
@@ -790,7 +743,7 @@
                         <div class="single-post2 hover-zoomin mb-30 wow fadeInUp animated" data-animation="fadeInUp"
                             data-delay=".4s">
                             <div class="blog-thumb2">
-                                <a href="#"><img
+                                <a href="#0"><img
                                         src="{{ config('app.url') }}visitors/assets/img/features/GALL-56 (1).jpg"
                                         alt="img"></a>
                             </div>
@@ -800,7 +753,7 @@
                         <div class="single-post2 hover-zoomin mb-30 wow fadeInUp animated" data-animation="fadeInUp"
                             data-delay=".4s">
                             <div class="blog-thumb2">
-                                <a href="#"><img
+                                <a href="#0"><img
                                         src="{{ config('app.url') }}visitors/assets/img/features/GALL-54.jpg"
                                         alt="img"></a>
                             </div>
@@ -810,7 +763,7 @@
                         <div class="single-post2 hover-zoomin mb-30 wow fadeInUp animated" data-animation="fadeInUp"
                             data-delay=".4s">
                             <div class="blog-thumb2">
-                                <a href="#"><img
+                                <a href="#0"><img
                                         src="{{ config('app.url') }}visitors/assets/img/features/GALL-62.jpg"
                                         alt="img"></a>
                             </div>
@@ -820,7 +773,7 @@
                         <div class="single-post2 hover-zoomin mb-30 wow fadeInUp animated" data-animation="fadeInUp"
                             data-delay=".4s">
                             <div class="blog-thumb2">
-                                <a href="#"><img
+                                <a href="#0"><img
                                         src="{{ config('app.url') }}visitors/assets/img/features/GALL-63.jpg"
                                         alt="img"></a>
                             </div>

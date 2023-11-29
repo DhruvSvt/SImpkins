@@ -4,19 +4,19 @@
             <ul class="first-ul" style="margin-right: 5.2rem;">
                 <li>
                     <a class="d-none d-md-block" href="{{ config('app.url') }}visitors/assets/doc/NOTI-1.pdf"
-                        target="_blank" style="color: black;font-weight: bolder; font-size: 1rem;">Mandatory Public
+                        target="_blank" >Mandatory Public
                         Disclosure</a>
                 </li>
                 <li>
-                    <a href="{{ config('app.url') }}dashboard" style="color: black;font-weight: bolder; font-size: 1rem;">
+                    <a href="{{ config('app.url') }}dashboard" >
                         <i class="icon fal fa-lock"></i> ERP Login</a>
                 </li>
                 <li>
-                    <a href="{{ config('app.url') }}admission" style="color: black;font-weight: bolder; font-size: 1rem;"><i class="icon fal fa-envelope"></i>
+                    <a href="{{ config('app.url') }}admission" ><i class="icon fal fa-envelope"></i>
                         Admission Enquiry</a>
                 </li>
                 <li>
-                    <a href="/{{ 'complete-detail' }}" style="color: black;font-weight: bolder; font-size: 1rem;"><i class="icon fal fa-phone-office"></i> Contact Us</a>
+                    <a href="/{{ 'complete-detail' }}" ><i class="icon fal fa-phone-office"></i> Contact Us</a>
                 </li>
                 {{-- <li><a class="book_tour" href="{{ route('visitor.contact') }}">Book A Tour</a></li> --}}
             </ul>
@@ -56,7 +56,10 @@
                     <?php
                     date_default_timezone_set('Asia/Kolkata'); // Set the timezone to India (Asia/Kolkata)
                     ?>
-                    <p class=".address{" style="font-size: 0.90rem; line-height: 1.5;color: black;font-weight: bolder;">
+                    <p style="font-size: 12px;
+                    line-height: 1.5;
+                    color: #646464;
+                    font-weight: 600;">
                         CBSE Affiliation No. 2130149<br>
                         Date : <?= date('d-F-y') ?><br>
                         Current Time:<span id="current-time">Loading...</span>
