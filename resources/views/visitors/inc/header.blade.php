@@ -8,13 +8,13 @@
                         Disclosure</a>
                 </li>
                 <li>
-                    <a href="#" style="color: black;font-weight: bolder; font-size: 1rem;">
+                    <a href="{{ config('app.url') }}dashboard" style="color: black;font-weight: bolder; font-size: 1rem;">
                         <i class="icon fal fa-lock"></i> ERP Login</a>
                 </li>
-                {{-- <li>
-                    <a href="admission-enquiry.html" style="color: black;font-weight: bolder; font-size: 1rem;"><i class="icon fal fa-envelope"></i>
+                <li>
+                    <a href="{{ config('app.url') }}admission" style="color: black;font-weight: bolder; font-size: 1rem;"><i class="icon fal fa-envelope"></i>
                         Admission Enquiry</a>
-                </li> --}}
+                </li>
                 <li>
                     <a href="/{{ 'complete-detail' }}" style="color: black;font-weight: bolder; font-size: 1rem;"><i class="icon fal fa-phone-office"></i> Contact Us</a>
                 </li>
