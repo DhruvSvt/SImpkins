@@ -516,16 +516,7 @@
                                         <div class="tags-area mb-3">
                                         </div>
 
-                                        <div class="button-area">
-                                            <!-- START INSERT: Button Component -->
-                                            <a href="https://www.asu.edu/academics" class="btn btn-md btn-gold"
-                                                role="link"
-                                                data-ga-animated-content-section-section="experience world-class academics"
-                                                data-ga-animated-content-section="learn more">
-                                                Learn more
-                                            </a>
-                                            <!-- END INSERT: Button Component -->
-                                        </div>
+
                                     </div>
                                 </div>
                             </div>
