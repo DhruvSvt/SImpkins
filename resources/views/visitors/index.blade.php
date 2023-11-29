@@ -55,7 +55,7 @@
             <div class="video-background-holder">
                 <div class="video-background-overlay" style="    background-size: cover;background: url({{  config('app.url')  }}visitors/assets/img/bg/banner.jpg);">
                     <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" preload="auto">
-                        <source src="{{ config('app.url') }}visitors/assets/video/Zenith.mp4" type="video/mp4">
+                        <source src="{{ config('app.url') }}visitors/assets/video/Zenith1Trim.mp4" type="video/mp4">
                     </video>
                     {{-- <iframe src="https://www.youtube.com/embed/ql7TjZuRzQM?si=WnxgzXQFNf9f7A_B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> --}}
                 </div>
@@ -463,7 +463,7 @@
         <!-- Aluminai Cards Start -->
         <div class="white-curve-main top"></div>
         <div class="stats-main-div">
-            <div class="main-stats-wrapper">
+            {{-- <div class="main-stats-wrapper">
                 <div>
                     <h3 class="counter main-stats">4</h3>
                     <h4 class="stats-caption">Campus</h4>
@@ -484,7 +484,7 @@
                     <h3 class="counter main-stats">20k+</h3>
                     <h4 class="stats-caption">Alumni</h4>
                 </div>
-            </div>
+            </div> --}}
         </div>
         <div class="white-curve-main"></div>
         <!-- Success Story Cards Start -->

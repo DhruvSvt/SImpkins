@@ -43,7 +43,7 @@
                     <p style="font-size: 12px;
                     line-height: 1.5;
                     color: #404040;
-                    font-weight: 600;">
+                    font-weight: 600;    margin-bottom: 2px;">
                         (Maruti Estate, Bodla Road, Shahganj, Agra, U.P – 282010)
                     </p>
                     <p class="address" style="text-transform: uppercase;font-size: 0.90rem;color: black;font-weight: bolder;">
@@ -61,6 +61,7 @@
                     color: #646464;
                     font-weight: 600;">
                         CBSE Affiliation No. 2130149<br>
+                        School Code:60063<br>
                         Date : <?= date('d-F-y') ?><br>
                         Current Time:<span id="current-time">Loading...</span>
                     </p>
