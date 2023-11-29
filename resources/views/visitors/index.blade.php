@@ -104,12 +104,7 @@
                                 from classes Pre Nursery to 12th. This day-school is co-educational and the medium of
                                 instruction here is English. School Session runs from April to March.</p>
 
-                            <a href="#0" class="button-inner ">
-                                <p class="button_text">Read more</p><img
-                                    src="{{ config('app.url') }}visitors/assets/img/features/5f3ed15cfcf155b03d5adbe9_blue-arrow-03.svg"
-                                    alt="Arrow" class="arrow_img">
-                                <div class="button_background" style="width: 40px; height: 40px;"></div>
-                            </a>
+
                         </div>
                     </div>
 
@@ -452,7 +447,7 @@
                     @foreach ($aluminais as $alu)
                         <div class="card" style="border: none;">
                             <img src="{{ config('app.url') }}storage/{{ $alu->image }}" class="card-img-top"
-                                style="width: 275px; height: 183px;margin: auto;" alt="img" />
+                                alt="img" />
                             <div class="card-body">
                                 <p class="card-text">
                                     {{ $alu->description }}
