@@ -61,7 +61,7 @@
                     color: #646464;
                     font-weight: 600;">
                         CBSE Affiliation No. 2130149<br>
-                        School Code:60063<br>
+                        School Code : 60063<br>
                         Date : <?= date('d-F-y') ?><br>
                         Current Time:<span id="current-time">Loading...</span>
                     </p>
