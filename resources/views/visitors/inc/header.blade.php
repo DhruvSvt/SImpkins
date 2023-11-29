@@ -95,14 +95,16 @@
                                 @endif
                             </li>
                         @endforeach
-                        {{-- <li class="has-sub">
-                                    <a href="qeducato/blog.html">Resources</a>
-                                    <ul>
-                                        <li><a href="gallery.html"> Photo Gallery </a></li>
-                                        <li><a href="notice.html"> Latest Notice</a></li>
-                                        <li><a href="events.html">Upcoming Events </a></li>
-                                    </ul>
-                                </li> --}}
+                        <li>
+                            <a href="/contact">
+                                Contact Us
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#0">
+                                Online fee payment
+                            </a>
+                        </li>
                     </ul>
                 </nav>
             </div>
