@@ -166,6 +166,7 @@ class ResumeSubmitController extends Controller
             $tempRow['highest_qualification'] = $row->highest_qualification;
             $tempRow['current_organization'] = $row->current_organization;
             $tempRow['address'] = $row->address;
+            $tempRow['resume'] = 'storage/'.$row->resume;
 
             $tempRow['operate'] = $operate;
             $rows[] = $tempRow;

@@ -854,6 +854,9 @@ function bannerImageFormatter(value, row) {
 function contentImageFormatter(value, row) {
     return "<a data-toggle='lightbox' href='" + row.content_image + "'><img src='" + row.content_image + "' class='img-fluid'  alt='image'  /></a>";
 }
+function resumeFormatter(value, row) {
+    return "<a target='_blank' href='" + row.resume + "'>View Resume</a>";
+}
 
 function examTimetableFormatter(value, row) {
     let html = []

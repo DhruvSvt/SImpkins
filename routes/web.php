@@ -69,6 +69,8 @@ Route::post('/admission', [EnquiryController::class, 'enuiryAdmission'])->name('
 Route::view('/contact','visitors.contact')->name('visitor.contact');
 Route::post('/contact',[EnquiryController::class, 'enuiryContact'])->name('visitor.contact');
 
+Route::view('/apply-form','visitors.jobapply')->name('visitor.jobformview');
+Route::post('/apply-form',[EnquiryController::class, 'enuiryJob'])->name('visitor.jobform');
 Route::view('/page/privacy-policy','visitors.privacy-policy')->name('visitor.privacy-policy');
 // Route::get('/login', [HomeController::class, 'login'])->name('login');
 

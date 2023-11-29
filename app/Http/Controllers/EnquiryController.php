@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\AdmissionEnquiry;
 use App\Models\ContactEnquiry;
-use App\Models\ContactEnuiry;
-use App\Models\EventNotice;
+use App\Models\ResumeSubmit;
 use Illuminate\Http\Request;
 use Throwable;
 
@@ -39,20 +38,58 @@ class EnquiryController extends Controller
             $admission->date = date('Y-m-d', strtotime($request->date));
             $admission->save();
 
-            $response = [
-                'error' => false,
-                'message' => trans('data_store_successfully')
-            ];
+            // $response = [
+            //     'error' => false,
+            //     'message' => trans('data_store_successfully')
+            // ];
+            return redirect()->back()->with('success', trans('data_store_successfully'));
         } catch (Throwable $e) {
-            $response = array(
-                'error' => true,
-                'message' => trans('error_occurred'),
-                'data' => $e
-            );
+            // $response = array(
+            //     'error' => true,
+            //     'message' => trans('error_occurred'),
+            //     'data' => $e
+            // );
+            return redirect()->back()->with('error', $e->getMessage());
         }
-        return redirect()->back()->with('response', $response);
+        // return redirect()->back()->with('response', $response);
     }
 
+    public function enuiryJob(Request $request)
+    {
+        $request->validate([
+            'candidate_name' => 'required',
+            'father_name' => 'required',
+            'mobile' => 'required',
+            'apply_for' => 'required',
+            'highest_qualification' => 'required',
+            'current_organization' => 'required',
+            'address' => 'required',
+            'resume' => 'required|mimes:pdf|max:2048',
+        ]);
+
+        try {
+
+            $resume = new ResumeSubmit();
+            $resume->resume = $request->file('resume')->store('resume', 'public');
+            $resume->candidate_name = $request->candidate_name;
+            $resume->father_name = $request->father_name;
+            $resume->mobile = $request->mobile;
+            $resume->apply_for = $request->apply_for;
+            $resume->highest_qualification = $request->highest_qualification;
+            $resume->current_organization = $request->current_organization;
+            $resume->address = $request->address;
+            $resume->save();
+
+            return redirect()->back()->with('success', trans('data_store_successfully'));
+        } catch (Throwable $e) {
+            // $response = array(
+            //     'error' => true,
+            //     'message' => trans('error_occurred'),
+            //     'data' => $e
+            // );
+            return redirect()->back()->with('error', $e->getMessage());
+        }
+    }
     public function enuiryContact(Request $request) {
         try {
             $enquiry = new ContactEnquiry;
@@ -66,7 +103,7 @@ class EnquiryController extends Controller
             return redirect()->back()->with('success', 'Thank you !! \n We have Reached Out You Soon ');
         }
             catch (Throwable $e) {
-            return redirect()->back()->withError(trans('error_occurred'))->with('data', $e);
+                return redirect()->back()->with('error', $e->getMessage());
         }
     }
 }

@@ -55,6 +55,8 @@
                                                 {{ __('current_organization') }}</th>
                                             <th scope="col" data-field="address" data-sortable="false">
                                                 {{ __('address') }}</th>
+                                                <th scope="col" data-field="resume" data-formatter="resumeFormatter" data-sortable="false">
+                                                    {{ __('resume') }}</th>
                                             @canany(['resume-submit-edit', 'resume-submit-delete'])
                                             <th data-events="resumeSubmitEvents" scope="col" data-field="operate"
                                                 data-sortable="false">{{ __('action') }}</th>
