@@ -40,7 +40,10 @@
                     <h2 class="d-inline w-100 simpkins" style="font-size: 2.2rem">
                         SIMPKINS SCHOOL
                     </h2>
-                    <p class=".address{" style="font-size: 0.90rem; color: black;font-weight: bolder;padding-bottom: 5px">
+                    <p style="font-size: 12px;
+                    line-height: 1.5;
+                    color: #404040;
+                    font-weight: 600;">
                         (Maruti Estate, Bodla Road, Shahganj, Agra, U.P – 282010)
                     </p>
                     <p class="address" style="text-transform: uppercase;font-size: 0.90rem;color: black;font-weight: bolder;">
@@ -81,7 +84,7 @@
                         @endphp
                         @foreach ($menus as $menu)
                             <li class="has-sub">
-                                <a href="javascript:void(0)" style="color: black;font-size: 20px;">{{ $menu->name }}</a>
+                                <a href="javascript:void(0)" >{{ $menu->name }}</a>
                                 @if (isset($menu->pages) && count($menu->pages) > 0)
                                     <ul>
                                         @foreach ($menu->pages as $page)

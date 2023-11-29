@@ -80,7 +80,7 @@
 
 
         <!-- about-area -->
-        <section class="about-area about-p pt-60 pb-60 p-relative fix" style="background-image:url('visitors/assets/img/bg-img.avif');background-size: cover;background-position: right;">
+        <section class="about-area about-p pt-60 pb-60 p-relative fix" >
             <div class="animations-02"><img src="{{ config('app.url') }}visitors/assets/img/bg/an-img-02.png"
                     alt="contact-bg-an-01"></div>
             <div class="container">
@@ -318,32 +318,7 @@
             </div>
         </section> --}}
 
-        <div class="white-curve-main top"></div>
-        <div class="stats-main-div">
-            <div class="main-stats-wrapper">
-                <div>
-                    <h3 class="counter main-stats">4</h3>
-                    <h4 class="stats-caption">Campus</h4>
-                </div>
-                <div>
-                    <div class="hor-div-3 centre-align">
-                        <h3 class="counter main-stats">1.5k+</h3>
-                    </div>
-                    <h4 class="stats-caption">Active Students</h4>
-                </div>
-                <div id="w-node-_2be81a79-976a-16ed-c2f4-7f0694264efe-2207cad4">
-                    <div class="hor-div-3 centre-align">
-                        <h3 class="counter main-stats">100+</h3>
-                    </div>
-                    <h4 class="stats-caption">Faculty</h4>
-                </div>
-                <div>
-                    <h3 class="counter main-stats">20k+</h3>
-                    <h4 class="stats-caption">Alumni</h4>
-                </div>
-            </div>
-        </div>
-        <div class="white-curve-main"></div>
+
         <!-- frequently-area -->
         {{-- <section class="faq-area pt-90 pb-90 p-relative fix">
         <div class="animations-10"><img src="{{ config('app.url') }}visitors/assets/img/bg/an-img-04.png"
@@ -491,7 +466,32 @@
             </div>`
         </div>
         <!-- Aluminai Cards Start -->
-
+        <div class="white-curve-main top"></div>
+        <div class="stats-main-div">
+            <div class="main-stats-wrapper">
+                <div>
+                    <h3 class="counter main-stats">4</h3>
+                    <h4 class="stats-caption">Campus</h4>
+                </div>
+                <div>
+                    <div class="hor-div-3 centre-align">
+                        <h3 class="counter main-stats">1.5k+</h3>
+                    </div>
+                    <h4 class="stats-caption">Active Students</h4>
+                </div>
+                <div id="w-node-_2be81a79-976a-16ed-c2f4-7f0694264efe-2207cad4">
+                    <div class="hor-div-3 centre-align">
+                        <h3 class="counter main-stats">100+</h3>
+                    </div>
+                    <h4 class="stats-caption">Faculty</h4>
+                </div>
+                <div>
+                    <h3 class="counter main-stats">20k+</h3>
+                    <h4 class="stats-caption">Alumni</h4>
+                </div>
+            </div>
+        </div>
+        <div class="white-curve-main"></div>
         <!-- Success Story Cards Start -->
         <div
             class="block-inline-blockasu-edu-anim-content-buttons bg white-bg bg-top bg-percent-100 max-size-container center-container  pt-50 pb-30">

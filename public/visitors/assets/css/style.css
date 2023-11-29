@@ -399,7 +399,7 @@ label {
     border-radius: 40px;
     margin-top: 20px;
     padding: 10px 25px;
-    font-family: Poppins, sans-serif;
+
     font-size: 14px;
     font-weight: 600;
     line-height: 24px;
@@ -662,11 +662,10 @@ label {
 }
 .main-menu ul li a {
     display: block;
-    color: #fff;
+    color: #000;
     padding: 10px 0px;
-    font-family: Poppins, sans-serif;
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 15px;
+    font-weight: 700;
     font-family: 'Montserrat', sans-serif;
 }
 .main-menu ul li a::after {
@@ -2088,7 +2087,7 @@ label {
     margin-bottom: 15px;
 }
 .s-about-content .txt-clr {
-    color: #245b73;
+    color: #000;
     font-size: 18px;
     line-height: 28px;
 }
@@ -4254,7 +4253,7 @@ section:hover .section-title h2::before {
     box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.1);
 }
 .s-about-content h2 {
-    font-size: 22px;
+    font-size: 28px;
     line-height: 30px;
 }
 .s-about-content h3 {
@@ -6508,7 +6507,7 @@ section:hover .section-title h2::before {
     border-bottom-width: 1px;
     border-bottom-color: rgba(0, 173, 238, 0);
     margin-bottom: 10px;
-    font-family: Poppins, sans-serif;
+
     font-size: 13px;
     font-weight: 600;
     line-height: 30px;
@@ -6516,7 +6515,7 @@ section:hover .section-title h2::before {
     display: inline;
 }
 .s-about-content .txt-clr {
-    color: #245b73;
+    color: #000;
     font-size: 15px;
     line-height: initial;
 }
@@ -6532,7 +6531,7 @@ section:hover .section-title h2::before {
     float: none;
     color: #fff;
     margin-bottom: 5px;
-    font-family: Poppins, sans-serif;
+
     font-size: 13px;
     font-weight: 300;
     line-height: 20px;
