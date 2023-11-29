@@ -1,4 +1,6 @@
-@extends('layouts.master')
+@php
+
+@endphp@extends('layouts.master')
 @section('title')
     {{__('dashboard')}}
 @endsection
