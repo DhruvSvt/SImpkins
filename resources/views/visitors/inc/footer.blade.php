@@ -189,7 +189,7 @@ max-width: 100%;"></a>
                     <div class="col">
                         <div class="d-flex footer-innovation-links">
                             <nav class="nav" aria-label="University Services">
-                                <a class="nav-link" href="/{{ 'complete-detail' }}" data-ga-footer-type="internal link"
+                                <a class="nav-link" href="/{{ 'contact' }}" data-ga-footer-type="internal link"
                                     data-ga-footer-section="secondary footer" data-ga-footer="maps and locations"
                                     data-ga-footer-component="">Maps and
                                     Locations</a>

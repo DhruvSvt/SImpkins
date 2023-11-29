@@ -16,7 +16,7 @@
                         Admission Enquiry</a>
                 </li>
                 <li>
-                    <a href="/{{ 'complete-detail' }}" ><i class="icon fal fa-phone-office"></i> Contact Us</a>
+                    <a href="/{{ 'contact' }}" ><i class="icon fal fa-phone-office"></i> Contact Us</a>
                 </li>
                 {{-- <li><a class="book_tour" href="{{ route('visitor.contact') }}">Book A Tour</a></li> --}}
             </ul>
