@@ -71,7 +71,7 @@
 
     </div>
 </header>
-<div class="menu-area">
+<div class="menu-area" style="background: #ffc627">
     <div class="second-menu">
         <div class="row align-items-center" style="background: #ffc627">
 
