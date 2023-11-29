@@ -53,7 +53,7 @@
         </div> --}}
             <!-- Background video -->
             <div class="video-background-holder">
-                <div class="video-background-overlay" style="background: url({{  config('app.url')  }}visitors/assets/img/bg/banner.jpg);">
+                <div class="video-background-overlay" style="    background-size: cover;background: url({{  config('app.url')  }}visitors/assets/img/bg/banner.jpg);">
                     <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" preload="auto">
                         <source src="{{ config('app.url') }}visitors/assets/video/Zenith.mp4" type="video/mp4">
                     </video>
