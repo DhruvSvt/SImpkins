@@ -491,8 +491,8 @@
             class="block-inline-blockasu-edu-anim-content-buttons bg white-bg bg-top bg-percent-100 max-size-container center-container  pt-50 pb-30">
             <div class="container">
                 <h2 class="text-center m-4" style="visibility: visible;">
-                    Our Succes story</h2>
-                <div class="testimonial-active">
+                    Our Success story</h2>
+                <div class="testimonial-active success">
                     @foreach ($success_story as $ss)
                         <div class="item">
                             <div class="content-section my-2"

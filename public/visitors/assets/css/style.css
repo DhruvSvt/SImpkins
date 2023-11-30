@@ -911,9 +911,22 @@ label {
 .second-header a:hover {
     color: #ffffffc2;
 }
+.slick-initialized .slick-slide {
+    display: block;
+    padding: 10px;
+}
 .second-menu {
     position: relative;
     z-index: 9;
+}
+.success .slick-track
+{
+    display: flex !important;
+}
+
+.success .slick-slide
+{
+    height: inherit !important;
 }
 .sticky-menu .second-menu {
     margin: 0;
