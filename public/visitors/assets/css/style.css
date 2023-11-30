@@ -3495,8 +3495,9 @@ section:hover .section-title h2::before {
 }
 .step-box .text p {
     margin-bottom: 0;
-    color: #fff;
-    font-size: 13px;
+    color: black;
+    font-size: 15px;
+    font-weight: 600;
     line-height: 21px;
 }
 .s-about-img {

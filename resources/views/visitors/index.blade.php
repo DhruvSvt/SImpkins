@@ -207,9 +207,8 @@
                                                 alt="icon"></div>
                                     </div>
                                     <div class="text">
-                                        <h3 style="color: black;">Best Teachers</h3>
-                                        <p style="color: black;font-size: 17px;">Each of our teacher is well qualified & trained so that they can do justice
-                                            while delivering a world class curriculum.</p>
+                                         <p >Ours is a premier school situated in the heart of the beautiful city of Agra. Established in 1981,
+                                            SIMPKINS is a Co-Ed school affiliated to Central Board of Secondary Education (CBSE).</p>
                                     </div>
                                 </div>
                             </li>
@@ -221,9 +220,10 @@
                                                 alt="icon"></div>
                                     </div>
                                     <div class="text">
-                                        <h3 style="color: black;">Activity Based Learning</h3>
-                                        <p style="color: black;font-size: 17px;">Convert every class to a lab. All our learning happens in experiential
-                                            learning mode.</p>
+                                        <p >At Simpkins, we believe
+                                            in nurturing young minds and fostering a passion for learning. Our experienced faculty members are dedicated to
+                                             providing personalised attention to each student and creating an environment that encourages curiosity, creativity,
+                                              and critical thinking.</p>
                                     </div>
                                 </div>
                             </li>
@@ -235,9 +235,10 @@
                                                 alt="icon"></div>
                                     </div>
                                     <div class="text">
-                                        <h3 style="color: black;">Safety & Security</h3>
-                                        <p style="color: black;font-size: 17px;"> Students are safeguarded to the best and taken utmost care with measures
-                                            like 24/7 guardhouse, CCTV cameras, and more.</p>
+
+                                        <p > The Simpkins Family is committed to providing a safe and inclusive learning environment
+                                            where students can thrive academically, socially, and emotionally, which would naturally result in the holistic
+                                            development of our children. Join us on our journey to make Hogwarts more than just a fictional place.</p>
                                     </div>
                                 </div>
                             </li>
