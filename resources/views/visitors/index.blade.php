@@ -657,6 +657,30 @@
                                     <span>Mother of Kavya verma KG</span>
                                 </div>
                             </div>
+                            <div class="single-testimonial text-center">
+                                <div class="qt-img">
+                                    <img src="{{ config('app.url') }}visitors/assets/img/testimonial/qt-icon.png"
+                                        alt="img">
+                                </div>
+                                <p>This school is the best school for all the children, in terms of sports and education. In short, it’s the school where my daughter carries a smile on her face and that shows it’s a right choice for her to be in Simpkins public school. As a parent we all look for that smile.</p>
+
+                                <div class="ta-info">
+                                    <h6>priya kumar</h6>
+                                    <span>Mother of reyansh kumar KG</span>
+                                </div>
+                            </div>
+                            <div class="single-testimonial text-center">
+                                <div class="qt-img">
+                                    <img src="{{ config('app.url') }}visitors/assets/img/testimonial/qt-icon.png"
+                                        alt="img">
+                                </div>
+                                <p>It has a been a great experience to watch my children become more independent and confident at such an early age. I am very thrilled that my daughter has now started playing cricket. My son has become very independent and is learaning so many new things everyday.</p>
+
+                                <div class="ta-info">
+                                    <h6>Jia Parmar</h6>
+                                    <span>Mother of kriya Parmar KG</span>
+                                </div>
+                            </div>
 
                         </div>
                     </div>
