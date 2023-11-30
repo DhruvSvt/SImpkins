@@ -5246,14 +5246,14 @@ section:hover .section-title h2::before {
     margin: 20px;
     color: #525c7b;
 }
-.testimonial-active .slick-slide {
+.parents .testimonial-active .slick-slide {
     position: relative;
     padding: 30px;
     margin: 0 15px 15px;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 20px;
 }
-.testimonial-active .slick-slide:hover {
+.parents .testimonial-active .slick-slide:hover {
     background: #fff;
     box-shadow: 1px 1.732px 60px 0px rgba(0, 0, 0, 0.05);
 }
@@ -6326,7 +6326,7 @@ section:hover .section-title h2::before {
     background-color:#fdf8e4;
     overflow: hidden;
 }
-.testimonial-active .slick-slide {
+.parents .testimonial-active .slick-slide {
     text-align: center;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 20px;

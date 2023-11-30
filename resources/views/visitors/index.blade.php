@@ -442,8 +442,7 @@
         <div class="container  center-container">
             <h2 class="text-center m-4" style="visibility: visible;">
                 Our Alumni</h2>
-            <div class="row">
-                <div class="row row-cols-1 row-cols-lg-3 row-cols-sm-1 g-3">
+            <div class="testimonial-active">
                     @foreach ($aluminais as $alu)
                         <div class="card" style="border: none;">
                             <img src="{{ config('app.url') }}storage/{{ $alu->image }}" class="card-img-top"
@@ -457,7 +456,7 @@
                             </div>
                         </div>
                     @endforeach
-                </div>
+
             </div>`
         </div>
         <!-- Aluminai Cards Start -->
@@ -493,9 +492,9 @@
             <div class="container">
                 <h2 class="text-center m-4" style="visibility: visible;">
                     Our Succes story</h2>
-                <div class="row">
+                <div class="testimonial-active">
                     @foreach ($success_story as $ss)
-                        <div class="col-sm-4">
+                        <div class="item">
                             <div class="content-section my-2"
                                 style="background: url({{ config('app.url') }}storage/{{ $ss->image }}) rgb(0 0 0 / 36%);
                                 background-blend-mode: multiply;
@@ -619,7 +618,7 @@
                             </h2>
                         </div>
                     </div>
-                    <div class="col-lg-12">
+                    <div class="col-lg-12 parents">
                         <div class="testimonial-active wow fadeInUp animated" data-animation="fadeInUp" data-delay=".4s">
 
                             <div class="single-testimonial text-center">
