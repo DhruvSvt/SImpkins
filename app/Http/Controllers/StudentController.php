@@ -655,7 +655,7 @@ class StudentController extends Controller
         $bulkData['total'] = $total;
         $rows = array();
         $tempRow = array();
-        $no = 1;
+        $no = $offset+1;
         $data = getSettings('date_formate');
         foreach ($res as $row) {
             $operate = '';
