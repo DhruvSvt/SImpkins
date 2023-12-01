@@ -1925,7 +1925,8 @@ class TeacherApiController extends Controller
     {
         try {
             $teacher = $request->user()->teacher;
-            $timetable = Timetable::where('subject_teacher_id', $teacher->id)->with('class_section', 'subject')->get();
+             $subject_teacher_ids = SubjectTeacher::where('teacher_id', $teacher->id)->first();
+            $timetable = Timetable::where('subject_teacher_id', $subject_teacher_ids->id)->with('class_section', 'subject')->get();
             $response = array(
                 'error' => false,
                 'message' => "Timetable Fetched Successfully",
