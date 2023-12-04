@@ -460,9 +460,11 @@
             <div class="card" style="border: none;">
                 <img src="{{ config('app.url') }}storage/{{ $alu->image }}" class="card-img-top" alt="img" />
                 <div class="card-body">
-                    <p class="card-text">
-                        {{ $alu->description }}
-                    </p>
+                    @if(strlen($alu->description) > 5)
+                        <p class="card-text">
+                            {{ $alu->description }}
+                        </p>
+                    @endif
                     <h5 class="card-title">{{ $alu->name }}</h5>
                     <p class="card-text">{{ $alu->std_title }}</p>
                 </div>
