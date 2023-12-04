@@ -26,16 +26,22 @@
     <meta name="msapplication-navbutton-color" content="#40B9EB">
     <meta name="apple-mobile-web-app-status-bar-style" content="#40B9EB">
 
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="{{ config('app.url') }}visitors/assets/img/features/icon.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-        <!-- Font Awsome cdn-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <!-- Font Awsome cdn-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- sweet alert cdn -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
+        integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <link rel="stylesheet" href="{{ config('app.url') }}visitors/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ config('app.url') }}visitors/assets/css/animate.min.css">
@@ -47,6 +53,9 @@
     <link rel="stylesheet" href="{{ config('app.url') }}visitors/assets/css/default.css">
     <link rel="stylesheet" href="{{ config('app.url') }}visitors/assets/css/style.css">
     <link rel="stylesheet" href="{{ config('app.url') }}visitors/assets/css/responsive.css?v=85">
+
+
+
     <!--qeducato-->
 
 </head>
@@ -63,8 +72,8 @@
     <!-- footer -->
     @include('visitors.inc.footer')
     <div class="div-block-189 button-enq tokyo noida-sticky-right-btn">
-        <a href="#" class="button-14 enquire w-button" data-bs-toggle="modal"
-            data-bs-target="#staticBackdrop">Enquire Now</a>
+        <a href="#" class="button-14 enquire w-button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Enquire
+            Now</a>
         <a href="{{ route('visitor.contact') }}" class="button-14 book-a-tour-button w-button" target="_blank">BOOK A
             TOUR</a>
     </div>
@@ -93,25 +102,23 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="contact-field p-relative c-name mb-20">
-                                        <input type="text" id="name" name="name" placeholder="Name"
-                                            required="">
+                                        <input type="text" id="name" name="name" placeholder="Name" required="">
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="contact-field p-relative c-subject mb-20">
-                                        <input type="text" id="email" name="email" placeholder="Email"
-                                            required="">
+                                        <input type="text" id="email" name="email" placeholder="Email" required="">
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="contact-field p-relative c-subject mb-20">
-                                        <input type="text" id="phone" name="mobile" placeholder="Phone No."
-                                            required="">
+                                        <input type="text" id="phone" name="mobile" placeholder="Phone No." required="">
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="contact-field p-relative c-message mb-0">
-                                        <textarea name="comments" id="message" cols="30" rows="4" placeholder="Write comments"></textarea>
+                                        <textarea name="comments" id="message" cols="30" rows="4"
+                                            placeholder="Write comments"></textarea>
                                     </div>
                                     <div class="slider-btn">
                                         <button class="btn ss-btn" data-animation="fadeInRight"
@@ -150,7 +157,9 @@
     <script src="{{ config('app.url') }}visitors/assets/js/jquery.magnific-popup.min.js"></script>
     <script src="{{ config('app.url') }}visitors/assets/js/element-in-view.js"></script>
     <script src="{{ config('app.url') }}visitors/assets/js/main.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
+        integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     @if (Session::has('error'))
     <script>
@@ -162,14 +171,14 @@
     </script>
     @endif
     @if (Session::has('success'))
-<script>
-    swal("Success", "{{ Session::get('success') }}", 'success', {
+    <script>
+        swal("Success", "{{ Session::get('success') }}", 'success', {
                 buttons: {
                     confirm: "OK",
                 },
             });
-</script>
-@endif
+    </script>
+    @endif
 </body>
 
 </html>
