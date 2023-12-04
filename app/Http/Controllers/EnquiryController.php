@@ -23,6 +23,7 @@ class EnquiryController extends Controller
             'mother_name' => 'required',
             'last_class' => 'required',
             'father_mobile' => 'required',
+            'mother_mobile' => 'required',
             'address' => 'required',
             'date' => 'required',
         ]);
@@ -40,6 +41,7 @@ class EnquiryController extends Controller
             $admission->mother_name = $request->mother_name;
             $admission->last_class = $request->last_class;
             $admission->father_mobile = $request->father_mobile;
+            $admission->mother_mobile = $request->mother_mobile;
             $admission->address = $request->address;
             $admission->date = date('Y-m-d', strtotime($request->date));
             $admission->save();
