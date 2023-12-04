@@ -75,8 +75,8 @@
                                         type="text">
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>Previous School Name <span class="text-danger">*</span></label>
-                                    <input placeholder="Previous School Name" class="form-control"
+                                    <label>Current School<span class="text-danger">*</span></label>
+                                    <input placeholder="Current School" class="form-control"
                                         name="previous_school_name" type="text">
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
@@ -89,25 +89,25 @@
                                     <input placeholder="Mother&#039;s Name" class="form-control" name="mother_name"
                                         type="text">
                                 </div>
-                                <div class="form-group col-sm-12 col-md-4">
+                                {{-- <div class="form-group col-sm-12 col-md-4">
                                     <label>Last Class <span class="text-danger">*</span></label>
                                     <input placeholder="Last Class" class="form-control" name="last_class" type="text">
-                                </div>
-                                <div class="form-group col-sm-12 col-md-4">
+                                </div> --}}
+                                {{-- <div class="form-group col-sm-12 col-md-4">
                                     <label>Father&#039;s Mobile <span class="text-danger">*</span></label>
                                     <input placeholder="Father&#039;s Mobile" class="form-control" name="father_mobile"
                                         type="text">
-                                </div>
-                                <div class="form-group col-sm-12 col-md-4">
+                                </div> --}}
+                                {{-- <div class="form-group col-sm-12 col-md-4">
                                     <label>Mother&#039;s Mobile <span class="text-danger">*</span></label>
                                     <input placeholder="Mother&#039;s Mobile" class="form-control" name="mother_mobile"
                                         type="text">
-                                </div>
-                                <div class="form-group col-sm-12 col-md-4">
+                                </div> --}}
+                                {{-- <div class="form-group col-sm-12 col-md-4">
                                     <label>Apply Date<span class="text-danger">*</span></label>
                                     <input placeholder="Date" class="form-control datepicker-popup form-control"
                                         name="date" type="text">
-                                </div>
+                                </div> --}}
                                 <div class="form-group col-12">
                                     <label>Address<span class="text-danger">*</span></label>
                                     <textarea placeholder="Address" class="form-control" id="address" rows="2"
