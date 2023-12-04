@@ -42,10 +42,10 @@ class AluminaiController extends Controller
         $request->validate([
             'name' => 'required',
             'std_title' => 'required',
-            'description' => 'required',
+            // 'description' => 'required',
             'image' => 'required|image',
         ]);
-        try 
+        try
         {
             // $fileName = time() . '.' . $request->image->extension();
             // $request->image->storeAs('public/images', $fileName);
@@ -53,7 +53,7 @@ class AluminaiController extends Controller
             $aluminai = new Aluminai;
             $aluminai->name = $request->name;
             $aluminai->std_title = $request->std_title;
-            $aluminai->description = $request->description;
+            $aluminai->description = $request->description ?? '';
             $aluminai->image = $request->file('image')->store('aluminai', 'public');
             $aluminai->save();
             $response = [
@@ -164,7 +164,7 @@ class AluminaiController extends Controller
         $request->validate([
             'name' => 'required',
             'std_title' => 'required',
-            'description' => 'required',
+            // 'description' => 'required',
         ]);
 
         try {

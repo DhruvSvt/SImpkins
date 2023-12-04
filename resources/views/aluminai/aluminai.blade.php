@@ -27,7 +27,7 @@
                                     {!! Form::text('name', null, ['placeholder' => __('name'), 'class' => 'form-control']) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('Student Title') }} <span class="text-danger">*</span></label>
+                                    <label>{{ __('description') }} <span class="text-danger">*</span></label>
                                     {!! Form::text('std_title', null, ['placeholder' => __('Student Titile'), 'class' => 'form-control']) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
@@ -42,10 +42,10 @@
                                         </span>
                                     </div>
                                 </div>
-                                <div class="form-group col-12">
+                                {{-- <div class="form-group col-12">
                                     <label>{{ __('description') }} <span class="text-danger">*</span></label>
                                     {!! Form::textarea('description', null, ['placeholder' => __('description'), 'class' => 'form-control', 'rows' => 2]) !!}
-                                </div>
+                                </div> --}}
                             </div>
                             <input class="btn btn-theme" type="submit" value={{ __('submit') }}>
                         </form>

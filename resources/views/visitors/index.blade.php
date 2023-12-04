@@ -458,7 +458,7 @@
         <div class="testimonial-active">
             @foreach ($aluminais as $alu)
             <div class="card" style="border: none;">
-                <img src="{{ config('app.url') }}storage/{{ $alu->image }}" class="card-img-top" alt="img" />
+                <img src="{{ config('app.url') }}storage/{{ $alu->image }}" class="card-img-top" style="object-fit: fill;" alt="img" />
                 <div class="card-body">
                     @if(strlen($alu->description) > 5)
                         <p class="card-text">

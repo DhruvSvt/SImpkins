@@ -42,10 +42,10 @@
                                             <th scope="col" data-field="name" data-sortable="true" data-visible="true">
                                                 {{ __('Name') }}</th>
                                             <th scope="col" data-field="std_title" data-sortable="true">
-                                                {{ __('Student Title') }}</th>
-
-                                            <th scope="col" data-field="description" data-sortable="false">
                                                 {{ __('description') }}</th>
+
+                                            {{-- <th scope="col" data-field="description" data-sortable="false">
+                                                {{ __('description') }}</th> --}}
 
                                             <th data-events="aluminaiEvents" scope="col" data-field="operate"
                                                 data-sortable="false">{{ __('action') }}
@@ -89,7 +89,7 @@
                                 ]) !!}
                             </div>
                             <div class="form-group col-sm-12 col-md-4">
-                                <label>{{ __('Student Title') }} <span class="text-danger">*</span></label>
+                                <label>{{ __('description') }} <span class="text-danger">*</span></label>
                                 {!! Form::text('std_title', null, [
                                     'placeholder' => __('std_title'),
                                     'class' => 'form-control',
@@ -97,7 +97,7 @@
                                     'required' => true,
                                 ]) !!}
                             </div>
-                            <div class="form-group col-sm-12 col-md-4">
+                            {{-- <div class="form-group col-sm-12 col-md-4">
                                 <label>{{ __('description') }} <span class="text-danger">*</span></label>
                                 {!! Form::text('description', null, [
                                     'placeholder' => __('description'),
@@ -105,7 +105,7 @@
                                     'id' => 'edit_description',
                                     'required' => true,
                                 ]) !!}
-                            </div>
+                            </div> --}}
                             <div class="form-group col-sm-12 col-md-4">
                                 <label>{{ __('image') }} <span class="text-danger">*</span></label>
                                 <input type="file" name="image" class="file-upload-default" />
