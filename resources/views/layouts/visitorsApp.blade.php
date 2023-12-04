@@ -57,6 +57,28 @@
 
 
     <!--qeducato-->
+    <style>
+        .new-admission{
+            color: #f00;
+            width: 9px;
+            height: 6px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 10px;
+            font-weight: bold;
+            animation: zoom-in-zoom-out 1s ease infinite;
+        }
+
+        @keyframes zoom-in-zoom-out {
+            0% {
+                transform: scale(1, 1);
+            }
+            100% {
+                transform: scale(1.1, 1.1);
+            }
+        }
+    </style>
 
 </head>
 

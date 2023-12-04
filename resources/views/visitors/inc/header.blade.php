@@ -91,7 +91,12 @@
                         @endphp
                         @foreach ($menus as $menu)
                             @php $pages = $menu->pages; @endphp
-                            <li class="has-sub">
+                            <li class="has-sub" @if($menu->order == 4) style="position:relative" @endif>
+                                @if($menu->order == 4)
+                                    <div class="new-admission">
+                                        NEW
+                                    </div>
+                                @endif
                                 <a href="javascript:void(0)">{{ $menu->name }}</a>
                                 @if (isset($pages) && count($pages) > 0)
                                     <ul>
