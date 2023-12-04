@@ -212,7 +212,7 @@
                                             alt="icon"></div>
                                 </div>
                                 <div class="text">
-                                    <p>Ours is a premier school situated in the heart of the beautiful city of Agra.
+                                    <p style="text-align:justify;">Ours is a premier school situated in the heart of the beautiful city of Agra.
                                         Established in 1981,
                                         SIMPKINS is a Co-Ed school affiliated to Central Board of Secondary Education
                                         (CBSE).</p>
@@ -227,7 +227,7 @@
                                             alt="icon"></div>
                                 </div>
                                 <div class="text">
-                                    <p>At Simpkins, we believe
+                                    <p style="text-align:justify;">At Simpkins, we believe
                                         in nurturing young minds and fostering a passion for learning. Our experienced
                                         faculty members are dedicated to
                                         providing personalised attention to each student and creating an environment
@@ -245,7 +245,7 @@
                                 </div>
                                 <div class="text">
 
-                                    <p> The Simpkins Family is committed to providing a safe and inclusive learning
+                                    <p style="text-align:justify;"> The Simpkins Family is committed to providing a safe and inclusive learning
                                         environment
                                         where students can thrive academically, socially, and emotionally, which would
                                         naturally result in the holistic
