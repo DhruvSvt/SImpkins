@@ -1,25 +1,37 @@
 <div style="background:#ffc627">
     <div class="main-menu text-right text-xl-right .mini-header">
         <nav class="nav-menu-top-wrapper w-nav-menu">
-            <ul class="first-ul" style="margin-right: 5.2rem;">
-                <li>
-                    <a class="d-none d-md-block" href="{{ config('app.url') }}visitors/assets/doc/NOTI-1.pdf"
-                        target="_blank">Mandatory Public
-                        Disclosure</a>
-                </li>
-                <li>
-                    <a href="{{ config('app.url') }}dashboard">
-                        <i class="icon fal fa-lock"></i> ERP Login</a>
-                </li>
-                <li>
-                    <a href="{{ config('app.url') }}admission"><i class="icon fal fa-envelope"></i>
-                        Admission Enquiry</a>
-                </li>
-                <li>
-                    <a href="/{{ 'contact' }}"><i class="icon fal fa-phone-office"></i> Contact Us</a>
-                </li>
-                {{-- <li><a class="book_tour" href="{{ route('visitor.contact') }}">Book A Tour</a></li> --}}
-            </ul>
+            <div style="display:flex">
+                <div style="width:58%;">
+                    <marquee width="100%" behavior="alternate" style="
+                    color: red;
+                    vertical-align: bottom;
+                    font-weight: bold;">
+                        Admission Open for 2024 - 25
+                    </marquee>
+                </div>
+                <div style="width:auto;">
+                    <ul class="first-ul" style="margin-right: 5.2rem;width:max-content;">
+                        <li>
+                            <a class="d-none d-md-block" href="{{ config('app.url') }}visitors/assets/doc/NOTI-1.pdf"
+                                target="_blank">Mandatory Public
+                                Disclosure</a>
+                        </li>
+                        <li>
+                            <a href="{{ config('app.url') }}dashboard">
+                                <i class="icon fal fa-lock"></i> ERP Login</a>
+                        </li>
+                        <li>
+                            <a href="{{ config('app.url') }}admission"><i class="icon fal fa-envelope"></i>
+                                Admission Enquiry</a>
+                        </li>
+                        <li>
+                            <a href="/{{ 'contact' }}"><i class="icon fal fa-phone-office"></i> Contact Us</a>
+                        </li>
+                        {{-- <li><a class="book_tour" href="{{ route('visitor.contact') }}">Book A Tour</a></li> --}}
+                    </ul>
+                </div>
+            </div>
         </nav>
     </div>
 </div>
@@ -40,8 +52,7 @@
                     <h2 class="d-inline w-100 simpkins" style="font-size: 2.2rem">
                         SIMPKINS SCHOOL
                     </h2>
-                    <p
-                        style="font-size: 12px;
+                    <p style="font-size: 12px;
                     line-height: 1.5;
                     color: #404040;
                     font-weight: 600;    margin-bottom: 2px;">
@@ -58,14 +69,14 @@
                     <?php
                     date_default_timezone_set('Asia/Kolkata'); // Set the timezone to India (Asia/Kolkata)
                     ?>
-                    <p
-                        style="font-size: 12px;
+                    <p style="font-size: 12px;
                     line-height: 1.5;
                     color: #646464;
                     font-weight: 600;">
                         CBSE Affiliation No. 2130149<br>
                         School Code : 60063<br>
-                        Date : <?= date('d-F-y') ?><br>
+                        Date :
+                        <?= date('d-F-y') ?><br>
                         Current Time:<span id="current-time">Loading...</span>
                     </p>
                 </div>
@@ -87,26 +98,26 @@
                             </a>
                         </li>
                         @php
-                            $menus = App\Models\Menu::get();
+                        $menus = App\Models\Menu::get();
                         @endphp
                         @foreach ($menus as $menu)
-                            @php $pages = $menu->pages; @endphp
-                            <li class="has-sub" @if($menu->order == 4) style="position:relative" @endif>
-                                @if($menu->order == 4)
-                                    <div class="new-admission">
-                                        NEW
-                                    </div>
-                                @endif
-                                <a href="javascript:void(0)">{{ $menu->name }}</a>
-                                @if (isset($pages) && count($pages) > 0)
-                                    <ul>
-                                        @foreach ($pages as $page)
-                                            <li><a href="/{{ $page->slug }}"> {{ $page->page_name }} </a>
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                @endif
-                            </li>
+                        @php $pages = $menu->pages; @endphp
+                        <li class="has-sub" @if($menu->order == 4) style="position:relative" @endif>
+                            @if($menu->order == 4)
+                            <div class="new-admission">
+                                NEW
+                            </div>
+                            @endif
+                            <a href="javascript:void(0)">{{ $menu->name }}</a>
+                            @if (isset($pages) && count($pages) > 0)
+                            <ul>
+                                @foreach ($pages as $page)
+                                <li><a href="/{{ $page->slug }}"> {{ $page->page_name }} </a>
+                                </li>
+                                @endforeach
+                            </ul>
+                            @endif
+                        </li>
                         @endforeach
                         <li>
                             <a href="/contact">
