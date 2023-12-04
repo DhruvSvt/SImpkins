@@ -57,7 +57,12 @@
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>gender<span class="text-danger">*</span></label>
-                                    <input placeholder="Gender" class="form-control" name="gender" type="text">
+                                    <select name="gender" class="form-select" style="height: 45px; padding:0 13px;" required>
+                                        <option value="">Select Gender</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Other">Other</option>
+                                    </select>
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>Contact No.<span class="text-danger">*</span></label>
