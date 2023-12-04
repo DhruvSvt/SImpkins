@@ -27,7 +27,7 @@ class AluminaiServiceProvider extends ServiceProvider
     public function boot()
     {
             View::composer('visitors.index', function ($view) {
-            $aluminais = Aluminai::latest()->limit(30)->get();
+            $aluminais = Aluminai::orderBy('created_at')->limit(30)->get();
             $view->with('aluminais', $aluminais);
         });
     }
