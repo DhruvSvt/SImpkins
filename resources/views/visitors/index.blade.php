@@ -55,7 +55,7 @@
             <div class="video-background-holder">
                 <div class="video-background-overlay" style=" background: url({{  config('app.url')  }}visitors/assets/img/bg/banner.jpg);    background-size: cover!important;">
                     <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" preload="auto">
-                        <source src="{{ config('app.url') }}visitors/assets/video/simpkins_video.mp4" type="video/mp4">
+                        <source src="{{ config('app.url') }}visitors/assets/video/simpkins_video1.mp4" type="video/mp4">
                     </video>
                     {{-- <iframe src="https://www.youtube.com/embed/ql7TjZuRzQM?si=WnxgzXQFNf9f7A_B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> --}}
                 </div>
