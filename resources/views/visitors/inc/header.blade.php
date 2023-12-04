@@ -4,19 +4,19 @@
             <ul class="first-ul" style="margin-right: 5.2rem;">
                 <li>
                     <a class="d-none d-md-block" href="{{ config('app.url') }}visitors/assets/doc/NOTI-1.pdf"
-                        target="_blank" >Mandatory Public
+                        target="_blank">Mandatory Public
                         Disclosure</a>
                 </li>
                 <li>
-                    <a href="{{ config('app.url') }}dashboard" >
+                    <a href="{{ config('app.url') }}dashboard">
                         <i class="icon fal fa-lock"></i> ERP Login</a>
                 </li>
                 <li>
-                    <a href="{{ config('app.url') }}admission" ><i class="icon fal fa-envelope"></i>
+                    <a href="{{ config('app.url') }}admission"><i class="icon fal fa-envelope"></i>
                         Admission Enquiry</a>
                 </li>
                 <li>
-                    <a href="/{{ 'contact' }}" ><i class="icon fal fa-phone-office"></i> Contact Us</a>
+                    <a href="/{{ 'contact' }}"><i class="icon fal fa-phone-office"></i> Contact Us</a>
                 </li>
                 {{-- <li><a class="book_tour" href="{{ route('visitor.contact') }}">Book A Tour</a></li> --}}
             </ul>
@@ -40,13 +40,15 @@
                     <h2 class="d-inline w-100 simpkins" style="font-size: 2.2rem">
                         SIMPKINS SCHOOL
                     </h2>
-                    <p style="font-size: 12px;
+                    <p
+                        style="font-size: 12px;
                     line-height: 1.5;
                     color: #404040;
                     font-weight: 600;    margin-bottom: 2px;">
                         (Maruti Estate, Bodla Road, Shahganj, Agra, U.P – 282010)
                     </p>
-                    <p class="address" style="text-transform: uppercase;font-size: 0.90rem;color: black;font-weight: bolder;">
+                    <p class="address"
+                        style="text-transform: uppercase;font-size: 0.90rem;color: black;font-weight: bolder;">
                         Affiliated to central board of secondary education, New Delhi
                     </p>
                 </div>
@@ -56,7 +58,8 @@
                     <?php
                     date_default_timezone_set('Asia/Kolkata'); // Set the timezone to India (Asia/Kolkata)
                     ?>
-                    <p style="font-size: 12px;
+                    <p
+                        style="font-size: 12px;
                     line-height: 1.5;
                     color: #646464;
                     font-weight: 600;">
@@ -87,11 +90,12 @@
                             $menus = App\Models\Menu::get();
                         @endphp
                         @foreach ($menus as $menu)
+                            @php $pages = $menu->pages; @endphp
                             <li class="has-sub">
-                                <a href="javascript:void(0)" >{{ $menu->name }}</a>
-                                @if (isset($menu->pages) && count($menu->pages) > 0)
+                                <a href="javascript:void(0)">{{ $menu->name }}</a>
+                                @if (isset($pages) && count($pages) > 0)
                                     <ul>
-                                        @foreach ($menu->pages as $page)
+                                        @foreach ($pages as $page)
                                             <li><a href="/{{ $page->slug }}"> {{ $page->page_name }} </a>
                                             </li>
                                         @endforeach
