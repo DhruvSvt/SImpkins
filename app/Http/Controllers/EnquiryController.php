@@ -14,6 +14,9 @@ class EnquiryController extends Controller
     {
         $request->validate([
             'student_name' => 'required',
+            'dob' => 'required',
+            'gender' => 'required',
+            'contact_no' => 'required',
             'admitted_class' => 'required',
             'previous_school_name' => 'required',
             'father_name' => 'required',
@@ -28,6 +31,9 @@ class EnquiryController extends Controller
 
             $admission = new AdmissionEnquiry();
             $admission->student_name = $request->student_name;
+            $admission->dob = $request->dob;
+            $admission->gender = $request->gender;
+            $admission->contact_no = $request->contact_no;
             $admission->admitted_class = $request->admitted_class;
             $admission->previous_school_name = $request->previous_school_name;
             $admission->father_name = $request->father_name;

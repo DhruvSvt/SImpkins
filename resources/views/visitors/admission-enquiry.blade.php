@@ -53,6 +53,21 @@
                                             type="text">
                                     </div>
                                     <div class="form-group col-sm-12 col-md-4">
+                                        <label> Date of Birth <span class="text-danger">*</span></label>
+                                        <input placeholder="Date of Birth" class="form-control" name="dob"
+                                            type="text">
+                                    </div>
+                                    <div class="form-group col-sm-12 col-md-4">
+                                        <label>gender<span class="text-danger">*</span></label>
+                                        <input placeholder="Gender" class="form-control" name="gender"
+                                            type="text">
+                                    </div>
+                                    <div class="form-group col-sm-12 col-md-4">
+                                        <label>Contact No.<span class="text-danger">*</span></label>
+                                        <input placeholder="Contact Number" class="form-control" name="contact_no"
+                                            type="text">
+                                    </div>
+                                    <div class="form-group col-sm-12 col-md-4">
                                         <label>Admitted Class <span class="text-danger">*</span></label>
                                         <input placeholder="Admitted Class" class="form-control" name="admitted_class"
                                             type="text">
