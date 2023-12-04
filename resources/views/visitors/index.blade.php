@@ -625,7 +625,7 @@
                     <div class="section-title text-center mb-50 wow fadeInDown animated" data-animation="fadeInDown"
                         data-delay=".4s">
                         <h2>
-                            Hear what parents have to say about us
+                            Testimonials
                         </h2>
                     </div>
                 </div>
