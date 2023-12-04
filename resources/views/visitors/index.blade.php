@@ -509,6 +509,7 @@
                 <div class="item">
                     <div class="content-section my-2" style="background: url({{ config('app.url') }}storage/{{ $ss->image }}) rgb(0 0 0 / 36%);
                                 background-blend-mode: multiply;
+                                background-size: cover;
                                 padding: 41px 13px;
                                 color: #fff;">
                         <div class="image-holder"></div>
