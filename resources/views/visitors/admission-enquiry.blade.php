@@ -62,7 +62,7 @@
                                         type="text">
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>Admitted Class <span class="text-danger">*</span></label>
+                                    <label>Class to be admitted in <span class="text-danger">*</span></label>
                                     <input placeholder="Admitted Class" class="form-control" name="admitted_class"
                                         type="text">
                                 </div>
