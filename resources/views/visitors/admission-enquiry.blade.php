@@ -52,12 +52,38 @@
                                         type="text">
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
+                                    <label>Current School<span class="text-danger">*</span></label>
+                                    <input placeholder="Current School" class="form-control" name="previous_school_name"
+                                        type="text">
+                                </div>
+                                <div class="form-group col-sm-12 col-md-4">
+                                    <label>Father&#039;s Name <span class="text-danger">*</span></label>
+                                    <input placeholder="Father&#039;s Name" class="form-control" name="father_name"
+                                        type="text">
+                                </div>
+                                <div class="form-group col-sm-12 col-md-4">
+                                    <label>Admitted Class <span class="text-danger">*</span></label>
+                                    <input placeholder="Admitted Class" class="form-control" name="admitted_class"
+                                        type="text">
+                                </div>
+                                <div class="form-group col-sm-12 col-md-4">
+                                    <label>Mother&#039;s Name <span class="text-danger">*</span></label>
+                                    <input placeholder="Mother&#039;s Name" class="form-control" name="mother_name"
+                                        type="text">
+                                </div>
+                                <div class="form-group col-sm-12 col-md-4">
                                     <label> Date of Birth <span class="text-danger">*</span></label>
                                     <input placeholder="Date of Birth" class="form-control" name="dob" type="text">
                                 </div>
+                                <div class="form-group col-12">
+                                    <label>Address<span class="text-danger">*</span></label>
+                                    <textarea placeholder="Address" class="form-control" id="address" rows="2"
+                                        name="address" cols="50"></textarea>
+                                </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>gender<span class="text-danger">*</span></label>
-                                    <select name="gender" class="form-select" style="height: 45px; padding:0 13px;" required>
+                                    <select name="gender" class="form-select" style="height: 45px; padding:0 13px;"
+                                        required>
                                         <option value="">Select Gender</option>
                                         <option value="Male">Male</option>
                                         <option value="Female">Female</option>
@@ -69,26 +95,9 @@
                                     <input placeholder="Contact Number" class="form-control" name="contact_no"
                                         type="text">
                                 </div>
-                                <div class="form-group col-sm-12 col-md-4">
-                                    <label>Admitted Class <span class="text-danger">*</span></label>
-                                    <input placeholder="Admitted Class" class="form-control" name="admitted_class"
-                                        type="text">
-                                </div>
-                                <div class="form-group col-sm-12 col-md-4">
-                                    <label>Current School<span class="text-danger">*</span></label>
-                                    <input placeholder="Current School" class="form-control"
-                                        name="previous_school_name" type="text">
-                                </div>
-                                <div class="form-group col-sm-12 col-md-4">
-                                    <label>Father&#039;s Name <span class="text-danger">*</span></label>
-                                    <input placeholder="Father&#039;s Name" class="form-control" name="father_name"
-                                        type="text">
-                                </div>
-                                <div class="form-group col-sm-12 col-md-4">
-                                    <label>Mother&#039;s Name <span class="text-danger">*</span></label>
-                                    <input placeholder="Mother&#039;s Name" class="form-control" name="mother_name"
-                                        type="text">
-                                </div>
+
+
+
                                 {{-- <div class="form-group col-sm-12 col-md-4">
                                     <label>Last Class <span class="text-danger">*</span></label>
                                     <input placeholder="Last Class" class="form-control" name="last_class" type="text">
@@ -108,11 +117,7 @@
                                     <input placeholder="Date" class="form-control datepicker-popup form-control"
                                         name="date" type="text">
                                 </div> --}}
-                                <div class="form-group col-12">
-                                    <label>Address<span class="text-danger">*</span></label>
-                                    <textarea placeholder="Address" class="form-control" id="address" rows="2"
-                                        name="address" cols="50"></textarea>
-                                </div>
+
 
                             </div>
                             <div class="slider-btn">
