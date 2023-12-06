@@ -178,7 +178,13 @@ class TeacherController extends Controller
             $response = array(
                 'error' => true,
                 'message' => trans('error_occurred'),
-                'data' => $e
+                'data' => [
+                    'exception' => get_class($e),
+                    'message' => $e->getMessage(),
+                    'file' => $e->getFile(),
+                    'line' => $e->getLine(),
+                    'trace' => $e->getTrace()
+                ]
             );
         }
         return response()->json($response);
