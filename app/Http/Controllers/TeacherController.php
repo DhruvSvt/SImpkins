@@ -50,7 +50,6 @@ class TeacherController extends Controller
         }
         $teacher_count = Teacher::count();
         $teacher_code = 'SST'. ($teacher_count + 1000 + 1);
-
         return view('teacher.index',compact('teacher_code'));
     }
 
@@ -80,7 +79,7 @@ class TeacherController extends Controller
             );
             return response()->json($response);
         }
-        
+
         try {
             $class_section_id = $request->class_section_id;
             Excel::import(new TeacherImport($class_section_id), $request->file);
@@ -114,19 +113,19 @@ class TeacherController extends Controller
         }
         $request->validate([
             'teacher_code' => 'required',
-            'image' => 'required|mimes:jpeg,png,jpg|image|max:2048',
-            'name' => 'required',
-            'mobile' => 'required',
-            'father_name' => 'required',
-            'mother_name' => 'required',
-            'religion' => 'required',
-            'gender' => 'required',
-            'category' => 'required',
-            'dob' => 'required',
-            'designation' => 'required',
-            'date_of_joining' => 'required',
-            'address' => 'required',
-            'qualification' => 'required',
+            // 'image' => 'required|mimes:jpeg,png,jpg|image|max:2048',
+            // 'name' => 'required',
+            // 'mobile' => 'required',
+            // 'father_name' => 'required',
+            // 'mother_name' => 'required',
+            // 'religion' => 'required',
+            // 'gender' => 'required',
+            // 'category' => 'required',
+            // 'dob' => 'required',
+            // 'designation' => 'required',
+            // 'date_of_joining' => 'required',
+            // 'address' => 'required',
+            // 'qualification' => 'required',
 
         ]);
 
@@ -134,7 +133,7 @@ class TeacherController extends Controller
             $teacher_plaintext_password = str_replace('-', '', date('d-m-Y', strtotime($request->dob)));
 
             $user = new User();
-            $user->image = $request->file('image')->store('teachers', 'public');    
+            $user->image = $request->file('image')->store('teachers', 'public');
             $user->password = Hash::make($teacher_plaintext_password);
             $user->full_name = $request->name;
             $user->email = $request->email ?? $request->teacher_code;
@@ -143,7 +142,7 @@ class TeacherController extends Controller
             $user->gender = $request->gender;
             $user->mobile = $request->mobile;
             $user->current_address = $request->address;
-            $user->save();  
+            $user->save();
 
             $teacher = new Teacher();
             $teacher->user_id = $user->id;

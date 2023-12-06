@@ -229,6 +229,23 @@ $(".student-registration-form").validate({
     }
 });
 
+$(".teacher-registration-form").validate({
+    rules: {
+        // 'full_name': "required",
+        // 'last_name': "required",
+        'mobile': "number",
+        // 'image': "required",
+        // 'dob': "required",
+
+    },
+    errorPlacement: function (label, element) {
+        errorPlacement(label, element);
+    },
+    highlight: function (element, errorClass) {
+        highlight(element, errorClass);
+    }
+});
+
 $(".edit-student-registration-form").validate({
     rules: {
         'first_name': "required",
