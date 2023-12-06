@@ -71,7 +71,7 @@ class ParentApiController extends Controller
         } else {
             $response = array(
                 'error' => true,
-                'message' => 'Invalid Login Credentials',
+                'message' => Auth::user(),
                 'code' => 101
             );
             return response()->json($response, 200);
