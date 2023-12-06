@@ -58,8 +58,7 @@
                             if (response['days'][i]['day'] == response['timetable'][j]['day']) {
                                 html += '<p class="card-body">'
                                     + response['timetable'][j]['subject_teacher']['subject']['name']
-                                    + '<br>' + response['timetable'][j]['subject_teacher']['teacher']['user']['first_name'] + ' ' + response['timetable'][j]['subject_teacher']['teacher']['user']['last_name']
-                                    + '<br>start time: ' + response['timetable'][j]['start_time'] + '<br>end time: '
+                                    + '<br>' + response['timetable'][j]['subject_teacher']['teacher']['user']['first_name'] + '<br>start time: ' + response['timetable'][j]['start_time'] + '<br>end time: '
                                     + response['timetable'][j]['end_time'] + '</p>';
 
                             }

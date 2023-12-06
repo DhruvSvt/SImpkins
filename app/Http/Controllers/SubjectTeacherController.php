@@ -31,7 +31,6 @@ class SubjectTeacherController extends Controller
 
         $class_section = ClassSection::with('class', 'section')->get();
         $teachers = Teacher::with('user')->get();
-
         return view('subject.teacher', compact('class_section', 'teachers', 'subjects'));
     }
 

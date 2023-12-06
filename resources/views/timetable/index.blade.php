@@ -252,9 +252,7 @@
                                 for (let i = 0; i < response.length; i++) {
                                     html += '<option data-id=' + response[i]['id'] + ' value=' +
                                         response[i]['teacher_id'] + '>' + response[i]['teacher']['user']
-                                            ['first_name'] + ' ' + response[i]['teacher']['user'][
-                                            'last_name'
-                                            ] + '</option>';
+                                            ['first_name'] + '</option>';
                                 }
 
                             } else {

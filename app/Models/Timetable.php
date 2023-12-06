@@ -11,7 +11,7 @@ class Timetable extends Model
     use SoftDeletes;
 
     public function subject_teacher() {
-        return $this->belongsTo(SubjectTeacher::class)->with('subject', 'teacher.user:id,first_name,last_name')->withTrashed();
+        return $this->belongsTo(SubjectTeacher::class)->with('subject', 'teacher.user:id,first_name,last_name,full_name')->withTrashed();
     }
 
     public function class_section() {
