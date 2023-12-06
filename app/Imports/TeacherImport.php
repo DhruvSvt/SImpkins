@@ -18,20 +18,20 @@ class TeacherImport implements ToCollection, WithHeadingRow
     public function collection(Collection $rows)
     {
         $validator = Validator::make($rows->toArray(), [
-            // '*.teacher_code' => 'required',
+            '*.teacher_code' => 'required',
             // '*.image' => 'required|mimes:jpeg,png,jpg|image|max:2048',
-            '*.name' => 'required',
-            '*.mobile' => 'required',
-            '*.father_name' => 'required',
-            '*.mother_name' => 'required',
-            '*.religion' => 'required',
-            '*.gender' => 'required',
-            '*.category' => 'required',
+            // '*.name' => 'required',
+            // '*.mobile' => 'required',
+            // '*.father_name' => 'required',
+            // '*.mother_name' => 'required',
+            // '*.religion' => 'required',
+            // '*.gender' => 'required',
+            // '*.category' => 'required',
             '*.dob' => 'required',
-            '*.designation' => 'required',
-            '*.date_of_joining' => 'required',
-            '*.address' => 'required',
-            '*.qualification' => 'required',
+            // '*.designation' => 'required',
+            // '*.date_of_joining' => 'required',
+            // '*.address' => 'required',
+            // '*.qualification' => 'required',
         ]);
 
         $validator->validate();
