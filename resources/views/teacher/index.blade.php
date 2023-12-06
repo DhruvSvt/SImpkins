@@ -23,15 +23,15 @@
                             @csrf
                             <div class="row">
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('teacher_code') }} <span class="text-danger">*</span></label>
+                                    <label>{{ __('teacher_code') }} </label>
                                     {!! Form::text('teacher_code', $teacher_code, ['placeholder' => __('teacher_code'), 'readonly' => true, 'class' => 'form-control']) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('name') }} <span class="text-danger">*</span></label>
+                                    <label>{{ __('name') }} </label>
                                     {!! Form::text('name', null, ['placeholder' => __('name'), 'class' => 'form-control']) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('mobile') }} <span class="text-danger">*</span></label>
+                                    <label>{{ __('mobile') }} </label>
                                     {!! Form::text('mobile', null, ['placeholder' => __('mobile'), 'class' => 'form-control']) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
@@ -43,19 +43,19 @@
                                     {!! Form::text('email', null, ['placeholder' => __('email'), 'class' => 'form-control']) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('father_name') }} <span class="text-danger">*</span></label>
+                                    <label>{{ __('father_name') }} </label>
                                     {!! Form::text('father_name', null, ['placeholder' => __('father_name'), 'class' => 'form-control']) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('mother_name') }} <span class="text-danger">*</span></label>
+                                    <label>{{ __('mother_name') }} </label>
                                     {!! Form::text('mother_name', null, ['placeholder' => __('mother_name'), 'class' => 'form-control']) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('religion') }} <span class="text-danger">*</span></label>
+                                    <label>{{ __('religion') }} </label>
                                     {!! Form::text('religion', null, ['placeholder' => __('religion'), 'class' => 'form-control']) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-12">
-                                    <label>{{ __('gender') }} <span class="text-danger">*</span></label><br>
+                                    <label>{{ __('gender') }} </label><br>
                                     <div class="d-flex">
                                         <div class="form-check form-check-inline">
                                             <label class="form-check-label">
@@ -72,7 +72,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('image') }} <span class="text-danger">*</span></label>
+                                    <label>{{ __('image') }} <span class="text-danger">*</span> </label>
                                     <input type="file" name="image" class="file-upload-default" />
                                     <div class="input-group col-xs-12">
                                         <input type="text" class="form-control file-upload-info" disabled=""
@@ -84,7 +84,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('category') }} <span class="text-danger">*</span></label>
+                                    <label>{{ __('category') }} </label>
                                     {!! Form::text('category', null, ['placeholder' => __('category'), 'class' => 'form-control']) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
@@ -94,18 +94,18 @@
                                     </span> --}}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('designation') }} <span class="text-danger">*</span></label>
+                                    <label>{{ __('designation') }} </label>
                                     {!! Form::text('designation', null, ['placeholder' => __('designation'), 'class' => 'form-control']) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('date_of_joining') }} <span class="text-danger">*</span></label>
+                                    <label>{{ __('date_of_joining') }} </label>
                                     {!! Form::text('date_of_joining', null, [
                                         'placeholder' => __('date_of_joining'),
                                         'class' => 'datepicker-popup form-control',
                                     ]) !!}
                                 </div>
                                 <div class="form-group col-12">
-                                    <label>{{ __('address') }} <span class="text-danger">*</span></label>
+                                    <label>{{ __('address') }} </label>
                                     {!! Form::textarea('address', null, ['placeholder' => __('address'), 'class' => 'form-control', 'rows' => 2]) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
@@ -125,7 +125,7 @@
                                     {!! Form::text('bank_acc_no', null, ['placeholder' => __('bank_acc_no'), 'class' => 'form-control']) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>{{ __('qualification') }} <span class="text-danger">*</span></label>
+                                    <label>{{ __('qualification') }} </label>
                                     {!! Form::text('qualification', null, ['placeholder' => __('qualification'), 'class' => 'form-control']) !!}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
