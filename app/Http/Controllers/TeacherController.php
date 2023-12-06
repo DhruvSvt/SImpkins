@@ -271,14 +271,14 @@ class TeacherController extends Controller
             $tempRow['id'] = $row->id;
             $tempRow['no'] = $no++;
             $tempRow['user_id'] = $row->user_id;
-            $tempRow['full_name'] = $row->user->full_name;
-            $tempRow['email'] = $row->user->email;
-            $tempRow['dob'] = date($data['date_formate'], strtotime($row->user->dob));
-            $tempRow['mobile'] = $row->user->mobile;
-            $tempRow['image'] = $row->user->image;
-            $tempRow['image_link'] = $row->user->image;
-            $tempRow['address'] = $row->user->current_address;
-            $tempRow['gender'] = $row->user->gender;
+            $tempRow['full_name'] = $row->user ? $row->user->full_name : '-';
+            $tempRow['email'] = $row->user ? $row->user->email : '-';
+            $tempRow['dob'] = $row->user ? date($data['date_formate'], strtotime($row->user->dob)) : '00-00-0000';
+            $tempRow['mobile'] = $row->user ? $row->user->mobile : '-';
+            $tempRow['image'] = $row->user ? $row->user->image : '-';
+            $tempRow['image_link'] = $row->user ? $row->user->image : '-';
+            $tempRow['address'] = $row->user ? $row->user->current_address : '-';
+            $tempRow['gender'] = $row->user ? $row->user->gender : '-';
 
             $tempRow['teacher_code'] = $row->code;
             $tempRow['father_name'] = $row->father_name;
