@@ -1321,6 +1321,23 @@ $('.student-registration-form').on('submit', function (e) {
 
     formAjaxRequest('POST', url, data, formElement, submitButtonElement, successCallback);
 })
+$('.teacher-registration-form').on('submit', function (e) {
+    e.preventDefault();
+    let formElement = $(this);
+    let submitButtonElement = $(this).find(':submit');
+    let url = $(this).attr('action');
+    let data = new FormData(this);
+
+    let ck_field = document.getElementById('usingckeditor');
+    if (ck_field !== null) {
+        data.append('content', CKEDITOR.instances['usingckeditor'].getData());
+    }
+    function successCallback() {
+        window.location.reload();
+    }
+
+    formAjaxRequest('POST', url, data, formElement, submitButtonElement, successCallback);
+})
 $('#admin-profile-update').on('submit', function (e) {
     e.preventDefault();
     let formElement = $(this);
