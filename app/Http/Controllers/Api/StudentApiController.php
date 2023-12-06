@@ -706,7 +706,8 @@ class StudentApiController extends Controller
     {
         try {
             $student_class_section_id = Auth::user()->student->class_section_id;
-            $student = Students::with('class_section')->where('id', $student_class_section_id)->first();
+
+            $student = Students::with('class_section')->where('user_id', Auth::user()->id)->first();
             $class_id = $student->class_section->class_id;
             $exam_data_db = ExamClass::with('exam.session_year:id,name')->where('class_id', $class_id)->get();
 
