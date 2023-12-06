@@ -63,7 +63,7 @@ class User extends Authenticatable
         return url(Storage::url($value));
     }
 
-    public function getFirstName(){
+    public function getFirstNameAttribute(){
         return $this->full_name;
     }
 }
