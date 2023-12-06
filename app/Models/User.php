@@ -62,4 +62,8 @@ class User extends Authenticatable
     public function getImageAttribute($value) {
         return url(Storage::url($value));
     }
+
+    public function getFirstName(){
+        return $this->full_name;
+    }
 }
