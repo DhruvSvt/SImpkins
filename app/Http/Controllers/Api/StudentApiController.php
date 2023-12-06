@@ -51,7 +51,7 @@ class StudentApiController extends Controller
             );
             return response()->json($response);
         }
-        if (Auth::attempt(['admission_no' => $request->gr_number, 'password' => $request->password])) {
+        if (Auth::attempt(['email' => $request->gr_number, 'password' => $request->password])) {
             //        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             //Here Email Field is referenced as a GR Number for Student
             $auth = Auth::user();
