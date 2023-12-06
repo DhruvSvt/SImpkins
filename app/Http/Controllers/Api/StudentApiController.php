@@ -72,6 +72,7 @@ class StudentApiController extends Controller
             }
             //Set Class Section name
             $user->class_section_name = $user->student->class_section->class->name . " " . $user->student->class_section->section->name;
+            $user->first_name = $auth->full_name;
             //Set Medium name
             $user->medium_name = $user->student->class_section->class->medium->name;
             unset($user->student->class_section);
