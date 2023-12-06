@@ -18,7 +18,7 @@
                         <h4 class="card-title">
                             {{ __('create') . ' ' . __('teacher') }}
                         </h4>
-                        <form class="pt-3 student-registration-form" enctype="multipart/form-data"
+                        <form class="pt-3 teacher-registration-form" enctype="multipart/form-data"
                             action="{{ route('teachers.store') }}" method="POST" novalidate="novalidate">
                             @csrf
                             <div class="row">
@@ -76,7 +76,7 @@
                                     <input type="file" name="image" class="file-upload-default" />
                                     <div class="input-group col-xs-12">
                                         <input type="text" class="form-control file-upload-info" disabled=""
-                                            placeholder="{{ __('image') }}" required="required" />
+                                            placeholder="{{ __('image') }}" />
                                         <span class="input-group-append">
                                             <button class="file-upload-browse btn btn-theme"
                                                 type="button">{{ __('upload') }}</button>
@@ -90,8 +90,8 @@
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('dob') }} <span class="text-danger">*</span></label>
                                     {!! Form::text('dob', null, ['placeholder' => __('dob'), 'class' => 'datepicker-popup form-control']) !!}
-                                    <span class="input-group-addon input-group-append">
-                                    </span>
+                                    {{-- <span class="input-group-addon input-group-append">
+                                    </span> --}}
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('designation') }} <span class="text-danger">*</span></label>
@@ -166,7 +166,7 @@
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('salary_mode') }}</label>
-                                    <select required name="salary_mode" class="form-control" id="edit_salary_mode">
+                                    <select name="salary_mode" class="form-control" id="edit_salary_mode">
                                         <option value="" selected disabled>{{ __('select') . ' ' . __('salary_mode') }}
                                         <option value="{{ __('cash') }}"> {{ __('cash') }}</option>
                                         <option value="{{ __('bank') }}">{{ __('bank') }}</option>
