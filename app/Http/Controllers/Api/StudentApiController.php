@@ -63,7 +63,7 @@ class StudentApiController extends Controller
                 );
                 return response()->json($response, 200);
             }
-            $token = $auth->createToken($auth->first_name)->plainTextToken;
+            $token = $auth->createToken($auth->full_name)->plainTextToken;
             $user = $auth->load(['student.class_section', 'student.category']);
 
             if ($request->fcm_id) {
