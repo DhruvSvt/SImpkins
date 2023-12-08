@@ -212,7 +212,8 @@
                                             alt="icon"></div>
                                 </div>
                                 <div class="text">
-                                    <p style="text-align:justify;">Ours is a premier school situated in the heart of the beautiful city of Agra.
+                                    <p style="text-align:justify;">Ours is a premier school situated in the heart of the
+                                        beautiful city of Agra.
                                         Established in 1981,
                                         SIMPKINS is a Co-Ed school affiliated to Central Board of Secondary Education
                                         (CBSE).</p>
@@ -245,7 +246,8 @@
                                 </div>
                                 <div class="text">
 
-                                    <p style="text-align:justify;"> The Simpkins Family is committed to providing a safe and inclusive learning
+                                    <p style="text-align:justify;"> The Simpkins Family is committed to providing a safe
+                                        and inclusive learning
                                         environment
                                         where students can thrive academically, socially, and emotionally, which would
                                         naturally result in the holistic
@@ -458,12 +460,13 @@
         <div class="testimonial-active">
             @foreach ($aluminais as $alu)
             <div class="card" style="border: none;">
-                <img src="{{ config('app.url') }}storage/{{ $alu->image }}" class="card-img-top" style="object-fit: fill;" alt="img" />
+                <img src="{{ config('app.url') }}storage/{{ $alu->image }}" class="card-img-top"
+                    style="object-fit: fill;" alt="img" />
                 <div class="card-body">
                     @if(strlen($alu->description) > 5)
-                        <p class="card-text">
-                            {{ $alu->description }}
-                        </p>
+                    <p class="card-text">
+                        {{ $alu->description }}
+                    </p>
                     @endif
                     <h5 class="card-title">{{ $alu->name }}</h5>
                     <p class="card-text">{{ $alu->std_title }}</p>
@@ -817,11 +820,14 @@
         <div class="modal-content">
             <div class="modal-header-new">
                 <img src="{{ config('app.url') }}visitors/assets/img/popup.jpg" width="auto" height="500px">
-                <button type="button" class="close" onclick="$('#exampleModalCenter').modal('hide')" data-dismiss="modal" aria-label="Close" style="
-            font-size: 2rem;
-            padding-inline: 7px;
-            color: black !important;
-            ">
+                <button type="button" class="close" onclick="$('#exampleModalCenter').modal('hide')"
+                    data-dismiss="modal" aria-label="Close" style="
+                    font-size: 2rem;
+                    padding-inline: 7px;
+                    color: black !important;
+                    position: absolute;
+                    margin-left:93%;
+                    ">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
