@@ -20,7 +20,7 @@ class TimetableCollection extends ResourceCollection
                 "end_time" => $row['end_time'],
                 "day" => $row['day'],
                 "day_name" => $row['day_name'],
-                "subject" => $row['subject_teacher']['subject'],
+                "subject" => $row['subject_teacher'],
                 "teacher_first_name" => $row['subject_teacher']['teacher']['user']['first_name'],
                 "teacher_last_name" => $row['subject_teacher']['teacher']['user']['last_name'],
             );
