@@ -25,7 +25,7 @@
                                         <option value="">{{ __('select') }}</option>
                                         @foreach ($teacher as $teacher)
                                             <option value="{{ $teacher->id }}">
-                                                {{ $teacher->user->full_name }}
+                                                {{ $teacher->user->full_name ?? '' }}
                                             </option>
                                         @endforeach
                                     </select>
