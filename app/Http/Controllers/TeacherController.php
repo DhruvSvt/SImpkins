@@ -48,8 +48,9 @@ class TeacherController extends Controller
             );
             return redirect(route('home'))->withErrors($response);
         }
-        $teacher_count = Teacher::count();
-        $teacher_code = 'SST'. ($teacher_count + 1000 + 1);
+        $teacher_count = Teacher::orderBy('id','desc')->withTrashed()->first()->code;
+        $teacher_code =  (int) filter_var($teacher_count, FILTER_SANITIZE_NUMBER_INT);
+        $teacher_code = 'SST'. ($teacher_code + 1);
         return view('teacher.index',compact('teacher_code'));
     }
 
