@@ -263,9 +263,9 @@ class StudentsImport implements ToCollection, WithHeadingRow
 
             $student->admitted_class = $row['admitted_class'];
             $student->aadhar_card = $row['aadhar_card'] ?? '';
-            $student->is_handicap = (int)$row['is_handicap'] ?? 0;
-            $student->is_only_child = (int)$row['is_only_child'] ?? 0;
-            $student->is_minority = (int)$row['is_minority'] ?? 0;
+            $student->is_handicap = isset($row['is_handicap']) ?  (int)$row['is_handicap'] : 0;
+            $student->is_only_child = isset($row['is_only_child']) ?  (int)$row['is_only_child'] : 0;
+            $student->is_minority = isset($row['is_minority']) ?  (int)$row['is_minority'] : 0;
             $student->save();
 
             //Send User Credentials via Email
