@@ -35,7 +35,7 @@ class StudentsImport implements ToCollection, WithHeadingRow
         $validator = Validator::make($rows->toArray(), [
             '*.full_name' => 'required',
             // '*.last_name' => 'required',
-            '*.admission_no' => 'required|unique:users,email',
+            '*.admission_no' => 'required',
             '*.mobile' => 'nullable|regex:/^([0-9\s\-\+\(\)]*)$/',
             '*.gender' => 'required',
             '*.dob' => 'required',
@@ -65,6 +65,9 @@ class StudentsImport implements ToCollection, WithHeadingRow
         $studentRole = Role::where('name', 'Student')->first();
 
         foreach ($rows as $row) {
+            if(User::where('email',$row['admission_no'])->first()){
+               continue;
+            }
             $mother_email = $row['mother_full_name']  . time() . '@gmail.com';
             $father_email = $row['father_full_name'] . time(). '@gmail.com';
 
