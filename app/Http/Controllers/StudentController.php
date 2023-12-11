@@ -679,7 +679,7 @@ class StudentController extends Controller
             $tempRow['class_section_id'] = $row->class_section_id;
             $tempRow['class_section_name'] = $row->class_section->class->name . "-" . $row->class_section->section->name;
             $tempRow['category_id'] = $row->category_id;
-            $tempRow['category_name'] = $row->category->name;
+            $tempRow['category_name'] = $row->category ? $row->category->name : '';
             $tempRow['admission_no'] = $row->admission_no;
             $tempRow['roll_number'] = $row->roll_number;
             $tempRow['caste'] = $row->caste;

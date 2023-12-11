@@ -100,20 +100,20 @@ class StudentsImport implements ToCollection, WithHeadingRow
                     return response()->json($response);
                 }
                 $father_user = new User();
-                $father_user->full_name = $row['father_full_name'];
+                $father_user->full_name = $row['father_full_name'] ?? '';
                 // $father_user->last_name = $row['father_last_name'];
                 $father_user->email = $father_email;
                 $father_user->password = Hash::make($father_plaintext_password);
-                $father_user->mobile = $row['father_mobile'];
+                $father_user->mobile = $row['father_mobile']  ?? '';
                 $father_user->image = 'dummy_logo.jpg';
-                $father_user->dob = date('Y-m-d', strtotime($row['father_dob']));
+                $father_user->dob = date('Y-m-d', strtotime($row['father_dob']) ?? '');
                 $father_user->gender = 'Male';
                 $father_user->save();
                 $father_user->assignRole($parentRole);
 
                 $father_parent = new Parents();
                 $father_parent->user_id = $father_user->id;
-                $father_parent->full_name = $row['father_full_name'];
+                $father_parent->full_name = $row['father_full_name'] ;
                 // $father_parent->last_name = $row['father_last_name'];
                 $father_parent->image = 'dummy_logo.jpg';
                 $father_parent->occupation = $row['father_occupation'];
@@ -167,7 +167,7 @@ class StudentsImport implements ToCollection, WithHeadingRow
                 $mother_parent->full_name = $row['mother_full_name'];
                 // $mother_parent->last_name = $row['mother_last_name'];
                 $mother_parent->image = 'dummy_logo.jpg';
-                $mother_parent->occupation = $row['mother_occupation'];
+                $mother_parent->occupation = $row['mother_occupation'] ?? '';
                 $mother_parent->mobile = $row['mother_mobile'];
                 $mother_parent->email = $mother_email;
                 $mother_parent->dob = date('Y-m-d', strtotime($row['mother_dob'])) ?? '';
@@ -234,26 +234,26 @@ class StudentsImport implements ToCollection, WithHeadingRow
             // $user->last_name = $row['last_name'];
             $user->email = $row['admission_no'];
             $user->gender = $row['gender'];
-            $user->mobile = $row['mobile'];
+            $user->mobile = $row['mobile'] ?? '';
             $user->image = 'dummy_logo.jpg';
             $user->dob = date('Y-m-d', strtotime($row['dob']));
             $user->current_address = $row['current_address'];
-            $user->permanent_address = $row['permanent_address'];
+            $user->permanent_address = $row['permanent_address'] ?? '';
             $user->save();
             $user->assignRole($studentRole);
 
             $student = new Students();
             $student->user_id = $user->id;
             $student->class_section_id = $this->class_section_id;
-            $student->category_id = $category_id;
+            $student->category_id = $category_id ?? '';
             $student->admission_no = $row['admission_no'];
-            $student->roll_number = $row['roll_number'];
-            $student->caste = $row['caste'];
+            $student->roll_number = $row['roll_number'] ?? '';
+            $student->caste = $row['caste'] ?? '';
             $student->religion = $row['religion'];
             $student->admission_date = date('Y-m-d', strtotime($row['admission_date']));
-            $student->blood_group = $row['blood_group'];
-            $student->session = $row['session'];
-            $student->status = (int)$row['status'] ?? 1;
+            $student->blood_group = $row['blood_group'] ?? '';
+            $student->session = $row['session'] ?? '';
+            // $student->status = (int)$row['status'] ?? 1;
             $student->father_id = $father_parent_id;
             $student->mother_id = $mother_parent_id;
             $student->guardian_id = $guardian_parent_id;
