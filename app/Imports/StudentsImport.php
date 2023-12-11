@@ -43,7 +43,7 @@ class StudentsImport implements ToCollection, WithHeadingRow
             // '*.roll_number' => 'required',
             // '*.caste' => 'required',
             '*.religion' => 'required',
-            '*.admission_date' => 'required|date',
+            // '*.admission_date' => 'required|date',
             // '*.blood_group' => 'required',
             // '*.height' => 'required',
             // '*.wieght' => 'required',
@@ -116,8 +116,8 @@ class StudentsImport implements ToCollection, WithHeadingRow
                 $father_parent->full_name = $row['father_full_name'] ;
                 // $father_parent->last_name = $row['father_last_name'];
                 $father_parent->image = 'dummy_logo.jpg';
-                $father_parent->occupation = $row['father_occupation'];
-                $father_parent->annual_income = $row['father_annual_income'];
+                $father_parent->occupation = $row['father_occupation'] ?? '';
+                $father_parent->annual_income = $row['father_annual_income'] ?? '';
                 $father_parent->mobile = $row['father_mobile'];
                 $father_parent->email = $father_email;
                 $father_parent->dob = date('Y-m-d', strtotime($row['father_dob']));
@@ -259,7 +259,7 @@ class StudentsImport implements ToCollection, WithHeadingRow
             $student->guardian_id = $guardian_parent_id;
 
             $student->admitted_class = $row['admitted_class'];
-            $student->aadhar_card = $row['aadhar_card'];
+            $student->aadhar_card = $row['aadhar_card'] ?? '';
             $student->is_handicap = (int)$row['is_handicap'] ?? 0;
             $student->is_only_child = (int)$row['is_only_child'] ?? 0;
             $student->is_minority = (int)$row['is_minority'] ?? 0;
