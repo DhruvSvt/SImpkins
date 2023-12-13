@@ -883,7 +883,7 @@
         $(document).ready(function () {
     $("#imageModal").modal('show');
     });
-    }, 1000);
+    }, 1500);
 </script>
 @if (Session::has('success'))
 <script>
