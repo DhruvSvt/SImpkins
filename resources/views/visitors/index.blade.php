@@ -867,12 +867,12 @@
                 <img src="{{ config('app.url') }}visitors/assets/img/popup.jpg" style="height: 90vh;
                 width: 100%;" alt="" />
             </div>
-            <div class="">
-                {{-- <h5 class="modal-title" id="imageModalLabel">Modal Title</h5> --}}
+
+            {{-- <div class="">
                 <button type="button" class="closebtn" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-            </div>
+            </div> --}}
 
         </div>
     </div>
