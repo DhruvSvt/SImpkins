@@ -247,4 +247,20 @@ max-width: 100%;"></a>
             </style>
         </div>
     </div>
+    <div class="copyright-wrap" style="
+    background-color: #ffc627;
+    border-top: 1px solid;
+">
+        <div class="container">
+            <div class="row align--center">
+
+
+                <div class="col-lg-12 text-" style="
+    color: #000;
+">
+                    Copyright © Simpkins School Agra 2023 . All rights reserved. ERP &amp; Website By <a href="https://svtindia.in/">SVT INDIA</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </footer>

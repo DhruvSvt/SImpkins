@@ -414,18 +414,18 @@
             <a class="nav-link" data-toggle="collapse" href="#aluminai-menu" aria-expanded="false"
                 aria-controls="academics-menu">
                 <i class="fa fa-user menu-icon"></i>
-                <span class="menu-title">{{ __('aluminai') }}</span>
+                <span class="menu-title">{{ __('Alumni') }}</span>
             </a>
             <div class="collapse" id="aluminai-menu">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('aluminai.create') }}">
-                            {{ __('Aluminai Add') }}
+                            {{ __('Alumni Add') }}
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('aluminai.index') }}">
-                            {{ __('Aluminai Details') }}
+                            {{ __('Alumni Details') }}
                         </a>
                     </li>
                 </ul>

@@ -8,7 +8,7 @@
     <div class="content-wrapper">
         <div class="page-header">
             <h3 class="page-title">
-                {{ __('manage') . ' ' . __('aluminai') }}
+                {{ __('manage') . ' ' . __('alumni') }}
             </h3>
         </div>
         <div class="row">
@@ -16,7 +16,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">
-                            {{ __('create') . ' ' . __('aluminai') }}
+                            {{ __('create') . ' ' . __('alumni') }}
                         </h4>
                         <form class="pt-3 student-registration-form" enctype="multipart/form-data"
                             action="{{ route('aluminai.store') }}" method="POST" novalidate="novalidate">

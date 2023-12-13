@@ -8,7 +8,7 @@
     <div class="content-wrapper">
         <div class="page-header">
             <h3 class="page-title">
-                {{ __('manage') . ' ' . __('aluminai') }}
+                {{ __('manage') . ' ' . __('alumni') }}
             </h3>
         </div>
 
@@ -17,7 +17,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">
-                            {{ __('list') . ' ' . __('aluminai') }}
+                            {{ __('list') . ' ' . __('alumni') }}
                         </h4>
                         <div class="row">
                             <div class="col-12">
@@ -67,7 +67,7 @@
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="exampleModalLabel">{{ __('edit') . ' ' . __('Aluminai') }}</h4><br>
+                    <h4 class="modal-title" id="exampleModalLabel">{{ __('edit') . ' ' . __('alumni') }}</h4><br>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true"><i class="fa fa-close"></i></span>
                     </button>

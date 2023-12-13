@@ -456,7 +456,7 @@
     <!-- Aluminai Cards Start -->
     <div class="container  center-container">
         <h2 class="text-center m-4" style="visibility: visible;">
-            Our Aluminai</h2>
+            Our Alumni</h2>
         <div class="testimonial-active">
             @foreach ($aluminais as $alu)
             <div class="card" style="border: none;">
