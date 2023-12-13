@@ -814,23 +814,66 @@
     <!-- Modal -->
 
 </main>
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header-new">
-                <img src="{{ config('app.url') }}visitors/assets/img/popup.jpg" width="auto" height="500px">
+
+{{-- <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="padding:0 1rem !important">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="margin-left: 22%;">
+        <div class="modal-content border-0">
+            <div class="modal-header-new position-relative bg-transparent">
+                <img src="{{ config('app.url') }}visitors/assets/img/popup.jpg" class="img-fluid mx-auto d-block"
+                    alt="Popup Image" style="height: 93vh; width:650px; ">
                 <button type="button" class="close" onclick="$('#exampleModalCenter').modal('hide')"
                     data-dismiss="modal" aria-label="Close" style="
                     font-size: 2rem;
-                    padding-inline: 7px;
                     color: black !important;
                     position: absolute;
-                    margin-left:93%;
+                    top: -5px;
+                    right: 0;
                     ">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
+        </div>
+    </div>
+</div> --}}
+
+
+{{-- <div class="modal fade bd-example-modal-lg show" id="myModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="">
+            <div class="">
+                <button type="button" class="close" data-dismiss="modal" style="
+                            position: relative;
+                            padding-top: 15px;
+                            margin-right: 18px;
+                            z-index: 999;
+                            data-dismiss=" modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="dynamic-content">
+                <img src="{{ config('app.url') }}visitors/assets/img/popup.jpg" class="img-fluid" alt="" />
+            </div>
+        </div>
+    </div>
+</div> --}}
+
+<div id="imageModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel"
+    aria-hidden="true" style="padding-right:0px !important">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <!-- Add your image source here -->
+                <img src="{{ config('app.url') }}visitors/assets/img/popup.jpg" style="height: 90vh;
+                width: 100%;" alt="" />
+            </div>
+            <div class="">
+                {{-- <h5 class="modal-title" id="imageModalLabel">Modal Title</h5> --}}
+                <button type="button" class="closebtn" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
         </div>
     </div>
 </div>
@@ -838,9 +881,9 @@
 <script>
     setTimeout(() => {
         $(document).ready(function () {
-    $("#exampleModalCenter").modal('show');
+    $("#imageModal").modal('show');
     });
-    }, 2000);
+    }, 1000);
 </script>
 @if (Session::has('success'))
 <script>

@@ -14349,4 +14349,46 @@ blockquote cite {
     display: flex !important;
     -ms-flex-align: start !important;
     align-items: flex-start !important;
+    width: 650px;
+}
+
+.modal-body {
+    /* position: absolute; */
+    flex: 1 1 auto;
+    padding: 0 !important;
+}
+
+#imageModal .modal-dialog {
+    max-width: 75%;
+    max-height: 75%;
+}
+
+#imageModal img {
+    width: 100%;
+    height: auto;
+}
+
+.closebtn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #000;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    background: transparent;
+    outline: none;
+    border: none;
+}
+
+@media screen and (max-width: 575px) {
+    #imageModal .modal-dialog {
+        max-width: 100%;
+        max-height: 75%;
+        margin-top: 50px;
+    }
+
+    .modal-body img{
+        max-height: 60vh;
+    }
 }
