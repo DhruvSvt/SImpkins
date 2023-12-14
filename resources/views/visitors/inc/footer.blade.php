@@ -198,7 +198,7 @@ max-width: 100%;"></a>
                                     data-ga-footer-component="">Jobs</a>
                                 <a class="nav-link" href="/{{ 'page/privacy-policy' }}" data-ga-footer-type="internal link"
                                     data-ga-footer-section="secondary footer" data-ga-footer="jobs"
-                                    data-ga-footer-component="">Privacy & Policy</a>
+                                    data-ga-footer-component="">Privacy-Policy</a>
                                 {{-- <a class="nav-link" href="#" data-ga-footer-type="internal link"
                                     data-ga-footer-section="secondary footer" data-ga-footer="directory"
                                     data-ga-footer-component="">Directory</a>
