@@ -71,7 +71,7 @@ Route::post('/contact',[EnquiryController::class, 'enuiryContact'])->name('visit
 
 Route::view('/apply-form','visitors.jobapply')->name('visitor.jobformview');
 Route::post('/apply-form',[EnquiryController::class, 'enuiryJob'])->name('visitor.jobform');
-Route::view('/page/privacy-policy','visitors.privacy-policy')->name('visitor.privacy-policy');
+Route::view('/privacy-policy','visitors.privacy-policy')->name('visitor.privacy-policy');
 // Route::get('/login', [HomeController::class, 'login'])->name('login');
 
 Auth::routes();
@@ -255,7 +255,7 @@ Route::group(['middleware' => ['Role', 'auth'],], function () {
         Route::post('email-settings', [SettingController::class, 'email_update']);
         Route::post('verify-email-settings', [SettingController::class, 'verifyEmailConfigration'])->name('setting.varify-email-config');
 
-        Route::get('privacy-policy', [SettingController::class, 'privacy_policy_index']);
+        // Route::get('privacy-policy', [SettingController::class, 'privacy_policy_index']);
         Route::get('terms-condition', [SettingController::class, 'terms_condition_index']);
         Route::get('contact-us', [SettingController::class, 'contact_us_index']);
         Route::get('about-us', [SettingController::class, 'about_us_index']);
