@@ -78,7 +78,7 @@ class StudentApiController extends Controller
             unset($user->student->class_section);
 
             //Set Category name
-            $user->category_name = $user->student->category->name;
+            $user->category_name = $user->student->category ? $user->student->category->name : '';
             unset($user->student->category);
             $response = array(
                 'error' => false,
