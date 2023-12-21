@@ -56,7 +56,7 @@ class ParentApiController extends Controller
                 unset($child->class_section);
 
                 //Set Category name
-                $child->category_name = $child->category->name;
+                $child->category_name = $child->category ? $child->category->name : '';
                 unset($child->category);
             }
             $data = array_merge($user, ['children' => $children->toArray()]);

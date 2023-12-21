@@ -474,8 +474,8 @@
             </div>
             @endforeach
 
-        </div>`
-    </div>
+        </div>
+    </div> 
     <!-- Aluminai Cards Start -->
     <div class="white-curve-main top"></div>
     <div class="stats-main-div">

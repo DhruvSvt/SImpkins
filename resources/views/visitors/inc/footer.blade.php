@@ -139,9 +139,8 @@ max-width: 100%;"></a>
             <div class="container" id="endorsed-footer">
                 <div class="row">
                     <div class="col-md" id="endorsed-logo">
-                        <a href="/" data-ga-footer-type="internal link"
-                            data-ga-footer-section="primary footer" data-ga-footer="asu logo"
-                            data-ga-footer-component="">
+                        <a href="/" data-ga-footer-type="internal link" data-ga-footer-section="primary footer"
+                            data-ga-footer="asu logo" data-ga-footer-component="">
                         </a>
                         <a href="/">
                             <img src="{{ config('app.url') }}visitors/assets/img/logo/logo.png" alt="Simpkins School"
@@ -151,9 +150,9 @@ max-width: 100%;"></a>
                     </div>
                     <div class="col-md mt-4" id="social-media">
                         <nav class="nav justify-content-end" aria-label="Social Media">
-                            <a class="nav-link" href="https://www.facebook.com/SimpkinsSchoolAgra" data-ga-footer-type="external link"
-                                data-ga-footer-section="primary footer" data-ga-footer="facebook icon"
-                                data-ga-footer-component="" target="_blank">
+                            <a class="nav-link" href="https://www.facebook.com/SimpkinsSchoolAgra"
+                                data-ga-footer-type="external link" data-ga-footer-section="primary footer"
+                                data-ga-footer="facebook icon" data-ga-footer-component="" target="_blank">
                                 <i class="fa-brands fa-square-facebook" style="color: #ffffff;"></i>
                             </a>
                             {{-- <a class="nav-link" href="#" data-ga-footer-type="external link"
@@ -161,19 +160,19 @@ max-width: 100%;"></a>
                                 data-ga-footer-component="" target="_blank">
                                 <i class="fa-brands fa-square-x-twitter" style="color: #ffffff;"></i>
                             </a> --}}
-                            <a class="nav-link" href="https://www.instagram.com/simpkinsschool/" data-ga-footer-type="external link"
-                                data-ga-footer-section="primary footer" data-ga-footer="instagram icon"
-                                data-ga-footer-component="" target="_blank">
+                            <a class="nav-link" href="https://www.instagram.com/simpkinsschool/"
+                                data-ga-footer-type="external link" data-ga-footer-section="primary footer"
+                                data-ga-footer="instagram icon" data-ga-footer-component="" target="_blank">
                                 <i class="fa-brands fa-square-instagram" style="color: #ffffff;"></i>
                             </a>
-                            <a class="nav-link" href="https://www.youtube.com/@simpkinsschool" data-ga-footer-type="external link"
-                                data-ga-footer-section="primary footer" data-ga-footer="youtube icon"
-                                data-ga-footer-component="" target="_blank">
+                            <a class="nav-link" href="https://www.youtube.com/@simpkinsschool"
+                                data-ga-footer-type="external link" data-ga-footer-section="primary footer"
+                                data-ga-footer="youtube icon" data-ga-footer-component="" target="_blank">
                                 <i class="fa-brands fa-square-youtube" style="color: #ffffff;"></i>
                             </a>
-                            <a class="nav-link" href="https://www.linkedin.com/feed/" data-ga-footer-type="external link"
-                                data-ga-footer-section="primary footer" data-ga-footer="linkedin icon"
-                                data-ga-footer-component="" target="_blank">
+                            <a class="nav-link" href="https://www.linkedin.com/feed/"
+                                data-ga-footer-type="external link" data-ga-footer-section="primary footer"
+                                data-ga-footer="linkedin icon" data-ga-footer-component="" target="_blank">
                                 <i class="fa-brands fa-square-linkedin" style="color: #ffffff;"></i>
                             </a>
                         </nav>
@@ -210,8 +209,8 @@ max-width: 100%;"></a>
                                     data-ga-footer-component="">My ASU</a> --}}
                             </nav>
                             <a class="img-link p-4 " href="/" data-ga-footer-type="internal link"
-                                data-ga-footer-section="secondary footer"
-                                data-ga-footer="#1 in the u.s. for innovation" data-ga-footer-component="">
+                                data-ga-footer-section="secondary footer" data-ga-footer="#1 in the u.s. for innovation"
+                                data-ga-footer-component="">
                                 <img src="{{ config('app.url') }}visitors/assets/img/logo/logo.png" loading="lazy"
                                     style="width: 300px;"
                                     alt="Repeatedly ranked #1 for innovation, sustainability, and global impact">
@@ -226,16 +225,17 @@ max-width: 100%;"></a>
         class="block block-block-content block-block-content650145e8-efc1-4854-9d68-1ae336ad609a clearfix default">
         <div class="formatted-text">
 
-        <style type="text/css">
-            @media screen and (max-width: 576px) {
-            .uds-card-and-image {
-            height: 0;
-            }
-        }
-        .uds-video-hero .container h1 span.highlight-white {
-            line-height: 4.45rem;
-        }
-        </style>
+            <style type="text/css">
+                @media screen and (max-width: 576px) {
+                    .uds-card-and-image {
+                        height: 0;
+                    }
+                }
+
+                .uds-video-hero .container h1 span.highlight-white {
+                    line-height: 4.45rem;
+                }
+            </style>
 
         </div>
     </div>
@@ -244,9 +244,9 @@ max-width: 100%;"></a>
         class="block block-block-content block-block-contentfdbbb6bc-b9ba-455a-a9a1-595e609c74dd clearfix default">
         <div class="formatted-text">
             <style type="text/css">
-            div#banner-close {
-                display: none;
-            }
+                div#banner-close {
+                    display: none;
+                }
             </style>
         </div>
     </div>
@@ -261,7 +261,8 @@ max-width: 100%;"></a>
                 <div class="col-lg-12 text-" style="
     color: #000;
 ">
-                    Copyright © Simpkins School Agra 2023 . All rights reserved. ERP &amp; Website By <a href="https://svtindia.in/">SVT INDIA</a>
+                    Copyright © Simpkins School Agra 2023 . All rights reserved. ERP &amp; Website By <a
+                        href="https://svtindia.in/">SVT INDIA</a>
                 </div>
             </div>
         </div>
