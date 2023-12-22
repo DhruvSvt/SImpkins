@@ -68,8 +68,7 @@
                                         <option value="">Class to be admitted in</option>
                                         <option value="PG">PG</option>
                                         <option value="NURSUERY">NURSUERY</option>
-                                        <option value="LKG">LKG</option>
-                                        <option value="UKG">UKG</option>
+                                        <option value="KG">KG</option>
                                         <option value="I">I</option>
                                         <option value="II">II</option>
                                         <option value="III">III</option>
