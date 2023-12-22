@@ -45,6 +45,8 @@
                                                 {{ __('student_name') }}</th>
                                             <th scope="col" data-field="admitted_class" data-sortable="false">
                                                 {{ __('admitted_class') }}</th>
+                                            <th scope="col" data-field="contact_no" data-sortable="false">
+                                                {{ __('contact_no') }}</th>
                                             <th scope="col" data-field="previous_school_name" data-sortable="false">
                                                 {{ __('previous_school_name') }}</th>
                                             <th scope="col" data-field="father_name" data-sortable="false">
@@ -106,6 +108,15 @@
                                     'placeholder' => __('admitted_class'),
                                     'class' => 'form-control',
                                     'id' => 'edit_admitted_class',
+                                ]) !!}
+
+                            </div>
+                            <div class="form-group col-sm-12 col-md-4">
+                                <label>{{ __('contact_no') }} <span class="text-danger">*</span></label>
+                                {!! Form::text('contact_no', null, [
+                                    'placeholder' => __('contact_no'),
+                                    'class' => 'form-control',
+                                    'id' => 'edit_contact_no',
                                 ]) !!}
 
                             </div>

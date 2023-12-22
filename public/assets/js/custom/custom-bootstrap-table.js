@@ -526,6 +526,7 @@ window.admissionEnquiryEvents = {
         $('#edit_id').val(row.id);
         $('#edit_student_name').val(row.student_name);
         $('#edit_admitted_class').val(row.admitted_class);
+        $('#edit_contact_no').val(row.contact_no);
         $('#edit_previous_school_name').val(row.previous_school_name);
         $('#edit_father_name').val(row.father_name);
         $('#edit_mother_name').val(row.mother_name);

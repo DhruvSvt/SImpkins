@@ -25,6 +25,7 @@ class AdmissionEnquiryController extends Controller
             return redirect(route('home'))->withErrors($response);
         }
         $admissions = AdmissionEnquiry::get();
+        // dd($admissions);
         return view('front_office.admission-enquiry.details', compact('admissions'));
     }
 
@@ -133,6 +134,7 @@ class AdmissionEnquiryController extends Controller
             $sql->where('id', 'LIKE', "%$search%")
                 ->where('student_name','LIKE',"%$search%")
                 ->where('admitted_class','LIKE',"%$search%")
+                ->where('contact_no','LIKE',"%$search%")
                 ->where('previous_school_name','LIKE',"%$search%")
                 ->where('father_name','LIKE',"%$search%")
                 ->where('mother_name','LIKE',"%$search%")
@@ -167,6 +169,7 @@ class AdmissionEnquiryController extends Controller
             $tempRow['no'] = $no++;
             $tempRow['student_name'] = $row->student_name;
             $tempRow['admitted_class'] = $row->admitted_class;
+            $tempRow['contact_no'] = $row->contact_no;
             $tempRow['previous_school_name'] = $row->previous_school_name;
             $tempRow['father_name'] = $row->father_name;
             $tempRow['mother_name'] = $row->mother_name;
