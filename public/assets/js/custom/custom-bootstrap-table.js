@@ -533,6 +533,7 @@ window.admissionEnquiryEvents = {
         $('#edit_last_class').val(row.last_class);
         $('#edit_father_mobile').val(row.father_mobile);
         $('#edit_address').val(row.address);
+        $('#edit_dob').val(row.dob);
         $('#edit_date').val(row.date);
     }
 };

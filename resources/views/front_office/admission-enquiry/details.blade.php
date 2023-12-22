@@ -53,12 +53,14 @@
                                                 {{ __('father') . ' ' . __('name') }}</th>
                                             <th scope="col" data-field="mother_name" data-sortable="false">
                                                 {{ __('mother') . ' ' . __('name') }}</th>
-                                            <th scope="col" data-field="last_class" data-sortable="false">
+                                            {{-- <th scope="col" data-field="last_class" data-sortable="false">
                                                 {{ __('last_class') }}</th>
                                             <th scope="col" data-field="father_mobile" data-sortable="false">
-                                                {{ __('father_mobile') }}</th>
+                                                {{ __('father_mobile') }}</th> --}}
                                             <th scope="col" data-field="address" data-sortable="false">
                                                 {{ __('address') }}</th>
+                                            <th scope="col" data-field="dob" data-sortable="false">
+                                                {{ __('dob') }}</th>
                                             <th scope="col" data-field="date" data-sortable="false">
                                                 {{ __('date') }}</th>
                                             @canany(['admission-enquiry-edit', 'admission-enquiry-delete'])
