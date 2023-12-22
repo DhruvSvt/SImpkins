@@ -125,6 +125,7 @@ class ClassTeacherController extends Controller
         $no = 1;
         foreach ($res as $row) {
             $operate = '<a class="btn btn-xs btn-gradient-primary btn-rounded btn-icon editdata" data-id=' . $row->id . ' title="Edit" data-toggle="modal" data-target="#editModal"><i class="fa fa-edit"></i></a>&nbsp;&nbsp;';
+            $operate .= '<a href=' . route('class.teacher.destroy', $row->id) . ' class="btn btn-xs btn-gradient-danger btn-rounded btn-icon delete-form" data-id=' . $row->id . '><i class="fa fa-trash"></i></a>';
 
             $tempRow['id'] = $row->id;
             $tempRow['class_id'] = $row->class_id;
@@ -140,5 +141,24 @@ class ClassTeacherController extends Controller
 
         $bulkData['rows'] = $rows;
         return response()->json($bulkData);
+    }
+
+    public function destroy($id){
+
+        try{
+            $class_sections = ClassSection::findOrFail($id);
+            $class_sections->class_teacher_id = null;
+            $class_sections->save();
+            $response = array(
+                'error' => false,
+                'message' => trans('Teacher Removed Successfully')
+            );
+        } catch (\Throwable $e) {
+            $response = array(
+                'error' => true,
+                'message' => trans('error_occurred')
+            );
+        }
+        return response()->json($response);
     }
 }

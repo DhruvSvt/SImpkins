@@ -119,6 +119,7 @@ Route::group(['middleware' => ['Role', 'auth'],], function () {
         Route::get('assign/class/teacher', [ClassTeacherController::class, 'teacher'])->name('class.teacher');
         Route::post('class/teacher/store', [ClassTeacherController::class, 'assign_teacher'])->name('class.teacher.store');
         Route::get('class-teacher-list', [ClassTeacherController::class, 'show']);
+        Route::delete('class/teacher/{id}', [ClassTeacherController::class, 'destroy'])->name('class.teacher.destroy');
 
         Route::resource('subject', SubjectController::class);
         Route::get('subject-list', [SubjectController::class, 'show']);
