@@ -49,11 +49,11 @@ class ClassTeacherController extends Controller
         try {
             $teacher = Teacher::findOrFail($request->teacher_id);
             $assign_teacher = ClassSection::find($request->class_section_id);
-            if ($assign_teacher->class_teacher_id && $assign_teacher->class_teacher_id != $request->teacher_id) {
-                //If Old teacher is removed and new teacher is assigned as class teacher then remove old teacher's permission
-                $old_teacher = Teacher::find($request->teacher_id)->with('user')->first();
-                $old_teacher->user->revokePermissionTo('class-teacher');
-            }
+            // if ($assign_teacher->class_teacher_id && $assign_teacher->class_teacher_id != $request->teacher_id) {
+            //     //If Old teacher is removed and new teacher is assigned as class teacher then remove old teacher's permission
+            //     $old_teacher = Teacher::find($request->teacher_id)->with('user')->first();
+            //     $old_teacher->user->revokePermissionTo('class-teacher');
+            // }
             $assign_teacher->class_teacher_id = $request->teacher_id;
             $assign_teacher->save();
             $teacher->user->givePermissionTo('class-teacher');
@@ -89,7 +89,7 @@ class ClassTeacherController extends Controller
         if (isset($_GET['offset']))
             $offset = $_GET['offset'];
         if (isset($_GET['limit']))
-            $limit = $_GET['limit'];
+            $limit =     $_GET['limit'];
 
         if (isset($_GET['sort']))
             $sort = $_GET['sort'];
