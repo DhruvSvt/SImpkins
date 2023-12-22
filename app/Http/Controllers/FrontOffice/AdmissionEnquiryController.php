@@ -158,7 +158,7 @@ class AdmissionEnquiryController extends Controller
         foreach ($res as $row) {
             $operate = '';
             // if (Auth::user()->can('employee-edit')) {
-                $operate .= '<a class="btn btn-xs btn-gradient-primary btn-rounded btn-icon editdata" data-id=' . $row->id . ' data-url=' . url('admission-enquiry') . ' title="Edit" data-toggle="modal" data-target="#editModal"><i class="fa fa-edit"></i></a>&nbsp;&nbsp;';
+                // $operate .= '<a class="btn btn-xs btn-gradient-primary btn-rounded btn-icon editdata" data-id=' . $row->id . ' data-url=' . url('admission-enquiry') . ' title="Edit" data-toggle="modal" data-target="#editModal"><i class="fa fa-edit"></i></a>&nbsp;&nbsp;';
             // }
 
             // if (Auth::user()->can('employee-delete')) {
