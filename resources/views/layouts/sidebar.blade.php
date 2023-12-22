@@ -220,18 +220,18 @@
                     {{-- @endcan --}}
 
                     {{-- @can('menu-list') --}}
-                    {{-- <li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ route('gallery.create') }}">
                             {{ __('gallery_add') }}
                         </a>
-                    </li> --}}
+                    </li>
                     {{-- @endcan --}}
                     {{-- @can('menu-list') --}}
-                    {{-- <li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ route('gallery.index') }}">
                             {{ __('gallery_details') }}
                         </a>
-                    </li> --}}
+                    </li>
                     {{-- @endcan --}}
                 </ul>
             </div>
