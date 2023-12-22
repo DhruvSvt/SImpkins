@@ -12,6 +12,7 @@ class EnquiryController extends Controller
 {
     public function enuiryAdmission(Request $request)
     {
+        
         $request->validate([
             'student_name' => 'required',
             'dob' => 'required',

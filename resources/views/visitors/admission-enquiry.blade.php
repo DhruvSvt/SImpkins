@@ -63,8 +63,26 @@
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>Class to be admitted in <span class="text-danger">*</span></label>
-                                    <input placeholder="Admitted Class" class="form-control" name="admitted_class"
-                                        type="text">
+                                     <select name="admitted_class" class="form-select" style="height: 45px; padding:0 13px;"
+                                        required>
+                                        <option value="">Class to be admitted in</option>
+                                        <option value="PG">PG</option>
+                                        <option value="NURSUERY">NURSUERY</option>
+                                        <option value="LKG">LKG</option>
+                                        <option value="UKG">UKG</option>
+                                        <option value="I">I</option>
+                                        <option value="II">II</option>
+                                        <option value="III">III</option>
+                                        <option value="IV">IV</option>
+                                        <option value="V">V</option>
+                                        <option value="VI">VI</option>
+                                        <option value="VII">VII</option>
+                                        <option value="VIII">VIII</option>
+                                        <option value="IX">IX</option>
+                                        <option value="X">X</option>
+                                        <option value="XI">XI</option>
+                                        <option value="XII">XII</option>
+                                    </select>
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>Mother&#039;s Name <span class="text-danger">*</span></label>
@@ -73,7 +91,7 @@
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label> Date of Birth <span class="text-danger">*</span></label>
-                                    <input placeholder="Date of Birth" class="form-control" name="dob" type="text">
+                                    <input placeholder="Date of Birth" class="form-control" name="dob" type="date">
                                 </div>
                                 <div class="form-group col-12">
                                     <label>Address<span class="text-danger">*</span></label>

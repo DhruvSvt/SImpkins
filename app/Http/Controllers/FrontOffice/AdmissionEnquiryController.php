@@ -176,7 +176,7 @@ class AdmissionEnquiryController extends Controller
             $tempRow['last_class'] = $row->last_class;
             $tempRow['father_mobile'] = $row->father_mobile;
             $tempRow['address'] = $row->address;
-            $tempRow['date'] = date($data['date_formate'], strtotime($row->date));
+            $tempRow['date'] = date($data['date_formate'], strtotime($row->dob));
 
             $tempRow['operate'] = $operate;
             $rows[] = $tempRow;
