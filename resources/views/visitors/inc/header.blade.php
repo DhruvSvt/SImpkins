@@ -125,7 +125,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('alumni.create') }}">
+                            <a href="{{ route('alumnai.create') }}">
                                 Alumni Registration
                             </a>
                         </li>

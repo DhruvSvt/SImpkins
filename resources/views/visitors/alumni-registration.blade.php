@@ -43,20 +43,20 @@
                             </h2>
                         </div>
                         <form class="contact-form mt-30 contact-field " enctype="multipart/form-data"
-                            action="{{ route('alumni.store') }}" method="POST" novalidate="novalidate">
+                            action="{{ route('alumnai.store') }}" method="POST" novalidate="novalidate">
                             @csrf
                             <div class="row">
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>First Name <span class="text-danger">*</span></label>
-                                    <input placeholder="First Name" class="form-control" name="first_name" type="text">
+                                    <input placeholder="First Name" class="form-control" name="first_name" type="text" required>
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>Last Name <span class="text-danger">*</span></label>
-                                    <input placeholder="Last Name" class="form-control" name="last_name" type="text">
+                                    <input placeholder="Last Name" class="form-control" name="last_name" type="text" required>
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label> Date of Birth <span class="text-danger">*</span></label>
-                                    <input placeholder="Date of Birth" class="form-control" name="dob" type="date">
+                                    <input placeholder="Date of Birth" class="form-control" name="dob" type="date" required>
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>Gender<span class="text-danger">*</span></label>
@@ -79,19 +79,19 @@
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>Mobile No.<span class="text-danger">*</span></label>
-                                    <input placeholder="Mobile No" class="form-control" name="phn_no" type="text">
+                                    <input placeholder="Mobile No" class="form-control" name="phn_no" type="text" required>
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>Profession <span class="text-danger">*</span></label>
-                                    <input placeholder="Profession" class="form-control" name="profession" type="text">
+                                    <input placeholder="Profession" class="form-control" name="profession" type="text" required>
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>Email<span class="text-danger">*</span></label>
-                                    <input placeholder="Email" class="form-control" name="email" type="email">
+                                    <input placeholder="Email" class="form-control" name="email" type="email" required>
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>Batch<span class="text-danger">*</span></label>
-                                    <input placeholder="YYYY format" class="form-control" name="batch" type="text">
+                                    <input placeholder="YYYY format" class="form-control" name="batch" type="text" required>
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>Last Class<span class="text-danger">*</span></label>
@@ -116,11 +116,11 @@
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>Year of leaving school<span class="text-danger">*</span></label>
                                     <input placeholder="YYYY format" class="form-control" name="leaving_year"
-                                        type="text">
+                                        type="text" required>
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>Home Town<span class="text-danger">*</span></label>
-                                    <input placeholder="Home Town" class="form-control" name="home_town" type="text">
+                                    <input placeholder="Home Town" class="form-control" name="home_town" type="text" required>
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>Country<span class="text-danger">*</span></label>
@@ -134,11 +134,11 @@
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>Image</label>
-                                    <input type="file" class="form-control" name="home_town" type="text">
+                                    <input type="file" class="form-control" name="image" type="text">
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>Upload Your Document (only school related)</label>
-                                    <input type="file" class="form-control" name="home_town" type="text">
+                                    <input type="file" class="form-control" name="docs" type="text">
                                 </div>
                             </div>
                             <div class="slider-btn">

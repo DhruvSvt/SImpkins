@@ -304,7 +304,7 @@ Route::group(['middleware' => ['Role', 'auth'],], function () {
 });
 
 // alumni
-Route::resource('alumni', AluminiController::class);
+Route::resource('alumnai', AluminiController::class);
 
 Route::get('public/privacy-policy', function () {
     $settings = getSettings('privacy_policy');
