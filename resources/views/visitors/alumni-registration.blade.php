@@ -127,15 +127,17 @@
                                     <select name="country" class="form-select" style="height: 45px; padding:0 13px;"
                                         required>
                                         <option value="">Select Your Country</option>
-                                        <option value="Married">India</option>
+                                        @foreach ($countries as $country )
+                                        <option value="{{ $country }}">{{ $country }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>Image<span class="text-danger">*</span></label>
+                                    <label>Image</label>
                                     <input type="file" class="form-control" name="home_town" type="text">
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
-                                    <label>Upload Your Document (only school related)*<span class="text-danger">*</span></label>
+                                    <label>Upload Your Document (only school related)</label>
                                     <input type="file" class="form-control" name="home_town" type="text">
                                 </div>
                             </div>

@@ -179,6 +179,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\AluminaiServiceProvider::class,
         App\Providers\SuccessStoryServiceProvider::class,
+        Monarobase\CountryList\CountryListServiceProvider::class,
     ],
 
     /*
@@ -195,6 +196,7 @@ return [
     'aliases' => Facade::defaultAliases()->merge([
         // ...
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+        'Countries' => Monarobase\CountryList\CountryListFacade::class,
     ])->toArray(),
 
 ];

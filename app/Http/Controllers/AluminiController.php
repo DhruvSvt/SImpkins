@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Monarobase\CountryList\CountryListFacade;
 
 class AluminiController extends Controller
 {
@@ -23,7 +24,8 @@ class AluminiController extends Controller
      */
     public function create()
     {
-        return view('visitors.alumni-registration');
+        $countries = CountryListFacade::getList('en');
+        return view('visitors.alumni-registration',compact('countries'));
     }
 
     /**
