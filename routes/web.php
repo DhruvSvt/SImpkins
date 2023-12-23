@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AluminaiController;
+use App\Http\Controllers\AluminiController;
 use App\Http\Controllers\FrontOffice\AdmissionEnquiryController;
 use App\Models\ExamTimetable;
 use App\Models\Grade;
@@ -62,7 +63,7 @@ use App\Models\ContactEnquiry;
 |
 */
 
-Route::get('/',[IndexController::class, 'index']);
+Route::get('/',[IndexController::class, 'index'])->name('index');
 Route::view('/admission','visitors.admission-enquiry')->name('visitor.admission');
 Route::post('/admission', [EnquiryController::class, 'enuiryAdmission'])->name('visitor.admission');
 
@@ -301,6 +302,10 @@ Route::group(['middleware' => ['Role', 'auth'],], function () {
         });
     });
 });
+
+// alumni
+Route::resource('alumni', AluminiController::class);
+
 Route::get('public/privacy-policy', function () {
     $settings = getSettings('privacy_policy');
     echo $settings['privacy_policy'];

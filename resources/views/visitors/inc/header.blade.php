@@ -125,8 +125,8 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#0">
-                                Online fee payment
+                            <a href="{{ route('alumni.create') }}">
+                                Alumni Registration
                             </a>
                         </li>
                     </ul>
