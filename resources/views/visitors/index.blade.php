@@ -84,113 +84,99 @@
     </section>
     <!-- slider-area -->
 
-
-    <!-- about-area -->
-    <section class="about-area about-p pt-60 pb-60 p-relative fix">
-        <div class="animations-02"><img src="{{ config('app.url') }}visitors/assets/img/bg/an-img-02.png"
-                alt="contact-bg-an-01"></div>
+    <!-- blog-area -->
+    <section id="blog" class="blog-area p-relative fix pt-90 pb-45" style="">
         <div class="container">
-            <div class="row justify-content-center align-items-center">
-                <div class="col-lg-6 col-md-12 col-sm-12">
-                    <div class="about-content s-about-content pl-15 wow fadeInRight  animated mb-5"
-                        data-animation="fadeInRight" data-delay=".4s">
-                        <div class="about-title second-title pb-15">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <div class="section-title center-align mb-50 text-center wow fadeInDown animated"
+                        data-animation="fadeInDown" data-delay=".4s">
 
-                            <h2>Welcome to Simpkins School in Agra</h2>
+                        <h2>
+                            Student Life @ Simpkins
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-6">
+                    <div class="single-post2 hover-zoomin mb-30 wow fadeInUp animated" data-animation="fadeInUp"
+                        data-delay=".4s">
+                        <div class="blog-thumb2">
+                            <a href="#0"><img src="{{ config('app.url') }}visitors/assets/img/features/GALL-65.jpg"
+                                    alt="img"></a>
                         </div>
-                        <p class="txt-clr">‘If your plan is for one year, plant rice; If your plan is for ten years,
-                            plant trees; If your plan is for a hundred years, Educate children.’- Confucius
-                            Simpkins School is located in the heart of the historical city of Agra. The school was
-                            founded three decades back with a commitment to excellence and for providing
-                            opportunities to enable young people to be best positioned, consequent to their
-                            education. Today, we have grown into one of the city’s leading institutions with
-                            branches across the city, providing quality education to our students, facilitated by
-                            dedicated educators who are trained to channelize their energy and resources towards
-                            child-centered qualitative learning. The school follows the CBSE curriculum and runs
-                            from classes Pre Nursery to 12th. This day-school is co-educational and the medium of
-                            instruction here is English. School Session runs from April to March.</p>
-
-
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-6">
+                    <div class="single-post2 hover-zoomin mb-30 wow fadeInUp animated" data-animation="fadeInUp"
+                        data-delay=".4s">
+                        <div class="blog-thumb2">
+                            <a href="#0"><img src="{{ config('app.url') }}visitors/assets/img/features/GALL-66.jpg"
+                                    alt="img"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-6">
+                    <div class="single-post2 hover-zoomin mb-30 wow fadeInUp animated" data-animation="fadeInUp"
+                        data-delay=".4s">
+                        <div class="blog-thumb2">
+                            <a href="#0"><img src="{{ config('app.url') }}visitors/assets/img/features/GALL-64.jpg"
+                                    alt="img"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-6">
+                    <div class="single-post2 hover-zoomin mb-30 wow fadeInUp animated" data-animation="fadeInUp"
+                        data-delay=".4s">
+                        <div class="blog-thumb2">
+                            <a href="#0"><img src="{{ config('app.url') }}visitors/assets/img/features/GALL-68.jpg"
+                                    alt="img"></a>
+                        </div>
                     </div>
                 </div>
 
-                {{-- <div id="thank_you" style="display: none; text-align: center;">
-                    <h2>Thank You!</h2>
-                    <p>Your form has been submitted successfully.</p>
-                </div> --}}
-                <div class="offset-lg-1 col-lg-5 col-md-12 col-sm-12">
-                    <div class="row justify-content-center align-items-center">
-                        <div class="section-title wow fadeInDown animated" data-animation="fadeInDown" data-delay=".4s">
-                            <h2>
-                                Make An Enquiry
-                            </h2>
+                <div class="col-lg-3 col-md-6 col-6">
+                    <div class="single-post2 hover-zoomin mb-30 wow fadeInUp animated" data-animation="fadeInUp"
+                        data-delay=".4s">
+                        <div class="blog-thumb2">
+                            <a href="#0"><img src="{{ config('app.url') }}visitors/assets/img/features/GALL-56 (1).jpg"
+                                    alt="img"></a>
                         </div>
-                        <form action="{{ route('visitor.contact') }}" method="post"
-                            class="contact-form mt-30 wow fadeInUp animated" id="my_form" data-animation="fadeInUp"
-                            data-delay=".4s">
-                            @csrf
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="contact-field p-relative c-name mb-20">
-                                        <input type="text" id="name" name="name" placeholder="Name" required>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="contact-field p-relative c-subject mb-20">
-                                        <input type="text" id="email" name="email" placeholder="Email" required>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="contact-field p-relative c-subject mb-20">
-                                        <input type="text" id="phone" name="mobile" placeholder="Phone No." required>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="contact-field p-relative c-message mb-0">
-                                        <textarea name="comments" id="message" cols="30" rows="4"
-                                            placeholder="Write comments"></textarea>
-                                    </div>
-                                    <div class="slider-btn">
-                                        <button type="submit" class="btn ss-btn" data-animation="fadeInRight"
-                                            data-delay=".8s"><span>Submit Now</span> <i
-                                                class="fal fa-angle-right"></i></button>
-                                    </div>
-                                    {{-- <div id="thank_you" style="display: none;">
-                                        <img src="{{ config('app.url')}}visitors/assets/img/thanks.png" width="550"
-                                            height="400" srcset="">
-                                    </div> --}}
-                                </div>
-                            </div>
-                        </form>
-
-                        <!-- Thanku popup -->
-                        {{-- @if (Session::has('success'))
-                        <script>
-                            swal("Response", "{{ Session::get('success') }}", 'success', {
-                            title: "<i>Thank You !</i>",
-                            html: "We've Reach Out to you Soon",
-                            confirmButtonText: "<u>Ok</u>",
-                        });
-                        </script>
-                        @endif
-
-                        @if (Session::has('error'))
-                        <script>
-                            swal("Response", "{{ Session::get('error') }}", 'error', {
-                            title: "<i>Error</i>",
-                            confirmButtonText: "<u>Ok</u>",
-                        });
-                        </script>
-                        @endif --}}
-
-
-
                     </div>
                 </div>
-
+                <div class="col-lg-3 col-md-6 col-6">
+                    <div class="single-post2 hover-zoomin mb-30 wow fadeInUp animated" data-animation="fadeInUp"
+                        data-delay=".4s">
+                        <div class="blog-thumb2">
+                            <a href="#0"><img src="{{ config('app.url') }}visitors/assets/img/features/GALL-54.jpg"
+                                    alt="img"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-6">
+                    <div class="single-post2 hover-zoomin mb-30 wow fadeInUp animated" data-animation="fadeInUp"
+                        data-delay=".4s">
+                        <div class="blog-thumb2">
+                            <a href="#0"><img src="{{ config('app.url') }}visitors/assets/img/features/GALL-62.jpg"
+                                    alt="img"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-6">
+                    <div class="single-post2 hover-zoomin mb-30 wow fadeInUp animated" data-animation="fadeInUp"
+                        data-delay=".4s">
+                        <div class="blog-thumb2">
+                            <a href="#0"><img src="{{ config('app.url') }}visitors/assets/img/features/GALL-63.jpg"
+                                    alt="img"></a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+    <!-- blog-area-end -->
+
     <!-- about-area-end -->
     <section class="steps-area p-relative" style="background-color: #ffc627;">
         <div class="animations-10"><img src="{{ config('app.url') }}visitors/assets/img/bg/an-img-10.png"
@@ -200,7 +186,7 @@
                 <div class="col-lg-6 col-md-12">
                     <div class="section-title mb-35 wow fadeInDown animated" data-animation="fadeInDown"
                         data-delay=".4s">
-                        <h2 style="color: black;">Why Simkins is the best school for your child</h2>
+                        <h2 style="color: black;">Welcome to Simpkins School in Agra</h2>
 
                     </div>
                     <ul class="pr-20">
@@ -475,7 +461,7 @@
             @endforeach
 
         </div>
-    </div> 
+    </div>
     <!-- Aluminai Cards Start -->
     <div class="white-curve-main top"></div>
     <div class="stats-main-div">
@@ -718,98 +704,113 @@
 
 
     <!-- brand-area-end -->
-    <!-- blog-area -->
-    <section id="blog" class="blog-area p-relative fix pt-90 pb-45" style="">
+    <!-- about-area -->
+    <section class="about-area about-p pt-60 pb-60 p-relative fix">
+        <div class="animations-02"><img src="{{ config('app.url') }}visitors/assets/img/bg/an-img-02.png"
+                alt="contact-bg-an-01"></div>
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-12">
-                    <div class="section-title center-align mb-50 text-center wow fadeInDown animated"
-                        data-animation="fadeInDown" data-delay=".4s">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-lg-6 col-md-12 col-sm-12">
+                    <div class="about-content s-about-content pl-15 wow fadeInRight  animated mb-5"
+                        data-animation="fadeInRight" data-delay=".4s">
+                        <div class="about-title second-title pb-15">
 
-                        <h2>
-                            Student Life @ Simpkins
-                        </h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-6">
-                    <div class="single-post2 hover-zoomin mb-30 wow fadeInUp animated" data-animation="fadeInUp"
-                        data-delay=".4s">
-                        <div class="blog-thumb2">
-                            <a href="#0"><img src="{{ config('app.url') }}visitors/assets/img/features/GALL-65.jpg"
-                                    alt="img"></a>
+                            <h2>Know About Simpkins School in Agra</h2>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-6">
-                    <div class="single-post2 hover-zoomin mb-30 wow fadeInUp animated" data-animation="fadeInUp"
-                        data-delay=".4s">
-                        <div class="blog-thumb2">
-                            <a href="#0"><img src="{{ config('app.url') }}visitors/assets/img/features/GALL-66.jpg"
-                                    alt="img"></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-6">
-                    <div class="single-post2 hover-zoomin mb-30 wow fadeInUp animated" data-animation="fadeInUp"
-                        data-delay=".4s">
-                        <div class="blog-thumb2">
-                            <a href="#0"><img src="{{ config('app.url') }}visitors/assets/img/features/GALL-64.jpg"
-                                    alt="img"></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-6">
-                    <div class="single-post2 hover-zoomin mb-30 wow fadeInUp animated" data-animation="fadeInUp"
-                        data-delay=".4s">
-                        <div class="blog-thumb2">
-                            <a href="#0"><img src="{{ config('app.url') }}visitors/assets/img/features/GALL-68.jpg"
-                                    alt="img"></a>
-                        </div>
+                        <p class="txt-clr">‘If your plan is for one year, plant rice; If your plan is for ten years,
+                            plant trees; If your plan is for a hundred years, Educate children.’- Confucius
+                            Simpkins School is located in the heart of the historical city of Agra. The school was
+                            founded three decades back with a commitment to excellence and for providing
+                            opportunities to enable young people to be best positioned, consequent to their
+                            education. Today, we have grown into one of the city’s leading institutions with
+                            branches across the city, providing quality education to our students, facilitated by
+                            dedicated educators who are trained to channelize their energy and resources towards
+                            child-centered qualitative learning. The school follows the CBSE curriculum and runs
+                            from classes Pre Nursery to 12th. This day-school is co-educational and the medium of
+                            instruction here is English. School Session runs from April to March.</p>
+
+
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6 col-6">
-                    <div class="single-post2 hover-zoomin mb-30 wow fadeInUp animated" data-animation="fadeInUp"
-                        data-delay=".4s">
-                        <div class="blog-thumb2">
-                            <a href="#0"><img src="{{ config('app.url') }}visitors/assets/img/features/GALL-56 (1).jpg"
-                                    alt="img"></a>
+                {{-- <div id="thank_you" style="display: none; text-align: center;">
+                    <h2>Thank You!</h2>
+                    <p>Your form has been submitted successfully.</p>
+                </div> --}}
+                <div class="offset-lg-1 col-lg-5 col-md-12 col-sm-12">
+                    <div class="row justify-content-center align-items-center">
+                        <div class="section-title wow fadeInDown animated" data-animation="fadeInDown" data-delay=".4s">
+                            <h2>
+                                Make An Enquiry
+                            </h2>
                         </div>
+                        <form action="{{ route('visitor.contact') }}" method="post"
+                            class="contact-form mt-30 wow fadeInUp animated" id="my_form" data-animation="fadeInUp"
+                            data-delay=".4s">
+                            @csrf
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="contact-field p-relative c-name mb-20">
+                                        <input type="text" id="name" name="name" placeholder="Name" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="contact-field p-relative c-subject mb-20">
+                                        <input type="text" id="email" name="email" placeholder="Email" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="contact-field p-relative c-subject mb-20">
+                                        <input type="text" id="phone" name="mobile" placeholder="Phone No." required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="contact-field p-relative c-message mb-0">
+                                        <textarea name="comments" id="message" cols="30" rows="4"
+                                            placeholder="Write comments"></textarea>
+                                    </div>
+                                    <div class="slider-btn">
+                                        <button type="submit" class="btn ss-btn" data-animation="fadeInRight"
+                                            data-delay=".8s"><span>Submit Now</span> <i
+                                                class="fal fa-angle-right"></i></button>
+                                    </div>
+                                    {{-- <div id="thank_you" style="display: none;">
+                                        <img src="{{ config('app.url')}}visitors/assets/img/thanks.png" width="550"
+                                            height="400" srcset="">
+                                    </div> --}}
+                                </div>
+                            </div>
+                        </form>
+
+                        <!-- Thanku popup -->
+                        {{-- @if (Session::has('success'))
+                        <script>
+                            swal("Response", "{{ Session::get('success') }}", 'success', {
+                            title: "<i>Thank You !</i>",
+                            html: "We've Reach Out to you Soon",
+                            confirmButtonText: "<u>Ok</u>",
+                        });
+                        </script>
+                        @endif
+
+                        @if (Session::has('error'))
+                        <script>
+                            swal("Response", "{{ Session::get('error') }}", 'error', {
+                            title: "<i>Error</i>",
+                            confirmButtonText: "<u>Ok</u>",
+                        });
+                        </script>
+                        @endif --}}
+
+
+
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-6">
-                    <div class="single-post2 hover-zoomin mb-30 wow fadeInUp animated" data-animation="fadeInUp"
-                        data-delay=".4s">
-                        <div class="blog-thumb2">
-                            <a href="#0"><img src="{{ config('app.url') }}visitors/assets/img/features/GALL-54.jpg"
-                                    alt="img"></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-6">
-                    <div class="single-post2 hover-zoomin mb-30 wow fadeInUp animated" data-animation="fadeInUp"
-                        data-delay=".4s">
-                        <div class="blog-thumb2">
-                            <a href="#0"><img src="{{ config('app.url') }}visitors/assets/img/features/GALL-62.jpg"
-                                    alt="img"></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-6">
-                    <div class="single-post2 hover-zoomin mb-30 wow fadeInUp animated" data-animation="fadeInUp"
-                        data-delay=".4s">
-                        <div class="blog-thumb2">
-                            <a href="#0"><img src="{{ config('app.url') }}visitors/assets/img/features/GALL-63.jpg"
-                                    alt="img"></a>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </section>
-    <!-- blog-area-end -->
+    <!-- about-area -->
     <!-- newslater-area -->
     <!-- Modal -->
 
@@ -858,8 +859,8 @@
     </div>
 </div> --}}
 
-<div id="imageModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel"
-    aria-hidden="true" style="padding-right:0px !important">
+<div id="imageModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true"
+    style="padding-right:0px !important">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
