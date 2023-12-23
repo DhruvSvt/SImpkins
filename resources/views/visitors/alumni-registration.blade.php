@@ -43,7 +43,7 @@
                             </h2>
                         </div>
                         <form class="contact-form mt-30 contact-field " enctype="multipart/form-data"
-                            action="{{ route('visitor.admission') }}" method="POST" novalidate="novalidate">
+                            action="{{ route('alumni.store') }}" method="POST" novalidate="novalidate">
                             @csrf
                             <div class="row">
                                 <div class="form-group col-sm-12 col-md-4">
@@ -52,7 +52,7 @@
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>Last Name <span class="text-danger">*</span></label>
-                                    <input placeholder="Last Name" class="form-control" name="Last_name" type="text">
+                                    <input placeholder="Last Name" class="form-control" name="last_name" type="text">
                                 </div>
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label> Date of Birth <span class="text-danger">*</span></label>
