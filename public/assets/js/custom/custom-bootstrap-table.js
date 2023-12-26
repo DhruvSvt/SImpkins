@@ -521,6 +521,26 @@ window.success_storyEvents = {
     }
 };
 
+window.alumniFetchEvents = {
+    'click .editdata': function (e, value, row, index) {
+        $('#edit_id').val(row.id);
+        $('#edit_first_name').val(row.first_name);
+        $('#edit_last_name').val(row.last_name);
+        $('#edit_dob').val(row.dob);
+        $('#edit_gender').val(row.gender);
+        $('#edit_martial').val(row.martial);
+        $('#edit_phn_no').val(row.phn_no);
+        $('#edit_profession').val(row.profession);
+        $('#edit_email').val(row.email);
+        $('#edit_last_class').val(row.last_class);
+        $('#edit_leaving_year').val(row.leaving_year);
+        $('#edit_batch').val(row.batch);
+        $('#edit_home_town').val(row.home_town);
+        $('#edit_country').val(row.country);
+        // $('#edit-aluminai-image-tag').attr('src', row.image);
+    }
+};
+
 window.admissionEnquiryEvents = {
     'click .editdata': function (e, value, row, index) {
         $('#edit_id').val(row.id);

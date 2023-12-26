@@ -281,8 +281,13 @@
                             {{ __('contact-enquiry') }}
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('alumini.index') }}">
+                            {{ __('alumni-enquiry') }}
+                        </a>
+                    </li>
                     {{-- @endcan --}}
-                    
+
                 </ul>
             </div>
         </li>

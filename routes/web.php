@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AluminaiController;
 use App\Http\Controllers\AluminiController;
+use App\Http\Controllers\AluminiFetchController;
 use App\Http\Controllers\FrontOffice\AdmissionEnquiryController;
 use App\Models\ExamTimetable;
 use App\Models\Grade;
@@ -63,16 +64,16 @@ use App\Models\ContactEnquiry;
 |
 */
 
-Route::get('/',[IndexController::class, 'index'])->name('index');
-Route::view('/admission','visitors.admission-enquiry')->name('visitor.admission');
+Route::get('/', [IndexController::class, 'index'])->name('index');
+Route::view('/admission', 'visitors.admission-enquiry')->name('visitor.admission');
 Route::post('/admission', [EnquiryController::class, 'enuiryAdmission'])->name('visitor.admission');
 
-Route::view('/contact','visitors.contact')->name('visitor.contact');
-Route::post('/contact',[EnquiryController::class, 'enuiryContact'])->name('visitor.contact');
+Route::view('/contact', 'visitors.contact')->name('visitor.contact');
+Route::post('/contact', [EnquiryController::class, 'enuiryContact'])->name('visitor.contact');
 
-Route::view('/apply-form','visitors.jobapply')->name('visitor.jobformview');
-Route::post('/apply-form',[EnquiryController::class, 'enuiryJob'])->name('visitor.jobform');
-Route::view('/privacy-policy','visitors.privacy-policy')->name('visitor.privacy-policy');
+Route::view('/apply-form', 'visitors.jobapply')->name('visitor.jobformview');
+Route::post('/apply-form', [EnquiryController::class, 'enuiryJob'])->name('visitor.jobform');
+Route::view('/privacy-policy', 'visitors.privacy-policy')->name('visitor.privacy-policy');
 // Route::get('/login', [HomeController::class, 'login'])->name('login');
 
 Auth::routes();
@@ -299,12 +300,20 @@ Route::group(['middleware' => ['Role', 'auth'],], function () {
             //     $message->from('sagar.wrteam@gmail.com', 'Eschool Admin');
             // });
             echo "Basic Email Sent. Check your inbox.";
+
         });
+
+        Route::resource('alumini',AluminiFetchController::class);
+        Route::get('alumini/show', [AluminiFetchController::class, 'show'])->name('alumini.show');
+
     });
 });
 
 // alumni
 Route::resource('alumnai', AluminiController::class);
+// Route::get('alumnai-enquiry-list', [AluminiController::class, 'alumini_index'])->name('alumni-index');
+// Route::get('alumnai-enquiry-list', [AluminiController::class, 'show'])->name('alumini-enquiry-list');
+
 
 Route::get('public/privacy-policy', function () {
     $settings = getSettings('privacy_policy');
@@ -364,7 +373,7 @@ Route::get('migrate', function () {
 // });
 
 
-Route::get('/storage-link', function(){
+Route::get('/storage-link', function () {
     $target = storage_path('app/public');
     $link = public_path('/storage');
     symlink($target, $link);
@@ -392,8 +401,7 @@ Route::get('/storage-link', function(){
 //     return view('auth.login');
 // });
 
-Route::get('/photo-gallery',[GalleryController::class,'photo_gallery'])->name('photo-gallery');
-Route::get('/video-gallery',[GalleryController::class,'video_gallery'])->name('video-gallery');
+Route::get('/photo-gallery', [GalleryController::class, 'photo_gallery'])->name('photo-gallery');
+Route::get('/video-gallery', [GalleryController::class, 'video_gallery'])->name('video-gallery');
 
-Route::get('/{slug}',[IndexController::class, 'pages'])->name('pages');
-
+Route::get('/{slug}', [IndexController::class, 'pages'])->name('pages');

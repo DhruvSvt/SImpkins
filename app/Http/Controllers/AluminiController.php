@@ -18,7 +18,7 @@ class AluminiController extends Controller
      */
     public function index()
     {
-        
+       //
     }
 
     /**
@@ -85,7 +85,7 @@ class AluminiController extends Controller
                 //file moved and save to db
                 $dbPath = 'alumni-images/' . $subFolder . '/' . $filName;
                 $alumni->image = $dbPath;
-                $alumni->save();
+                // $alumni->save();
             }
         }
 
@@ -103,12 +103,12 @@ class AluminiController extends Controller
                 //file moved and save to db
                 $dbPath = 'alumni-docs/' . $subFolder . '/' . $filName;
                 $alumni->docs = $dbPath;
-                $alumni->save();
+                // $alumni->save();
             }
         }
 
-        return redirect()->back()->with('success', trans('data_store_successfully'));
         $alumni->save();
+        return redirect()->back()->with('success', trans('data_store_successfully'));
     }
 
     /**
@@ -119,7 +119,7 @@ class AluminiController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
