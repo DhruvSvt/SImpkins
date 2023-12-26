@@ -77,7 +77,7 @@ class AluminiController extends Controller
             $file = $request->file('image');
             $filName = Str::random() . '.' . $file->getClientOriginalExtension();
             $subFolder = date('FY');
-            $destinationPath = Storage::path('public/alumni-images/' . $subFolder);
+            $destinationPath = Storage::path('alumni-images/' . $subFolder);
             if (!File::isDirectory($destinationPath)) {
                 File::makeDirectory($destinationPath, 0777, true, true);
             }
@@ -94,7 +94,7 @@ class AluminiController extends Controller
             $file = $request->file('docs');
             $filName = Str::random() . '.' . $file->getClientOriginalExtension();
             $subFolder = date('FY');
-            $destinationPath = Storage::path('public/alumni-docs/' . $subFolder);
+            $destinationPath = Storage::path('alumni-docs/' . $subFolder);
             if (!File::isDirectory($destinationPath)) {
                 File::makeDirectory($destinationPath, 0777, true, true);
             }
