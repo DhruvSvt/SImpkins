@@ -106,7 +106,7 @@ class AluminiFetchController extends Controller
             $tempRow['batch'] = $row->batch;
             $tempRow['home_town'] = $row->home_town;
             $tempRow['country'] = $row->country;
-            // $tempRow['image'] = 'storage/' . $row->image;
+            $tempRow['image'] = 'storage/' . $row->image;
             $tempRow['operate'] = $operate;
             $rows[] = $tempRow;
         }

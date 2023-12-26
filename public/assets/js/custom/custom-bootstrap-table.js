@@ -537,7 +537,7 @@ window.alumniFetchEvents = {
         $('#edit_batch').val(row.batch);
         $('#edit_home_town').val(row.home_town);
         $('#edit_country').val(row.country);
-        // $('#edit-aluminai-image-tag').attr('src', row.image);
+        $('#edit-alumni-image-tag').attr('src', row.image);
     }
 };
 

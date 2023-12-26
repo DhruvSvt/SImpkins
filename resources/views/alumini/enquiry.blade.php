@@ -39,6 +39,8 @@
                                         <th scope="col" data-field="id" data-sortable="true" data-visible="false">
                                             {{ __('id') }}</th>
                                         <th scope="col" data-field="no" data-sortable="true">{{ __('no') }}</th>
+                                        <th scope="col" data-field="image" data-formatter="imageFormatter"
+                                            data-sortable="true">{{ __('image') }}</th>
                                         <th scope="col" data-field="first_name" data-sortable="false">
                                             {{ __('first_name') }}</th>
                                         <th scope="col" data-field="last_class" data-sortable="false">
