@@ -173,6 +173,36 @@ class StudentApiController extends Controller
         }
     }
 
+    public function uploadStudentProfileImage(Request $request)
+    {
+        try {
+
+            $userId = $request->user_id;
+
+
+            $file = $request->file('image');
+            $extenstion = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extenstion;
+            $file->move('uploads/students/', $filename);
+
+            $user =User::where('id',$userId)->update(['image'=>'uploads/students/'.$filename]);
+            $response = array(
+                'error' => false,
+                'message' => 'Student Profile updated Successfully.',
+                'data' => [],
+                'code' => 200,
+            );
+            return response()->json($response, 200);
+        } catch (\Exception $e) {
+            $response = array(
+                'error' => true,
+                'message' => $e->getMessage(),
+                'code' => 103,
+            );
+            return response()->json($response, 500);
+        }
+    }
+
     public function classSubjects(Request $request)
     {
         try {

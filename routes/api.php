@@ -35,6 +35,7 @@ Route::group(['prefix' => 'student'], function () {
     //Authenticated APIs
     Route::group(['middleware' => 'auth:sanctum'], function () {
         Route::get('subjects', [StudentApiController::class, 'subjects']);
+
         Route::get('class-subjects', [StudentApiController::class, 'classSubjects']);
         Route::post('select-subjects', [StudentApiController::class, 'selectSubjects']);
         Route::get('parent-details', [StudentApiController::class, 'getParentDetails']);
@@ -90,6 +91,8 @@ Route::group(['prefix' => 'teacher'], function () {
         Route::get('primary-classes', [TeacherApiController::class, 'primaryClass']);
 
         Route::get('subjects', [TeacherApiController::class, 'subjects']);
+
+        Route::post('subject-update-image', [StudentApiController::class, 'uploadStudentProfileImage']);
 
         //Assignment
         Route::get('get-assignment', [TeacherApiController::class, 'getAssignment']);
