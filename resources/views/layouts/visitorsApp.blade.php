@@ -51,7 +51,7 @@
     <link rel="stylesheet" href="{{ config('app.url') }}visitors/assets/css/slick.css">
     <link rel="stylesheet" href="{{ config('app.url') }}visitors/assets/css/meanmenu.css">
     <link rel="stylesheet" href="{{ config('app.url') }}visitors/assets/css/default.css">
-    <link rel="stylesheet" href="{{ config('app.url') }}visitors/assets/css/style.css">
+    <link rel="stylesheet" href="{{ config('app.url') }}visitors/assets/css/style.css?v=58">
     <link rel="stylesheet" href="{{ config('app.url') }}visitors/assets/css/responsive.css?v=85">
 
 

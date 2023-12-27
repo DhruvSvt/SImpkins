@@ -1422,7 +1422,7 @@ label {
 .breadcrumb-area {
     background-size: cover;
     position: relative;
-    min-height: 450px;
+    min-height: 200px;
     background-repeat: no-repeat;
     background-color: #000;
 }
