@@ -183,9 +183,9 @@ class StudentApiController extends Controller
             $file = $request->file('image');
             $extenstion = $file->getClientOriginalExtension();
             $filename = time().'.'.$extenstion;
-            $file->move('uploads/students/', $filename);
+            $path = $file->store('uploads/students/', $filename);
 
-            $user =User::where('id',$userId)->update(['image'=>'uploads/students/'.$filename]);
+            $user =User::where('id',$userId)->update(['image'=>$path]);
             $response = array(
                 'error' => false,
                 'message' => 'Student Profile updated Successfully.',
