@@ -39,12 +39,12 @@
                             <div class="col-12">
                                 <table aria-describedby="mydesc" class='table table-responsive' id='table_list'
                                     data-toggle="table" data-url="{{ url('students-list') }}" data-click-to-select="true"
-                                    data-side-pagination="server" data-pagination="true"
+                                    data-side-pagination="server" data-pagination="true" data-show-export="true"
                                     data-page-list="[5, 10, 20, 50, 100, 200, All]" data-search="true"
                                     data-toolbar="#toolbar" data-show-columns="true" data-show-refresh="true"
                                     data-fixed-columns="true" data-fixed-number="2" data-fixed-right-number="1"
                                     data-trim-on-search="false" data-mobile-responsive="true" data-sort-name="id"
-                                    data-sort-order="desc" data-maintain-selected="true" data-export-types='["txt","excel"]'
+                                    data-sort-order="desc" data-maintain-selected="true" data-export-types='["excel"]'
                                     data-export-options='{ "fileName": "students-list-<?= date('d-m-y') ?>" ,"ignoreColumn":
                                     ["operate"]}' data-query-params="StudentDetailQueryParams"
                                     data-check-on-init="true">
