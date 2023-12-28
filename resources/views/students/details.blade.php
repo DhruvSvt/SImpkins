@@ -56,9 +56,10 @@
 
                                             <th scope="col" data-field="no" data-sortable="true">{{ __('no') }}</th>
                                             @canany(['student-edit', 'student-delete'])
-                                            <th data-events="studentEvents" scope="col" data-field="operate"
-                                                data-sortable="false">{{ __('action') }}</th>
-                                        @endcanany
+                                                <th data-events="studentEvents" scope="col" data-field="operate"
+                                                    data-sortable="false">{{ __('action') }}</th>
+                                            @endcanany
+                                            <th scope="col" data-field="image" data-formatter="imageFormatter" data-sortable="true">{{ __('image') }}</th>
                                             <th scope="col" data-field="user_id" data-sortable="false"
                                                 data-visible="false">{{ __('user_id') }}</th>
                                             <th scope="col" data-field="admission_no" data-sortable="false">
