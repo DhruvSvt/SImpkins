@@ -718,7 +718,7 @@
                             <h2>Know About Simpkins School in Agra</h2>
                         </div>
                         <p class="txt-clr">‘If your plan is for one year, plant rice; If your plan is for ten years,
-                            plant trees; If your plan is for a hundred years, Educate children.’- Confucius
+                            plant trees; If your plan is for a hundred years, Educate children.’- Confucius.
                             Simpkins School is located in the heart of the historical city of Agra. The school was
                             founded three decades back with a commitment to excellence and for providing
                             opportunities to enable young people to be best positioned, consequent to their
@@ -865,7 +865,7 @@
         <div class="modal-content">
             <div class="modal-body">
                 <!-- Add your image source here -->
-                <img src="{{ config('app.url') }}visitors/assets/img/popup.jpg" style="height: 90vh;
+                <img src="{{ config('app.url') }}visitors/assets/img/popup.jpg" style="height: auto;
                 width: 100%;" alt="" />
             </div>
 

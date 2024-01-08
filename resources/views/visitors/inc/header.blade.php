@@ -77,7 +77,7 @@
                         School Code : 60063<br>
                         Date :
                         <?= date('d-F-y') ?><br>
-                        Current Time: <span id="current-time">Loading...</span>
+                        Current Time : <span id="current-time">Loading...</span>
                     </p>
                 </div>
             </div>
