@@ -861,7 +861,8 @@
 
 <div id="imageModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true"
     style="padding-right:0px !important">
-    <div class="modal-dialog" style="    max-width: 800px;
+    <div class="modal-dialog" style="       max-width: 583px;
+    margin-top: 6px;
     ">
         <div class="modal-content">
             <div class="modal-body">
