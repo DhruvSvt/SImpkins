@@ -149,6 +149,23 @@
                                     <div class="d-flex">
                                         <div class="form-check form-check-inline">
                                             <label class="form-check-label">
+                                                {!! Form::radio('gender', 'male', null, ['class' => 'form-check-input edit', 'id' => 'gender']) !!}
+                                                {{ __('male') }}
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">
+                                                {!! Form::radio('gender', 'female', null, ['class' => 'form-check-input edit', 'id' => 'gender']) !!}
+                                                {{ __('female') }}
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{-- <div class="form-group col-sm-12 col-md-12">
+                                    <label>{{ __('gender') }} <span class="text-danger">*</span></label><br>
+                                    <div class="d-flex">
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">
                                                 {!! Form::radio('gender', 'male', ['class' => 'form-check-input edit', 'id' => 'male']) !!}
                                                 {{ __('male') }}
                                             </label>
@@ -160,7 +177,7 @@
                                             </label>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('image') }}</label>
                                     <input type="file" name="image" class="file-upload-default" />
