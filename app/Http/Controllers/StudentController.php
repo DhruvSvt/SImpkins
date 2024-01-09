@@ -129,7 +129,7 @@ class StudentController extends Controller
             // 'admitted_class' => 'required',
             'class_section_id' => 'required',
             'category_id' => 'required',
-            // 'admission_no' => 'unique:users,email',
+            'admission_no' => 'unique:users,email',
             // 'roll_number' => 'required',
             //            'caste' => 'required',
             //            'religion' => 'required',
@@ -278,7 +278,7 @@ class StudentController extends Controller
             $student = Students::where('user_id', $user->id)->firstOrFail();
             $student->class_section_id = $request->class_section_id;
             $student->category_id = $request->category_id;
-            //            $student->admission_no = $request->admission_no;
+            $student->admission_no = $request->admission_no;
             $student->roll_number = $request->roll_number;
             $student->caste = $request->caste;
             $student->religion = $request->religion;
