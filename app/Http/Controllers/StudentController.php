@@ -265,6 +265,7 @@ class StudentController extends Controller
             $user->current_address = $request->current_address;
             $user->permanent_address = $request->permanent_address;
             $user->gender = $request->gender;
+            $user->email = $request->admission_no;
 
             //If Image exists then upload new image and delete the old image
             if ($request->hasFile('image')) {
