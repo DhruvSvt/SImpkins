@@ -120,6 +120,15 @@ class StudentController extends Controller
             return response()->json($response);
         }
 
+        $student = Students::where('user_id',$request->edit_id)->first();
+
+        if($student->admission_no!=$request->admission_no){
+            $request->validate([
+                'admission_no' => 'unique:users,email',
+            ]);
+        }
+
+
         $request->validate([
             'full_name' => 'required',
             // 'last_name' => 'required',
@@ -129,7 +138,7 @@ class StudentController extends Controller
             // 'admitted_class' => 'required',
             'class_section_id' => 'required',
             'category_id' => 'required',
-            'admission_no' => 'unique:users,email',
+            // 'admission_no' => 'unique:users,email',
             // 'roll_number' => 'required',
             //            'caste' => 'required',
             //            'religion' => 'required',
@@ -255,6 +264,7 @@ class StudentController extends Controller
 
             //Create Student User First
             $user = User::find($request->edit_id);
+
             //            $user->password = Hash::make(str_replace('/', '', $request->dob));
             $user->full_name = $request->full_name;
             // $user->last_name = $request->last_name;
