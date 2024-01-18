@@ -44,7 +44,7 @@
                     </div>
                     <div class="col-lg-4 d-flex col-sm-12 text-center">
                         <img src="{{ config('app.url') }}storage/{{ $page->content_image }}"
-                            class="m-auto img-fluid img-bordered img-thumbnail" alt="{{ $page->page_name ?? '-' }}">
+                            class="m-auto img-fluid img-bordered img-thumbnail" onerror="this.style.display='none'">
                     </div>
                 </div>
             </div>
