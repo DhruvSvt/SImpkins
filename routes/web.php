@@ -66,6 +66,7 @@ use App\Models\ContactEnquiry;
 
 Route::get('/', [IndexController::class, 'index'])->name('index');
 Route::view('/admission', 'visitors.admission-enquiry')->name('visitor.admission');
+Route::view('/prospectus', 'visitors.prospectus')->name('visitor.prospectus');
 Route::post('/admission', [EnquiryController::class, 'enuiryAdmission'])->name('visitor.admission');
 
 Route::view('/contact', 'visitors.contact')->name('visitor.contact');
