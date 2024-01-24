@@ -45,10 +45,10 @@
                                             {{ __('student_name') }}</th>
                                         <th scope="col" data-field="admitted_class" data-sortable="false">
                                             {{ __('admitted_class') }}</th>
+                                        <th scope="col" data-field="contact_no" data-sortable="false">
+                                            {{ __('contact_no') }}</th>
                                         <th scope="col" data-field="father_mobile" data-sortable="false">
                                             {{ __('father_mobile') }}</th>
-                                        {{-- <th scope="col" data-field="contact_no" data-sortable="false">
-                                            {{ __('contact_no') }}</th> --}}
                                         <th scope="col" data-field="previous_school_name" data-sortable="false">
                                             {{ __('previous_school_name') }}</th>
                                         <th scope="col" data-field="father_name" data-sortable="false">
