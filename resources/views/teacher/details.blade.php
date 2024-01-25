@@ -241,7 +241,6 @@
                                 <div class="form-group col-sm-12 col-md-4">
                                     <label>{{ __('dob') }} <span class="text-danger">*</span></label>
                                     {!! Form::text('dob', null, [
-                                        'readonly',
                                         'placeholder' => __('dob'),
                                         'class' => 'datepicker-popup form-control',
                                         'id' => 'edit_dob',
