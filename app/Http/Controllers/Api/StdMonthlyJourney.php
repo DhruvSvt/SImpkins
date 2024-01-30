@@ -4,6 +4,8 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Models\StdMonthlyJourney as ModelsStdMonthlyJourney;
+use App\Models\Teacher;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
@@ -17,12 +19,21 @@ class StdMonthlyJourney extends Controller
      */
     public function index()
     {
-        $std_review = ModelsStdMonthlyJourney::all();
+        $std_reviews = ModelsStdMonthlyJourney::all();
+
+        // Pluck all teacher_id values from the collection
+        $teacherIds = $std_reviews->pluck('teacher_id')->unique()->toArray();
+
+        // Retrieve all teachers with the specified teacher_ids
+        $teachers = Teacher::whereIn('id', $teacherIds)->get();
+
         return response()->json([
             'status' => true,
-            'std_review' => $std_review
+            'std_reviews' => $std_reviews,
+            'teachers' => $teachers,
         ]);
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -89,6 +100,33 @@ class StdMonthlyJourney extends Controller
         return response()->json($response);
     }
 
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+
+    public function show($id)
+    {
+        $std_review = ModelsStdMonthlyJourney::where('id', $id)
+            ->whereMonth('created_at', Carbon::now()->month)
+            ->first();
+        if($std_review){
+            $teacher = Teacher::where('id', $std_review->teacher_id)->get();
+            return response()->json([
+                'status' => true,
+                'std_reviews' => $std_review,
+                'teachers' => $teacher,
+            ]);
+        }else{
+            return response()->json([
+                'status' => "No Records Found",
+                'std_reviews' => $std_review,
+            ]);
+        }
+
+    }
     /**
      * Update the specified resource in storage.
      *

@@ -22,4 +22,8 @@ class StdMonthlyJourney extends Model
         'speaking',
         'participation',
     ]);
+
+    public function teacher() {
+        return $this->belongsTo(Teacher::class, 'teacher_id');
+    }
 }
