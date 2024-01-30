@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Models\StdMonthlyJourney as ModelsStdMonthlyJourney;
 use App\Models\Teacher;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -111,7 +112,7 @@ class StdMonthlyJourney extends Controller
             ->whereMonth('created_at', Carbon::now()->month)
             ->first();
         if ($std_review) {
-            $teacher = Teacher::where('user_id', $std_review->teacher_id)->get();
+            $teacher = User::where('id', $std_review->teacher_id)->get();
             return response()->json([
                 'status' => true,
                 'std_reviews' => $std_review,
