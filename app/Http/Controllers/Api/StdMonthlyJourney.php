@@ -45,7 +45,7 @@ class StdMonthlyJourney extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'teacher_id' => 'required',
+            // 'teacher_id' => 'required',
             'std_id' => 'required',
             'classroom_conduct' => 'required',
             'uniform' => 'required',
@@ -112,20 +112,19 @@ class StdMonthlyJourney extends Controller
         $std_review = ModelsStdMonthlyJourney::where('id', $id)
             ->whereMonth('created_at', Carbon::now()->month)
             ->first();
-        if($std_review){
+        if ($std_review) {
             $teacher = Teacher::where('id', $std_review->teacher_id)->get();
             return response()->json([
                 'status' => true,
                 'std_reviews' => $std_review,
                 'teachers' => $teacher,
             ]);
-        }else{
+        } else {
             return response()->json([
                 'status' => "No Records Found",
                 'std_reviews' => $std_review,
             ]);
         }
-
     }
     /**
      * Update the specified resource in storage.
