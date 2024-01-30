@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\Api\ApiController;
 use App\Http\Controllers\Api\ParentApiController;
-use App\Http\Controllers\API\StdMonthlyJourney;
+use App\Http\Controllers\Api\StdMonthlyJourney;
 use App\Http\Controllers\Api\StudentApiController;
 use App\Http\Controllers\Api\TeacherApiController;
 use Illuminate\Http\Request;
