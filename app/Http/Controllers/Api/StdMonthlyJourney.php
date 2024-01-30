@@ -112,7 +112,7 @@ class StdMonthlyJourney extends Controller
             ->whereMonth('created_at', Carbon::now()->month)
             ->first();
         if ($std_review) {
-            $teacher = User::where('id', $std_review->teacher_id)->pluck('full_name');
+            $teacher = User::where('id', $std_review->teacher_id)->pluck('full_name')->first();
             return response()->json([
                 'status' => true,
                 'std_reviews' => $std_review,
