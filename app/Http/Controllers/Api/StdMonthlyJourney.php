@@ -94,7 +94,7 @@ class StdMonthlyJourney extends Controller
         } catch (\Exception $e) {
             $response = array(
                 'error' => true,
-                'message' => trans('error_occurred'),
+                'message' => trans($e->getMessage()),
                 'code' => 103,
             );
         }
