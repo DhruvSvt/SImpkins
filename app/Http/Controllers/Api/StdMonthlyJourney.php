@@ -67,12 +67,9 @@ class StdMonthlyJourney extends Controller
             return response()->json($response);
         }
 
-        // $auth = Auth::user();
-
-
         try {
             $std_review = new ModelsStdMonthlyJourney;
-            $std_review->teacher_id = $request->user()->teacher;
+            $std_review->teacher_id = $request->teacher_id;
             $std_review->std_id = $request->std_id;
             $std_review->classroom_conduct = $request->classroom_conduct;
             $std_review->uniform = $request->uniform;
