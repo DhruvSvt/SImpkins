@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\ApiController;
 use App\Http\Controllers\Api\ParentApiController;
+use App\Http\Controllers\API\StdMonthlyJourney;
 use App\Http\Controllers\Api\StudentApiController;
 use App\Http\Controllers\Api\TeacherApiController;
 use Illuminate\Http\Request;
@@ -162,3 +163,12 @@ Route::post('forgot-password', [ApiController::class, 'forgotPassword']);
 Route::group(['middleware' => ['auth:sanctum',]], function () {
     Route::post('change-password', [ApiController::class, 'changePassword']);
 });
+
+/**
+ * STUDENT Monthly Journey APIs
+ **/
+
+Route::resource('student-review', StdMonthlyJourney::class);
+// Route::group(['middleware' => 'auth:sanctum'], function () {
+// });
+
