@@ -107,7 +107,7 @@ class StdMonthlyJourney extends Controller
 
     public function show($id)
     {
-        $std_review = ModelsStdMonthlyJourney::where('id', $id)
+        $std_review = ModelsStdMonthlyJourney::where('std_id', $id)
             ->whereMonth('created_at', Carbon::now()->month)
             ->first();
         if ($std_review) {
