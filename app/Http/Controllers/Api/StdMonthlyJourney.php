@@ -69,6 +69,7 @@ class StdMonthlyJourney extends Controller
 
         $auth = Auth::user();
 
+
         try {
             $std_review = new ModelsStdMonthlyJourney;
             $std_review->teacher_id = $auth->id;
@@ -93,7 +94,7 @@ class StdMonthlyJourney extends Controller
         } catch (\Exception $e) {
             $response = array(
                 'error' => true,
-                'message' => trans('error_occurred'),
+                'message' => "trans('error_occurred')",
                 'code' => 103,
             );
         }
