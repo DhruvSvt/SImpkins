@@ -46,7 +46,6 @@ class StdMonthlyJourney extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            // 'teacher_id' => 'required',
             'std_id' => 'required',
             'classroom_conduct' => 'required',
             'uniform' => 'required',
@@ -134,7 +133,37 @@ class StdMonthlyJourney extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $std_review = ModelsStdMonthlyJourney::where('std_id', $id)
+            ->whereMonth('created_at', Carbon::now()->month)
+            ->first();
+
+        try {
+            $std_review->classroom_conduct = $request->classroom_conduct;
+            $std_review->uniform = $request->uniform;
+            $std_review->punctuality = $request->punctuality;
+            $std_review->intelligence = $request->intelligence;
+            $std_review->creativity = $request->creativity;
+            $std_review->handwriting = $request->handwriting;
+            $std_review->reading = $request->reading;
+            $std_review->speaking = $request->speaking;
+            $std_review->participation = $request->participation;
+
+            $std_review->save();
+
+            $response = array(
+                'error' => false,
+                'message' => trans('data_updated_successfully'),
+                'code' => 200,
+                'student_journey' => $std_review
+            );
+        } catch (\Exception $e) {
+            $response = array(
+                'error' => true,
+                'message' => trans($e->getMessage()),
+                'code' => 103,
+            );
+        }
+        return response()->json($response);
     }
 
     /**
