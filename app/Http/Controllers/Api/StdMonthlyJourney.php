@@ -133,7 +133,7 @@ class StdMonthlyJourney extends Controller
      */
     public function update(Request $request, $id)
     {
-        $std_review = ModelsStdMonthlyJourney::where('std_id', $id)
+        $std_review = ModelsStdMonthlyJourney::where('id', $id)
             ->whereMonth('created_at', Carbon::now()->month)
             ->first();
 
