@@ -110,7 +110,7 @@ class StdMonthlyJourney extends Controller
         $std_review = ModelsStdMonthlyJourney::where('std_id', $id)
             ->whereMonth('created_at', Carbon::now()->month)
             ->first();
-        $student = $request->user()->student->load(['father', 'mother', 'guardian']);
+        $student = User::where('id', $id)->student->load(['father', 'mother', 'guardian']);
 
         if ($std_review) {
             $teacher = User::where('id', $std_review->teacher_id)->pluck('full_name')->first();
