@@ -48,6 +48,7 @@ use App\Http\Controllers\FrontOffice\VisitorBookController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\SuccessStoryController;
 use App\Models\Aluminai;
@@ -185,6 +186,10 @@ Route::group(['middleware' => ['Role', 'auth'],], function () {
         // Success Story Route
         Route::resource('success_story', SuccessStoryController::class);
         Route::get('success_story_list', [SuccessStoryController::class, 'show']);
+
+        // Success Story Route
+        Route::resource('message', MessageController::class);
+        // Route::get('message', [MessageController::class, 'show']);
 
 
         Route::resource('timetable', TimetableController::class);

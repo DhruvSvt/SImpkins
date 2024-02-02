@@ -105,17 +105,22 @@ class StdMonthlyJourney extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function show($id)
+    public function show(Request $request, $id)
     {
         $std_review = ModelsStdMonthlyJourney::where('std_id', $id)
             ->whereMonth('created_at', Carbon::now()->month)
             ->first();
+        $student = $request->user()->student->load(['father', 'mother', 'guardian']);
+
         if ($std_review) {
             $teacher = User::where('id', $std_review->teacher_id)->pluck('full_name')->first();
             return response()->json([
                 'status' => true,
                 'std_reviews' => $std_review,
                 'teachers' => $teacher,
+                'father' => (!empty($student->father)) ? $student->father : (object)[],
+                'mother' => (!empty($student->mother)) ? $student->mother : (object)[],
+                'guardian' => (!empty($student->guardian)) ? $student->guardian : (object)[]
             ]);
         } else {
             return response()->json([
