@@ -84,6 +84,30 @@
     </section>
     <!-- slider-area -->
 
+    <!-- Aluminai Cards Start -->
+    <div class="container  center-container" style="margin-top: 5rem;">
+        <h2 class="text-center m-4" style="visibility: visible;">
+            Our Success story</h2>
+        <div class="testimonial-active">
+            @foreach ($success_story as $ss)
+            <div class="card" style="border: none;">
+                <img src="{{ config('app.url') }}storage/{{ $ss->image }}" class="card-img-top"
+                    style="object-fit: inherit; height:25rem" alt="img" />
+                <div class="card-body">
+                    <h5 class="card-title">{{ $ss->title }}</h5>
+                    {{-- @if(strlen($ss->description) > 5) --}}
+                    <p class="card-text">
+                        {{ $ss->description }}
+                    </p>
+                    {{-- @endif --}}
+                </div>
+            </div>
+            @endforeach
+
+        </div>
+    </div>
+    <!-- Aluminai Cards Start -->
+
     <!-- blog-area -->
     <section id="blog" class="blog-area p-relative fix pt-90 pb-45" style="">
         <div class="container">
@@ -489,8 +513,9 @@
         </div> --}}
     </div>
     <div class="white-curve-main"></div>
+
     <!-- Success Story Cards Start -->
-    <div
+    {{-- <div
         class="block-inline-blockasu-edu-anim-content-buttons bg white-bg bg-top bg-percent-100 max-size-container center-container  pt-50 pb-30">
         <div class="container">
             <h2 class="text-center m-4" style="visibility: visible;">
@@ -524,90 +549,10 @@
                     </div>
                 </div>
                 @endforeach
-
-                {{-- <div class="col-sm-4">
-                    <div class="content-section my-2" style="background: url('https://www.asu.edu/sites/default/files/2022-08/KE-pillar-macroTech_0.jpg') rgb(0 0 0 / 36%);
-                                        background-blend-mode: multiply;
-                                        padding: 41px 13px;
-                                        color: #fff;">
-                        <div class="content-holder px-4">
-                            <h2 style="font-size: 30px;color: #fff;font-weight: 700;">Experience world-class academics
-                            </h2>
-                            <div class="hidden-details">
-                                <div class="long-text mt-1 mb-3">
-                                    <p style="color: #fff;font-weight: 400;">As a comprehensive public research
-                                        university, ASU is committed to
-                                        providing excellence in education through the Academic Enterprise,
-                                        and enables the success of each unique student and increases access
-                                        to higher education for all.</p>
-                                </div>
-
-                                <div class="link-area mb-3">
-                                </div>
-
-                                <div class="tags-area mb-3">
-                                </div>
-
-                                <div class="button-area">
-                                    <!-- START INSERT: Button Component -->
-                                    <a href="https://www.asu.edu/academics" class="btn btn-md btn-gold" role="link"
-                                        data-ga-animated-content-section-section="experience world-class academics"
-                                        data-ga-animated-content-section="learn more">
-                                        Learn more
-                                    </a>
-
-                                    <!-- END INSERT: Button Component -->
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-4">
-                    <div class="content-section my-2" style="background: url('https://www.asu.edu/sites/default/files/2022-08/LE-pillar-online.jpg') rgb(0 0 0 / 36%);
-                                        background-blend-mode: multiply;
-                                        padding: 41px 13px;
-                                        color: #fff;">
-                        <div class="image-holder"></div>
-                        <div class="content-holder px-4">
-                            <h2 style="font-size: 30px;color: #fff;font-weight: 700;">Experience world-class academics
-                            </h2>
-                            <div class="hidden-details">
-                                <div class="long-text mt-1 mb-3">
-                                    <p style="color: #fff;font-weight: 400;">As a comprehensive public research
-                                        university, ASU is committed to
-                                        providing excellence in education through the Academic Enterprise,
-                                        and enables the success of each unique student and increases access
-                                        to higher education for all.</p>
-                                </div>
-
-                                <div class="link-area mb-3">
-                                </div>
-
-                                <div class="tags-area mb-3">
-                                </div>
-
-                                <div class="button-area">
-                                    <!-- START INSERT: Button Component -->
-                                    <a href="https://www.asu.edu/academics" class="btn btn-md btn-gold" role="link"
-                                        data-ga-animated-content-section-section="experience world-class academics"
-                                        data-ga-animated-content-section="learn more">
-                                        Learn more
-                                    </a>
-
-                                    <!-- END INSERT: Button Component -->
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
-
             </div>
         </div>
 
-    </div>
+    </div> --}}
 
 
     <section class="gmp-2 mission-wrp testimonial-area pt-90 pb-90 p-relative fix">
