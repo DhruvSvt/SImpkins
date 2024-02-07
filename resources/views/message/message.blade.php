@@ -18,40 +18,46 @@
                     <h4 class="card-title">
                         {{ __('select').' '.__('template') }}
                     </h4>
-                    <div class="row" id="toolbar">
-                        <div class="form-group col-sm-12 col-md-4">
-                            <select required name="attendance_type" id="template_name" class="form-control select2"
-                                style="width:100%;" tabindex="-1" aria-hidden="true">
-                                <option value="">{{__('select')}}</option>
-                                <option value="1">Holiday Message 1</option>
-                                <option value="2">Regular Classes</option>
-                                <option value="3">School Closed 1</option>
-                                <option value="4">Parents Teacher Meeting</option>
-                                <option value="5">Holiday Message 2</option>
-                                <option value="6">Month Attandance Counts</option>
-                                <option value="7">Collect your ward</option>
-                                <option value="8">school close</option>
-                            </select>
+                    <form action="{{ route('message.store') }}" method="POST">
+                        @csrf
+                        <div class="row" id="toolbar">
+                            <div class="form-group col-sm-12 col-md-4">
+                                <label>Choose Message <span class="text-danger">*</span></label>
+                                <select required name="template_id" id="template_name" class="form-control select2"
+                                    style="width:100%;" tabindex="-1" aria-hidden="true">
+                                    <option value="">{{__('select')}}</option>
+                                    <option value="1">Holiday Message 1</option>
+                                    <option value="2">Regular Classes</option>
+                                    <option value="3">School Closed 1</option>
+                                    <option value="4">Parents Teacher Meeting</option>
+                                    <option value="5">Holiday Message 2</option>
+                                    <option value="6">Month Attandance Counts</option>
+                                    <option value="7">Collect Your Ward</option>
+                                    <option value="8">School Close 2</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-sm-12 col-md-4">
+                                {{-- <label>{{ __('class') }} {{ __('section') }} <span
+                                        class="text-danger">*</span></label>
+                                --}}
+                                <label>Classes <span class="text-danger">*</span></label>
+                                <select required name="class_id" id="class_id"
+                                    class="form-control select2" style="width:100%;" tabindex="-1" aria-hidden="true">
+                                    <option value="">{{__('select')}}</option>
+                                    @foreach($classes as $class)
+                                    <option value="{{$class->id}}" data-class="{{$class->id}}">
+                                        {{$class->name}}
+                                    </option>
+                                    @endforeach
+                                </select>
+                            </div>
                         </div>
-                        <div class="form-group col-sm-12 col-md-4">
-                            {{-- <label>{{ __('class') }} {{ __('section') }} <span class="text-danger">*</span></label>
-                            --}}
-                            <select required name="class_section_id" id="timetable_class_section"
-                                class="form-control select2" style="width:100%;" tabindex="-1" aria-hidden="true">
-                                <option value="">{{__('select')}}</option>
-                                @foreach($classes as $class)
-                                <option value="{{$class->id}}" data-class="{{$class->id}}">
-                                    {{$class->name}}
-                                </option>
-                                @endforeach
-                            </select>
+                        <div class="form-group col-12">
+                            <label>Template Message <span class="text-danger">*</span></label>
+                            <textarea class="form-control" cols="50" rows="5" name="msg"></textarea>
                         </div>
-                    </div>
-                    <div class="form-group col-12">
-                        <label>Template Message <span class="text-danger">*</span></label>
-                        <textarea class="form-control" cols="50" rows="5" name="msg"></textarea>
-                    </div>
-                    <input class="btn btn-theme" type="submit" value="Send">
+                        <input class="btn btn-theme" type="submit" value="Sent">
+                    </form>
                 </div>
             </div>
         </div>

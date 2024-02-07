@@ -3,8 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\ClassSchool;
+use App\Models\ClassSection;
 use App\Models\MessageTemplate;
+use App\Models\Parents;
+use App\Models\Students;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
 
 class MessageController extends Controller
 {
@@ -17,7 +22,7 @@ class MessageController extends Controller
     {
         $classes = ClassSchool::all();
         $template = MessageTemplate::all();
-        return view('message.message',compact('classes', 'template'));
+        return view('message.message', compact('classes', 'template'));
     }
 
     /**
@@ -38,7 +43,51 @@ class MessageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'template_id' => 'required',
+            'class_id' => 'required',
+            'msg' => 'required'
+        ]);
+
+        $template_message = $request->msg;
+
+        $class_section_ids = ClassSection::where('class_id', $request->class_id)->pluck('id');
+        $father_ids = Students::whereIn('class_section_id', $class_section_ids)->pluck('father_id');
+        $mobile_numbers = Parents::whereIn('id', $father_ids)->pluck('mobile')->toArray();
+        $mobile_numbers_string = implode(',', $mobile_numbers);
+
+        // $response = Http::get('http://sms.a2pservices.in/api/mt/SendSMS', [
+        //     'user' => env('SMS_USER'),
+        //     'password' => env('SMS_PASSWORD'),
+        //     'senderid' => env('SMS_SENDER_ID'),
+        //     'channel' => 'Trans',
+        //     'DCS' => 0,
+        //     'flashsms' => 0,
+        //     'number' => '916397646784',
+        //     'text' => $template_message,
+        //     'route' => '##',
+        //     'PEId' => '##',
+        // ]);
+
+        // $response = Http::get('http://sms.a2pservices.in/api/mt/SendSMS?user=simpkins&password=Karan@15&senderid=SMPKNS&channel=Trans&DCS=0&flashsms=0&number=916397646784&text='.$template_message.'message&route=20');
+        $response = Http::get('http://sms.a2pservices.in/api/mt/SendSMS?user=simpkins&password=Karan@15&senderid=SMPKNS&channel=Trans&DCS=0&flashsms=0&number=916397646784&text='.$template_message.'&route=20');
+
+        if ($response->successful()) {
+            // Success: Handle successful response
+            return response()->json([
+                'message' => 'Message sent successfully'
+            ]);
+        }
+        if ($response->failed()) {
+            // Error: Handle error response
+            $errorData = $response->json();
+            Log::error('Error occurred while sending message: ' . json_encode($errorData));
+            // Return an appropriate error response
+            return response()->json([
+                'error' => 'Error occurred while sending message',
+                'message' => 'Unknown error occurred'
+            ], 500);
+        }
     }
 
     /**
@@ -47,7 +96,7 @@ class MessageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request , $selectedOption)
+    public function show(Request $request, $selectedOption)
     {
         $id = $request->selectedOption;
         $template = MessageTemplate::findOrFail($id);
