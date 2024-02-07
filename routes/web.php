@@ -188,6 +188,7 @@ Route::group(['middleware' => ['Role', 'auth'],], function () {
         Route::get('success_story_list', [SuccessStoryController::class, 'show']);
 
         // Success Story Route
+        Route::POST('/message/show/{selectedOption}', [MessageController::class, 'show'])->name('message.show');
         Route::resource('message', MessageController::class);
         // Route::get('message', [MessageController::class, 'show']);
 
@@ -306,12 +307,10 @@ Route::group(['middleware' => ['Role', 'auth'],], function () {
             //     $message->from('sagar.wrteam@gmail.com', 'Eschool Admin');
             // });
             echo "Basic Email Sent. Check your inbox.";
-
         });
 
-        Route::resource('alumini',AluminiFetchController::class);
+        Route::resource('alumini', AluminiFetchController::class);
         Route::get('alumini/show', [AluminiFetchController::class, 'show'])->name('alumini.show');
-
     });
 });
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ClassSchool;
+use App\Models\MessageTemplate;
 use Illuminate\Http\Request;
 
 class MessageController extends Controller
@@ -15,7 +16,8 @@ class MessageController extends Controller
     public function index()
     {
         $classes = ClassSchool::all();
-        return view('message.message',compact('classes'));
+        $template = MessageTemplate::all();
+        return view('message.message',compact('classes', 'template'));
     }
 
     /**
@@ -45,9 +47,14 @@ class MessageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request , $selectedOption)
     {
-        //
+        $id = $request->selectedOption;
+        $template = MessageTemplate::findOrFail($id);
+        $template_message = $template->template;
+        return response()->json([
+            'template_message' => $template_message
+        ]);
     }
 
     /**
