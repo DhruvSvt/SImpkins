@@ -806,13 +806,11 @@
 
 <div id="imageModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true"
     style="padding-right:0px !important">
-    <div class="modal-dialog" style="       max-width: 583px;
-    margin-top: 6px;
-    ">
+    <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
                 <!-- Add your image source here -->
-                <img src="{{ config('app.url') }}visitors/assets/img/popup.jpg" style="height: auto;
+                <img src="{{ config('app.url') }}visitors/assets/img/popup1.JPG" style="height: auto;
                 width: 100%;" alt="" />
             </div>
 
