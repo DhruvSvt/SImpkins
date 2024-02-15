@@ -26,7 +26,7 @@ class SuccessStoryServiceProvider extends ServiceProvider
     public function boot()
     {
         View::composer('visitors.index', function ($view) {
-            $success_story = Success_Story::latest()->limit(20)->get();
+            $success_story = Success_Story::limit(20)->get();
             $view->with('success_story', $success_story);
         });
     }
