@@ -2,7 +2,7 @@
 @section('content')
 
 
-<!-- main-area -->
+
 <div class="splash-container">
     <img src="{{ config('app.url') }}visitors/assets/img/features/icon.png" alt="">
     <div class="school-name">Simpkins</div>
